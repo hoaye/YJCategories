@@ -20,4 +20,12 @@
     }
 }
 
+/** 移除字符串中的所有空白 */
+- (NSString *)removeBlank{
+    if (self == nil || [self isEqual:[NSNull null]]) {
+        return nil;
+    }
+    return [self stringByReplacingOccurrencesOfString:@"\\s+" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [self length])];
+}
+
 @end

@@ -17,13 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor cyanColor];
+    [self setUpMainView];
 }
 
+- (void)setUpMainView{
+    
+    NSLog(@"-->%@", [UIDevice getNetWorkStates]);
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
 
 
 @end

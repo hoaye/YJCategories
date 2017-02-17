@@ -13,4 +13,7 @@
 /** 安全取出非nilString, 避免显示(null) */
 + (NSString *)safeString:(NSString *)string;
 
+/** 移除字符串中的所有空白 */
+- (NSString *)removeBlank;
+
 @end

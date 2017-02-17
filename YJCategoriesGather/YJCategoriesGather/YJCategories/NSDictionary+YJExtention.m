@@ -47,4 +47,12 @@
     return data;
 }
 
+/** 安全设置键值对 */
+- (void)setSafeValue:(id)value forKey:(NSString *)key{
+    if (!value || !key) {
+        return;
+    }
+    [self setValue:value forKey:key];
+}
+
 @end

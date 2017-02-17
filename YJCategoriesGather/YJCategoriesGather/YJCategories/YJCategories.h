@@ -13,6 +13,9 @@
 
     #import "NSString+YJExtention.h"
     #import "NSArray+YJExtention.h"
+    #import "UIView+YJExtention.h"
+    #import "NSDictionary+YJExtention.h"
+    #import "UIDevice+YJExtention.h"
 
 
 #endif

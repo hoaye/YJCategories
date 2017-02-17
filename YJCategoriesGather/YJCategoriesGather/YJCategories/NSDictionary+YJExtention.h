@@ -16,4 +16,7 @@
 /** 转换为 NSData */
 - (NSData *)convertToJSONData;
 
+/** 安全设置键值对 */
+- (void)setSafeValue:(id)value forKey:(NSString *)key;
+
 @end

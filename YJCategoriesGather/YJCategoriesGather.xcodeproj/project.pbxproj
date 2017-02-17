@@ -17,6 +17,7 @@
 		63F04B701E56F6C4007F0DDA /* NSArray+YJExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B6F1E56F6C4007F0DDA /* NSArray+YJExtention.m */; };
 		63F04B731E56F75D007F0DDA /* UIView+YJExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B721E56F75D007F0DDA /* UIView+YJExtention.m */; };
 		63F04B761E56F8B0007F0DDA /* NSDictionary+YJExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B751E56F8B0007F0DDA /* NSDictionary+YJExtention.m */; };
+		63F04B791E56FBEE007F0DDA /* UIDevice+YJExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B781E56FBEE007F0DDA /* UIDevice+YJExtention.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,9 @@
 		63F04B721E56F75D007F0DDA /* UIView+YJExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YJExtention.m"; sourceTree = "<group>"; };
 		63F04B741E56F8B0007F0DDA /* NSDictionary+YJExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YJExtention.h"; sourceTree = "<group>"; };
 		63F04B751E56F8B0007F0DDA /* NSDictionary+YJExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YJExtention.m"; sourceTree = "<group>"; };
+		63F04B771E56FBEE007F0DDA /* UIDevice+YJExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+YJExtention.h"; sourceTree = "<group>"; };
+		63F04B781E56FBEE007F0DDA /* UIDevice+YJExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+YJExtention.m"; sourceTree = "<group>"; };
+		63F04B7A1E56FCDF007F0DDA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 				63F04B3D1E56E2A5007F0DDA /* LaunchScreen.storyboard */,
 				63F04B401E56E2A5007F0DDA /* Info.plist */,
 				63F04B301E56E2A5007F0DDA /* main.m */,
+				63F04B7A1E56FCDF007F0DDA /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -105,6 +110,8 @@
 				63F04B721E56F75D007F0DDA /* UIView+YJExtention.m */,
 				63F04B741E56F8B0007F0DDA /* NSDictionary+YJExtention.h */,
 				63F04B751E56F8B0007F0DDA /* NSDictionary+YJExtention.m */,
+				63F04B771E56FBEE007F0DDA /* UIDevice+YJExtention.h */,
+				63F04B781E56FBEE007F0DDA /* UIDevice+YJExtention.m */,
 			);
 			path = YJCategories;
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 				63F04B731E56F75D007F0DDA /* UIView+YJExtention.m in Sources */,
 				63F04B371E56E2A5007F0DDA /* ViewController.m in Sources */,
 				63F04B491E56E362007F0DDA /* NSString+YJExtention.m in Sources */,
+				63F04B791E56FBEE007F0DDA /* UIDevice+YJExtention.m in Sources */,
 				63F04B341E56E2A5007F0DDA /* AppDelegate.m in Sources */,
 				63F04B761E56F8B0007F0DDA /* NSDictionary+YJExtention.m in Sources */,
 				63F04B701E56F6C4007F0DDA /* NSArray+YJExtention.m in Sources */,
@@ -306,6 +314,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 33JZ8ZWGJN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = YJCategoriesGather/PrefixHeader.pch;
 				INFOPLIST_FILE = YJCategoriesGather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -319,6 +329,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 33JZ8ZWGJN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = YJCategoriesGather/PrefixHeader.pch;
 				INFOPLIST_FILE = YJCategoriesGather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
