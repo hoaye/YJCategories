@@ -18,6 +18,7 @@
 		63F04B731E56F75D007F0DDA /* UIView+YJExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B721E56F75D007F0DDA /* UIView+YJExtention.m */; };
 		63F04B761E56F8B0007F0DDA /* NSDictionary+YJExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B751E56F8B0007F0DDA /* NSDictionary+YJExtention.m */; };
 		63F04B791E56FBEE007F0DDA /* UIDevice+YJExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B781E56FBEE007F0DDA /* UIDevice+YJExtention.m */; };
+		63F04B7D1E57037D007F0DDA /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F04B7C1E57037D007F0DDA /* libresolv.9.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		63F04B771E56FBEE007F0DDA /* UIDevice+YJExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+YJExtention.h"; sourceTree = "<group>"; };
 		63F04B781E56FBEE007F0DDA /* UIDevice+YJExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+YJExtention.m"; sourceTree = "<group>"; };
 		63F04B7A1E56FCDF007F0DDA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		63F04B7C1E57037D007F0DDA /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F04B7D1E57037D007F0DDA /* libresolv.9.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 			children = (
 				63F04B2E1E56E2A5007F0DDA /* YJCategoriesGather */,
 				63F04B2D1E56E2A5007F0DDA /* Products */,
+				63F04B7B1E57037C007F0DDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +118,14 @@
 				63F04B781E56FBEE007F0DDA /* UIDevice+YJExtention.m */,
 			);
 			path = YJCategories;
+			sourceTree = "<group>";
+		};
+		63F04B7B1E57037C007F0DDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63F04B7C1E57037D007F0DDA /* libresolv.9.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

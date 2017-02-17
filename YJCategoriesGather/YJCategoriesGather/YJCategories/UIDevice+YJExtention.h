@@ -13,4 +13,10 @@
 /** 根据状态栏获取_网络状态 */
 + (NSString *)getNetWorkStates;
 
+/** 获取手机当前的DNS地址 */
++ (NSArray *)getAllDNSServers;
+
+/** 文件大小的计算转换为KB/MB/GB */
++ (NSString *)fileSizeWithOrginalSize:(CGFloat)orginalSize;
+
 @end

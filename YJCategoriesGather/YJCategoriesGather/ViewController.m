@@ -22,7 +22,7 @@
 
 - (void)setUpMainView{
     
-    NSLog(@"-->%@", [UIDevice getNetWorkStates]);
+    NSLog(@"-->%@", [UIDevice getAllDNSServers]);
 
 }
 

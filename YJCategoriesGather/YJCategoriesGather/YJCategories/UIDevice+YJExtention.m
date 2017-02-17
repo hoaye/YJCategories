@@ -7,6 +7,8 @@
 //
 
 #import "UIDevice+YJExtention.h"
+#import <resolv.h>
+#import <arpa/inet.h>
 
 @implementation UIDevice (YJExtention)
 
@@ -44,6 +46,41 @@
         }
     }
     return state;
+}
+
+/** 获取手机的DNS地址 */
++ (NSArray *)getAllDNSServers{
+    
+    NSMutableArray *addresses = [NSMutableArray array];
+    res_state res = malloc(sizeof(struct __res_state));
+    int result = res_ninit(res);
+    
+    if (result == 0){
+        for (int i = 0; i < res->nscount; i++){
+            NSString *s = [NSString stringWithUTF8String:inet_ntoa(res->nsaddr_list[i].sin_addr)];
+            [addresses addObject:s];
+        }
+    }
+    return addresses;
+}
+
++ (NSString *)fileSizeWithOrginalSize:(CGFloat)orginalSize{
+    
+    NSInteger KB = 1024;
+    NSInteger MB = KB*KB;
+    NSInteger GB = MB*KB;
+    
+    if (orginalSize < 10.0f){
+        return @"0B";
+    }else if (orginalSize < KB){
+        return @"< 1KB";
+    }else if (orginalSize < MB){
+        return [NSString stringWithFormat:@"%.1fK",((CGFloat)orginalSize)/KB];
+    }else if (orginalSize < GB){
+        return [NSString stringWithFormat:@"%.1fM",((CGFloat)orginalSize)/MB];
+    }else{
+        return [NSString stringWithFormat:@"%.1fG",((CGFloat)orginalSize)/GB];
+    }
 }
 
 @end
