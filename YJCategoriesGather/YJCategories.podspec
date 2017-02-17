@@ -1,4 +1,4 @@
-version = "0.0.2";
+version = "0.0.3";
 
 Pod::Spec.new do |s|
     s.name         = "YJCategories"
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                             DESC
     s.homepage     = "https://github.com/YJManager/YJCategories.git"
 
-    s.license      = "MIT"
+    s.license      = { :type => "MIT", :file => "../LICENSE" }
 
     s.author       = { "houmanager" => "houmanager@Hotmail.com" }
     s.platform     = :ios, "8.0"
