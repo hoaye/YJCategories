@@ -10,4 +10,14 @@
 
 @implementation NSString (YJExtention)
 
+/** 安全取出非nilString, 避免显示(null) */
++ (NSString *)safeString:(NSString *)string{
+    if (string) {
+        return string;
+    }else{
+        NSString * blankString = @"";
+        return blankString;
+    }
+}
+
 @end

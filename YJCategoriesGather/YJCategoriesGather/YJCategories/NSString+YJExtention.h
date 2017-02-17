@@ -10,4 +10,7 @@
 
 @interface NSString (YJExtention)
 
+/** 安全取出非nilString, 避免显示(null) */
++ (NSString *)safeString:(NSString *)string;
+
 @end
