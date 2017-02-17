@@ -1,7 +1,7 @@
 version = "0.0.1";
 
 Pod::Spec.new do |s|
-    s.name         = "YJCategoriesGather"
+    s.name         = "YJCategories"
     s.version      = version
     s.summary      = "YJCategories(iOS-Categories), a collection of useful Objective-C Categories extending iOS Frameworks"
     s.description      = <<-DESC
