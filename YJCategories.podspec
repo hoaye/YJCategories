@@ -1,4 +1,4 @@
-version = "0.0.3";
+version = "0.0.4";
 
 Pod::Spec.new do |s|
     s.name         = "YJCategories"
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                             DESC
     s.homepage     = "https://github.com/YJManager/YJCategories.git"
 
-    s.license      = { :type => "MIT", :file => "../LICENSE" }
+    s.license      = { :type => "MIT", :file => "LICENSE" }
 
     s.author       = { "houmanager" => "houmanager@Hotmail.com" }
     s.platform     = :ios, "8.0"
@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
     s.frameworks = 'Foundation', 'UIKit', 'CoreData', 'QuartzCore', 'CoreLocation', 'MapKit'
     #s.libraries    = "z"
     s.source       = { :git => "https://github.com/YJManager/YJCategories.git", :tag => "#{version}" }
-    s.source_files = "YJCategoriesGather/YJCategories", "YJCategoriesGather/YJCategories/*.{h}", "YJCategoriesGather/YJCategories/**/*.{h,m}"
+    s.source_files = "YJCategoriesGather/YJCategoriesGather/YJCategories", "YJCategoriesGather/YJCategoriesGather/YJCategories/*.{h}", "YJCategoriesGather/YJCategoriesGather/YJCategories/**/*.{h,m}"
     #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 end
