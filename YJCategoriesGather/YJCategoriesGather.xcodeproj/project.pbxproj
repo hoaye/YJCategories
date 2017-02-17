@@ -14,6 +14,9 @@
 		63F04B3C1E56E2A5007F0DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63F04B3B1E56E2A5007F0DDA /* Assets.xcassets */; };
 		63F04B3F1E56E2A5007F0DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F04B3D1E56E2A5007F0DDA /* LaunchScreen.storyboard */; };
 		63F04B491E56E362007F0DDA /* NSString+YJExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B481E56E362007F0DDA /* NSString+YJExtention.m */; };
+		63F04B701E56F6C4007F0DDA /* NSArray+YJExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B6F1E56F6C4007F0DDA /* NSArray+YJExtention.m */; };
+		63F04B731E56F75D007F0DDA /* UIView+YJExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B721E56F75D007F0DDA /* UIView+YJExtention.m */; };
+		63F04B761E56F8B0007F0DDA /* NSDictionary+YJExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B751E56F8B0007F0DDA /* NSDictionary+YJExtention.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,13 @@
 		63F04B401E56E2A5007F0DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63F04B471E56E362007F0DDA /* NSString+YJExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YJExtention.h"; sourceTree = "<group>"; };
 		63F04B481E56E362007F0DDA /* NSString+YJExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YJExtention.m"; sourceTree = "<group>"; };
+		63F04B6D1E56F5DD007F0DDA /* YJCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJCategories.h; sourceTree = "<group>"; };
+		63F04B6E1E56F6C4007F0DDA /* NSArray+YJExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YJExtention.h"; sourceTree = "<group>"; };
+		63F04B6F1E56F6C4007F0DDA /* NSArray+YJExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YJExtention.m"; sourceTree = "<group>"; };
+		63F04B711E56F75D007F0DDA /* UIView+YJExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YJExtention.h"; sourceTree = "<group>"; };
+		63F04B721E56F75D007F0DDA /* UIView+YJExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YJExtention.m"; sourceTree = "<group>"; };
+		63F04B741E56F8B0007F0DDA /* NSDictionary+YJExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YJExtention.h"; sourceTree = "<group>"; };
+		63F04B751E56F8B0007F0DDA /* NSDictionary+YJExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YJExtention.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +96,15 @@
 		63F04B461E56E320007F0DDA /* YJCategories */ = {
 			isa = PBXGroup;
 			children = (
+				63F04B6D1E56F5DD007F0DDA /* YJCategories.h */,
 				63F04B471E56E362007F0DDA /* NSString+YJExtention.h */,
 				63F04B481E56E362007F0DDA /* NSString+YJExtention.m */,
+				63F04B6E1E56F6C4007F0DDA /* NSArray+YJExtention.h */,
+				63F04B6F1E56F6C4007F0DDA /* NSArray+YJExtention.m */,
+				63F04B711E56F75D007F0DDA /* UIView+YJExtention.h */,
+				63F04B721E56F75D007F0DDA /* UIView+YJExtention.m */,
+				63F04B741E56F8B0007F0DDA /* NSDictionary+YJExtention.h */,
+				63F04B751E56F8B0007F0DDA /* NSDictionary+YJExtention.m */,
 			);
 			path = YJCategories;
 			sourceTree = "<group>";
@@ -164,9 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F04B731E56F75D007F0DDA /* UIView+YJExtention.m in Sources */,
 				63F04B371E56E2A5007F0DDA /* ViewController.m in Sources */,
 				63F04B491E56E362007F0DDA /* NSString+YJExtention.m in Sources */,
 				63F04B341E56E2A5007F0DDA /* AppDelegate.m in Sources */,
+				63F04B761E56F8B0007F0DDA /* NSDictionary+YJExtention.m in Sources */,
+				63F04B701E56F6C4007F0DDA /* NSArray+YJExtention.m in Sources */,
 				63F04B311E56E2A5007F0DDA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +346,7 @@
 				63F04B451E56E2A5007F0DDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
