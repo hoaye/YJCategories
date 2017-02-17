@@ -1,4 +1,4 @@
-version = "0.0.6";
+version = "0.0.7";
 
 Pod::Spec.new do |s|
     s.name         = "YJCategories"
@@ -16,7 +16,8 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = "8.0"
     s.requires_arc = true
     s.frameworks = 'Foundation', 'UIKit', 'CoreData', 'QuartzCore', 'CoreLocation', 'MapKit'
-    s.libraries    = "libresolv.9"
+    s.library       = 'libresolv.9' // 设置只依赖一个系统的library
+    #s.libraries    = "libresolv.9.tbd"
     s.source       = { :git => "https://github.com/YJManager/YJCategories.git", :tag => "#{version}" }
     s.source_files = "YJCategoriesGather/YJCategoriesGather/YJCategories", "YJCategoriesGather/YJCategoriesGather/YJCategories/*.{h}", "YJCategoriesGather/YJCategoriesGather/YJCategories/**/*.{h,m}"
     #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
