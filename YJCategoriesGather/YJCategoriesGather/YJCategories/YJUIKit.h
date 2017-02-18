@@ -12,6 +12,8 @@
     #import "UIView+YJFrame.h"  // View Frame
     #import "UIView+YJFind.h"   // 寻找 View
     #import "UIView+YJLoadNib.h"  // 从 Nib 实例化 View
+    #import "UIView+YJScreenshot.h" // 将 view 转为 image
+    #import "UIView+YJGestureBlock.h"   // 给 View 添加手势
 
 
 #endif /* YJUIKit_h */
