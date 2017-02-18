@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^YJGestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
+
 @interface UIView (YJGestureBlock)
+
+/** 添加 Tap 手势 */
+- (void)addTapGestureWithBlock:(YJGestureActionBlock)block;
+
+/** 添加 LongPressGesture 收拾 */
+- (void)addLongPressGestureWithBlock:(YJGestureActionBlock)block;
 
 @end
