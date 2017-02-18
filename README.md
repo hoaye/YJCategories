@@ -1,21 +1,21 @@
-YJCategories Objective-C超级分类集合
+YJCategories 是Objective-C超级分类集合
 ================
 
-YJCategories 是收集常用、实用的Objective-C Categories扩展, 其中包括 Foundation, UIKit, CoreData, QuartzCore, CoreLocation, MapKit 等.
+收集常用、实用的Objective-C Categories扩展, 其中包括 Foundation, UIKit, CoreData, QuartzCore, CoreLocation, MapKit 等.
 
 ## Requirements
-This library requires `iOS 8.0+`.
+    This library requires `iOS 8.0+`.
 
 ## Installation
 
 ### Installation with CocoaPods
 
-platform :ios
-pod 'YJCategories'
+    platform :ios
+    pod 'YJCategories'
 
 ### Manually
 
-Copy YJCategories folder to your project
+    Copy YJCategories folder to your project
 
 ## Usage
 
@@ -23,28 +23,28 @@ Copy YJCategories folder to your project
  
 #### onekey import all categories of all frameworks
 
-"YJCategories.h",
+    "YJCategories.h",
 
 ## Content
 ### Foundation
-* NSArray
+    * NSArray
 
 ### UIKit
-* UIView
+    * UIView
 
 ### QuartzCore
-* CALayer
+    * CALayer
 
 ### CoreData
-* NSManagedObjectContext
+    * NSManagedObjectContext
 
 ### CoreLocation
-* CLLocationManager
+    * CLLocationManager
 
 ### MapKit
-* MKMapView
+    * MKMapView
 
 ## License
 
-YJCategories is available under the MIT license.
+    YJCategories is available under the MIT license.
 
