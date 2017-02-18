@@ -10,6 +10,7 @@
 #define YJUIKit_h
 
     #import "UIView+YJFrame.h"  // View Frame
+    #import "UIView+YJFind.h"   // 寻找 View
 
 
 #endif /* YJUIKit_h */
