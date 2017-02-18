@@ -1,14 +1,14 @@
 //
-//  NSDictionary+YJExtention.m
+//  NSDictionary+YJSuperExt.m
 //  YJCategoriesGather
 //
-//  Created by YJHou on 2017/2/17.
-//  Copyright © 2017年 Houmanager. All rights reserved.
+//  Created by YJHou on 2017/2/18.
+//  Copyright © 2017年 侯跃军 houmanager@Hotmail.com. All rights reserved.
 //
 
-#import "NSDictionary+YJExtention.h"
+#import "NSDictionary+YJSuperExt.h"
 
-@implementation NSDictionary (YJExtention)
+@implementation NSDictionary (YJSuperExt)
 
 /** NSDictionary->NSString */
 - (NSString *)convertToJSONString{

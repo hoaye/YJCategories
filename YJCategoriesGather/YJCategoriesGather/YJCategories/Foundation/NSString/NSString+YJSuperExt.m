@@ -1,14 +1,14 @@
 //
-//  NSString+YJExtention.m
+//  NSString+YJSuperExt.m
 //  YJCategoriesGather
 //
-//  Created by YJHou on 2017/2/17.
-//  Copyright © 2017年 Houmanager. All rights reserved.
+//  Created by YJHou on 2017/2/18.
+//  Copyright © 2017年 侯跃军 houmanager@Hotmail.com. All rights reserved.
 //
 
-#import "NSString+YJExtention.h"
+#import "NSString+YJSuperExt.h"
 
-@implementation NSString (YJExtention)
+@implementation NSString (YJSuperExt)
 
 /** 安全取出非nilString, 避免显示(null) */
 + (NSString *)safeString:(NSString *)string{
