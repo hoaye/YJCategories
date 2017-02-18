@@ -37,7 +37,7 @@ YJCategories 是Objective-C超级分类集合
         4.  YJScreenshot
         5.  YJConstraints
         6.  YJGestureBlock
-        7.  获取 View 水平右边的位置 right
+        7.  YJRecursion
         8.  获取 View 竖直上边的位置 y
         9.  获取 View 竖直底部位置 bottom
         10. 获取 View 左上角 leftTop

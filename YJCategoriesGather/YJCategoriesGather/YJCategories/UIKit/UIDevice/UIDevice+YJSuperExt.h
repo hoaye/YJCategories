@@ -1,14 +1,14 @@
 //
-//  UIDevice+YJExtention.h
+//  UIDevice+YJSuperExt.h
 //  YJCategoriesGather
 //
-//  Created by YJHou on 2017/2/17.
-//  Copyright © 2017年 Houmanager. All rights reserved.
+//  Created by YJHou on 2017/2/18.
+//  Copyright © 2017年 侯跃军 houmanager@Hotmail.com. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIDevice (YJExtention)
+@interface UIDevice (YJSuperExt)
 
 /** 根据状态栏获取_网络状态 */
 + (NSString *)getNetWorkStates;
