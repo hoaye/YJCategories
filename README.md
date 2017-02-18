@@ -32,8 +32,8 @@ YJCategories 是Objective-C超级分类集合
 ### UIKit
     * UIView
         1.  Frame
-        2.  获取 View 坐标起点 origin
-        3.  获取 View 大小 size
+        2.  Find
+        3.  LoadNib
         4.  获取 View 宽 width
         5.  获取 View 高 height
         6.  获取 View 水平左边位置 x

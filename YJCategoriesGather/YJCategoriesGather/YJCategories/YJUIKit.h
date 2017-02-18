@@ -11,6 +11,7 @@
 
     #import "UIView+YJFrame.h"  // View Frame
     #import "UIView+YJFind.h"   // 寻找 View
+    #import "UIView+YJLoadNib.h"  // 从 Nib 实例化 View
 
 
 #endif /* YJUIKit_h */
