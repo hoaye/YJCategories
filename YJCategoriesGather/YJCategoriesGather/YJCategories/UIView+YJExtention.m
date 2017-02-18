@@ -8,13 +8,6 @@
 
 #import "UIView+YJExtention.h"
 
-CGPoint CGRectGetCenter(CGRect rect){
-    CGPoint pt;
-    pt.x = CGRectGetMidX(rect);
-    pt.y = CGRectGetMidY(rect);
-    return pt;
-}
-
 @implementation UIView (YJExtention)
 
 - (CGPoint)origin{

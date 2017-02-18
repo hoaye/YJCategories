@@ -11,6 +11,8 @@
 
 #ifdef __OBJC__
 
+    #import "YJUIKit.h"
+
     #import "NSString+YJExtention.h"
     #import "NSArray+YJExtention.h"
     #import "UIView+YJExtention.h"

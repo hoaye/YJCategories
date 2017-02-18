@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  YJCategoriesGather
 //
-//  Created by YJHou on 2017/2/17.
-//  Copyright © 2017年 Houmanager. All rights reserved.
+//  Created by YJHou on 2015/3/17.
+//  Copyright © 2015年 侯跃军 houmanager@Hotmail.com. All rights reserved.
 //
 
 #import "AppDelegate.h"

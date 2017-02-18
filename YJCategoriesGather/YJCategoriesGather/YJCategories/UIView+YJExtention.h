@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-/** 得到中心点 */
-CGPoint CGRectGetCenter(CGRect rect);
-
 @interface UIView (YJExtention)
 
 @property (nonatomic, assign) CGPoint origin; /**< 坐标点 */
