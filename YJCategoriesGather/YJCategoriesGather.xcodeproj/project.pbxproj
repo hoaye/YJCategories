@@ -30,6 +30,8 @@
 		631D70761E59752400F12739 /* NSData+YJGzip.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D70751E59752400F12739 /* NSData+YJGzip.m */; };
 		631D70791E5977A000F12739 /* NSData+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D70781E5977A000F12739 /* NSData+YJSuperExt.m */; };
 		631D707C1E59788800F12739 /* NSDictionary+YJMerge.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D707B1E59788800F12739 /* NSDictionary+YJMerge.m */; };
+		631D70801E597D9400F12739 /* UIApplication+YJAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D707F1E597D9400F12739 /* UIApplication+YJAppInfo.m */; };
+		631D70841E597F0200F12739 /* UITableView+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D70831E597F0200F12739 /* UITableView+YJSuperExt.m */; };
 		63F04B311E56E2A5007F0DDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B301E56E2A5007F0DDA /* main.m */; };
 		63F04B341E56E2A5007F0DDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B331E56E2A5007F0DDA /* AppDelegate.m */; };
 		63F04B371E56E2A5007F0DDA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B361E56E2A5007F0DDA /* ViewController.m */; };
@@ -88,6 +90,10 @@
 		631D70781E5977A000F12739 /* NSData+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+YJSuperExt.m"; sourceTree = "<group>"; };
 		631D707A1E59788800F12739 /* NSDictionary+YJMerge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YJMerge.h"; sourceTree = "<group>"; };
 		631D707B1E59788800F12739 /* NSDictionary+YJMerge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YJMerge.m"; sourceTree = "<group>"; };
+		631D707E1E597D9400F12739 /* UIApplication+YJAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+YJAppInfo.h"; sourceTree = "<group>"; };
+		631D707F1E597D9400F12739 /* UIApplication+YJAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+YJAppInfo.m"; sourceTree = "<group>"; };
+		631D70821E597F0200F12739 /* UITableView+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+YJSuperExt.h"; sourceTree = "<group>"; };
+		631D70831E597F0200F12739 /* UITableView+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+YJSuperExt.m"; sourceTree = "<group>"; };
 		63F04B2C1E56E2A5007F0DDA /* YJCategoriesGather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJCategoriesGather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F04B301E56E2A5007F0DDA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63F04B321E56E2A5007F0DDA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 		6314C3A11E58483900A40B52 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				631D70811E597EB400F12739 /* UITableView */,
+				631D707D1E597D7D00F12739 /* UIApplication */,
 				6314C3E51E58998300A40B52 /* UIDevice */,
 				6314C3E11E5898F400A40B52 /* UIWindow */,
 				6314C3DD1E58987300A40B52 /* UIButton */,
@@ -295,6 +303,24 @@
 			path = NSData;
 			sourceTree = "<group>";
 		};
+		631D707D1E597D7D00F12739 /* UIApplication */ = {
+			isa = PBXGroup;
+			children = (
+				631D707E1E597D9400F12739 /* UIApplication+YJAppInfo.h */,
+				631D707F1E597D9400F12739 /* UIApplication+YJAppInfo.m */,
+			);
+			path = UIApplication;
+			sourceTree = "<group>";
+		};
+		631D70811E597EB400F12739 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				631D70821E597F0200F12739 /* UITableView+YJSuperExt.h */,
+				631D70831E597F0200F12739 /* UITableView+YJSuperExt.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
 		63F04B231E56E2A5007F0DDA = {
 			isa = PBXGroup;
 			children = (
@@ -433,8 +459,10 @@
 				6314C3E81E58999800A40B52 /* UIDevice+YJSuperExt.m in Sources */,
 				6314C3CD1E5894B000A40B52 /* UIView+YJRecursion.m in Sources */,
 				6314C3F01E589AF000A40B52 /* NSString+YJSuperExt.m in Sources */,
+				631D70801E597D9400F12739 /* UIApplication+YJAppInfo.m in Sources */,
 				6314C3CA1E5894B000A40B52 /* UIView+YJFrame.m in Sources */,
 				631D707C1E59788800F12739 /* NSDictionary+YJMerge.m in Sources */,
+				631D70841E597F0200F12739 /* UITableView+YJSuperExt.m in Sources */,
 				6314C3D81E58977900A40B52 /* UIViewController+YJSuperExt.m in Sources */,
 				6314C3F61E589BAA00A40B52 /* NSDictionary+YJSuperExt.m in Sources */,
 				631D70661E596DAF00F12739 /* NSNotificationCenter+YJMainThread.m in Sources */,

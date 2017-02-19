@@ -21,6 +21,8 @@
 //////////// UIWindow /////////////////
     #import "UIWindow+YJHierarchy.h"
 
+//////////// UIViewController /////////////////
+    #import "UIApplication+YJAppInfo.h"
 
 //////////// UILabel /////////////////
     #import "UILabel+YJSuperExt.h"
@@ -29,10 +31,11 @@
 //////////// UIButton /////////////////
     #import "UIButton+YJSuperExt.h"
 
+//////////// UITableView /////////////////
+#import "UITableView+YJSuperExt.h"
 
 //////////// UITableViewCell /////////////////
     #import "UITableViewCell+YJNib.h"  // 加载 Nib
-
 
 //////////// UIViewController /////////////////
     #import "UIViewController+YJSuperExt.h"
