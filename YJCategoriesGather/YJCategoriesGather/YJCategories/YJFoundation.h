@@ -12,6 +12,12 @@
     #import "NSArray+YJSuperExt.h"
     #import "NSDictionary+YJSuperExt.h"
     #import "NSString+YJSuperExt.h"
+    #import "NSNotificationCenter+YJMainThread.h"
+    #import "NSIndexPath+YJOffset.h"
+    #import "NSURL+YJParameters.h"
+    #import "NSBundle+YJSuperExt.h"
+    #import "NSData+YJGzip.h"
+    #import "NSData+YJSuperExt.h"
 
 
 

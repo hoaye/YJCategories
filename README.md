@@ -27,7 +27,33 @@ YJCategories 是Objective-C超级分类集合
 
 ## Content
 ### Foundation
+
     * NSArray
+        1.  YJSuperExt
+
+    * NSDictionary
+        1.  YJSuperExt
+
+    * NSString
+        1.  YJSuperExt
+
+    * NSNotificationCenter
+        1.  YJMainThread
+
+    * NSIndexPath
+        1.  YJOffset
+
+    * NSURL
+        1.  YJParameters
+
+    * NSBundle
+        1.  YJSuperExt
+
+    * NSData
+        1.  YJGzip
+        2.  YJSuperExt
+
+
 
 ### UIKit
     * UIView

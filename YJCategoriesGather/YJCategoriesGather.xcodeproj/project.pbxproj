@@ -24,6 +24,11 @@
 		6314C3F31E589B7200A40B52 /* NSArray+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6314C3F21E589B7200A40B52 /* NSArray+YJSuperExt.m */; };
 		6314C3F61E589BAA00A40B52 /* NSDictionary+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6314C3F51E589BAA00A40B52 /* NSDictionary+YJSuperExt.m */; };
 		631D70661E596DAF00F12739 /* NSNotificationCenter+YJMainThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D70651E596DAF00F12739 /* NSNotificationCenter+YJMainThread.m */; };
+		631D706A1E59711200F12739 /* NSIndexPath+YJOffset.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D70691E59711200F12739 /* NSIndexPath+YJOffset.m */; };
+		631D706E1E59729100F12739 /* NSURL+YJParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D706D1E59729100F12739 /* NSURL+YJParameters.m */; };
+		631D70721E5973CF00F12739 /* NSBundle+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D70711E5973CF00F12739 /* NSBundle+YJSuperExt.m */; };
+		631D70761E59752400F12739 /* NSData+YJGzip.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D70751E59752400F12739 /* NSData+YJGzip.m */; };
+		631D70791E5977A000F12739 /* NSData+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D70781E5977A000F12739 /* NSData+YJSuperExt.m */; };
 		63F04B311E56E2A5007F0DDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B301E56E2A5007F0DDA /* main.m */; };
 		63F04B341E56E2A5007F0DDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B331E56E2A5007F0DDA /* AppDelegate.m */; };
 		63F04B371E56E2A5007F0DDA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B361E56E2A5007F0DDA /* ViewController.m */; };
@@ -70,6 +75,16 @@
 		6314C3F51E589BAA00A40B52 /* NSDictionary+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YJSuperExt.m"; sourceTree = "<group>"; };
 		631D70641E596DAF00F12739 /* NSNotificationCenter+YJMainThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+YJMainThread.h"; sourceTree = "<group>"; };
 		631D70651E596DAF00F12739 /* NSNotificationCenter+YJMainThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+YJMainThread.m"; sourceTree = "<group>"; };
+		631D70681E59711200F12739 /* NSIndexPath+YJOffset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+YJOffset.h"; sourceTree = "<group>"; };
+		631D70691E59711200F12739 /* NSIndexPath+YJOffset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+YJOffset.m"; sourceTree = "<group>"; };
+		631D706C1E59729100F12739 /* NSURL+YJParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+YJParameters.h"; sourceTree = "<group>"; };
+		631D706D1E59729100F12739 /* NSURL+YJParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+YJParameters.m"; sourceTree = "<group>"; };
+		631D70701E5973CF00F12739 /* NSBundle+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+YJSuperExt.h"; sourceTree = "<group>"; };
+		631D70711E5973CF00F12739 /* NSBundle+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+YJSuperExt.m"; sourceTree = "<group>"; };
+		631D70741E59752400F12739 /* NSData+YJGzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+YJGzip.h"; sourceTree = "<group>"; };
+		631D70751E59752400F12739 /* NSData+YJGzip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+YJGzip.m"; sourceTree = "<group>"; };
+		631D70771E5977A000F12739 /* NSData+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+YJSuperExt.h"; sourceTree = "<group>"; };
+		631D70781E5977A000F12739 /* NSData+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+YJSuperExt.m"; sourceTree = "<group>"; };
 		63F04B2C1E56E2A5007F0DDA /* YJCategoriesGather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJCategoriesGather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F04B301E56E2A5007F0DDA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63F04B321E56E2A5007F0DDA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -189,6 +204,10 @@
 		6314C3E91E589A4100A40B52 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				631D70731E59751100F12739 /* NSData */,
+				631D706F1E5973B800F12739 /* NSBundle */,
+				631D706B1E59727400F12739 /* NSURL */,
+				631D70671E5970FF00F12739 /* NSIndexPath */,
 				631D70631E596D9100F12739 /* NSNotificationCenter */,
 				6314C3EA1E589A9000A40B52 /* NSArray */,
 				6314C3EB1E589A9000A40B52 /* NSDictionary */,
@@ -231,6 +250,44 @@
 				631D70651E596DAF00F12739 /* NSNotificationCenter+YJMainThread.m */,
 			);
 			path = NSNotificationCenter;
+			sourceTree = "<group>";
+		};
+		631D70671E5970FF00F12739 /* NSIndexPath */ = {
+			isa = PBXGroup;
+			children = (
+				631D70681E59711200F12739 /* NSIndexPath+YJOffset.h */,
+				631D70691E59711200F12739 /* NSIndexPath+YJOffset.m */,
+			);
+			path = NSIndexPath;
+			sourceTree = "<group>";
+		};
+		631D706B1E59727400F12739 /* NSURL */ = {
+			isa = PBXGroup;
+			children = (
+				631D706C1E59729100F12739 /* NSURL+YJParameters.h */,
+				631D706D1E59729100F12739 /* NSURL+YJParameters.m */,
+			);
+			path = NSURL;
+			sourceTree = "<group>";
+		};
+		631D706F1E5973B800F12739 /* NSBundle */ = {
+			isa = PBXGroup;
+			children = (
+				631D70701E5973CF00F12739 /* NSBundle+YJSuperExt.h */,
+				631D70711E5973CF00F12739 /* NSBundle+YJSuperExt.m */,
+			);
+			path = NSBundle;
+			sourceTree = "<group>";
+		};
+		631D70731E59751100F12739 /* NSData */ = {
+			isa = PBXGroup;
+			children = (
+				631D70741E59752400F12739 /* NSData+YJGzip.h */,
+				631D70751E59752400F12739 /* NSData+YJGzip.m */,
+				631D70771E5977A000F12739 /* NSData+YJSuperExt.h */,
+				631D70781E5977A000F12739 /* NSData+YJSuperExt.m */,
+			);
+			path = NSData;
 			sourceTree = "<group>";
 		};
 		63F04B231E56E2A5007F0DDA = {
@@ -375,19 +432,24 @@
 				6314C3D81E58977900A40B52 /* UIViewController+YJSuperExt.m in Sources */,
 				6314C3F61E589BAA00A40B52 /* NSDictionary+YJSuperExt.m in Sources */,
 				631D70661E596DAF00F12739 /* NSNotificationCenter+YJMainThread.m in Sources */,
+				631D706A1E59711200F12739 /* NSIndexPath+YJOffset.m in Sources */,
 				6314C3CE1E5894B000A40B52 /* UIView+YJScreenshot.m in Sources */,
 				63F04B371E56E2A5007F0DDA /* ViewController.m in Sources */,
 				6314C3CC1E5894B000A40B52 /* UIView+YJLoadNib.m in Sources */,
 				6314C3CB1E5894B000A40B52 /* UIView+YJGestureBlock.m in Sources */,
 				63F04B341E56E2A5007F0DDA /* AppDelegate.m in Sources */,
+				631D70761E59752400F12739 /* NSData+YJGzip.m in Sources */,
 				6314C3D11E58951E00A40B52 /* UITableViewCell+YJNib.m in Sources */,
 				6314C3E41E58990E00A40B52 /* UIWindow+YJHierarchy.m in Sources */,
+				631D706E1E59729100F12739 /* NSURL+YJParameters.m in Sources */,
 				6314C3F31E589B7200A40B52 /* NSArray+YJSuperExt.m in Sources */,
 				6314C3C81E5894B000A40B52 /* UIView+YJConstraints.m in Sources */,
+				631D70791E5977A000F12739 /* NSData+YJSuperExt.m in Sources */,
 				6314C3C91E5894B000A40B52 /* UIView+YJFind.m in Sources */,
 				63F04B311E56E2A5007F0DDA /* main.m in Sources */,
 				6314C3DC1E58980D00A40B52 /* UILabel+YJSuperExt.m in Sources */,
 				6314C3E01E58988F00A40B52 /* UIButton+YJSuperExt.m in Sources */,
+				631D70721E5973CF00F12739 /* NSBundle+YJSuperExt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
