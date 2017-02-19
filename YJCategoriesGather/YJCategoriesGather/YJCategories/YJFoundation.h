@@ -11,6 +11,7 @@
 
     #import "NSArray+YJSuperExt.h"
     #import "NSDictionary+YJSuperExt.h"
+    #import "NSDictionary+YJMerge.h"
     #import "NSString+YJSuperExt.h"
     #import "NSNotificationCenter+YJMainThread.h"
     #import "NSIndexPath+YJOffset.h"

@@ -19,4 +19,7 @@
 /** 安全设置键值对 */
 - (void)setSafeValue:(id)value forKey:(NSString *)key;
 
+/** 将NSDictionary转换成url 参数字符串 */
+- (NSString *)parameterDictToString;
+
 @end

@@ -30,8 +30,8 @@
     NSData  *data   = nil;
     NSException *exce = nil;
     @try {
-        ///这里的options参数为kNilOptions,转换为json的时候不添加\n格式化换行
-        ///当该参数为NSJSONWritingPrettyPrinted时，添加\n格式化换行，方便阅读
+        // 这里的options参数为kNilOptions,转换为json的时候不添加\n格式化换行
+        // 当该参数为NSJSONWritingPrettyPrinted时，添加\n格式化换行，方便阅读
         data = [NSJSONSerialization dataWithJSONObject:self options:kNilOptions error:&error];
     }
     @catch (NSException *exception) {
@@ -53,6 +53,20 @@
         return;
     }
     [self setValue:value forKey:key];
+}
+
+/** 将NSDictionary转换成url 参数字符串 */
+- (NSString *)parameterDictToString{
+    NSMutableString *string = [NSMutableString string];
+    for (NSString *key in [self allKeys]) {
+        if ([string length]) {
+            [string appendString:@"&"];
+        }
+        CFStringRef escaped = CFURLCreateStringByAddingPercentEscapes(NULL,(CFStringRef)[[self objectForKey:key] description], NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
+        [string appendFormat:@"%@=%@", key, escaped];
+        CFRelease(escaped);
+    }
+    return string;
 }
 
 @end
