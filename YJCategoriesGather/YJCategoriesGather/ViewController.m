@@ -22,7 +22,7 @@
 
 - (void)setUpMainView{
     
-    NSLog(@"-%@", [NSDate currentCalendar]);
+    NSLog(@"%@-->%@", [NSDate date], [[NSDate date] yj_longTimeString]);
 
 }
 
