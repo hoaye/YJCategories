@@ -22,7 +22,7 @@
 
 - (void)setUpMainView{
     
-    NSLog(@"%@-->%@", [NSDate date], [[NSDate date] yj_longTimeString]);
+    NSLog(@"%@-->%@", [NSDate date], [NSDate yj_dateByAddingMinutes:-10]);
 
 }
 

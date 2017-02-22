@@ -137,36 +137,58 @@ _Pragma("clang diagnostic pop") \
     return [self yj_stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
 }
 
-- (NSString *) yj_shortDateString{
+- (NSString *)yj_shortDateString{
     return [self yj_stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
 }
 
-- (NSString *) yj_shortTimeString{
+- (NSString *)yj_shortTimeString{
     return [self yj_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterShortStyle];
 }
 
-- (NSString *) yj_mediumString{
+- (NSString *)yj_mediumString{
     return [self yj_stringWithDateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle ];
 }
 
-- (NSString *) yj_mediumTimeString{
+- (NSString *)yj_mediumTimeString{
     return [self yj_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterMediumStyle ];
 }
 
-- (NSString *) yj_mediumDateString{
+- (NSString *)yj_mediumDateString{
     return [self yj_stringWithDateStyle:NSDateFormatterMediumStyle  timeStyle:NSDateFormatterNoStyle];
 }
 
-- (NSString *) yj_longString{
+- (NSString *)yj_longString{
     return [self yj_stringWithDateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterLongStyle ];
 }
 
-- (NSString *) yj_longTimeString{
+- (NSString *)yj_longTimeString{
     return [self yj_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterLongStyle ];
 }
 
-- (NSString *) yj_longDateString{
+- (NSString *)yj_longDateString{
     return [self yj_stringWithDateStyle:NSDateFormatterLongStyle  timeStyle:NSDateFormatterNoStyle];
+}
+
+#pragma mark - 从当前日期相对日期时间
+/** 增加 days 天时间 */
+- (NSDate *)yj_dateByAddingDays:(NSUInteger)days{
+    NSDateComponents *c = [[NSDateComponents alloc] init];
+    c.day = days;
+    return [[NSCalendar currentCalendar] dateByAddingComponents:c toDate:self options:0];
+}
+
+/** 当前时间增加 dHours 个小时 */
+- (NSDate *)yj_dateByAddingHours:(NSInteger)dHours{
+    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + YJ_EACH_HOUR * dHours;
+    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
+    return newDate;
+}
+
+/** 当前时间增加 dMinutes 分钟 */
+- (NSDate *)yj_dateByAddingMinutes:(NSInteger)dMinutes{
+    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + YJ_EACH_MINUTE * dMinutes;
+    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
+    return newDate;
 }
 
 

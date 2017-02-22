@@ -45,22 +45,17 @@
 - (NSString *)yj_stringWithFormat:(NSString *)format;
 
 #pragma mark -- 从当前日期相对日期时间
-/** 明天 */
-+ (NSDate *)yj_dateTomorrow;
-/** 昨天 */
-+ (NSDate *)yj_dateYesterday;
-/** 今天后几天 */
-+ (NSDate *)yj_dateWithDaysFromNow:(NSInteger)days;
-/** 今天前几天 */
-+ (NSDate *)yj_dateWithDaysBeforeNow:(NSInteger)days;
-/** 当前小时后dHours个小时 */
-+ (NSDate *)yj_dateWithHoursFromNow:(NSInteger)dHours;
-/** 当前小时前dHours个小时 */
-+ (NSDate *)yj_dateWithHoursBeforeNow:(NSInteger)dHours;
-/** 当前分钟后dMinutes个分钟 */
-+ (NSDate *)yj_dateWithMinutesFromNow:(NSInteger)dMinutes;
-/** 当前分钟前dMinutes个分钟 */
-+ (NSDate *)yj_dateWithMinutesBeforeNow:(NSInteger)dMinutes;
+/** 增加几天时间 */
+- (NSDate *)yj_dateByAddingDays:(NSUInteger)days;
+
+/** 当前时间增加几个小时 */
+- (NSDate *)yj_dateByAddingHours:(NSInteger)dHours;
+
+/** 当前时间增加 dMinutes 分钟 */
+- (NSDate *)yj_dateByAddingMinutes:(NSInteger)dMinutes;
+
+
+
 
 
 
