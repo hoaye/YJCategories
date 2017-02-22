@@ -39,6 +39,7 @@
 		63F04B3C1E56E2A5007F0DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63F04B3B1E56E2A5007F0DDA /* Assets.xcassets */; };
 		63F04B3F1E56E2A5007F0DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F04B3D1E56E2A5007F0DDA /* LaunchScreen.storyboard */; };
 		63F04B7D1E57037D007F0DDA /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F04B7C1E57037D007F0DDA /* libresolv.9.tbd */; };
+		63F79EF21E5D5FC5000E5D65 /* NSDate+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F79EF11E5D5FC5000E5D65 /* NSDate+YJSuperExt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,8 @@
 		63F04B6D1E56F5DD007F0DDA /* YJCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJCategories.h; sourceTree = "<group>"; };
 		63F04B7A1E56FCDF007F0DDA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		63F04B7C1E57037D007F0DDA /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		63F79EF01E5D5FC5000E5D65 /* NSDate+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YJSuperExt.h"; sourceTree = "<group>"; };
+		63F79EF11E5D5FC5000E5D65 /* NSDate+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YJSuperExt.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,7 @@
 		6314C3E91E589A4100A40B52 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				63F79EEF1E5D5F1F000E5D65 /* NSDate */,
 				631D70731E59751100F12739 /* NSData */,
 				631D706F1E5973B800F12739 /* NSBundle */,
 				631D706B1E59727400F12739 /* NSURL */,
@@ -384,6 +388,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		63F79EEF1E5D5F1F000E5D65 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				63F79EF01E5D5FC5000E5D65 /* NSDate+YJSuperExt.h */,
+				63F79EF11E5D5FC5000E5D65 /* NSDate+YJSuperExt.m */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -456,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F79EF21E5D5FC5000E5D65 /* NSDate+YJSuperExt.m in Sources */,
 				6314C3E81E58999800A40B52 /* UIDevice+YJSuperExt.m in Sources */,
 				6314C3CD1E5894B000A40B52 /* UIView+YJRecursion.m in Sources */,
 				6314C3F01E589AF000A40B52 /* NSString+YJSuperExt.m in Sources */,
