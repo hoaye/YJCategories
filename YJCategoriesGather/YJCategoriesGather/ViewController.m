@@ -21,8 +21,8 @@
 }
 
 - (void)setUpMainView{
-    
-    NSLog(@"%@-->%@", [NSDate date], [[NSDate date] yj_dateByAddingHours:2]);
+    NSDate *dateCom = [NSDate dateWithTimeIntervalSinceReferenceDate:2];
+    NSLog(@"%@-%@->%d", [NSDate date], dateCom, [[NSDate date] yj_isEqualToDateIgnoreTime:dateCom]);
 
 }
 

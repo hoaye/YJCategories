@@ -193,6 +193,17 @@ _Pragma("clang diagnostic pop") \
 
 #pragma mark - 时间比较
 
+/** 比较年月日是否相等 */
+- (BOOL)yj_isEqualToDateIgnoreTime:(NSDate *)aDate{
+    NSDateComponents *components1 = [[NSDate yj_currentCalendar] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components2 = [[NSDate yj_currentCalendar] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:aDate];
+    return ((components1.year == components2.year) && (components1.month == components2.month) && (components1.day == components2.day));
+}
+
+- (BOOL)yj_isToday{
+    return [self jk_isEqualToDateIgnoringTime:[NSDate date]];
+}
+
 
 
 @end

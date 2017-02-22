@@ -55,6 +55,8 @@
 - (NSDate *)yj_dateByAddingMinutes:(NSInteger)dMinutes;
 
 #pragma mark - 时间比较
+/** 比较年月日是否相等 */
+- (BOOL)yj_isEqualToDateIgnoreTime:(NSDate *)aDate;
 
 
 
