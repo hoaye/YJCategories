@@ -22,7 +22,7 @@
 
 - (void)setUpMainView{
     
-    NSLog(@"-%@", NSStringFromCGPoint(CGRectGetCenter(self.view.frame)));
+    NSLog(@"-%@", [NSDate currentCalendar]);
 
 }
 

@@ -10,4 +10,7 @@
 
 @interface NSDate (YJSuperExt)
 
+/** 当前日历 */
++ (NSCalendar *)currentCalendar;
+
 @end
