@@ -22,7 +22,7 @@
 
 - (void)setUpMainView{
  
-    if ([[NSDate dateWithTimeIntervalSinceReferenceDate:10] yj_isToday]) {
+    if ([[NSDate date] yj_isEqualWeekWithDate:[NSDate date]]) {
         NSLog(@"-->%@", @"是");
     }else{
         NSLog(@"-->%@", @"否");

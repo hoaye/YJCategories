@@ -205,6 +205,85 @@ _Pragma("clang diagnostic pop") \
     return [self yj_isEqualToDateIgnoreTime:[NSDate date]];
 }
 
+/** 是否是明天 */
+- (BOOL)yj_isTomorrow{
+    return [self yj_isEqualToDateIgnoreTime:[[NSDate date] yj_dateByAddingDays:1]];
+}
+
+/** 是否是昨天 */
+- (BOOL)yj_isYesterday{
+    return [self yj_isEqualToDateIgnoreTime:[[NSDate date] yj_dateByAddingDays:-1]];
+}
+
+/** 是否是同一周 */
+- (BOOL)yj_isEqualWeekWithDate:(NSDate *)aDate{
+    NSDateComponents *components1 = [[NSDate yj_currentCalendar] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components2 = [[NSDate yj_currentCalendar] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:aDate];
+
+    if (components1.weekOfYear != components2.weekOfYear) return NO;
+    return (fabs([self timeIntervalSinceDate:aDate]) < YJ_EACH_WEEK);
+}
+
+/** 是否是本周 */
+- (BOOL)yj_isThisWeek{
+    return [self yj_isEqualWeekWithDate:[NSDate date]];
+}
+
+/** 是否是上一周 */
+- (BOOL)yj_isNextWeek{
+    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + YJ_EACH_WEEK;
+    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
+    return [self yj_isEqualWeekWithDate:newDate];
+}
+
+/** 是否是上一周 */
+- (BOOL)yj_isBeforeWeek{
+    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - YJ_EACH_WEEK;
+    NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
+    return [self yj_isEqualWeekWithDate:newDate];
+}
+
+/** 是否是同一个月 */
+- (BOOL)yj_isEqualMonthWithDate:(NSDate *)aDate{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+    NSDateComponents *components1;
+    NSDateComponents *components2;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
+        components1 = [[NSDate yj_currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth fromDate:self];
+        components2 = [[NSDate yj_currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth fromDate:aDate];
+    }else{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        components1 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
+        components2 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:aDate];
+#pragma clang diagnostic pop
+    }
+#else
+    NSDateComponents *components1 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
+    NSDateComponents *components2 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:aDate];
+#endif
+    
+    return ((components1.month == components2.month) && (components1.year == components2.year));
+}
+
+/** 是否是本月 */
+- (BOOL)jk_isThisMonth{
+    return [self jk_isSameMonthAsDate:[NSDate date]];
+}
+
+// Thanks Marcin Krzyzanowski, also for adding/subtracting years and months
+- (BOOL) jk_isLastMonth
+{
+    return [self jk_isSameMonthAsDate:[[NSDate date] jk_dateBySubtractingMonths:1]];
+}
+
+- (BOOL) jk_isNextMonth
+{
+    return [self jk_isSameMonthAsDate:[[NSDate date] jk_dateByAddingMonths:1]];
+}
+
+
+
 
 
 @end

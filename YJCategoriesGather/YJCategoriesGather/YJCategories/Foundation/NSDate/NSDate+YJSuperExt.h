@@ -58,8 +58,27 @@
 /** 比较年月日是否相等 */
 - (BOOL)yj_isEqualToDateIgnoreTime:(NSDate *)aDate;
 
+// ------ 天 --------
 /** 是否是今天 */
 - (BOOL)yj_isToday;
+
+/** 是否是明天 */
+- (BOOL)yj_isTomorrow;
+
+/** 是否是昨天 */
+- (BOOL)yj_isYesterday;
+//------- 周 ---------
+/** 是否是同一周 */
+- (BOOL)yj_isEqualWeekWithDate:(NSDate *)aDate;
+
+/** 是否是上一周 */
+- (BOOL)yj_isNextWeek;
+
+/** 是否是上一周 */
+- (BOOL)yj_isBeforeWeek;
+
+// ------- 月 ------
+
 
 
 
