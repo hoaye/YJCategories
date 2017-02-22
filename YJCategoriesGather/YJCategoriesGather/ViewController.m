@@ -21,8 +21,12 @@
 }
 
 - (void)setUpMainView{
-    NSDate *dateCom = [NSDate dateWithTimeIntervalSinceReferenceDate:2];
-    NSLog(@"%@-%@->%d", [NSDate date], dateCom, [[NSDate date] yj_isEqualToDateIgnoreTime:dateCom]);
+ 
+    if ([[NSDate dateWithTimeIntervalSinceReferenceDate:10] yj_isToday]) {
+        NSLog(@"-->%@", @"是");
+    }else{
+        NSLog(@"-->%@", @"否");
+    }
 
 }
 

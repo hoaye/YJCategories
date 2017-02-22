@@ -58,6 +58,9 @@
 /** 比较年月日是否相等 */
 - (BOOL)yj_isEqualToDateIgnoreTime:(NSDate *)aDate;
 
+/** 是否是今天 */
+- (BOOL)yj_isToday;
+
 
 
 

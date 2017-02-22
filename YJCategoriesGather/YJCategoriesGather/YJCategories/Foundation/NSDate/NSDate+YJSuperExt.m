@@ -200,8 +200,9 @@ _Pragma("clang diagnostic pop") \
     return ((components1.year == components2.year) && (components1.month == components2.month) && (components1.day == components2.day));
 }
 
+/** 是否是今天 */
 - (BOOL)yj_isToday{
-    return [self jk_isEqualToDateIgnoringTime:[NSDate date]];
+    return [self yj_isEqualToDateIgnoreTime:[NSDate date]];
 }
 
 
