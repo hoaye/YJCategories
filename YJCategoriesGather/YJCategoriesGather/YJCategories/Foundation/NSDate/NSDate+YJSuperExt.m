@@ -170,6 +170,23 @@ _Pragma("clang diagnostic pop") \
 }
 
 #pragma mark - 从当前日期相对日期时间
+
+/** 增加 dYears 年的时间 */
+- (NSDate *)yj_dateByAddingYears:(NSInteger)dYears{
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setYear:dYears];
+    NSDate *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:self options:0];
+    return newDate;
+}
+
+/** 增加 dMonths 月时间 */
+- (NSDate *)yj_dateByAddingMonths:(NSInteger)dMonths{
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setMonth:dMonths];
+    NSDate *newDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:self options:0];
+    return newDate;
+}
+
 /** 增加 days 天时间 */
 - (NSDate *)yj_dateByAddingDays:(NSUInteger)days{
     NSDateComponents *c = [[NSDateComponents alloc] init];
@@ -267,19 +284,23 @@ _Pragma("clang diagnostic pop") \
 }
 
 /** 是否是本月 */
-- (BOOL)jk_isThisMonth{
-    return [self jk_isSameMonthAsDate:[NSDate date]];
+- (BOOL)yj_isThisMonth{
+    return [self yj_isEqualMonthWithDate:[NSDate date]];
 }
 
-// Thanks Marcin Krzyzanowski, also for adding/subtracting years and months
-- (BOOL) jk_isLastMonth
-{
-    return [self jk_isSameMonthAsDate:[[NSDate date] jk_dateBySubtractingMonths:1]];
+/** 是否是上一个月 */
+- (BOOL)yj_isBeforeMonth{
+    return [self yj_isEqualMonthWithDate:[[NSDate date] yj_dateByAddingMonths:-1]];
 }
 
-- (BOOL) jk_isNextMonth
-{
-    return [self jk_isSameMonthAsDate:[[NSDate date] jk_dateByAddingMonths:1]];
+/** 是否是下一个月 */
+- (BOOL)yj_isNextMonth{
+    return [self yj_isEqualMonthWithDate:[[NSDate date] yj_dateByAddingMonths:1]];
+}
+
+/** 两个时间的差 */
+- (NSDateComponents *)yj_componentsWithOffsetFromDate:(NSDate *)aDate{
+    return [[NSDate yj_currentCalendar] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:aDate toDate:self options:0];
 }
 
 

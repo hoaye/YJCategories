@@ -45,6 +45,13 @@
 - (NSString *)yj_stringWithFormat:(NSString *)format;
 
 #pragma mark -- 从当前日期相对日期时间
+
+/** 增加 dYears 年的时间 */
+- (NSDate *)yj_dateByAddingYears:(NSInteger)dYears;
+
+/** 增加 dMonths 月时间 */
+- (NSDate *)yj_dateByAddingMonths:(NSInteger)dMonths;
+
 /** 增加几天时间 */
 - (NSDate *)yj_dateByAddingDays:(NSUInteger)days;
 
@@ -71,6 +78,9 @@
 /** 是否是同一周 */
 - (BOOL)yj_isEqualWeekWithDate:(NSDate *)aDate;
 
+/** 是否是本周 */
+- (BOOL)yj_isThisWeek;
+
 /** 是否是上一周 */
 - (BOOL)yj_isNextWeek;
 
@@ -78,6 +88,20 @@
 - (BOOL)yj_isBeforeWeek;
 
 // ------- 月 ------
+/** 是否是同一个月 */
+- (BOOL)yj_isEqualMonthWithDate:(NSDate *)aDate;
+
+/** 是否是本月 */
+- (BOOL)yj_isThisMonth;
+
+/** 是否是上一个月 */
+- (BOOL)yj_isBeforeMonth;
+
+/** 是否是下一个月 */
+- (BOOL)yj_isNextMonth;
+
+/** 两个时间的差 */
+- (NSDateComponents *)yj_componentsWithOffsetFromDate:(NSDate *)aDate;
 
 
 
