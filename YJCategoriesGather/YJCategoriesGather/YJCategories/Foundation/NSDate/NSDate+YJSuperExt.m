@@ -485,6 +485,27 @@ _Pragma("clang diagnostic pop") \
     return (NSInteger)(ti / YJ_EACH_MINUTE);
 }
 
+#pragma mark - 时间的开始和结束
+
+/** 某天的0点0分0秒 */
+- (NSDate *)yj_dateAtStartOfDay{
+    NSDateComponents *components = [[NSDate yj_currentCalendar] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    components.hour = 0;
+    components.minute = 0;
+    components.second = 0;
+    return [[NSDate yj_currentCalendar] dateFromComponents:components];
+}
+
+/** 某天的23点59分59秒 */
+- (NSDate *)yj_dateAtEndOfDay{
+    NSDateComponents *components = [[NSDate yj_currentCalendar] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+
+    components.hour = 23;
+    components.minute = 59;
+    components.second = 59;
+    return [[NSDate yj_currentCalendar] dateFromComponents:components];
+}
+
 
 
 

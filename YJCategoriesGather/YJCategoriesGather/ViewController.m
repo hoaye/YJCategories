@@ -21,8 +21,10 @@
 }
 
 - (void)setUpMainView{
-    
-    NSLog(@"-->%ld", [[NSDate date] yj_minutesAfterDate:[NSDate dateWithTimeIntervalSince1970:1487832600]]);
+    NSDateFormatter *fm = [[NSDateFormatter alloc] init];
+    [fm setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString * dateString = [fm stringFromDate:[[NSDate date] yj_dateAtEndOfDay]];
+    NSLog(@"-->%@", dateString);
  
     
 }

@@ -148,6 +148,13 @@
 /** aDate 后多少分钟 */
 - (NSInteger)yj_minutesAfterDate:(NSDate *)aDate;
 
+#pragma mark - 时间的开始和结束
+/** 某天的0点0分0秒 */
+- (NSDate *)yj_dateAtStartOfDay;
+
+/** 某天的23点59分59秒 */
+- (NSDate *)yj_dateAtEndOfDay;
+
 
 
 
