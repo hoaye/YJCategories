@@ -22,7 +22,7 @@
 
 - (void)setUpMainView{
     
-    NSLog(@"-->%ld", [[NSDate date] yj_dateDaysCalculateAfterDate:[NSDate dateWithTimeIntervalSince1970:1485114600]]);
+    NSLog(@"-->%ld", [[NSDate date] yj_minutesAfterDate:[NSDate dateWithTimeIntervalSince1970:1487832600]]);
  
     
 }

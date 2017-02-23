@@ -142,6 +142,12 @@
 /** aDate 后第几天 方式二 */
 - (NSInteger)yj_dateDaysCalculateAfterDate:(NSDate *)aDate;
 
+/** aDate 后多少小时 */
+- (NSInteger)yj_dateHoursAfterDate:(NSDate *)aDate;
+
+/** aDate 后多少分钟 */
+- (NSInteger)yj_minutesAfterDate:(NSDate *)aDate;
+
 
 
 

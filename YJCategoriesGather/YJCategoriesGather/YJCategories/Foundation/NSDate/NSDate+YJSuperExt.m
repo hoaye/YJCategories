@@ -470,7 +470,19 @@ _Pragma("clang diagnostic pop") \
 /** aDate 后第几天 方式二 */
 - (NSInteger)yj_dateDaysCalculateAfterDate:(NSDate *)aDate{
     NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
-    return (NSInteger) (ti / YJ_EACH_DAY);
+    return (NSInteger)(ti / YJ_EACH_DAY);
+}
+
+/** aDate 后多少小时 */
+- (NSInteger)yj_dateHoursAfterDate:(NSDate *)aDate{
+    NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
+    return (NSInteger)(ti / YJ_EACH_HOUR);
+}
+
+/** aDate 后多少分钟 */
+- (NSInteger)yj_minutesAfterDate:(NSDate *)aDate{
+    NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
+    return (NSInteger)(ti / YJ_EACH_MINUTE);
 }
 
 
