@@ -384,7 +384,7 @@ _Pragma("clang diagnostic pop") \
     return ([self compare:aDate] == NSOrderedDescending);
 }
 
-/** 是否是工作日 */
+/** 是否是周末 */
 - (BOOL)yj_isTypicallyWeekend{
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components;
@@ -399,12 +399,13 @@ _Pragma("clang diagnostic pop") \
 #else
     NSDateComponents *components = [[NSDate yj_currentCalendar] components:NSWeekdayCalendarUnit fromDate:self];
 #endif
-    if ((components.weekday == 1) || (components.weekday == 7))
+    if ((components.weekday == 1) || (components.weekday == 7)){
         return YES;
+    }
     return NO;
 }
 
-/** 是否是周末 */
+/** 是否是工作日 */
 - (BOOL)yj_isTypicallyWorkday{
     return ![self yj_isTypicallyWeekend];
 }

@@ -22,7 +22,7 @@
 
 - (void)setUpMainView{
     
-    NSLog(@"%@-->%ld", [NSDate dateWithTimeIntervalSince1970:1487827960], [[NSDate dateWithTimeIntervalSince1970:1487827960] yj_componentsWithOffsetFromDate:[NSDate date]].minute);
+    NSLog(@"-->%d", [[NSDate date] yj_isTypicallyWorkday]);
  
     if ([[NSDate date] yj_isEqualWeekWithDate:[NSDate date]]) {
         NSLog(@"-->%@", @"是");

@@ -123,10 +123,10 @@
 /** 是否晚于 aDate  */
 - (BOOL)yj_isLaterThanDate:(NSDate *)aDate;
 
-/** 是否是工作日 */
+/** 是否是周末 */
 - (BOOL)yj_isTypicallyWeekend;
 
-/** 是否是周末 */
+/** 是否是工作日 */
 - (BOOL)yj_isTypicallyWorkday;
 
 
