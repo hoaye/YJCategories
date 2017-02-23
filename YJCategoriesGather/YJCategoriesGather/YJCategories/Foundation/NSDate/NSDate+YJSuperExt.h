@@ -65,6 +65,9 @@
 /** 比较年月日是否相等 */
 - (BOOL)yj_isEqualToDateIgnoreTime:(NSDate *)aDate;
 
+/** 两个时间的差 */
+- (NSDateComponents *)yj_componentsWithOffsetFromDate:(NSDate *)aDate;
+
 // ------ 天 --------
 /** 是否是今天 */
 - (BOOL)yj_isToday;
@@ -100,8 +103,19 @@
 /** 是否是下一个月 */
 - (BOOL)yj_isNextMonth;
 
-/** 两个时间的差 */
-- (NSDateComponents *)yj_componentsWithOffsetFromDate:(NSDate *)aDate;
+// -------- 年 -----------
+/** 是否是同一年 */
+- (BOOL)yj_isEqualYearWithDate:(NSDate *)aDate;
+
+/** 是否是今年 */
+- (BOOL) jk_isThisYear;
+
+/** 是否是上一年 */
+- (BOOL)yj_isBeforeYear;
+
+/** 是否是下一年 */
+- (BOOL)yj_isNextYear;
+
 
 
 

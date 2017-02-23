@@ -217,6 +217,11 @@ _Pragma("clang diagnostic pop") \
     return ((components1.year == components2.year) && (components1.month == components2.month) && (components1.day == components2.day));
 }
 
+/** 两个时间的差 */
+- (NSDateComponents *)yj_componentsWithOffsetFromDate:(NSDate *)aDate{
+    return [[NSDate yj_currentCalendar] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:aDate toDate:self options:0];
+}
+
 /** 是否是今天 */
 - (BOOL)yj_isToday{
     return [self yj_isEqualToDateIgnoreTime:[NSDate date]];
@@ -298,10 +303,77 @@ _Pragma("clang diagnostic pop") \
     return [self yj_isEqualMonthWithDate:[[NSDate date] yj_dateByAddingMonths:1]];
 }
 
-/** 两个时间的差 */
-- (NSDateComponents *)yj_componentsWithOffsetFromDate:(NSDate *)aDate{
-    return [[NSDate yj_currentCalendar] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:aDate toDate:self options:0];
+/** 是否是同一年 */
+- (BOOL)yj_isEqualYearWithDate:(NSDate *)aDate{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+    NSDateComponents *components1;
+    NSDateComponents *components2;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
+        components1 = [[NSDate yj_currentCalendar] components:NSCalendarUnitYear fromDate:self];
+        components2 = [[NSDate yj_currentCalendar] components:NSCalendarUnitYear fromDate:aDate];
+    }else{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        components1 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit fromDate:self];
+        components2 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit  fromDate:aDate];
+#pragma clang diagnostic pop
+    }
+#else
+    NSDateComponents *components1 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
+    NSDateComponents *components2 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:aDate];
+#endif
+    return (components1.year == components2.year);
 }
+
+/** 是否是今年 */
+- (BOOL) jk_isThisYear{
+    return [self yj_isEqualYearWithDate:[NSDate date]];
+}
+
+/** 是否是上一年 */
+- (BOOL)yj_isBeforeYear{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+    NSDateComponents *components1;
+    NSDateComponents *components2;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
+        components1 = [[NSDate yj_currentCalendar] components:NSCalendarUnitYear fromDate:self];
+        components2 = [[NSDate yj_currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
+    }else{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        components1 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit fromDate:self];
+        components2 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit  fromDate:[NSDate date]];
+#pragma clang diagnostic pop
+    }
+#else
+    NSDateComponents *components1 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit fromDate:self];
+    NSDateComponents *components2 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit fromDate:[NSDate date]];
+#endif
+    return (components1.year == (components2.year - 1));
+}
+
+/** 是否是下一年 */
+- (BOOL)yj_isNextYear{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+    NSDateComponents *components1;
+    NSDateComponents *components2;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
+        components1 = [[NSDate yj_currentCalendar] components:NSCalendarUnitYear fromDate:self];
+        components2 = [[NSDate yj_currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
+    }else{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        components1 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit fromDate:self];
+        components2 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit  fromDate:[NSDate date]];
+#pragma clang diagnostic pop
+    }
+#else
+    NSDateComponents *components1 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit fromDate:self];
+    NSDateComponents *components2 = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit fromDate:[NSDate date]];
+#endif
+    return (components1.year == (components2.year + 1));
+}
+
 
 
 
