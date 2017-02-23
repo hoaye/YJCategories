@@ -116,6 +116,19 @@
 /** 是否是下一年 */
 - (BOOL)yj_isNextYear;
 
+// ------- 早迟比较 ---------
+/** 是否早于 aDate  */
+- (BOOL)yj_isEarlierThanDate:(NSDate *)aDate;
+
+/** 是否晚于 aDate  */
+- (BOOL)yj_isLaterThanDate:(NSDate *)aDate;
+
+/** 是否是工作日 */
+- (BOOL)yj_isTypicallyWeekend;
+
+/** 是否是周末 */
+- (BOOL)yj_isTypicallyWorkday;
+
 
 
 

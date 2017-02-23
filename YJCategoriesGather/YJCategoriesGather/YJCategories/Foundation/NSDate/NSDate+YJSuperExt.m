@@ -374,6 +374,41 @@ _Pragma("clang diagnostic pop") \
     return (components1.year == (components2.year + 1));
 }
 
+/** 是否早于 aDate  */
+- (BOOL)yj_isEarlierThanDate:(NSDate *)aDate{
+    return ([self compare:aDate] == NSOrderedAscending);
+}
+
+/** 是否晚于 aDate  */
+- (BOOL)yj_isLaterThanDate:(NSDate *)aDate{
+    return ([self compare:aDate] == NSOrderedDescending);
+}
+
+/** 是否是工作日 */
+- (BOOL)yj_isTypicallyWeekend{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+    NSDateComponents *components;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
+        components = [[NSDate yj_currentCalendar] components:NSCalendarUnitWeekday | NSCalendarUnitMonth fromDate:self];
+    }else{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        components = [[NSDate yj_currentCalendar] components:NSWeekdayCalendarUnit fromDate:self];
+#pragma clang diagnostic pop
+    }
+#else
+    NSDateComponents *components = [[NSDate yj_currentCalendar] components:NSWeekdayCalendarUnit fromDate:self];
+#endif
+    if ((components.weekday == 1) || (components.weekday == 7))
+        return YES;
+    return NO;
+}
+
+/** 是否是周末 */
+- (BOOL)yj_isTypicallyWorkday{
+    return ![self yj_isTypicallyWeekend];
+}
+
 
 
 
