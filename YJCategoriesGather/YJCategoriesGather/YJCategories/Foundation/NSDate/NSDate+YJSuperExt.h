@@ -129,6 +129,20 @@
 /** 是否是工作日 */
 - (BOOL)yj_isTypicallyWorkday;
 
+#pragma mark -  时间间隔
+/** 时隔 几年 */
+- (NSInteger)yj_dateYearAfterDate:(NSDate *)anotherDate;
+
+/** 时间相隔几个月 */
+- (NSInteger)yj_dateMonthsAfterDate:(NSDate *)anotherDate;
+
+/** 时间相隔几天 方式一*/
+- (NSInteger)jk_dateDaysAfterDate:(NSDate *)anotherDate;
+
+/** aDate 后第几天 方式二 */
+- (NSInteger)yj_dateDaysCalculateAfterDate:(NSDate *)aDate;
+
+
 
 
 

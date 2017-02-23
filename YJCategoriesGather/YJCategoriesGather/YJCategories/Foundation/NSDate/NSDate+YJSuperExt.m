@@ -410,6 +410,69 @@ _Pragma("clang diagnostic pop") \
     return ![self yj_isTypicallyWeekend];
 }
 
+/** 时隔 几年 */
+- (NSInteger)yj_dateYearAfterDate:(NSDate *)anotherDate{
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+    NSDateComponents *components;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
+        components = [[NSDate yj_currentCalendar] components:NSCalendarUnitYear fromDate:self toDate:anotherDate options:0];
+    }else{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        components = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit fromDate:self toDate:anotherDate options:0];
+#pragma clang diagnostic pop
+    }
+#else
+    NSDateComponents *components = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit fromDate:self toDate:anotherDate options:0]
+#endif
+    return components.year * -1;
+}
+
+/** 时间相隔几个月 */
+- (NSInteger)yj_dateMonthsAfterDate:(NSDate *)anotherDate{
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+    NSDateComponents *components;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
+        components = [[NSDate yj_currentCalendar] components:NSCalendarUnitMonth fromDate:self toDate:anotherDate options:0];
+    }else{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        components = [[NSDate yj_currentCalendar] components:NSMonthCalendarUnit fromDate:self toDate:anotherDate options:0];
+#pragma clang diagnostic pop
+    }
+#else
+    NSDateComponents *components = [[NSDate yj_currentCalendar] components:NSMonthCalendarUnit fromDate:self toDate:anotherDate options:0]
+#endif
+    return components.month * -1;
+}
+
+/** 时间相隔几天 方式一*/
+- (NSInteger)jk_dateDaysAfterDate:(NSDate *)anotherDate{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+    NSDateComponents *components;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
+        components = [[NSDate yj_currentCalendar] components:NSCalendarUnitDay fromDate:self toDate:anotherDate options:0];
+    }else{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        components = [[NSDate yj_currentCalendar] components:NSDayCalendarUnit fromDate:self toDate:anotherDate options:0];
+#pragma clang diagnostic pop
+    }
+#else
+    NSDateComponents *components = [[NSDate yj_currentCalendar] components:NSDayCalendarUnit fromDate:self toDate:anotherDate options:0]
+#endif
+    
+    return components.day * -1;
+}
+
+/** aDate 后第几天 方式二 */
+- (NSInteger)yj_dateDaysCalculateAfterDate:(NSDate *)aDate{
+    NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
+    return (NSInteger) (ti / YJ_EACH_DAY);
+}
+
 
 
 

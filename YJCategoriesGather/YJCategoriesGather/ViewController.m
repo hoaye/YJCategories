@@ -22,14 +22,9 @@
 
 - (void)setUpMainView{
     
-    NSLog(@"-->%d", [[NSDate date] yj_isTypicallyWorkday]);
+    NSLog(@"-->%ld", [[NSDate date] yj_dateDaysCalculateAfterDate:[NSDate dateWithTimeIntervalSince1970:1485114600]]);
  
-    if ([[NSDate date] yj_isEqualWeekWithDate:[NSDate date]]) {
-        NSLog(@"-->%@", @"是");
-    }else{
-        NSLog(@"-->%@", @"否");
-    }
-
+    
 }
 
 
