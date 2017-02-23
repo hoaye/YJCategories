@@ -506,8 +506,44 @@ _Pragma("clang diagnostic pop") \
     return [[NSDate yj_currentCalendar] dateFromComponents:components];
 }
 
+#pragma mark - 时间判断
+/** 判断是否是润年 */
+- (BOOL)yj_isLeapYear{
+    NSUInteger year = [self yj_year];
+    if ((year % 4  == 0 && year % 100 != 0) || year % 400 == 0) {
+        return YES;
+    }
+    return NO;
+}
 
+/** 一年有多少天 */
+- (NSUInteger)yj_daysInThisYear{
+    return [self yj_isLeapYear]?366:365;
+}
 
+/** 该日期是今年的第几周 */
+- (NSUInteger)yj_weekOfYear{
+    NSUInteger i;
+    NSUInteger year = [self yj_year];
+    
+    NSDate *lastdate = [self yj_lastDayOfMonth];
+    
+    for (i = 1; [[lastdate yj_dateByAddingDays:-7 * i] yj_year] == year; i++) {
+        
+    }
+    return i;
+}
+
+/** 该月的第一天 */
+- (NSDate *)yj_beginDayOfMonth{
+    return [self yj_dateByAddingDays:-[self yj_day] + 1];
+}
+
+/** 该月的最后一天 */
+- (NSDate *)yj_lastDayOfMonth{
+    NSDate *lastDate = [self yj_beginDayOfMonth];
+    return [[lastDate yj_dateByAddingMonths:1] yj_dateByAddingDays:-1];
+}
 
 
 

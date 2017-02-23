@@ -155,6 +155,22 @@
 /** 某天的23点59分59秒 */
 - (NSDate *)yj_dateAtEndOfDay;
 
+#pragma mark - 类型/时间 判断
+/** 判断是否是润年 */
+- (BOOL)yj_isLeapYear;
+
+/** 一年有多少天 */
+- (NSUInteger)yj_daysInThisYear;
+
+/** 该日期是今年的第几周 */
+- (NSUInteger)yj_weekOfYear;
+
+/** 该月的第一天 */
+- (NSDate *)yj_beginDayOfMonth;
+
+/** 该月的最后一天 */
+- (NSDate *)yj_lastDayOfMonth;
+
 
 
 

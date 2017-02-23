@@ -24,7 +24,7 @@
     NSDateFormatter *fm = [[NSDateFormatter alloc] init];
     [fm setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString * dateString = [fm stringFromDate:[[NSDate date] yj_dateAtEndOfDay]];
-    NSLog(@"-->%@", dateString);
+    NSLog(@"-->%@", [[NSDate date] yj_lastDayOfMonth]);
  
     
 }
