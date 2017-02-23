@@ -171,6 +171,12 @@
 /** 该月的最后一天 */
 - (NSDate *)yj_lastDayOfMonth;
 
+/** 返回格式为 YYYY-MM-dd 的日期 */
+- (NSString *)yj_dateStringFormatYMD;
+
+/** 该月有多少周 */
+- (NSUInteger)yj_weeksOfMonth;
+
 
 
 

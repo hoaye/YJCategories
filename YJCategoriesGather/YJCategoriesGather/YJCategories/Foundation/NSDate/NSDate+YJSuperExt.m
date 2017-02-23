@@ -545,6 +545,17 @@ _Pragma("clang diagnostic pop") \
     return [[lastDate yj_dateByAddingMonths:1] yj_dateByAddingDays:-1];
 }
 
+/** 返回格式为 YYYY-MM-dd 的日期 */
+- (NSString *)yj_dateStringFormatYMD{
+    return [NSString stringWithFormat:@"%lu-%02lu-%02lu",[self yj_year],[self yj_month], [self yj_day]];
+}
+
+/** 该月有多少周 */
+- (NSUInteger)yj_weeksOfMonth{
+    NSUInteger index = [[self yj_lastDayOfMonth] yj_weekOfYear] - [[self yj_beginDayOfMonth] yj_weekOfYear] + 1;
+    return index;
+}
+
 
 
 @end
