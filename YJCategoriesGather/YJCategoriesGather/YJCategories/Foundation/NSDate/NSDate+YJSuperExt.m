@@ -528,6 +528,7 @@ _Pragma("clang diagnostic pop") \
     NSDate *lastdate = [self yj_lastDayOfMonth];
     
     for (i = 1; [[lastdate yj_dateByAddingDays:-7 * i] yj_year] == year; i++) {
+        NSLog(@"-->%ld", i);
     }
     return i;
 }
