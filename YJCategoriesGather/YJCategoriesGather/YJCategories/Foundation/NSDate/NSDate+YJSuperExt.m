@@ -463,7 +463,7 @@ _Pragma("clang diagnostic pop") \
 #else
     NSDateComponents *components = [[NSDate yj_currentCalendar] components:NSDayCalendarUnit fromDate:self toDate:anotherDate options:0]
 #endif
-    
+
     return components.day * -1;
 }
 
@@ -528,7 +528,6 @@ _Pragma("clang diagnostic pop") \
     NSDate *lastdate = [self yj_lastDayOfMonth];
     
     for (i = 1; [[lastdate yj_dateByAddingDays:-7 * i] yj_year] == year; i++) {
-        
     }
     return i;
 }
