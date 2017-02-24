@@ -175,7 +175,7 @@
 - (NSString *)yj_dateStringFormatYMD;
 
 /** 该月有多少周 */
-- (NSUInteger)yj_weeksOfMonth;
+- (NSUInteger)yj_weeksOfMonth; // 待验证
 
 
 
