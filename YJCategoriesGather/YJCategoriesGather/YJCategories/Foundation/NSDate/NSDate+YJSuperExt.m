@@ -520,17 +520,31 @@ _Pragma("clang diagnostic pop") \
     return [self yj_isLeapYear]?366:365;
 }
 
+/** 今天是今年的第多少天 */
+- (NSUInteger)yj_dayOfThisYear{
+    
+    int month[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    
+    if ([self yj_isLeapYear]) {
+        month[2] = 29;
+    }
+    
+    NSLog(@"-->&%d", month[2]);
+    return 0;
+}
+
 /** 该日期是今年的第几周 */
 - (NSUInteger)yj_weekOfYear{
-    NSUInteger i;
-    NSUInteger year = [self yj_year];
     
-    NSDate *lastdate = self;
+    /** 计算思路：
+     1.计算出1.1是星期几，记为base;
+     2.求出今日距1.1的总天数,记为day_add;
+     3.则nweek = (base + day_add) / 7 + 1(不能整除)，nweek即为本周是一年中的第几周;
+     */
+    int weekOfYear = 0, dayOfWeek = 0, dayOfYear = 0;
+
     
-    for (i = 1; [[lastdate yj_dateByAddingDays:-7 * i] yj_year] == year; i++) {
-        NSLog(@"-->%ld", i);
-    }
-    return i;
+    return weekOfYear;
 }
 
 /** 该月的第一天 */

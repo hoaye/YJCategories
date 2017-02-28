@@ -162,6 +162,9 @@
 /** 一年有多少天 */
 - (NSUInteger)yj_daysInThisYear;
 
+/** 今天是今年的第多少天 */
+- (NSUInteger)yj_dayOfThisYear;
+
 /** 该日期是今年的第几周 */
 - (NSUInteger)yj_weekOfYear;
 
