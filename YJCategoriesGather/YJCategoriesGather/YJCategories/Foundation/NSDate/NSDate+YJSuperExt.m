@@ -678,7 +678,7 @@ _Pragma("clang diagnostic pop") \
             }
         }
     }else if (time < 3600 * 24) { // 小于一天, 可能是今天也可能是昨天
-        NSDate *criticalDate = [date yj_dateByAddingMinutes:(time / 60)];
+        NSDate *criticalDate = [date yj_dateByAddingMinutes:-(time / 60)];
         if ([criticalDate yj_day] == [date yj_day]) { // 今天
             retTime = time / 3600;
             retTime = retTime <= 0.0 ? 1.0 : retTime;
