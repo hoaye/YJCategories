@@ -22,7 +22,7 @@
 
 - (void)setUpMainView{
 
-    NSLog(@"-->%@", [[NSDate dateWithTimeIntervalSince1970:1488124559] yj_timeInfo]);
+    NSLog(@"-->%@", [[NSDate date] jk_beginningOfDay]);
  
     
 }
