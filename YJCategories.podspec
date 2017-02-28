@@ -135,6 +135,13 @@ Pod::Spec.new do |s|
             sss.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/Foundation/NSDate/*.{h,m}'
             sss.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/Foundation/NSDate/*.{h}'
         end
+
+        # 9. NSDateFormatter 配置模块
+        ss.subspec 'NSDateFormatter' do |sss|
+            sss.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/Foundation/NSDateFormatter/*.{h,m}'
+            sss.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/Foundation/NSDateFormatter/*.{h}'
+        end
+
     end
 
     #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }

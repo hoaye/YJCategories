@@ -53,7 +53,11 @@ YJCategories 是Objective-C超级分类集合
     * NSData
         1.  YJGzip
         2.  YJSuperExt
+
     * NSDate
+    1.  YJSuperExt
+
+    * NSDateFormatter
     1.  YJSuperExt
 
 

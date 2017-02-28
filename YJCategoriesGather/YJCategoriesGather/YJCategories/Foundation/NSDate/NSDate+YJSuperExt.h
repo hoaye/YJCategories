@@ -171,6 +171,12 @@
 /** 今天是今年的第多少天 */
 - (NSUInteger)yj_dayOfThisYear;
 
+/** 这个月有多少天 */
+- (NSUInteger)yj_daysInMonth:(NSUInteger)month;
+
+/** date 月有多少天 */
++ (NSUInteger)yj_daysInMonth:(NSDate *)date month:(NSUInteger)month;
+
 /** 该月的第一天 */
 - (NSDate *)yj_beginDayOfMonth;
 
@@ -179,6 +185,15 @@
 
 /** 返回格式为 YYYY-MM-dd 的日期 */
 - (NSString *)yj_dateStringFormatYMD;
+
+/** 时间信息 */
+- (NSString *)yj_timeInfo;
+
+/** 根据date 返回字符类型日期 */
++ (NSString *)yj_timeInfoWithDate:(NSDate *)date;
+
+/** 返回时间信息 */
++ (NSString *)yj_timeInfoWithDateString:(NSString *)dateString;
 
 
 

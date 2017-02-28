@@ -7,6 +7,7 @@
 //
 
 #import "NSDate+YJSuperExt.h"
+#import "NSDateFormatter+YJSuperExt.h"
 
 #define YJ_EACH_MINUTE	60
 #define YJ_EACH_HOUR	3600
@@ -611,6 +612,22 @@ _Pragma("clang diagnostic pop") \
     return BeforeDays;
 }
 
+/** 这个月有多少天 */
+- (NSUInteger)yj_daysInMonth:(NSUInteger)month{
+    return [NSDate yj_daysInMonth:self month:month];
+}
+
+/** date 月有多少天 */
++ (NSUInteger)yj_daysInMonth:(NSDate *)date month:(NSUInteger)month{
+    switch (month) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            return 31;
+        case 2:
+            return [date yj_isLeapYear]?29:28;
+    }
+    return 30;
+}
+
 /** 该月的第一天 */
 - (NSDate *)yj_beginDayOfMonth{
     return [self yj_dateByAddingDays:-[self yj_day] + 1];
@@ -626,6 +643,84 @@ _Pragma("clang diagnostic pop") \
 - (NSString *)yj_dateStringFormatYMD{
     return [NSString stringWithFormat:@"%lu-%02lu-%02lu",[self yj_year],[self yj_month], [self yj_day]];
 }
+
+/** 时间信息 */
+- (NSString *)yj_timeInfo{
+    return [NSDate yj_timeInfoWithDate:self];
+}
+
+/** 根据date 返回字符类型日期 */
++ (NSString *)yj_timeInfoWithDate:(NSDate *)date{
+    return [self yj_timeInfoWithDateString:[NSDateFormatter yj_stringWithDate:date format:[NSDateFormatter yj_yyyyMMddHHmmssFormat]]];
+}
+
+/** 返回时间信息 */
++ (NSString *)yj_timeInfoWithDateString:(NSString *)dateString{
+    NSDate *date = [NSDateFormatter yj_dateWithString:dateString format:[NSDateFormatter yj_yyyyMMddHHmmssFormat]];
+    
+    NSDate *curDate = [NSDate date];
+    NSTimeInterval time = -[date timeIntervalSinceDate:curDate];
+    
+    int month = (int)([curDate yj_month] - [date yj_month]);
+    int year = (int)([curDate yj_year] - [date yj_year]);
+    int day = (int)([curDate yj_day] - [date yj_day]);
+    
+    NSTimeInterval retTime = 1.0;
+    if (time < 3600) { // 小于一小时
+        retTime = time / 60;
+        if (retTime <= 1.0) {
+            return @"刚刚";
+        }else{
+            return [NSString stringWithFormat:@"%.0f分钟前", retTime];
+        }
+    } else if (time < 3600 * 24) { // 小于一天，也就是今天
+        retTime = time / 3600;
+        retTime = retTime <= 0.0 ? 1.0 : retTime;
+        return [NSString stringWithFormat:@"%.0f小时前", retTime];
+    } else if (time < 3600 * 24 * 2) {
+        return @"昨天";
+    }
+    // 第一个条件是同年，且相隔时间在一个月内
+    // 第二个条件是隔年，对于隔年，只能是去年12月与今年1月这种情况
+    else if ((abs(year) == 0 && abs(month) <= 1)
+             || (abs(year) == 1 && [curDate yj_month] == 1 && [date yj_month] == 12)) {
+        int retDay = 0;
+        if (year == 0) { // 同年
+            if (month == 0) { // 同月
+                retDay = day;
+            }
+        }
+        
+        if (retDay <= 0) {
+            // 获取发布日期中，该月有多少天
+            int totalDays = (int)[self yj_daysInMonth:date month:[date yj_month]];
+            
+            // 当前天数 + （发布日期月中的总天数-发布日期月中发布日，即等于距离今天的天数）
+            retDay = (int)[curDate yj_day] + (totalDays - (int)[date yj_day]);
+        }
+        
+        return [NSString stringWithFormat:@"%d天前", (abs)(retDay)];
+    } else  {
+        if (abs(year) <= 1) {
+            if (year == 0) { // 同年
+                return [NSString stringWithFormat:@"%d个月前", abs(month)];
+            }
+            
+            // 隔年
+            int month = (int)[curDate yj_month];
+            int preMonth = (int)[date yj_month];
+            if (month == 12 && preMonth == 12) {// 隔年，但同月，就作为满一年来计算
+                return @"1年前";
+            }
+            return [NSString stringWithFormat:@"%d个月前", (abs)(12 - preMonth + month)];
+        }
+        
+        return [NSString stringWithFormat:@"%d年前", abs(year)];
+    }
+    return @"1小时前";
+}
+
+
 
 
 

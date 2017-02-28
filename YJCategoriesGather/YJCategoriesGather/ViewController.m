@@ -24,7 +24,7 @@
     NSDateFormatter *fm = [[NSDateFormatter alloc] init];
     [fm setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString * dateString = [fm stringFromDate:[[NSDate date] yj_dateAtEndOfDay]];
-    NSLog(@"-->%@", [NSDate yj_monthWithMonthNumber:10]);
+    NSLog(@"-->%@", [[NSDate dateWithTimeIntervalSince1970:1488268580] yj_timeInfo]);
  
     
 }
