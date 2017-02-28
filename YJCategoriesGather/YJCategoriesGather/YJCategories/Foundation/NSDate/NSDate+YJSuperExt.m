@@ -671,12 +671,21 @@ _Pragma("clang diagnostic pop") \
         if (retTime <= 1.0) {
             return @"刚刚";
         }else{
-            return [NSString stringWithFormat:@"%.0f分钟前", retTime];
+            if (retTime > 59.0f) {
+                return @"59分钟前";
+            }else{
+                return [NSString stringWithFormat:@"%.0f分钟前", retTime];
+            }
         }
-    } else if (time < 3600 * 24) { // 小于一天，也就是今天
-        retTime = time / 3600;
-        retTime = retTime <= 0.0 ? 1.0 : retTime;
-        return [NSString stringWithFormat:@"%.0f小时前", retTime];
+    }else if (time < 3600 * 24) { // 小于一天, 可能是今天也可能是昨天
+        NSDate *criticalDate = [date yj_dateByAddingMinutes:(time / 60)];
+        if ([criticalDate yj_day] == [date yj_day]) { // 今天
+            retTime = time / 3600;
+            retTime = retTime <= 0.0 ? 1.0 : retTime;
+            return [NSString stringWithFormat:@"%.0f小时前", retTime];
+        }else{ // 已经是昨天了
+            return @"昨天";
+        }
     } else if (time < 3600 * 24 * 2) {
         return @"昨天";
     }
@@ -690,7 +699,6 @@ _Pragma("clang diagnostic pop") \
                 retDay = day;
             }
         }
-        
         if (retDay <= 0) {
             // 获取发布日期中，该月有多少天
             int totalDays = (int)[self yj_daysInMonth:date month:[date yj_month]];
