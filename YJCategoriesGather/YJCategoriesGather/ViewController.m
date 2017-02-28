@@ -22,7 +22,7 @@
 
 - (void)setUpMainView{
 
-    NSLog(@"-->%@", [[NSDate date] yj_day]);
+    NSLog(@"-->%ld", [[NSDate date] yj_day]);
  
     
 }
