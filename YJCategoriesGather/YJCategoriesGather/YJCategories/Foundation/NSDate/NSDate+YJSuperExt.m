@@ -659,44 +659,51 @@ _Pragma("clang diagnostic pop") \
     NSDate *date = [NSDateFormatter yj_dateWithString:dateString format:[NSDateFormatter yj_yyyyMMddHHmmssFormat]];
     
     NSDate *curDate = [NSDate date];
-    NSTimeInterval time = -[date timeIntervalSinceDate:curDate];
+    NSTimeInterval timeDistance = -[date timeIntervalSinceDate:curDate];
     
-    int month = (int)([curDate yj_month] - [date yj_month]);
-    int year = (int)([curDate yj_year] - [date yj_year]);
-    int day = (int)([curDate yj_day] - [date yj_day]);
+    int monthDistance = (int)([curDate yj_month] - [date yj_month]);
+    int yearDistance  = (int)([curDate yj_year]  - [date yj_year]);
+    int dayDistance   = (int)([curDate yj_day]   - [date yj_day]);
     
-    NSTimeInterval retTime = 1.0;
-    if (time < 3600) { // 小于一小时
-        retTime = time / 60;
-        if (retTime <= 1.0) {
+    NSTimeInterval resultTime = 1.0;
+    
+    if (timeDistance < YJ_EACH_HOUR) { // 1小时内显示"xx分钟前"
+        resultTime = timeDistance / YJ_EACH_MINUTE; // value = 0~59.99
+        if (resultTime < 1.0) { // 小于1分钟
             return @"刚刚";
-        }else{
-            if (retTime > 59.0f) {
+        }else{ // 1分钟到59.99
+            if (resultTime > 59.0f) {
                 return @"59分钟前";
             }else{
-                return [NSString stringWithFormat:@"%.0f分钟前", retTime];
+                return [NSString stringWithFormat:@"%.0f分钟前", resultTime];
             }
         }
-    }else if (time < 3600 * 24) { // 小于一天, 可能是今天也可能是昨天
-        NSDate *criticalDate = [date yj_dateByAddingMinutes:-(time / 60)];
+    }else if (resultTime < YJ_EACH_HOUR * 24){ // 1小时~24小时 其中可能包括今天和昨天
+        NSDate *criticalDate = [date yj_dateByAddingMinutes:-(resultTime / 60)];
         if ([criticalDate yj_day] == [date yj_day]) { // 今天
-            retTime = time / 3600;
-            retTime = retTime <= 0.0 ? 1.0 : retTime;
-            return [NSString stringWithFormat:@"%.0f小时前", retTime];
+            resultTime = resultTime / YJ_EACH_HOUR;
+            resultTime = resultTime <= 0.0 ? 1.0 : resultTime;
+            return [NSString stringWithFormat:@"%.0f小时前", resultTime];
         }else{ // 已经是昨天了
             return @"昨天";
         }
-    } else if (time < 3600 * 24 * 2) {
-        return @"昨天";
+    }else if (resultTime < YJ_EACH_HOUR * 24 * 2){ // 24小时到48小时, 其中可能包括昨天和前天
+        NSDate *criticalDate = [date yj_dateByAddingMinutes:-(resultTime / 60)];
+        if ([criticalDate yj_day] == [date yj_day] - 1) { // z昨天
+            return @"昨天";
+        }else{ // 已经是前天了
+            return @"前天";
+        }
     }
+
     // 第一个条件是同年，且相隔时间在一个月内
     // 第二个条件是隔年，对于隔年，只能是去年12月与今年1月这种情况
-    else if ((abs(year) == 0 && abs(month) <= 1)
-             || (abs(year) == 1 && [curDate yj_month] == 1 && [date yj_month] == 12)) {
+    else if ((abs(yearDistance) == 0 && abs(monthDistance) <= 1)
+             || (abs(yearDistance) == 1 && [curDate yj_month] == 1 && [date yj_month] == 12)) {
         int retDay = 0;
-        if (year == 0) { // 同年
-            if (month == 0) { // 同月
-                retDay = day;
+        if (yearDistance == 0) { // 同年
+            if (monthDistance == 0) { // 同月
+                retDay = dayDistance;
             }
         }
         if (retDay <= 0) {
@@ -709,9 +716,9 @@ _Pragma("clang diagnostic pop") \
         
         return [NSString stringWithFormat:@"%d天前", (abs)(retDay)];
     } else  {
-        if (abs(year) <= 1) {
-            if (year == 0) { // 同年
-                return [NSString stringWithFormat:@"%d个月前", abs(month)];
+        if (abs(yearDistance) <= 1) {
+            if (yearDistance == 0) { // 同年
+                return [NSString stringWithFormat:@"%d个月前", abs(monthDistance)];
             }
             
             // 隔年
@@ -723,7 +730,7 @@ _Pragma("clang diagnostic pop") \
             return [NSString stringWithFormat:@"%d个月前", (abs)(12 - preMonth + month)];
         }
         
-        return [NSString stringWithFormat:@"%d年前", abs(year)];
+        return [NSString stringWithFormat:@"%d年前", abs(yearDistance)];
     }
     return @"1小时前";
 }
