@@ -525,7 +525,7 @@ _Pragma("clang diagnostic pop") \
     NSUInteger i;
     NSUInteger year = [self yj_year];
     
-    NSDate *lastdate = [self yj_lastDayOfMonth];
+    NSDate *lastdate = self;
     
     for (i = 1; [[lastdate yj_dateByAddingDays:-7 * i] yj_year] == year; i++) {
         NSLog(@"-->%ld", i);
