@@ -28,7 +28,11 @@
 // 日期分解
 /** 年、月、日、时、分、秒、周 */
 - (NSInteger)yj_year;
+
 - (NSInteger)yj_month;
+/** 返回英文月份 如"January" */
++ (NSString *)yj_monthWithMonthNumber:(NSInteger)month;
+
 - (NSInteger)yj_day;
 - (NSInteger)yj_nearestHour; // 最接近的一个整点
 - (NSInteger)yj_hour;
@@ -37,7 +41,6 @@
 
 - (NSInteger)yj_nthWeekday; // 该月第几周
 - (NSInteger)yj_weekday;    // 1~7 1=Sunday,2=Monday...7=Saturday
-
 /** "星期几" 返回 */
 - (NSString *)yj_weekDayString;
 
