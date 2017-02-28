@@ -526,11 +526,16 @@ _Pragma("clang diagnostic pop") \
     int month[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     
     if ([self yj_isLeapYear]) {
-        month[2] = 29;
+        month[1] = 29;
     }
     
-    NSLog(@"-->&%d", month[2]);
-    return 0;
+    int BeforeDays = 0;
+    
+    for (NSInteger i = 0; i < [self yj_month] - 1; i++) {
+        BeforeDays += month[i];
+    }
+    BeforeDays = BeforeDays + (int)[self yj_day];
+    return BeforeDays;
 }
 
 /** 该日期是今年的第几周 */

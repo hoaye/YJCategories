@@ -24,7 +24,7 @@
     NSDateFormatter *fm = [[NSDateFormatter alloc] init];
     [fm setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString * dateString = [fm stringFromDate:[[NSDate date] yj_dateAtEndOfDay]];
-    NSLog(@"-->%ld", [[NSDate date] yj_dayOfThisYear]);
+    NSLog(@"-->%ld", [[NSDate dateWithTimeIntervalSince1970:1483200000] yj_dayOfThisYear]);
  
     
 }
