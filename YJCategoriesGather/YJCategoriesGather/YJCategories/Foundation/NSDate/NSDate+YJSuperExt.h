@@ -36,7 +36,10 @@
 - (NSInteger)yj_second;
 
 - (NSInteger)yj_nthWeekday; // 该月第几周
-- (NSInteger)yj_weekday;
+- (NSInteger)yj_weekday;    // 1~7 1=Sunday,2=Monday...7=Saturday
+
+/** "星期几" 返回 */
+- (NSString *)yj_weekDayString;
 
 /** 使用dateStyle timeStyle格式化时间 */
 - (NSString *)yj_stringWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle;
@@ -165,9 +168,6 @@
 /** 今天是今年的第多少天 */
 - (NSUInteger)yj_dayOfThisYear;
 
-/** 该日期是今年的第几周 */
-- (NSUInteger)yj_weekOfYear;
-
 /** 该月的第一天 */
 - (NSDate *)yj_beginDayOfMonth;
 
@@ -177,8 +177,6 @@
 /** 返回格式为 YYYY-MM-dd 的日期 */
 - (NSString *)yj_dateStringFormatYMD;
 
-/** 该月有多少周 */
-- (NSUInteger)yj_weeksOfMonth; // 待验证
 
 
 

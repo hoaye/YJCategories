@@ -115,6 +115,36 @@ _Pragma("clang diagnostic pop") \
     return components.weekday;
 }
 
+/** "星期几" 返回 */
+- (NSString *)yj_weekDayString{
+    switch([self yj_weekday]) {
+        case 1:
+            return @"星期日";
+            break;
+        case 2:
+            return @"星期一";
+            break;
+        case 3:
+            return @"星期二";
+            break;
+        case 4:
+            return @"星期三";
+            break;
+        case 5:
+            return @"星期四";
+            break;
+        case 6:
+            return @"星期五";
+            break;
+        case 7:
+            return @"星期六";
+            break;
+        default:
+            break;
+    }
+    return @"";
+}
+
 #pragma mark - 格式化日期
 /** 使用dateStyle timeStyle格式化时间 */
 - (NSString *)yj_stringWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle{
@@ -528,28 +558,12 @@ _Pragma("clang diagnostic pop") \
     if ([self yj_isLeapYear]) {
         month[1] = 29;
     }
-    
     int BeforeDays = 0;
-    
     for (NSInteger i = 0; i < [self yj_month] - 1; i++) {
         BeforeDays += month[i];
     }
     BeforeDays = BeforeDays + (int)[self yj_day];
     return BeforeDays;
-}
-
-/** 该日期是今年的第几周 */
-- (NSUInteger)yj_weekOfYear{
-    
-    /** 计算思路：
-     1.计算出1.1是星期几，记为base;
-     2.求出今日距1.1的总天数,记为day_add;
-     3.则nweek = (base + day_add) / 7 + 1(不能整除)，nweek即为本周是一年中的第几周;
-     */
-    int weekOfYear = 0, dayOfWeek = 0, dayOfYear = 0;
-
-    
-    return weekOfYear;
 }
 
 /** 该月的第一天 */
@@ -568,11 +582,6 @@ _Pragma("clang diagnostic pop") \
     return [NSString stringWithFormat:@"%lu-%02lu-%02lu",[self yj_year],[self yj_month], [self yj_day]];
 }
 
-/** 该月有多少周 */
-- (NSUInteger)yj_weeksOfMonth{
-    NSUInteger index = [[self yj_lastDayOfMonth] yj_weekOfYear] - [[self yj_beginDayOfMonth] yj_weekOfYear] + 1;
-    return index;
-}
 
 
 
