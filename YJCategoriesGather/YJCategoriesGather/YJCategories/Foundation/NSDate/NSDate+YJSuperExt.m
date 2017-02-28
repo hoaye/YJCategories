@@ -678,8 +678,8 @@ _Pragma("clang diagnostic pop") \
                 return [NSString stringWithFormat:@"%.0f分钟前", resultTime];
             }
         }
-    }else if (resultTime < YJ_EACH_HOUR * 24){ // 1小时~24小时 其中可能包括今天和昨天
-        NSDate *criticalDate = [date yj_dateByAddingMinutes:-(resultTime / 60)];
+    }else if (timeDistance < YJ_EACH_HOUR * 24){ // 1小时~24小时 其中可能包括今天和昨天
+        NSDate *criticalDate = [date yj_dateByAddingMinutes:-(timeDistance / 60)];
         if ([criticalDate yj_day] == [date yj_day]) { // 今天
             resultTime = resultTime / YJ_EACH_HOUR;
             resultTime = resultTime <= 0.0 ? 1.0 : resultTime;
@@ -687,9 +687,9 @@ _Pragma("clang diagnostic pop") \
         }else{ // 已经是昨天了
             return @"昨天";
         }
-    }else if (resultTime < YJ_EACH_HOUR * 24 * 2){ // 24小时到48小时, 其中可能包括昨天和前天
-        NSDate *criticalDate = [date yj_dateByAddingMinutes:-(resultTime / 60)];
-        if ([criticalDate yj_day] == [date yj_day] - 1) { // z昨天
+    }else if (timeDistance < YJ_EACH_HOUR * 24 * 2){ // 24小时到48小时, 其中可能包括昨天和前天
+        NSDate *criticalDate = [curDate yj_dateByAddingMinutes:-(timeDistance / 60.0f)];
+        if ([criticalDate yj_day] == [curDate yj_day] - 1) { // 昨天
             return @"昨天";
         }else{ // 已经是前天了
             return @"前天";
