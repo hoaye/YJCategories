@@ -7,6 +7,7 @@
 //
 
 #import "NSDateFormatter+YJSuperExt.h"
+#import "NSDate+YJSuperExt.h"
 
 @implementation NSDateFormatter (YJSuperExt)
 
@@ -19,7 +20,7 @@
 
 /** 根据 date 和 format 返回字符串日期 */
 + (NSString *)yj_stringWithDate:(NSDate *)date format:(NSString *)format{
-    return [self _yj_stringWithDate:date format:format];
+    return [date yj_stringWithFormat:format];
 }
 
 /** yyyy-MM-dd 格式 */
@@ -35,15 +36,6 @@
 /** 完整的 yyyy-MM-dd HH:mm:ss */
 + (NSString *)yj_yyyyMMddHHmmssFormat{
     return @"yyyy-MM-dd HH:mm:ss";
-}
-
-#pragma mark - Private
-/** 根据指定format返回 String 时间 */
-+ (NSString *)_yj_stringWithDate:(NSDate *)date format:(NSString *)format{
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    //    formatter.locale = [NSLocale currentLocale]; // Necessary?
-    formatter.dateFormat = format;
-    return [formatter stringFromDate:date];
 }
 
 @end

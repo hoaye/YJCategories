@@ -9,9 +9,17 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+
+// 定义是否全局引入开关 0=完全不引入, 1=完全引入
+#define ALL_IMPORT_ENABLE 0
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#import "YJCategories.h"
+#if (defined(ALL_IMPORT_ENABLE) && ALL_IMPORT_ENABLE)
+
+    #import "YJCategories.h"
+
+#endif
 
 #endif /* PrefixHeader_pch */
