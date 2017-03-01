@@ -1,4 +1,4 @@
-version = "0.0.1";
+version = "0.0.0.5";
 
 Pod::Spec.new do |s|
     s.name         = "YJCategories"
