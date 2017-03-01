@@ -6,7 +6,7 @@
 //  Copyright © 2015年 侯跃军 houmanager@Hotmail.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NSIndexPath (YJOffset)
 
