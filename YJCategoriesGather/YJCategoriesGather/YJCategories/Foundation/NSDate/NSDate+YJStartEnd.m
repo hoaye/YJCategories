@@ -38,14 +38,22 @@ _Pragma("clang diagnostic pop") \
 
 @implementation NSDate (YJStartEnd)
 
+/** 当前日历 */
++ (NSCalendar *)yj_currentCalendarForStartEnd{
+    static NSCalendar *sharedCalendar = nil;
+    if (!sharedCalendar)
+        sharedCalendar = [NSCalendar autoupdatingCurrentCalendar];
+    return sharedCalendar;
+}
+
 #pragma mark - 时间的开始和结束
 /** 某天的0点0分0秒 */
 - (NSDate *)yj_dateAtStartOfDay{
-    NSDateComponents *components = [[NSDate yj_currentCalendar] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS_FOR_STARTEND fromDate:self];
+    NSDateComponents *components = [[NSDate yj_currentCalendarForStartEnd] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS_FOR_STARTEND fromDate:self];
     components.hour = 0;
     components.minute = 0;
     components.second = 0;
-    return [[NSDate yj_currentCalendar] dateFromComponents:components];
+    return [[NSDate yj_currentCalendarForStartEnd] dateFromComponents:components];
     
     /** 方式二
      NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -69,12 +77,12 @@ _Pragma("clang diagnostic pop") \
 
 /** 某天的23点59分59秒 */
 - (NSDate *)yj_dateAtEndOfDay{
-    NSDateComponents *components = [[NSDate yj_currentCalendar] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS_FOR_STARTEND fromDate:self];
+    NSDateComponents *components = [[NSDate yj_currentCalendarForStartEnd] components:YJ_NSDATE_UTILITIES_COMPONENT_FLAGS_FOR_STARTEND fromDate:self];
     
     components.hour = 23;
     components.minute = 59;
     components.second = 59;
-    return [[NSDate yj_currentCalendar] dateFromComponents:components];
+    return [[NSDate yj_currentCalendarForStartEnd] dateFromComponents:components];
     
     /** 方式二
      NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -91,28 +99,28 @@ _Pragma("clang diagnostic pop") \
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
-        components = [[NSDate yj_currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitWeekday|NSCalendarUnitDay fromDate:self];
+        components = [[NSDate yj_currentCalendarForStartEnd] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitWeekday|NSCalendarUnitDay fromDate:self];
     }else{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        components = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekdayCalendarUnit|NSDayCalendarUnit fromDate:self];
+        components = [[NSDate yj_currentCalendarForStartEnd] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekdayCalendarUnit|NSDayCalendarUnit fromDate:self];
 #pragma clang diagnostic pop
     }
 #else
-    NSDateComponents *components = [[NSDate yj_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit |NSWeekdayCalendarUnit| NSDayCalendarUnit fromDate:self];
+    NSDateComponents *components = [[NSDate yj_currentCalendarForStartEnd] components:NSYearCalendarUnit | NSMonthCalendarUnit |NSWeekdayCalendarUnit| NSDayCalendarUnit fromDate:self];
 #endif
     
-    NSUInteger offset = ([components weekday] == [[NSDate yj_currentCalendar] firstWeekday]) ? 6 : [components weekday] - 2;
+    NSUInteger offset = ([components weekday] == [[NSDate yj_currentCalendarForStartEnd] firstWeekday]) ? 6 : [components weekday] - 2;
     [components setDay:[components day] - offset];
     
-    return [[NSDate yj_currentCalendar] dateFromComponents:components];
+    return [[NSDate yj_currentCalendarForStartEnd] dateFromComponents:components];
 }
 
 /** 该日期的周结束日期 */
 - (NSDate *)yj_dateAtEndOfWeek{
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setWeekOfMonth:1];
-    return [[[NSDate yj_currentCalendar] dateByAddingComponents:components toDate:[self yj_dateAtStartOfWeek] options:0] dateByAddingTimeInterval:-1];
+    return [[[NSDate yj_currentCalendarForStartEnd] dateByAddingComponents:components toDate:[self yj_dateAtStartOfWeek] options:0] dateByAddingTimeInterval:-1];
 }
 
 /** 该月的开始 */

@@ -10,6 +10,9 @@
 
 @interface NSDate (YJStartEnd)
 
+/** 当前日历 */
++ (NSCalendar *)yj_currentCalendarForStartEnd;
+
 #pragma mark - 时间的开始和结束
 /** 某天的0点0分0秒 */
 - (NSDate *)yj_dateAtStartOfDay;
