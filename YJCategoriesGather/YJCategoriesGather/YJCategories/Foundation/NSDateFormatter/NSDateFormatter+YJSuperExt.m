@@ -7,7 +7,6 @@
 //
 
 #import "NSDateFormatter+YJSuperExt.h"
-#import "NSDate+YJSuperExt.h"
 
 @implementation NSDateFormatter (YJSuperExt)
 

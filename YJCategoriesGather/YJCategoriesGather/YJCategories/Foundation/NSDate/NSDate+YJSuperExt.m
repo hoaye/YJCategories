@@ -7,7 +7,6 @@
 //
 
 #import "NSDate+YJSuperExt.h"
-#import "NSDateFormatter+YJSuperExt.h"
 
 #define YJ_EACH_MINUTE	60
 #define YJ_EACH_HOUR	3600
