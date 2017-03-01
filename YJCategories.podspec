@@ -1,4 +1,4 @@
-version = "0.0.5.1";
+version = "0.0.5.2";
 
 Pod::Spec.new do |s|
     s.name         = "YJCategories"
@@ -18,9 +18,7 @@ Pod::Spec.new do |s|
     s.frameworks = 'Foundation', 'UIKit', 'CoreData', 'QuartzCore', 'CoreLocation', 'MapKit'
     s.library       = 'resolv.9'
     #s.libraries    = "libresolv.9.tbd"
-    s.source       = { :git => "https://github.com/YJManager/YJCategories.git", :tag => "#{version}", :submodules => true }
-    s.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/*.{h,m}'
-    s.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/*.{h,m}'
+    s.source       = { :git => "https://github.com/YJManager/YJCategories.git", :tag => "#{version}" }
 
 
 
