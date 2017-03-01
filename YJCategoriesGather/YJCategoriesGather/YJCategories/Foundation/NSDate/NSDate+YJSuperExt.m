@@ -7,6 +7,7 @@
 //
 
 #import "NSDate+YJSuperExt.h"
+#import "NSDateFormatter+YJSuperExt.h"
 
 #define YJ_EACH_MINUTE	60
 #define YJ_EACH_HOUR	3600
@@ -630,12 +631,12 @@ _Pragma("clang diagnostic pop") \
 
 /** 根据date 返回字符类型日期 */
 + (NSString *)yj_timeInfoWithDate:(NSDate *)date{
-    return [self yj_timeInfoWithDateString:[self _yj_stringWithDate:date format:[self _yj_yyyyMMddHHmmssFormat]]];
+    return [self yj_timeInfoWithDateString:[NSDateFormatter yj_stringWithDate:date format:[NSDateFormatter yj_yyyyMMddHHmmssFormat]]];
 }
 
 /** 返回时间信息 */
 + (NSString *)yj_timeInfoWithDateString:(NSString *)dateString{
-    NSDate *date = [self _yj_dateWithString:dateString format:[self _yj_yyyyMMddHHmmssFormat]];
+    NSDate *date = [NSDateFormatter yj_dateWithString:dateString format:[NSDateFormatter yj_yyyyMMddHHmmssFormat]];
     
     NSDate *curDate = [NSDate date];
     NSTimeInterval timeDistance = -[date timeIntervalSinceDate:curDate];
@@ -712,24 +713,6 @@ _Pragma("clang diagnostic pop") \
         return [NSString stringWithFormat:@"%d年前", abs(yearDistance)];
     }
     return @"1小时前";
-}
-
-
-#pragma mark - Private
-/** 根据 dateString 和 format 返回 NSDate */
-+ (NSDate *)_yj_dateWithString:(NSString *)dateString format:(NSString *)format{
-    NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
-    [inputFormatter setDateFormat:format];
-    return [inputFormatter dateFromString:dateString];
-}
-
-/** 根据 date 和 format 返回字符串日期 */
-+ (NSString *)_yj_stringWithDate:(NSDate *)date format:(NSString *)format{
-    return [date yj_stringWithFormat:format];
-}
-/** 完整的 yyyy-MM-dd HH:mm:ss */
-+ (NSString *)_yj_yyyyMMddHHmmssFormat{
-    return @"yyyy-MM-dd HH:mm:ss";
 }
 
 

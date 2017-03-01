@@ -1,11 +1,11 @@
-version = "0.0.5.5";
+version = "0.0.0.1";
 
 Pod::Spec.new do |s|
     s.name         = "YJCategories"
     s.version      = version
     s.summary      = "YJCategories(iOS-Categories), a collection of useful Objective-C Categories extending iOS Frameworks"
     s.description      = <<-DESC
-                          YJCategories(iOS-Categories), a collection of useful Objective-C Categories extending iOS Frameworks such as Foundation, UIKit, CoreData, QuartzCore, CoreLocation, MapKit Etc.
+                        YJCategories(iOS-Categories), a collection of useful Objective-C Categories extending iOS Frameworks such as Foundation, UIKit, CoreData, QuartzCore, CoreLocation, MapKit Etc. Author's email:houmanager@Hotmail.com
                             DESC
     s.homepage     = "https://github.com/YJManager/YJCategories.git"
 
