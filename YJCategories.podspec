@@ -1,4 +1,4 @@
-version = "0.0.4";
+version = "0.0.5.1";
 
 Pod::Spec.new do |s|
     s.name         = "YJCategories"
@@ -23,15 +23,7 @@ Pod::Spec.new do |s|
     s.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/*.{h,m}'
 
 
-    # UIKit 配置模块
-    s.subspec 'UIKit' do |ss|
-        # 1. UIApplication 配置模块
-        ss.subspec 'UIApplication' do |sss|
-            sss.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIApplication/*.{h,m}'
-            sss.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIApplication/*.{h,m}'
-        end
 
-    end
 
     #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 end
