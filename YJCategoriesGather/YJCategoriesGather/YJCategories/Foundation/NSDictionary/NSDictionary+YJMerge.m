@@ -43,4 +43,16 @@
     return [[self class] margeDictionaryWithDict:self dict:dict];
 }
 
+/** 字典选择器 */
+- (NSDictionary *)yj_dictionaryPickWithKeys:(NSArray *)keys{
+    
+    NSMutableDictionary *picked = [[NSMutableDictionary alloc] initWithCapacity:keys.count];
+    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if ([keys containsObject:key]) {
+            picked[key] = obj;
+        }
+    }];
+    return picked;
+}
+
 @end

@@ -11,10 +11,10 @@
 @interface NSDictionary (YJSuperExt)
 
 /** 转换为 NSString */
-- (NSString *)convertToJSONString;
+- (NSString *)yj_convertToJSONString;
 
 /** 转换为 NSData */
-- (NSData *)convertToJSONData;
+- (NSData *)yj_convertToJSONData;
 
 /** 安全设置键值对 */
 - (void)setSafeValue:(id)value forKey:(NSString *)key;

@@ -17,4 +17,7 @@
 /** 合并入一个NSDictionary */
 - (NSDictionary *)mergeDictionary:(NSDictionary *)dict;
 
+/** 字典选择器 */
+- (NSDictionary *)yj_dictionaryPickWithKeys:(NSArray *)keys;
+
 @end

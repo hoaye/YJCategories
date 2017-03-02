@@ -28,6 +28,12 @@
                            @"3":@"c",
                            @"4":@"d"
                            };
+    NSArray * keys = @[@"2", @"3", @"5"];
+    
+    NSDictionary *dictRes = [dict yj_dictionaryPickWithKeys:keys];
+    
+    NSLog(@"-->%@", dictRes);
+    
     
     
 }

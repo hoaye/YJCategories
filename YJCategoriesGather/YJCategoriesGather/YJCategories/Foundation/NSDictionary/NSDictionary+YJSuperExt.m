@@ -11,9 +11,9 @@
 @implementation NSDictionary (YJSuperExt)
 
 /** NSDictionary->NSString */
-- (NSString *)convertToJSONString{
+- (NSString *)yj_convertToJSONString{
     
-    NSData * data = [self convertToJSONData];
+    NSData * data = [self yj_convertToJSONData];
     if (data) {
         __autoreleasing NSString *  string=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         return string;
@@ -22,7 +22,7 @@
 }
 
 /** NSDictionary->NSData */
-- (NSData *)convertToJSONData{
+- (NSData *)yj_convertToJSONData{
     if (![NSJSONSerialization isValidJSONObject:self]) {
         return nil;
     }
