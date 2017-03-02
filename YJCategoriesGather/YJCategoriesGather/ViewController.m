@@ -29,12 +29,6 @@
                            @"4":@"d"
                            };
     
- 
-    NSArray *array = [dict jk_map:^id(id key, id value) {
-        
-        
-    }];
-    NSLog(@"-->%@", array);
     
 }
 

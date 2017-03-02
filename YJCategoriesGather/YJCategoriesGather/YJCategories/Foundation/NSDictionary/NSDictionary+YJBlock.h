@@ -10,9 +10,7 @@
 
 @interface NSDictionary (YJBlock)
 
-/** 遍历出字典的key-Value键值对 */
-- (void)yj_keyValuesBlock:(void (^)(id key, id value))block;
-
-- (NSArray *)jk_map:(id (^)(id key, id value))block;
+/** 遍历字典的key-Value键值对并 Return处理结果数组 */
+- (NSArray *)yj_keyValuesMapBlock:(id (^)(id key, id value))block;
 
 @end
