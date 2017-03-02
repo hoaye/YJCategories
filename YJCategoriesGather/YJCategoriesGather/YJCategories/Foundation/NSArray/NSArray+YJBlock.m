@@ -23,4 +23,25 @@
     return array;
 }
 
+/** 数组过滤器 */
+- (NSArray *)yj_filterBlock:(BOOL (^)(id object))block{
+    return [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return block(evaluatedObject);
+    }]];
+}
+
+/** 数组剔除器 */
+- (NSArray *)yj_reversePickWithArray:(NSArray *)array{
+    
+    NSMutableArray *results = [NSMutableArray arrayWithArray:self];
+ 
+    for (id obj in array) {
+        if ([self containsObject:obj]) { // 包含就剔除
+            [results removeObject:obj];
+        }
+    }
+    return results;
+}
+
+
 @end

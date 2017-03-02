@@ -28,17 +28,14 @@
                            @"3":@"c",
                            @"4":@"d"
                            };
-    NSArray * keys = @[@"2", @"3", @"4"];
+    NSArray * keys1 = @[@"2", @"3", @"4", @"5"];
+    NSArray * keys2 = @[@"3", @"4"];
     
     NSURL *url = [NSURL URLWithString:urlString];
     
 
-    NSArray *array = [dict yj_dictionaryMapBlock:^id(id key, id value) {
-        NSLog(@"-->%@=%@", key, value);
-        return value;
-    }];
-    
-    NSLog(@"-->%@", array);
+    NSArray * result = [keys2 yj_reversePickWithArray:keys1];
+    NSLog(@"-->%@", result);
     
 
     
