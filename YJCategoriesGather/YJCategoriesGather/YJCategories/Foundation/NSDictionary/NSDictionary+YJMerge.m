@@ -41,6 +41,12 @@
 /** 合并入一个NSDictionary */
 - (NSDictionary *)mergeDictionary:(NSDictionary *)dict{
     return [[self class] margeDictionaryWithDict:self dict:dict];
+    
+    /** 方式2
+         NSMutableDictionary *result = [self mutableCopy];
+         [result addEntriesFromDictionary:dictionary];
+         return result;
+     */
 }
 
 /** 遍历字典的key-Value键值对并 Return处理结果数组 */
@@ -57,7 +63,7 @@
 }
 
 /** 字典选择器 */
-- (NSDictionary *)yj_dictionaryPickWithKeys:(NSArray *)keys{
+- (NSDictionary *)yj_dictionaryPickForKeys:(NSArray *)keys{
     
     NSMutableDictionary *picked = [[NSMutableDictionary alloc] initWithCapacity:keys.count];
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -70,17 +76,19 @@
 
 
 /** 字典忽略器 */
-- (NSDictionary *)yj_dictionaryOmitWithKeys:(NSArray *)keys{
+- (NSDictionary *)yj_removeObjectsForKeys:(NSArray *)keys{
     
-    NSMutableDictionary *omitted = [[NSMutableDictionary alloc] initWithCapacity:([self allKeys].count - keys.count)];
+    NSMutableDictionary *result = [self mutableCopy];
+    [result removeObjectsForKeys:keys];
+    return result;
     
-    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        if (![keys containsObject:key]) {
-            omitted[key] = obj;
-        }
-    }];
-    
-    return omitted;
+    /** 方式2
+        NSMutableDictionary *omitted = [[NSMutableDictionary alloc] initWithCapacity:([self allKeys].count - keys.count)];
+        [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            if (![keys containsObject:key]) { omitted[key] = obj; }
+        }];
+        return omitted;
+     */
 }
 
 @end

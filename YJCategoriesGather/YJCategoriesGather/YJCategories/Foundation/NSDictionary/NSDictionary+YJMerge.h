@@ -21,9 +21,9 @@
 - (NSArray *)yj_keyValuesMapBlock:(id (^)(id key, id value))block;
 
 /** 字典选择器 */
-- (NSDictionary *)yj_dictionaryPickWithKeys:(NSArray *)keys;
+- (NSDictionary *)yj_dictionaryPickForKeys:(NSArray *)keys;
 
-/** 字典忽略器 */
-- (NSDictionary *)yj_dictionaryOmitWithKeys:(NSArray *)keys;
+/** 字典移除器 */
+- (NSDictionary *)yj_removeObjectsForKeys:(NSArray *)keys;
 
 @end

@@ -15,7 +15,7 @@
 //  NSDictionary
     #import "NSDictionary+YJSuperExt.h"
     #import "NSDictionary+YJMerge.h"
-    #import "NSDictionary+YJBlock.h"
+    #import "NSDictionary+YJXML.h"
 
 //  NSString
     #import "NSString+YJSuperExt.h"
