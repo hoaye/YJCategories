@@ -28,7 +28,7 @@
                            @"3":@"c",
                            @"4":@"d"
                            };
-    NSArray * keys = @[@"2", @"3", @"5"];
+    NSArray * keys = @[@"2", @"3", @"4"];
     
     NSDictionary *dictRes = [dict yj_dictionaryPickWithKeys:keys];
     

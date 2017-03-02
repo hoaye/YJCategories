@@ -43,6 +43,19 @@
     return [[self class] margeDictionaryWithDict:self dict:dict];
 }
 
+/** 遍历字典的key-Value键值对并 Return处理结果数组 */
+- (NSArray *)yj_keyValuesMapBlock:(id (^)(id key, id value))block{
+    
+    NSMutableArray *array = [NSMutableArray array];
+    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        id object = block(key, obj);
+        if (object) {
+            [array addObject:object];
+        }
+    }];
+    return array;
+}
+
 /** 字典选择器 */
 - (NSDictionary *)yj_dictionaryPickWithKeys:(NSArray *)keys{
     
@@ -53,6 +66,21 @@
         }
     }];
     return picked;
+}
+
+
+/** 字典忽略器 */
+- (NSDictionary *)yj_dictionaryOmitWithKeys:(NSArray *)keys{
+    
+    NSMutableDictionary *omitted = [[NSMutableDictionary alloc] initWithCapacity:([self allKeys].count - keys.count)];
+    
+    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if (![keys containsObject:key]) {
+            omitted[key] = obj;
+        }
+    }];
+    
+    return omitted;
 }
 
 @end
