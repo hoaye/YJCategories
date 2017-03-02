@@ -22,7 +22,7 @@
 
 - (void)setUpMainView{
 
-    NSString *urlString = @"http:wwww.baidu.com?a=1&b=2&c=3&d=4";
+    NSString *urlString = @"http://wwww.baidu.com?a=1&b=2&c=3&d=4";
     NSDictionary *dict = @{@"1":@"a",
                            @"2":@"b",
                            @"3":@"c",
@@ -30,8 +30,10 @@
                            };
     NSArray * keys = @[@"2", @"3", @"4"];
     
+    NSURL *url = [NSURL URLWithString:urlString];
     
- NSLog(@"-->%f", [NSFileManager yj_availableDiskSpace]);
+    NSLog(@"-->%@", [url yj_dictParameters]);
+    
 
     
     

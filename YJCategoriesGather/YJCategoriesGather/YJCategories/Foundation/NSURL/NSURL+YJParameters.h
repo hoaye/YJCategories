@@ -11,9 +11,7 @@
 @interface NSURL (YJParameters)
 
 /** url参数转字典 */
-- (NSDictionary *)dictParameters;
+- (NSDictionary *)yj_dictParameters;
 
-/** 根据参数名 取参数值 */
-- (NSString *)valueForParameter:(NSString *)parameter;
 
 @end

@@ -11,22 +11,24 @@
 @implementation NSURL (YJParameters)
 
 /** url参数转字典 */
-- (NSDictionary *)dictParameters{
+- (NSDictionary *)yj_dictParameters{
     
-    NSMutableDictionary *parametersDictionary = [NSMutableDictionary dictionary];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
     NSArray * queryComponents = [self.query componentsSeparatedByString:@"&"];
     for (NSString *queryComponent in queryComponents) {
-        NSString * key = [queryComponent componentsSeparatedByString:@"="].firstObject;
-        NSString * value = [queryComponent substringFromIndex:(key.length + 1)];
-        [parametersDictionary setObject:value forKey:key];
+        NSArray *contents = [queryComponent componentsSeparatedByString:@"="];
+        if([contents count] == 2) {
+            NSString *key = [contents objectAtIndex:0];
+            NSString *value = [contents objectAtIndex:1];
+            value = [value stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            if (key && value) {
+                [dict setObject:value forKey:key];
+            }
+        }
     }
-    return parametersDictionary;
+    return [NSDictionary dictionaryWithDictionary:dict];
 }
 
-/** 根据参数名 取参数值 */
-- (NSString *)valueForParameter:(NSString *)parameter{
-    return [[self dictParameters] objectForKey:parameter];
-}
 
 @end

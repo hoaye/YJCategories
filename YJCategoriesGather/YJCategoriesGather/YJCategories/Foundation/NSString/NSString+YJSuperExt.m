@@ -32,27 +32,16 @@
 - (NSDictionary *)yj_parameterDictionary{
     
     NSString *parameterString = nil;
-    // 如果没有?就是没有参数
-    if ([self containsString:@"?"]) {
-        NSArray *parameterStrings = [self componentsSeparatedByString:@"?"];
-        if (parameterStrings.count > 1) {
-            parameterString = [parameterStrings lastObject];
-        }else{
-            return nil;
-        }
+    if (self) {
+        parameterString = [self yj_removeBlank];
     }else{
         return nil;
     }
     
-    // 如果存在参数才继续进行
-    if (parameterString) {
-        parameterString = [parameterString yj_removeBlank];
-    }else{
-        return nil;
-    }
-    
+    NSURL *urlPath = [NSURL URLWithString:parameterString];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSArray *parameters = [parameterString componentsSeparatedByString:@"&"];
+    NSArray * parameters = [urlPath.query componentsSeparatedByString:@"&"];
+
     for(NSString *parameter in parameters) {
         NSArray *contents = [parameter componentsSeparatedByString:@"="];
         if([contents count] == 2) {
@@ -66,5 +55,6 @@
     }
     return [NSDictionary dictionaryWithDictionary:dict];
 }
+
 
 @end
