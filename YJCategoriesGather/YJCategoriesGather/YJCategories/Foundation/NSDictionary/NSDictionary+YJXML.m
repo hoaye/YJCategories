@@ -72,7 +72,9 @@
 - (NSData *)yj_plistData{
     //    return [NSPropertyListSerialization dataFromPropertyList:self format:NSPropertyListXMLFormat_v1_0   errorDescription:nil];
     NSError *error = nil;
-    NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:self format:NSPropertyListXMLFormat_v1_0 options:0 error:&error];
+    NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:self format:NSPropertyListXMLFormat_v1_0
+                                                                  options:0
+                                                                    error:&error];
     if (error) {
         return nil;
     }
