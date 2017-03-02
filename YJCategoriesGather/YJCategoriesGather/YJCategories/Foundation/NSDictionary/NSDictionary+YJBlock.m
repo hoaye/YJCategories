@@ -17,4 +17,17 @@
     }];
 }
 
+- (NSArray *)jk_map:(id (^)(id key, id value))block {
+    NSMutableArray *array = [NSMutableArray array];
+    
+    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        id object = block(key, obj);
+        if (object) {
+            [array addObject:object];
+        }
+    }];
+    
+    return array;
+}
+
 @end

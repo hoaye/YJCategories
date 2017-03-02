@@ -29,10 +29,12 @@
                            @"4":@"d"
                            };
     
-   [dict yj_keyValuesBlock:^(id key, id value) {
-       NSLog(@"-->%@=%@", key, value);
-   }];
  
+    NSArray *array = [dict jk_map:^id(id key, id value) {
+        
+        
+    }];
+    NSLog(@"-->%@", array);
     
 }
 

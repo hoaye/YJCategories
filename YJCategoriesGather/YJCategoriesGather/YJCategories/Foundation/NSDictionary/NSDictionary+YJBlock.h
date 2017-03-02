@@ -13,4 +13,6 @@
 /** 遍历出字典的key-Value键值对 */
 - (void)yj_keyValuesBlock:(void (^)(id key, id value))block;
 
+- (NSArray *)jk_map:(id (^)(id key, id value))block;
+
 @end
