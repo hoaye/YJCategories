@@ -22,7 +22,14 @@
 
 - (void)setUpMainView{
 
-//    NSLog(@"-->%ld", [[NSDate date] yj_day]);
+    NSString *urlString = @"http:wwww.baidu.com?a=1&b=2&c=3&d=4";
+    NSDictionary *dict = @{@"1":@"a",
+                           @"2":@"b",
+                           @"3":@"c",
+                           @"4":@"d"
+                           };
+    
+    NSLog(@"-->%@", [dict yj_parameterDictToUrlString]);
  
     
 }

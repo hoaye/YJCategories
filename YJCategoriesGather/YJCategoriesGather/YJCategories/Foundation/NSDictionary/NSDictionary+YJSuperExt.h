@@ -20,6 +20,6 @@
 - (void)setSafeValue:(id)value forKey:(NSString *)key;
 
 /** 将NSDictionary转换成 url 参数字符串 */
-- (NSString *)parameterDictToUrlString;
+- (NSString *)yj_parameterDictToUrlString;
 
 @end

@@ -21,7 +21,7 @@
 }
 
 /** 移除字符串中的所有空白 */
-- (NSString *)removeBlank{
+- (NSString *)yj_removeBlank{
     if (self == nil || [self isEqual:[NSNull null]]) {
         return nil;
     }
@@ -31,12 +31,28 @@
 /** 将字符串Url里面的参数解析出来 */
 - (NSDictionary *)yj_parameterDictionary{
     
-    if (![self containsString:@"?"]) {
+    NSString *parameterString = nil;
+    // 如果没有?就是没有参数
+    if ([self containsString:@"?"]) {
+        NSArray *parameterStrings = [self componentsSeparatedByString:@"?"];
+        if (parameterStrings.count > 1) {
+            parameterString = [parameterStrings lastObject];
+        }else{
+            return nil;
+        }
+    }else{
+        return nil;
+    }
+    
+    // 如果存在参数才继续进行
+    if (parameterString) {
+        parameterString = [parameterString yj_removeBlank];
+    }else{
         return nil;
     }
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    NSArray *parameters = [self componentsSeparatedByString:@"&"];
+    NSArray *parameters = [parameterString componentsSeparatedByString:@"&"];
     for(NSString *parameter in parameters) {
         NSArray *contents = [parameter componentsSeparatedByString:@"="];
         if([contents count] == 2) {

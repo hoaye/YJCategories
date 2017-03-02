@@ -56,7 +56,7 @@
 }
 
 /** 将NSDictionary转换成url 参数字符串 */
-- (NSString *)parameterDictToUrlString{
+- (NSString *)yj_parameterDictToUrlString{
     NSMutableString *string = [NSMutableString string];
     for (NSString *key in [self allKeys]) {
         if ([string length]) {

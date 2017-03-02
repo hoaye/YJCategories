@@ -14,7 +14,10 @@
 + (NSString *)safeString:(NSString *)string;
 
 /** 移除字符串中的所有空白 */
-- (NSString *)removeBlank;
+- (NSString *)yj_removeBlank;
+
+/** 将字符串Url里面的参数解析出来 */
+- (NSDictionary *)yj_parameterDictionary;
 
 
 @end
