@@ -35,6 +35,9 @@
     #import "NSDate+YJStartEnd.h"
     #import "NSDateFormatter+YJSuperExt.h"
 
+//  NSFileManager
+    #import "NSFileManager+YJSuperExt.h"
+
 
 
 #endif /* YJFoundation_h */

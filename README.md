@@ -63,6 +63,8 @@ YJCategories 是Objective-C超级分类集合
     * NSDateFormatter
         1.  YJSuperExt
 
+    * NSFileManager
+        1.  YJSuperExt
 
 
 ### UIKit

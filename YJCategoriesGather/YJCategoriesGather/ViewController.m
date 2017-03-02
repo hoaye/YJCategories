@@ -29,6 +29,9 @@
                            @"4":@"d"
                            };
     NSArray * keys = @[@"2", @"3", @"4"];
+    
+    
+ NSLog(@"-->%f", [NSFileManager yj_availableDiskSpace]);
 
     
     
