@@ -29,7 +29,9 @@
                            @"4":@"d"
                            };
     
-    NSLog(@"-->%@", [dict yj_parameterDictToUrlString]);
+   [dict yj_keyValuesBlock:^(id key, id value) {
+       NSLog(@"-->%@=%@", key, value);
+   }];
  
     
 }
