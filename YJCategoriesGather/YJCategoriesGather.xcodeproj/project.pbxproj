@@ -232,6 +232,7 @@
 		6314C3E91E589A4100A40B52 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				632BB2101E68173F00D5345F /* NSFileManager */,
 				636CF4EB1E655CD600926D3E /* NSDateFormatter */,
 				63F79EEF1E5D5F1F000E5D65 /* NSDate */,
 				631D70731E59751100F12739 /* NSData */,
@@ -350,6 +351,13 @@
 				632BB20E1E68145E00D5345F /* SampleFile.txt */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		632BB2101E68173F00D5345F /* NSFileManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NSFileManager;
 			sourceTree = "<group>";
 		};
 		636CF4EB1E655CD600926D3E /* NSDateFormatter */ = {
