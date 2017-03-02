@@ -11,6 +11,7 @@
 
 //  NSArray
     #import "NSArray+YJSuperExt.h"
+    #import "NSArray+YJBlock.h"
 
 //  NSDictionary
     #import "NSDictionary+YJSuperExt.h"

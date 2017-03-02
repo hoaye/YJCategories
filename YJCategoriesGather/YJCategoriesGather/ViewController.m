@@ -32,7 +32,13 @@
     
     NSURL *url = [NSURL URLWithString:urlString];
     
-    NSLog(@"-->%@", [url yj_dictParameters]);
+
+    NSArray *array = [dict yj_dictionaryMapBlock:^id(id key, id value) {
+        NSLog(@"-->%@=%@", key, value);
+        return value;
+    }];
+    
+    NSLog(@"-->%@", array);
     
 
     

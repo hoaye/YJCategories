@@ -35,6 +35,7 @@
 		632BB2081E6805EF00D5345F /* NSDictionary+YJXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 632BB2071E6805EF00D5345F /* NSDictionary+YJXML.m */; };
 		632BB20F1E68145E00D5345F /* SampleFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 632BB20E1E68145E00D5345F /* SampleFile.txt */; };
 		632BB2131E68177B00D5345F /* NSFileManager+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 632BB2121E68177B00D5345F /* NSFileManager+YJSuperExt.m */; };
+		632BB2161E68271C00D5345F /* NSArray+YJBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 632BB2151E68271C00D5345F /* NSArray+YJBlock.m */; };
 		636C21B21E67C3470051289F /* NSString+YJContains.m in Sources */ = {isa = PBXBuildFile; fileRef = 636C21B11E67C3470051289F /* NSString+YJContains.m */; };
 		636CF4EE1E655CF500926D3E /* NSDateFormatter+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF4ED1E655CF500926D3E /* NSDateFormatter+YJSuperExt.m */; };
 		636CF4F11E657DCE00926D3E /* NSDate+YJStartEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF4F01E657DCE00926D3E /* NSDate+YJStartEnd.m */; };
@@ -106,6 +107,8 @@
 		632BB20E1E68145E00D5345F /* SampleFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleFile.txt; sourceTree = "<group>"; };
 		632BB2111E68177B00D5345F /* NSFileManager+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+YJSuperExt.h"; sourceTree = "<group>"; };
 		632BB2121E68177B00D5345F /* NSFileManager+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+YJSuperExt.m"; sourceTree = "<group>"; };
+		632BB2141E68271C00D5345F /* NSArray+YJBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YJBlock.h"; sourceTree = "<group>"; };
+		632BB2151E68271C00D5345F /* NSArray+YJBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YJBlock.m"; sourceTree = "<group>"; };
 		636C21B01E67C3460051289F /* NSString+YJContains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YJContains.h"; sourceTree = "<group>"; };
 		636C21B11E67C3470051289F /* NSString+YJContains.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YJContains.m"; sourceTree = "<group>"; };
 		636CF4EC1E655CF500926D3E /* NSDateFormatter+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+YJSuperExt.h"; sourceTree = "<group>"; };
@@ -255,6 +258,8 @@
 			children = (
 				6314C3F11E589B7200A40B52 /* NSArray+YJSuperExt.h */,
 				6314C3F21E589B7200A40B52 /* NSArray+YJSuperExt.m */,
+				632BB2141E68271C00D5345F /* NSArray+YJBlock.h */,
+				632BB2151E68271C00D5345F /* NSArray+YJBlock.m */,
 			);
 			path = NSArray;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 				631D707C1E59788800F12739 /* NSDictionary+YJMerge.m in Sources */,
 				631D70841E597F0200F12739 /* UITableView+YJSuperExt.m in Sources */,
 				6314C3D81E58977900A40B52 /* UIViewController+YJSuperExt.m in Sources */,
+				632BB2161E68271C00D5345F /* NSArray+YJBlock.m in Sources */,
 				6314C3F61E589BAA00A40B52 /* NSDictionary+YJSuperExt.m in Sources */,
 				631D70661E596DAF00F12739 /* NSNotificationCenter+YJMainThread.m in Sources */,
 				631D706A1E59711200F12739 /* NSIndexPath+YJOffset.m in Sources */,

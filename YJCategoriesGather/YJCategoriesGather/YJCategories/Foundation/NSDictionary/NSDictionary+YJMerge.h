@@ -18,7 +18,7 @@
 - (NSDictionary *)mergeDictionary:(NSDictionary *)dict;
 
 /** 遍历字典的key-Value键值对并 Return处理结果数组 */
-- (NSArray *)yj_keyValuesMapBlock:(id (^)(id key, id value))block;
+- (NSArray *)yj_dictionaryMapBlock:(id (^)(id key, id value))block;
 
 /** 字典选择器 */
 - (NSDictionary *)yj_dictionaryPickForKeys:(NSArray *)keys;

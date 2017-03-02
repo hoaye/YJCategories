@@ -50,7 +50,7 @@
 }
 
 /** 遍历字典的key-Value键值对并 Return处理结果数组 */
-- (NSArray *)yj_keyValuesMapBlock:(id (^)(id key, id value))block{
+- (NSArray *)yj_dictionaryMapBlock:(id (^)(id key, id value))block{
     
     NSMutableArray *array = [NSMutableArray array];
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -73,7 +73,6 @@
     }];
     return picked;
 }
-
 
 /** 字典忽略器 */
 - (NSDictionary *)yj_removeObjectsForKeys:(NSArray *)keys{
