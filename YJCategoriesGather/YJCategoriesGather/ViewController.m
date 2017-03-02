@@ -30,7 +30,7 @@
                            };
     NSArray * keys = @[@"2", @"3", @"4"];
 
-    NSLog(@"-->%@", [dict yjxmlString]);
+    NSLog(@"-->%@", [dict yj_plistString]);
     
     
     

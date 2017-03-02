@@ -11,7 +11,7 @@
 @implementation NSDictionary (YJXML)
 
 /** 不带XML声明 不带根节点 */
-- (NSString *)yjxmlString{
+- (NSString *)yj_xmlString{
     return [self  yj_xmlStringWithRootElement:nil declaration:nil];
 }
 

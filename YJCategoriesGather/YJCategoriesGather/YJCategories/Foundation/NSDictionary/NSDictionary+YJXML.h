@@ -11,7 +11,7 @@
 @interface NSDictionary (YJXML)
 
 /** 不带XML声明 不带根节点 */
-- (NSString *)yjxmlString;
+- (NSString *)yj_xmlString;
 
 /** 默认 <?xml version=\"1.0\" encoding=\"utf-8\"?> 声明   自定义根节点 */
 - (NSString*)yj_xmlStringDefaultDeclarationWithRootElement:(NSString *)rootElement;
