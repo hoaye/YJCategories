@@ -37,6 +37,7 @@ YJCategories 是Objective-C超级分类集合
 
     * NSString
         1.  YJSuperExt
+        2.  YJContains
 
     * NSNotificationCenter
         1.  YJMainThread

@@ -28,4 +28,27 @@
     return [self stringByReplacingOccurrencesOfString:@"\\s+" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [self length])];
 }
 
+/** 将字符串Url里面的参数解析出来 */
+- (NSDictionary *)yj_parameterDictionary{
+    
+    if (![self containsString:@"?"]) {
+        return nil;
+    }
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    NSArray *parameters = [self componentsSeparatedByString:@"&"];
+    for(NSString *parameter in parameters) {
+        NSArray *contents = [parameter componentsSeparatedByString:@"="];
+        if([contents count] == 2) {
+            NSString *key = [contents objectAtIndex:0];
+            NSString *value = [contents objectAtIndex:1];
+            value = [value stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            if (key && value) {
+                [dict setObject:value forKey:key];
+            }
+        }
+    }
+    return [NSDictionary dictionaryWithDictionary:dict];
+}
+
 @end
