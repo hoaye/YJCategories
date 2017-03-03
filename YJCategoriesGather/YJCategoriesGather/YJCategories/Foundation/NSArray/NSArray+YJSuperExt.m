@@ -11,11 +11,24 @@
 @implementation NSArray (YJSuperExt)
 
 /** 安全取出数组中的元素,避免越界造成的崩溃 */
-- (id)objectSafeAtIndex:(NSUInteger)index{
+- (id)yj_objectSafeAtIndex:(NSUInteger)index{
     if (self.count > index){
         return [self objectAtIndex:index];
     }
     return nil;
+}
+
+@end
+
+
+#pragma mark - NSMutableArray
+@implementation NSMutableArray (YJSuperExt)
+
+/** 安全添加对象到数组，防止非对象的崩溃 */
+- (void)yj_addSafeObject:(id)obj{
+    if (obj != nil) {
+        [self addObject:obj];
+    }
 }
 
 @end

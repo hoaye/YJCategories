@@ -33,10 +33,16 @@
     
     NSURL *url = [NSURL URLWithString:urlString];
     
-
-    NSArray * result = [keys2 yj_reversePickWithArray:keys1];
-    NSLog(@"-->%@", result);
+    NSMutableArray *mutableArray = [NSMutableArray array];
     
+    [mutableArray yj_addSafeObject:@2];
+    
+    [mutableArray yj_addSafeObject:nil];
+
+    
+    NSLog(@"-->%@", mutableArray);
+    
+
 
     
     

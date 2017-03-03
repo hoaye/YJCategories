@@ -11,6 +11,14 @@
 @interface NSArray (YJSuperExt)
 
 /** 安全取出数组中的元素,避免越界造成的崩溃 */
-- (id)objectSafeAtIndex:(NSUInteger)index;
+- (id)yj_objectSafeAtIndex:(NSUInteger)index;
+
+@end
+
+#pragma mark - NSMutableArray
+@interface NSMutableArray (YJSuperExt)
+
+/** 安全添加对象到数组，防止非对象的崩溃 */
+- (void)yj_addSafeObject:(id)obj;
 
 @end
