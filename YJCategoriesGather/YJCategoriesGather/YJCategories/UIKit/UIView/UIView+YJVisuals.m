@@ -96,7 +96,7 @@
        repeatCount:(CGFloat)repeatCount
     timingFunction:(CAMediaTimingFunction *)timingFunction{
     
-    CABasicAnimation *move = [CABasicAnimation animationWithKeyPath: @"position"];
+    CABasicAnimation *move = [CABasicAnimation animationWithKeyPath:@"position"];
     move.toValue = [NSValue valueWithCGPoint: newPoint];
     move.duration = duration;
     move.removedOnCompletion = NO;
@@ -104,7 +104,7 @@
     move.autoreverses = autoreverse;
     move.fillMode = kCAFillModeBoth;
     move.timingFunction = timingFunction != nil?timingFunction:[CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
-    [self.layer addAnimation: move forKey: @"positionAnimation"];
+    [self.layer addAnimation:move forKey:@"positionAnimation"];
 }
 
 
