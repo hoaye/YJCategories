@@ -10,10 +10,5 @@
 
 @interface NSBundle (YJSuperExt)
 
-/** appIconPath 路径 */
-- (NSString *)appIconPath;
-
-/** appIconImage 对象 */
-- (UIImage *)appIconImage;
 
 @end
