@@ -15,4 +15,10 @@
                               duration:(NSTimeInterval)duration
                             completion:(void (^)(BOOL finished))completion;
 
+/** 脉冲式 动画 */
+- (void)yj_pulseDuration:(float)duration continuously:(BOOL)continuously;
+
+/** 改变alpaca */
+- (void)yj_changeAlpha:(float)newAlpha duration:(float)duration completion:(void (^)(BOOL finished))completion;
+
 @end

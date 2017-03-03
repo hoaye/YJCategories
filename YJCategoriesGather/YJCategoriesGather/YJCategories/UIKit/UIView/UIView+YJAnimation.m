@@ -28,4 +28,35 @@
     }];
 }
 
+/** 脉冲式 动画 */
+- (void)yj_pulseDuration:(float)duration continuously:(BOOL)continuously{
+    [UIView animateWithDuration:duration * 0.5 delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         // Fade out, but not completely
+                         self.alpha = 0.3;
+                     }
+                     completion:^(BOOL finished) {
+                         [UIView animateWithDuration:duration * 0.5 delay:0.0
+                                             options:UIViewAnimationOptionCurveLinear
+                                          animations:^{
+                                              self.alpha = 1.0;
+                                          }
+                                          completion:^(BOOL finished) {
+                                              if (continuously) {
+                                                  [self yj_pulseDuration:duration continuously:continuously];
+                                              }
+                                          }];
+                     }];
+}
+
+/** 改变alpaca */
+- (void)yj_changeAlpha:(float)newAlpha duration:(float)duration completion:(void (^)(BOOL finished))completion{
+    [UIView animateWithDuration:duration delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.alpha = newAlpha;
+                     }completion:completion];
+}
+
 @end
