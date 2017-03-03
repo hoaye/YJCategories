@@ -18,6 +18,7 @@
     #import "UIView+YJRecursion.h"       // 递归
     #import "UIView+YJCustomBorder.h"    // 自定义边框
     #import "UIView+YJShake.h"           // 摇动
+    #import "UIView+YJVisuals.h"         // 显示效果
 
 
 //////////// UIWindow /////////////////

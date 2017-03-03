@@ -104,7 +104,7 @@ YJCategories 是Objective-C超级分类集合
         7.  YJRecursion
         8.  YJCustomBorder
         9.  YJShake
-        10. 获取 View 左上角 leftTop
+        10. YJVisuals
         11. 获取 View 右上角 rightTop
         12. 获取 View 左下角 leftBottom
         13. 获取 View 右下角 rightBottom
