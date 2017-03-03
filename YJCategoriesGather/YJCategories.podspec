@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                             DESC
     s.homepage     = "https://github.com/YJManager/YJCategories.git"
 
-    s.license      = { :type => "MIT", :file => "LICENSE" }
+    s.license      = { :type => "MIT", :file => "../LICENSE" }
 
     s.author       = { "houmanager" => "houmanager@Hotmail.com" }
     s.platform     = :ios, "8.0"
