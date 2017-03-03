@@ -8,6 +8,9 @@
 
 #import "UIView+YJVisuals.h"
 
+// Degree -> Rad
+#define degToRad(x) (M_PI * (x) / 180.0)
+
 @implementation UIView (YJVisuals)
 
 /** 设置圆角和边框 */
@@ -63,8 +66,45 @@
     [UIView beginAnimations:nil context: NULL];
     [UIView setAnimationDuration:duration];
     [UIView setAnimationTransition:transition forView:self cache:YES];
-    [self addSubview:subview];
+    [self addSubview:subview];   // 同样可以移除
     [UIView commitAnimations];
+}
+
+
+/** 旋转参数设置 angle=角度 duration=时间 autoreverse=自动重复 repeatCount=重复次数 */
+- (void)yj_rotateByAngle:(CGFloat)angle
+                duration:(NSTimeInterval)duration
+             autoreverse:(BOOL)autoreverse
+             repeatCount:(CGFloat)repeatCount
+          timingFunction:(CAMediaTimingFunction *)timingFunction{
+    
+    CABasicAnimation *rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    rotation.toValue = [NSNumber numberWithFloat:degToRad(angle)];
+    rotation.duration = duration;
+    rotation.repeatCount = repeatCount;
+    rotation.autoreverses = autoreverse;
+    rotation.removedOnCompletion = NO;
+    rotation.fillMode = kCAFillModeBoth;
+    rotation.timingFunction = timingFunction != nil?timingFunction:[CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
+    [self.layer addAnimation:rotation forKey:@"rotationAnimation"];
+}
+
+/** 移动视图相关参数设置 newPoint=新位置 duration=时间 autoreverse=自动重复 repeatCount=重复次数*/
+- (void)yj_moveToPoint:(CGPoint)newPoint
+          duration:(NSTimeInterval)duration
+       autoreverse:(BOOL)autoreverse
+       repeatCount:(CGFloat)repeatCount
+    timingFunction:(CAMediaTimingFunction *)timingFunction{
+    
+    CABasicAnimation *move = [CABasicAnimation animationWithKeyPath: @"position"];
+    move.toValue = [NSValue valueWithCGPoint: newPoint];
+    move.duration = duration;
+    move.removedOnCompletion = NO;
+    move.repeatCount = repeatCount;
+    move.autoreverses = autoreverse;
+    move.fillMode = kCAFillModeBoth;
+    move.timingFunction = timingFunction != nil?timingFunction:[CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
+    [self.layer addAnimation: move forKey: @"positionAnimation"];
 }
 
 

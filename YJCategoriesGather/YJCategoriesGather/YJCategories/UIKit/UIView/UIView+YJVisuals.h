@@ -24,7 +24,21 @@
 /** 从父视图动画消失 */
 -(void)yj_removeFromSuperviewWithFadeDuration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion;
 
-/** 动画添加视图 一般用不到，比较喽*/
+/** 动画添加视图 一般用不到，比较low*/
 - (void)yj_addSubview:(UIView *)subview transition:(UIViewAnimationTransition)transition duration:(NSTimeInterval)duration;
+
+/** 旋转参数设置 angle=角度 duration=时间 autoreverse=自动重复 repeatCount=重复次数 */
+- (void)yj_rotateByAngle:(CGFloat)angle
+                duration:(NSTimeInterval)duration
+             autoreverse:(BOOL)autoreverse
+             repeatCount:(CGFloat)repeatCount
+          timingFunction:(CAMediaTimingFunction *)timingFunction;
+
+/** 移动视图相关参数设置 newPoint=新位置 duration=时间 autoreverse=自动重复 repeatCount=重复次数*/
+- (void)yj_moveToPoint:(CGPoint)newPoint
+              duration:(NSTimeInterval)duration
+           autoreverse:(BOOL)autoreverse
+           repeatCount:(CGFloat)repeatCount
+        timingFunction:(CAMediaTimingFunction *)timingFunction;
 
 @end
