@@ -10,4 +10,22 @@
 
 @implementation NSTimer (YJSuperExt)
 
+/** 暂停NSTimer */
+- (void)yj_pauseTimer{
+    if (![self isValid]) { return; }
+    [self setFireDate:[NSDate distantFuture]];
+}
+
+/** 开始NSTimer */
+- (void)yj_resumeTimer{
+    if (![self isValid]) { return ; }
+    [self setFireDate:[NSDate date]];
+}
+
+/** 延迟开始NSTimer */
+- (void)yj_resumeTimerAfterTimeInterval:(NSTimeInterval)interval{
+    if (![self isValid]) { return ; }
+    [self setFireDate:[NSDate dateWithTimeIntervalSinceNow:interval]];
+}
+
 @end

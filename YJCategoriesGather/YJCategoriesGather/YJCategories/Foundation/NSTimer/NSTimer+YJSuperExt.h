@@ -10,4 +10,13 @@
 
 @interface NSTimer (YJSuperExt)
 
+/** 暂停NSTimer */
+- (void)yj_pauseTimer;
+
+/** 开始NSTimer */
+- (void)yj_resumeTimer;
+
+/** 延迟开始NSTimer */
+- (void)yj_resumeTimerAfterTimeInterval:(NSTimeInterval)interval;
+
 @end
