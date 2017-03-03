@@ -23,19 +23,23 @@
 - (void)setUpMainView{
 
 
-    NSString *appPath = [[NSBundle mainBundle] appIconPath];
+    NSTimer *timer = [NSTimer yj_timerWithTimeInterval:1 block:^{
+        NSLog(@"-->%@", @"-----");
+    } repeats:NO];
+    [timer fire];
     
-    NSLog(@"-->%@", appPath);
-    
-    UIImage *appImg = [[NSBundle mainBundle] appIconImage];
-    
-    NSLog(@"-->%@", appImg);
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     
 
 
     
     
     
+}
+
+- (void)_yj_ExecuteSimpleBlock:(NSTimer *)timer{
+NSLog(@"-->%@", @"----");
+
 }
 
 

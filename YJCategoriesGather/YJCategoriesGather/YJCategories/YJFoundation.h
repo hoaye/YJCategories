@@ -39,6 +39,9 @@
 //  NSFileManager
     #import "NSFileManager+YJSuperExt.h"
 
+//  NSTimer
+    #import "NSTimer+YJBlock.h"
+
 
 
 #endif /* YJFoundation_h */

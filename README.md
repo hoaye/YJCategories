@@ -67,6 +67,9 @@ YJCategories 是Objective-C超级分类集合
     * NSFileManager
         1.  YJSuperExt
 
+    * NSTimer
+        1.  YJBlock
+
 
 ### UIKit
     * UIWindow
