@@ -26,6 +26,10 @@
     
     [self.view addSubview:self.showView];
     
+    [self.showView yj_cornerRadius:10 color:[UIColor redColor] borderWidth:0];
+    
+    [self.showView yj_shadowWithColor:[UIColor redColor] offset:CGSizeMake(5, 5) opacity:1 radius:10];
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
