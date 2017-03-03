@@ -26,7 +26,15 @@
     view.backgroundColor = [UIColor greenColor];
     [self.view addSubview:view];
     
-    [view yj_addTopBorderWithColor:[UIColor redColor] width:1 excludeLength:10 excludePointType:YJExcludePointAll];
+    [view yj_addTopBorderWithColor:[UIColor redColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
+    
+    [view yj_addLeftBorderWithColor:[UIColor yellowColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
+    
+    [view yj_addBottomBorderWithColor:[UIColor blueColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
+    
+    [view yj_addRightBorderWithColor:[UIColor blackColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
+    
+    
     
 
 

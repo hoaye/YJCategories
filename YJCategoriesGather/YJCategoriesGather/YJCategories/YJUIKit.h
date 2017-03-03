@@ -17,6 +17,7 @@
     #import "UIView+YJGestureBlock.h"    // 给 View 添加手势
     #import "UIView+YJRecursion.h"       // 递归
     #import "UIView+YJCustomBorder.h"    // 自定义边框
+    #import "UIView+YJShake.h"           // 摇动
 
 
 //////////// UIWindow /////////////////
