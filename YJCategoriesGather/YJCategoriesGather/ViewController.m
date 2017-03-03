@@ -28,18 +28,16 @@
     
     [self.showView yj_shadowWithColor:[UIColor redColor] offset:CGSizeMake(5, 5) opacity:1 radius:10];
     
+
     
-    [self.showView enableDragging];
-    
-    self.showView.shouldMoveAlongX = NO;
-    
-//    self.showView
     
     
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    [self.showView yj_moveToPoint:CGPointMake(300, 450) duration:1 autoreverse:YES repeatCount:10 timingFunction:nil];
+    
+
+
 }
 
 #pragma mark - Lazy
@@ -47,7 +45,7 @@
     if (!_showView) {
         _showView = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 100, 100)];
         _showView.backgroundColor = [UIColor greenColor];
-        [self.view addSubview:_showView];
+//        [self.view addSubview:_showView];
         
         
         [_showView yj_addTopBorderWithColor:[UIColor redColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];

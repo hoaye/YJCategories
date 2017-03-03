@@ -20,6 +20,7 @@
     #import "UIView+YJShake.h"           // 摇动
     #import "UIView+YJVisuals.h"         // 显示效果
     #import "UIView+YJDraggable.h"       // 拖动
+    #import "UIView+YJAnimation.h"       // 动画
 
 
 //////////// UIWindow /////////////////

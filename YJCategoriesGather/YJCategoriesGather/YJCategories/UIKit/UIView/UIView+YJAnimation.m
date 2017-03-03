@@ -10,4 +10,22 @@
 
 @implementation UIView (YJAnimation)
 
+/** 动画添加子视图 */
+- (void)yj_addSubviewWithFadeAnimation:(UIView *)subview
+                              duration:(NSTimeInterval)duration
+                            completion:(void (^)(BOOL finished))completion{
+    
+    CGFloat finalAlpha = subview.alpha;
+    
+    subview.alpha = 0.0;
+    [self addSubview:subview];
+    [UIView animateWithDuration:duration animations:^{
+        subview.alpha = finalAlpha;
+    } completion:^(BOOL finished) {
+        if (completion) {
+            completion(finished);
+        }
+    }];
+}
+
 @end

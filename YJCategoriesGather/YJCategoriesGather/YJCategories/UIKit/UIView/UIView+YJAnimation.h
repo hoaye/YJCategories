@@ -10,4 +10,9 @@
 
 @interface UIView (YJAnimation)
 
+/** 动画添加子视图 */
+- (void)yj_addSubviewWithFadeAnimation:(UIView *)subview
+                              duration:(NSTimeInterval)duration
+                            completion:(void (^)(BOOL finished))completion;
+
 @end
