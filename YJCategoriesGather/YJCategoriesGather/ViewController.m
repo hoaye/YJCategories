@@ -22,13 +22,11 @@
 
 - (void)setUpMainView{
 
-
-    NSTimer *timer = [NSTimer yj_timerWithTimeInterval:1 block:^{
-        NSLog(@"-->%@", @"-----");
-    } repeats:NO];
-    [timer fire];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 100, 100)];
+    view.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:view];
     
-    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    [view yj_addTopBorderWithColor:[UIColor redColor] width:1 excludeLength:10 excludePointType:YJExcludePointAll];
     
 
 
@@ -37,10 +35,6 @@
     
 }
 
-- (void)_yj_ExecuteSimpleBlock:(NSTimer *)timer{
-NSLog(@"-->%@", @"----");
-
-}
 
 
 
