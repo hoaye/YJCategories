@@ -29,7 +29,13 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.showView yj_shakeWithTimes:20 offset:20];
+    [self.showView yj_shakeHorizontalWithTimes:20 offset:20 completion:^{
+        NSLog(@"-->%@", @"一次结束");
+
+        [self.showView yj_shakeWithTimes:20 offset:10 speed:0.03 shakeDirection:YJShakeDirectionVertical completion:^{
+            NSLog(@"-->%@", @"二次结束");
+        }];
+    }];
 }
 
 #pragma mark - Lazy

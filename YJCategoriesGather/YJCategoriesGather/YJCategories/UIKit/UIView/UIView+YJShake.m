@@ -15,9 +15,14 @@
     [self _jk_shakeWithTimes:10 direction:1 currentTimes:0 offset:5 speed:0.03 shakeDirection:YJShakeDirectionHorizontal completion:nil];
 }
 
-/** 设置水平摇晃的 次数times和幅度offset */
-- (void)yj_shakeHorizontalWithTimes:(int)times offset:(CGFloat)offset{
-    [self _jk_shakeWithTimes:times direction:1 currentTimes:0 offset:offset speed:0.03 shakeDirection:YJShakeDirectionHorizontal completion:nil];
+/** 设置水平摇晃的 次数times和幅度offset Block */
+- (void)yj_shakeHorizontalWithTimes:(int)times offset:(CGFloat)offset completion:(void(^)())completion{
+    [self _jk_shakeWithTimes:times direction:1 currentTimes:0 offset:offset speed:0.03 shakeDirection:YJShakeDirectionHorizontal completion:completion];
+}
+
+/** 晃动 相关参数配置 */
+- (void)yj_shakeWithTimes:(int)times offset:(CGFloat)offset speed:(NSTimeInterval)speed shakeDirection:(YJShakeDirectionType)shakeDirection completion:(void (^)(void))completion{
+    [self _jk_shakeWithTimes:times direction:1 currentTimes:0 offset:offset speed:speed shakeDirection:shakeDirection completion:completion];
 }
 
 #pragma mark - Private

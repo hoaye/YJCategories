@@ -19,9 +19,10 @@ typedef NS_ENUM(NSInteger, YJShakeDirectionType) {
 /** 默认参数配置Shake */
 - (void)yj_shakeDefaultHorizontal;
 
-/** 设置水平摇晃的 次数times和幅度offset */
-- (void)yj_shakeHorizontalWithTimes:(int)times offset:(CGFloat)offset;
+/** 设置水平摇晃的 次数times和幅度offset Block */
+- (void)yj_shakeHorizontalWithTimes:(int)times offset:(CGFloat)offset completion:(void(^)())completion;
 
-
+/** 晃动 相关参数配置 */
+- (void)yj_shakeWithTimes:(int)times offset:(CGFloat)offset speed:(NSTimeInterval)speed shakeDirection:(YJShakeDirectionType)shakeDirection completion:(void (^)(void))completion;
 
 @end
