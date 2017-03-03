@@ -21,4 +21,10 @@
                    opacity:(CGFloat)opacity
                     radius:(CGFloat)radius;
 
+/** 从父视图动画消失 */
+-(void)yj_removeFromSuperviewWithFadeDuration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion;
+
+/** 动画添加视图 一般用不到，比较喽*/
+- (void)yj_addSubview:(UIView *)subview transition:(UIViewAnimationTransition)transition duration:(NSTimeInterval)duration;
+
 @end

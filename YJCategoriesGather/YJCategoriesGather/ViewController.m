@@ -24,8 +24,6 @@
 
 - (void)setUpMainView{
     
-    [self.view addSubview:self.showView];
-    
     [self.showView yj_cornerRadius:10 color:[UIColor redColor] borderWidth:0];
     
     [self.showView yj_shadowWithColor:[UIColor redColor] offset:CGSizeMake(5, 5) opacity:1 radius:10];
@@ -33,13 +31,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.showView yj_shakeHorizontalWithTimes:20 offset:20 completion:^{
-        NSLog(@"-->%@", @"一次结束");
-
-        [self.showView yj_shakeWithTimes:20 offset:10 speed:0.03 shakeDirection:YJShakeDirectionVertical completion:^{
-            NSLog(@"-->%@", @"二次结束");
-        }];
-    }];
+    [self.view yj_addSubview:self.showView transition:UIViewAnimationTransitionFlipFromRight duration:1];
 }
 
 #pragma mark - Lazy
@@ -47,7 +39,8 @@
     if (!_showView) {
         _showView = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 100, 100)];
         _showView.backgroundColor = [UIColor greenColor];
-        [self.view addSubview:_showView];
+//        [self.view addSubview:_showView];
+        
         
         [_showView yj_addTopBorderWithColor:[UIColor redColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
         

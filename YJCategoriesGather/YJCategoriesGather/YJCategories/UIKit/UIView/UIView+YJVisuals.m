@@ -38,5 +38,34 @@
     self.layer.shadowRadius = radius;
 }
 
+/** 从父视图动画消失 */
+-(void)yj_removeFromSuperviewWithFadeDuration:(NSTimeInterval)duration completion:(void (^ __nullable)(BOOL finished))completion{
+//    [UIView beginAnimations:nil context: NULL];
+//    [UIView setAnimationBeginsFromCurrentState: YES];
+//    [UIView setAnimationDuration:duration];
+//    [UIView setAnimationDelegate:self];
+//    [UIView setAnimationDidStopSelector:@selector(removeFromSuperview)];
+//    self.alpha = 0.0;
+//    [UIView commitAnimations];
+    
+    [UIView animateWithDuration:duration animations:^{
+        self.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        if (completion) {
+            completion(YES);
+        }
+        [self removeFromSuperview];
+    }];
+}
+
+/** 动画添加视图 */
+- (void)yj_addSubview:(UIView *)subview transition:(UIViewAnimationTransition)transition duration:(NSTimeInterval)duration{
+    [UIView beginAnimations:nil context: NULL];
+    [UIView setAnimationDuration:duration];
+    [UIView setAnimationTransition:transition forView:self cache:YES];
+    [self addSubview:subview];
+    [UIView commitAnimations];
+}
+
 
 @end
