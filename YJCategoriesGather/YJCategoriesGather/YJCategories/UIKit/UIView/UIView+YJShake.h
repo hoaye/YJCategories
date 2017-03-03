@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+/** 摇晃的方向 */
+typedef NS_ENUM(NSInteger, YJShakeDirectionType) {
+    YJShakeDirectionHorizontal = 0,  // 水平
+    YJShakeDirectionVertical         // 竖直
+};
+
 @interface UIView (YJShake)
+
+/** 默认参数配置Shake */
+- (void)yj_shakeDefaultHorizontal;
+
+/** 设置水平摇晃的 次数times和幅度offset */
+- (void)yj_shakeHorizontalWithTimes:(int)times offset:(CGFloat)offset;
+
+
 
 @end

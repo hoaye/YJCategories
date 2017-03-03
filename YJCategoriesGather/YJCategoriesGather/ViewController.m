@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) UIView *showView;
+
 @end
 
 @implementation ViewController
@@ -21,26 +23,31 @@
 }
 
 - (void)setUpMainView{
+    
+    [self.view addSubview:self.showView];
+    
+}
 
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 100, 100)];
-    view.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:view];
-    
-    [view yj_addTopBorderWithColor:[UIColor redColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
-    
-    [view yj_addLeftBorderWithColor:[UIColor yellowColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
-    
-    [view yj_addBottomBorderWithColor:[UIColor blueColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
-    
-    [view yj_addRightBorderWithColor:[UIColor blackColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
-    
-    
-    
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.showView yj_shakeWithTimes:20 offset:20];
+}
 
-
-    
-    
-    
+#pragma mark - Lazy
+- (UIView *)showView{
+    if (!_showView) {
+        _showView = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 100, 100)];
+        _showView.backgroundColor = [UIColor greenColor];
+        [self.view addSubview:_showView];
+        
+        [_showView yj_addTopBorderWithColor:[UIColor redColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
+        
+        [_showView yj_addLeftBorderWithColor:[UIColor yellowColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
+        
+        [_showView yj_addBottomBorderWithColor:[UIColor blueColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
+        
+        [_showView yj_addRightBorderWithColor:[UIColor blackColor] width:30 excludeLength:30 excludePointType:YJExcludePointAll];
+    }
+    return _showView;
 }
 
 
