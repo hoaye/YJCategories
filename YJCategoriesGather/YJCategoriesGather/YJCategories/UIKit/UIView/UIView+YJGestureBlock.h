@@ -15,7 +15,7 @@ typedef void (^YJGestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
 /** 添加 Tap 手势 */
 - (void)addTapGestureWithBlock:(YJGestureActionBlock)block;
 
-/** 添加 LongPressGesture 收拾 */
+/** 添加 LongPressGesture 手势 */
 - (void)addLongPressGestureWithBlock:(YJGestureActionBlock)block;
 
 @end

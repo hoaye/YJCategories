@@ -28,10 +28,18 @@
     
     [self.showView yj_shadowWithColor:[UIColor redColor] offset:CGSizeMake(5, 5) opacity:1 radius:10];
     
+    
+    [self.showView enableDragging];
+    
+    self.showView.shouldMoveAlongX = NO;
+    
+//    self.showView
+    
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.showView yj_moveToPoint:CGPointMake(300, 450) duration:1 autoreverse:YES repeatCount:10 timingFunction:nil];
+//    [self.showView yj_moveToPoint:CGPointMake(300, 450) duration:1 autoreverse:YES repeatCount:10 timingFunction:nil];
 }
 
 #pragma mark - Lazy
