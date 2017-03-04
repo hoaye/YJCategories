@@ -24,8 +24,8 @@
 
 - (void)setUpMainView{
     
-    NSString *pinyin = @"侯跃军";
-    NSLog(@"-%@", [pinyin yj_pinyinInitialsArrayUppercase:NO]);
+    NSString *pinyin = @"风是雨的预言, 雨是云的牵绊, 云散了就是晴天, 晴天了才会感到暖. 用我的浪漫给你个晴天, 只想日夜与你牵绊, 爱不需要华丽的语言, 我一定让你看见.";
+    NSLog(@"-%@", [pinyin yj_pinyinWithPhoneticSymbolUppercase:NO]);
     
 
     
