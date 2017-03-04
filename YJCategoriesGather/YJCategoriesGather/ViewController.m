@@ -24,6 +24,9 @@
 
 - (void)setUpMainView{
     
+    NSString *pinyin = @"侯跃军";
+    NSLog(@"-%@", [pinyin yj_pinyinInitialsArrayUppercase:NO]);
+    
 
     
     
