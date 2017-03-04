@@ -1,17 +1,13 @@
 //
-//  AppDelegate.h
+//  NSString+YJPinYin.h
 //  YJCategoriesGather
 //
 //  Created by YJHou on 2014/11/4.
 //  Copyright © 2014年 侯跃军 houmanager@Hotmail.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface NSString (YJPinYin)
 
 @end
-
