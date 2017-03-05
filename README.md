@@ -38,8 +38,10 @@ YJCategories 是Objective-C超级分类集合
         3.  YJXML
 
     * NSString
-        1.  YJSuperExt
-        2.  YJContains
+        1.  YJSuperExt  // 超级集合
+        2.  YJContains  // 是否包含
+        3.  YJPinYin    // 汉字转各种拼音
+        4.  YJSize      // 计算字符串的大小
 
     * NSNotificationCenter
         1.  YJMainThread

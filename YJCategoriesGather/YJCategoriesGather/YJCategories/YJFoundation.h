@@ -22,6 +22,7 @@
     #import "NSString+YJSuperExt.h"
     #import "NSString+YJContains.h"
     #import "NSString+YJPinYin.h"
+    #import "NSString+YJSize.h"
 
     #import "NSNotificationCenter+YJMainThread.h"
     #import "NSIndexPath+YJOffset.h"

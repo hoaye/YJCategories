@@ -19,6 +19,9 @@
 /** 将字符串Url里面的参数解析出来 */
 - (NSDictionary *)yj_parameterDictionary;
 
+/** 翻转字符串 abc -> cba*/
+- (NSString *)yj_reverseString;
+
 
 
 @end

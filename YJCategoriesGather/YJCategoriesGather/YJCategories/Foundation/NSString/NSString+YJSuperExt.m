@@ -56,5 +56,18 @@
     return [NSDictionary dictionaryWithDictionary:dict];
 }
 
+/** 翻转字符串 abc -> cba*/
+- (NSString *)yj_reverseString{
+    NSMutableString* reverseString = [[NSMutableString alloc] init];
+    NSInteger charIndex = [self length];
+    while (charIndex > 0) {
+        charIndex --;
+        NSRange subStrRange = NSMakeRange(charIndex, 1);
+        [reverseString appendString:[self substringWithRange:subStrRange]];
+    }
+    return reverseString;
+}
+
+
 
 @end
