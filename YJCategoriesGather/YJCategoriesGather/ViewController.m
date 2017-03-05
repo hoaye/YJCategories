@@ -24,8 +24,8 @@
 
 - (void)setUpMainView{
     
-    NSString *pinyin = @"风是雨的预言";
-    NSLog(@"-%@", [pinyin yj_reverseString]);
+    NSString *pinyin = @"风是雨的预言😀";
+    NSLog(@"-%@", [pinyin yj_stringByReplacingEmojiUnicodeWithCheatCodes]);
     
 
     

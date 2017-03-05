@@ -13,8 +13,13 @@
 /** 安全取出非nilString, 避免显示(null) */
 + (NSString *)safeString:(NSString *)string;
 
+#pragma mark - remove
 /** 移除字符串中的所有空白 */
 - (NSString *)yj_removeBlank;
+/** 清除html标签 */
+- (NSString *)yj_stringByStrippingHTML;
+/** 清除js脚本 */
+- (NSString *)yj_stringByRemovingScriptsAndStrippingHTML;
 
 /** 将字符串Url里面的参数解析出来 */
 - (NSDictionary *)yj_parameterDictionary;

@@ -16,4 +16,10 @@
 /** 删除emoji字符 */
 - (NSString *)yj_removedEmojiString;
 
+/** emoji转换  "This is a smiley face :smiley:" -> "This is a smiley face \U0001F604" */
+- (NSString *)yj_stringByReplacingEmojiCheatCodesWithUnicode;
+
+/** emoji转换  "This is a smiley face \U0001F604" -> "This is a smiley face :smiley:" */
+- (NSString *)yj_stringByReplacingEmojiUnicodeWithCheatCodes;
+
 @end

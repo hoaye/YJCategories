@@ -20,12 +20,30 @@
     }
 }
 
+#pragma mark - remove
 /** 移除字符串中的所有空白 */
 - (NSString *)yj_removeBlank{
     if (self == nil || [self isEqual:[NSNull null]]) {
         return nil;
     }
     return [self stringByReplacingOccurrencesOfString:@"\\s+" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [self length])];
+}
+
+/** 清除html标签 */
+- (NSString *)yj_stringByStrippingHTML{
+    return [self stringByReplacingOccurrencesOfString:@"<[^>]+>" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, self.length)];
+}
+
+/** 清除js脚本 */
+- (NSString *)yj_stringByRemovingScriptsAndStrippingHTML{
+    NSMutableString *mString = [self mutableCopy];
+    NSError *error;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<script[^>]*>[\\w\\W]*</script>" options:NSRegularExpressionCaseInsensitive error:&error];
+    NSArray *matches = [regex matchesInString:mString options:NSMatchingReportProgress range:NSMakeRange(0, [mString length])];
+    for (NSTextCheckingResult *match in [matches reverseObjectEnumerator]) {
+        [mString replaceCharactersInRange:match.range withString:@""];
+    }
+    return [mString yj_stringByStrippingHTML];
 }
 
 /** 将字符串Url里面的参数解析出来 */
