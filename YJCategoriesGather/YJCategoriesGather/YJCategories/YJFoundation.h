@@ -25,6 +25,7 @@
     #import "NSString+YJSize.h"
     #import "NSString+YJSpecialCharacter.h"
     #import "NSString+YJMIME.h"
+    #import "NSString+YJVerification.h"
 
     #import "NSNotificationCenter+YJMainThread.h"
     #import "NSIndexPath+YJOffset.h"

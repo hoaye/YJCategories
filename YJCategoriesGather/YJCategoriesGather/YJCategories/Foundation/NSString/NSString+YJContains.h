@@ -19,13 +19,8 @@
 /** 是否包含字符 string */
 - (BOOL)yj_containsString:(NSString *)string;
 
-/** Unicode编码的字符串转成NSString */
-- (NSString *)yj_makeUnicodeToString;
-
 /** 是否包含字符集合 set */
 - (BOOL)yj_containsCharacterSet:(NSCharacterSet *)set;
 
-/** 字符数量 */
-- (int)yj_wordsCount;
 
 @end

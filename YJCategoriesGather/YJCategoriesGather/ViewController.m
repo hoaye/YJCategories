@@ -24,10 +24,9 @@
 
 - (void)setUpMainView{
     
-    NSString *pinyin = @"http://www.baidu.com/123.mov";
-    NSDictionary *dict = [NSString yj_MIMEDict];
+    NSString *string = @"17701343222";
     
-    NSLog(@"-%@", [pinyin yj_MIMEType]);
+    NSLog(@"-%@", [string yj_mobileNumberAscription]);
     
     
 

@@ -32,6 +32,12 @@
 /** 翻转字符串 abc -> cba*/
 - (NSString *)yj_reverseString;
 
+/** Unicode编码的字符串转成NSString */
+- (NSString *)yj_makeUnicodeToString;
+
+/** 字符数量 */
+- (int)yj_wordsCount;
+
 
 
 @end
