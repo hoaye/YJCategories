@@ -24,8 +24,8 @@
 
 - (void)setUpMainView{
     
-    NSString *pinyin = @"{\"people\":[{\"firstName\":\"Brett\",\"lastName\":\"McLaughlin\",\"email\":\"aaaa\"},{\"firstName\":\"Jason\",\"lastName\":\"Hunter\",\"email\":\"bbbb\"},{\"firstName\":\"Elliotte\",\"lastName\":\"Harold\",\"email\":\"cccc\"}]}";
-    NSLog(@"-%@", [[pinyin yj_convertToDictionary] objectForKey:@"people"]);
+    NSString *pinyin = @"我wo";
+    NSLog(@"-%d", [pinyin yj_wordsCount]);
     
 
     
