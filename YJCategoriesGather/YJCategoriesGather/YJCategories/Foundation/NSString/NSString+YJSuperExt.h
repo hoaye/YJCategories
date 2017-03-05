@@ -13,6 +13,11 @@
 /** 安全取出非nilString, 避免显示(null) */
 + (NSString *)safeString:(NSString *)string;
 
+#pragma mark - 装换Convert
+
+/** NSString -> NSDictionary */
+- (NSDictionary *)yj_convertToDictionary;
+
 #pragma mark - remove
 /** 移除字符串中的所有空白 */
 - (NSString *)yj_removeBlank;

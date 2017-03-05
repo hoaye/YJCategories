@@ -24,8 +24,8 @@
 
 - (void)setUpMainView{
     
-    NSString *pinyin = @"风是雨的预言😀";
-    NSLog(@"-%@", [pinyin yj_stringByReplacingEmojiUnicodeWithCheatCodes]);
+    NSString *pinyin = @"{\"people\":[{\"firstName\":\"Brett\",\"lastName\":\"McLaughlin\",\"email\":\"aaaa\"},{\"firstName\":\"Jason\",\"lastName\":\"Hunter\",\"email\":\"bbbb\"},{\"firstName\":\"Elliotte\",\"lastName\":\"Harold\",\"email\":\"cccc\"}]}";
+    NSLog(@"-%@", [[pinyin yj_convertToDictionary] objectForKey:@"people"]);
     
 
     

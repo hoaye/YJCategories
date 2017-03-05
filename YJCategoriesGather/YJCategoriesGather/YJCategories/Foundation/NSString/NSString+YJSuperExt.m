@@ -20,6 +20,20 @@
     }
 }
 
+#pragma mark - 装换Convert
+
+/** NSString -> NSDictionary */
+- (NSDictionary *)yj_convertToDictionary{
+    NSError *errorJson;
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:[self dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&errorJson];
+    if (errorJson != nil) {
+#ifdef DEBUG
+        NSLog(@"fail to get dictioanry from JSON: %@, error: %@", self, errorJson);
+#endif
+    }
+    return jsonDict;
+}
+
 #pragma mark - remove
 /** 移除字符串中的所有空白 */
 - (NSString *)yj_removeBlank{
