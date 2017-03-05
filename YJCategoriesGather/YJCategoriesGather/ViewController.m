@@ -24,8 +24,11 @@
 
 - (void)setUpMainView{
     
-    NSString *pinyin = @"我wo";
-    NSLog(@"-%d", [pinyin yj_wordsCount]);
+    NSString *pinyin = @"http://www.baidu.com/123.mov";
+    NSDictionary *dict = [NSString yj_MIMEDict];
+    
+    NSLog(@"-%@", [pinyin yj_MIMEType]);
+    
     
 
     
