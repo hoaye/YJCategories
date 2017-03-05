@@ -22,7 +22,7 @@
 @implementation NSString (YJXML)
 
 /** xml字符串转换成NSDictionary */
-- (NSDictionary *)yj_XMLDictionary{
+- (NSDictionary *)yj_convertXMLToDictionary{
     //TURN THE STRING INTO DATA
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     

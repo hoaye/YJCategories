@@ -38,6 +38,11 @@
 /** 字符数量 */
 - (int)yj_wordsCount;
 
+/** 精准分段 功能特性如下：1、分页比较准确 2、根据CGRect来计算页数 3、利用多线程加载和分页 */
+- (NSArray *)yj_getPagesOfString:(NSString *)string
+                            font:(UIFont*)font
+                          inRect:(CGRect)rect;
+
 
 
 @end

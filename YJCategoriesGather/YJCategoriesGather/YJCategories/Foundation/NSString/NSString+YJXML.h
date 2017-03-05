@@ -11,6 +11,6 @@
 @interface NSString (YJXML)
 
 /** xml字符串转换成NSDictionary */
-- (NSDictionary *)yj_XMLDictionary;
+- (NSDictionary *)yj_convertXMLToDictionary;
 
 @end

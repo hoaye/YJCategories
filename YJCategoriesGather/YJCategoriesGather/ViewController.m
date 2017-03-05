@@ -24,11 +24,10 @@
 
 - (void)setUpMainView{
     
-    NSString *string = @"17701343222";
-    
-    NSLog(@"-%@", [string yj_mobileNumberAscription]);
-    
-    
+//    NSString *XMLString = @"<test>data</test>";
+//    NSDictionary *XMLAsDictionary = [XMLString yj_XMLDictionary];
+//    
+//    NSLog(@"-%@", XMLAsDictionary);
 
     
     
