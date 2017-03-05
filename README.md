@@ -45,6 +45,7 @@ YJCategories 是Objective-C超级分类集合
         5.  YJSpecialCharacter  // 特殊字符 
         6.  YJMIME
         7.  YJVerification      // 字符串验证
+        8.  YJXML
 
     * NSNotificationCenter
         1.  YJMainThread
