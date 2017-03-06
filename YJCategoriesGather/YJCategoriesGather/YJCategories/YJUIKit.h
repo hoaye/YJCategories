@@ -44,6 +44,7 @@
 
 //////////// UIViewController /////////////////
     #import "UIViewController+YJSuperExt.h"
+    #import "UIViewController+YJBackButtonBlock.h"
 
 
 
