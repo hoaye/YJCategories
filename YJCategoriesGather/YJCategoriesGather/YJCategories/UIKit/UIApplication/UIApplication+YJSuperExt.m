@@ -9,7 +9,9 @@
 #import "UIApplication+YJSuperExt.h"
 #import <libkern/OSAtomic.h>
 
-static volatile int32_t numberOfActiveNetworkConnectionsxxx;
+static volatile int32_t numberOfActiveNetworkConnectionsxxx;   // 网络请求指示
+static CGRect _yj_keyboardFrame = (CGRect){ (CGPoint){ 0.0f, 0.0f }, (CGSize){ 0.0f, 0.0f }};
+
 
 @implementation UIApplication (YJSuperExt)
 
@@ -21,6 +23,23 @@ static volatile int32_t numberOfActiveNetworkConnectionsxxx;
 /** 停止网络请求指示 */
 - (void)yj_stopNetworkActivity{
     self.networkActivityIndicatorVisible = OSAtomicAdd32(-1, &numberOfActiveNetworkConnectionsxxx) > 0;
+}
+
+/** 键盘的大小 */
+- (CGRect)yj_keyboardFrame{
+    return _yj_keyboardFrame;
+}
+
++ (void)load{
+    [NSNotificationCenter.defaultCenter addObserverForName:UIKeyboardDidShowNotification object:nil queue:nil usingBlock:^(NSNotification *note){
+         _yj_keyboardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+     }];
+    [NSNotificationCenter.defaultCenter addObserverForName:UIKeyboardDidChangeFrameNotification object:nil queue:nil usingBlock:^(NSNotification *note){
+         _yj_keyboardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+     }];
+    [NSNotificationCenter.defaultCenter addObserverForName:UIKeyboardDidHideNotification object:nil queue:nil usingBlock:^(NSNotification *note){
+         _yj_keyboardFrame = CGRectZero;
+     }];
 }
 
 

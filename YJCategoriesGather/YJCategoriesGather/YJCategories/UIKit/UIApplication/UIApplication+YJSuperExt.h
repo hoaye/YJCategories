@@ -16,4 +16,7 @@
 /** 停止网络请求指示 */
 - (void)yj_stopNetworkActivity;
 
+/** 键盘的大小 */
+- (CGRect)yj_keyboardFrame;
+
 @end

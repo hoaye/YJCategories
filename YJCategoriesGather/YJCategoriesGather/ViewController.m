@@ -25,6 +25,10 @@
 
 - (void)setUpMainView{
     
+    UITextField *textF = [[UITextField alloc] initWithFrame:CGRectMake(40, 160, 100, 44)];
+    textF.backgroundColor = [UIColor redColor];
+    [self.view addSubview:textF];
+    
 }
 
 
@@ -36,8 +40,11 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    SubViewController *subVc = [[SubViewController alloc] init];
-    [self.navigationController pushViewController:subVc animated:YES];
+    NSLog(@"-->%@", NSStringFromCGRect([[UIApplication sharedApplication] yj_keyboardFrame]));
+
+    
+//    SubViewController *subVc = [[SubViewController alloc] init];
+//    [self.navigationController pushViewController:subVc animated:YES];
 }
 
 #pragma mark - Lazy
