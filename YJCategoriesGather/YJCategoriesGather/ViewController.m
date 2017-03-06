@@ -30,14 +30,16 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    [self.showView yj_rotateClockwise:NO duration:0.1];
+    [self.showView yj_moveTostopPoint:CGPointMake(200, 300) duration:1 snapBack:YES snapBackOffset:20 completion:^(BOOL finished) {
+        NSLog(@"-->%@", @"over");
+    }];
 
 }
 
 #pragma mark - Lazy
 - (UIView *)showView{
     if (!_showView) {
-        _showView = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 100, 100)];
+        _showView = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 10, 10)];
         _showView.backgroundColor = [UIColor redColor];
 //        [_showView yj_cornerRadius:50 color:[UIColor greenColor] borderWidth:1];
         

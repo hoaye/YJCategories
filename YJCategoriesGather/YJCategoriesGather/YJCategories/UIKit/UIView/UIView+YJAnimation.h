@@ -30,5 +30,16 @@
 /** 是否顺时针不停旋转 */
 - (void)yj_rotateClockwise:(BOOL)clockwise duration:(NSTimeInterval)duration;
 
+/** 动态旋转 degrees=度数 */
+- (void)yj_rotateDegrees:(CGFloat)degrees duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion;
+
+/** 缩放动画 scaleX 和 scaleY 取值 0~Max*/
+- (void)yj_scaleDuration:(NSTimeInterval)duration x:(CGFloat)scaleX y:(CGFloat)scaleY completion:(void (^)(BOOL finished))completion;
+
+#pragma mark - Moves
+
+/** 动态移动到 snapBack=是否回弹 snapBackOffset=回弹幅度*/
+- (void)yj_moveTostopPoint:(CGPoint)destination duration:(NSTimeInterval)duration snapBack:(BOOL)snapBack snapBackOffset:(CGFloat)snapBackOffset completion:(void (^)(BOOL finished))completion;
+
 
 @end

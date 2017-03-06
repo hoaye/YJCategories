@@ -99,8 +99,83 @@ float yj_radiansForDegrees(int degrees) {
     }];
 }
 
+/** 动态旋转 degrees=度数 */
+- (void)yj_rotateDegrees:(CGFloat)degrees duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion{
+    [UIView animateWithDuration:duration
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.transform = CGAffineTransformRotate(self.transform, yj_radiansForDegrees(degrees));
+                     }completion:^(BOOL finished) {
+                         if (completion) {
+                             completion(finished);
+                         }
+                     }];
+}
+
+/** 缩放动画 scaleX 和 scaleY 取值 0~Max*/
+- (void)yj_scaleDuration:(NSTimeInterval)duration x:(CGFloat)scaleX y:(CGFloat)scaleY completion:(void (^)(BOOL finished))completion{
+    [UIView animateWithDuration:duration
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.transform = CGAffineTransformScale(self.transform, scaleX, scaleY);
+                     }
+                     completion:^(BOOL finished) {
+                         if (completion) {
+                             completion(finished);
+                         }
+                     }];
+}
 
 
+#pragma mark - Moves
+/** 动态移动到 snapBack=是否回弹 snapBackOffset=回弹幅度*/
+- (void)yj_moveTostopPoint:(CGPoint)destination duration:(NSTimeInterval)duration snapBack:(BOOL)snapBack snapBackOffset:(CGFloat)snapBackOffset completion:(void (^)(BOOL finished))completion{
+    
+    CGFloat offsetValue = snapBackOffset;
+    CGPoint stopPoint = destination;
+    if (snapBack) {
+        int diffx = destination.x - self.frame.origin.x;
+        int diffy = destination.y - self.frame.origin.y;
+        if (diffx < 0) {
+            stopPoint.x -= offsetValue;
+        } else if (diffx > 0) {
+            stopPoint.x += offsetValue;
+        }
+        if (diffy < 0) {
+            stopPoint.y -= offsetValue;
+        } else if (diffy > 0) {
+            stopPoint.y += offsetValue;
+        }
+    }
+    
+    [UIView animateWithDuration:duration
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         self.frame = CGRectMake(stopPoint.x, stopPoint.y, self.frame.size.width, self.frame.size.height);
+                     }
+                     completion:^(BOOL finished) {
+                         if (snapBack) {
+                             [UIView animateWithDuration:0.1
+                                                   delay:0.0
+                                                 options:UIViewAnimationOptionCurveLinear
+                                              animations:^{
+                                                  self.frame = CGRectMake(destination.x, destination.y, self.frame.size.width, self.frame.size.height);
+                                              }
+                                              completion:^(BOOL finished) {
+                                                  if (completion) {
+                                                      completion(finished);
+                                                  }
+                                              }];
+                         }else{
+                             if (completion) {
+                                 completion(finished);
+                             }
+                         }
+                     }];        
+}
 
 
 
