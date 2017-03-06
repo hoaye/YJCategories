@@ -15,10 +15,20 @@
                               duration:(NSTimeInterval)duration
                             completion:(void (^)(BOOL finished))completion;
 
+#pragma mark - Effects
 /** 脉冲式 动画 */
-- (void)yj_pulseDuration:(float)duration continuously:(BOOL)continuously;
+- (void)yj_pulseDuration:(NSTimeInterval)duration continuously:(BOOL)continuously;
 
 /** 改变alpaca */
-- (void)yj_changeAlpha:(float)newAlpha duration:(float)duration completion:(void (^)(BOOL finished))completion;
+- (void)yj_changeAlpha:(float)newAlpha duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion;
+
+#pragma mark - Transitions
+/** 旋转变小消失 */
+- (void)yj_rotateRemoveDuration:(NSTimeInterval)duration;
+
+#pragma mark - Transforms
+/** 是否顺时针不停旋转 */
+- (void)yj_rotateClockwise:(BOOL)clockwise duration:(NSTimeInterval)duration;
+
 
 @end

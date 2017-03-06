@@ -8,6 +8,10 @@
 
 #import "UIView+YJAnimation.h"
 
+float yj_radiansForDegrees(int degrees) {
+    return degrees * M_PI / 180.0f;
+}
+
 @implementation UIView (YJAnimation)
 
 /** 动画添加子视图 */
@@ -28,8 +32,9 @@
     }];
 }
 
+#pragma mark - Effects
 /** 脉冲式 动画 */
-- (void)yj_pulseDuration:(float)duration continuously:(BOOL)continuously{
+- (void)yj_pulseDuration:(NSTimeInterval)duration continuously:(BOOL)continuously{
     [UIView animateWithDuration:duration * 0.5 delay:0.0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
@@ -51,12 +56,63 @@
 }
 
 /** 改变alpaca */
-- (void)yj_changeAlpha:(float)newAlpha duration:(float)duration completion:(void (^)(BOOL finished))completion{
+- (void)yj_changeAlpha:(float)newAlpha duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion{
     [UIView animateWithDuration:duration delay:0.0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
                          self.alpha = newAlpha;
                      }completion:completion];
 }
+
+#pragma mark - Transitions
+/** 旋转变小消失 */
+- (void)yj_rotateRemoveDuration:(NSTimeInterval)duration{
+    self.tag = 20;
+    [NSTimer scheduledTimerWithTimeInterval:duration/50 target:self selector:@selector(yj_drainTimer:) userInfo:nil repeats:YES];
+}
+- (void)yj_drainTimer:(NSTimer *)timer{
+    CGAffineTransform trans = CGAffineTransformRotate(CGAffineTransformScale(self.transform, 0.9, 0.9),0.314);
+    self.transform = trans;
+    self.alpha = self.alpha * 0.98;
+    self.tag = self.tag - 1;
+    if (self.tag <= 0) {
+        [timer invalidate];
+        [self removeFromSuperview];
+    }
+}
+
+
+#pragma mark - Transforms
+/** 是否顺时针不停旋转 */
+- (void)yj_rotateClockwise:(BOOL)clockwise duration:(NSTimeInterval)duration{
+    
+    CGFloat angleValue = 0.0;
+    if (clockwise) {
+        angleValue = yj_radiansForDegrees(90);
+    }else{
+        angleValue = yj_radiansForDegrees(270);
+    }
+    [UIView animateWithDuration:duration delay:0.0f options:UIViewAnimationOptionCurveLinear animations:^{
+        self.transform = CGAffineTransformRotate(self.transform, angleValue);
+    } completion:^(BOOL finished) {
+        [self yj_rotateClockwise:clockwise duration:duration];
+    }];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end
