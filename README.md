@@ -121,6 +121,9 @@ YJCategories 是Objective-C超级分类集合
         17. 缩放 View 的宽和高 scaleWidth:height:
         18. 适应缩放 View 填充 fitScaleInSize:
 
+    * UINavigationController
+        1.  YJSuperExt
+
 
 ### QuartzCore
     * CALayer

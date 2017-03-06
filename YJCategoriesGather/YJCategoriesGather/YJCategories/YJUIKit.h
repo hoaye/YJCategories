@@ -46,6 +46,8 @@
     #import "UIViewController+YJSuperExt.h"
     #import "UIViewController+YJBackButtonBlock.h"
 
+    #import "UINavigationController+YJSuperExt.h"
+
 
 
 #endif /* YJUIKit_h */

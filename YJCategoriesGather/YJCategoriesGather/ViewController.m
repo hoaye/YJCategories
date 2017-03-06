@@ -25,8 +25,7 @@
 
 - (void)setUpMainView{
     
-    [self.view addSubview:self.showView];
-    
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

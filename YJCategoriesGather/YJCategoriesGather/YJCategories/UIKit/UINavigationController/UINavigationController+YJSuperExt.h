@@ -1,14 +1,14 @@
 //
-//  UIViewController+YJSuperExt.m
+//  UINavigationController+YJSuperExt.h
 //  YJCategoriesGather
 //
 //  Created by YJHou on 2015/3/17.
 //  Copyright © 2015年 侯跃军 houmanager@Hotmail.com. All rights reserved.
 //
 
-#import "UIViewController+YJSuperExt.h"
+#import <UIKit/UIKit.h>
 
-@implementation UIViewController (YJSuperExt)
+@interface UINavigationController (YJSuperExt)
 
 
 @end
