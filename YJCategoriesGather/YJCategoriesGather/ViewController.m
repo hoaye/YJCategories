@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SubViewController.h"
 
 @interface ViewController ()
 
@@ -30,10 +31,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    [self.showView yj_moveTostopPoint:CGPointMake(200, 300) duration:1 snapBack:YES snapBackOffset:20 completion:^(BOOL finished) {
-        NSLog(@"-->%@", @"over");
-    }];
-
+    SubViewController *subVc = [[SubViewController alloc] init];
+    [self.navigationController pushViewController:subVc animated:YES];
 }
 
 #pragma mark - Lazy

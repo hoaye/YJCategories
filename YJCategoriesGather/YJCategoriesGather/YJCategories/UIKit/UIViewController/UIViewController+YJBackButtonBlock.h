@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^YJBackButtonHandlBlock)(__kindof UIViewController *vc);
+
 @interface UIViewController (YJBackButtonBlock)
+
+/** 返回按钮的预处理操作 */
+- (void)yj_backButtonClickBlock:(YJBackButtonHandlBlock)clickBlock;
 
 @end
