@@ -10,5 +10,7 @@
 
 @interface UIViewController (YJSuperExt)
 
+/** vc 是否已经显示 */
+- (BOOL)yj_isVisible;
 
 @end

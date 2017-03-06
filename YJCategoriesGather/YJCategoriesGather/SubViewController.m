@@ -24,6 +24,16 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"55555" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alert show];
     }];
+    
+    NSLog(@"-->%d", [self jk_isVisible]);
+
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    NSLog(@"8888-->%d", [self jk_isVisible]);
+
 }
 
 
