@@ -25,14 +25,12 @@
         [alert show];
     }];
     
-    NSLog(@"-->%d", [self jk_isVisible]);
 
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    NSLog(@"8888-->%d", [self jk_isVisible]);
 
 }
 
@@ -44,6 +42,12 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [[UIApplication sharedApplication] yj_startNetworkActivity];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] yj_stopNetworkActivity];
+    });
 
 }
 

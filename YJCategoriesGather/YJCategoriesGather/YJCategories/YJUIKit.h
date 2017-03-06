@@ -28,6 +28,7 @@
 
 //////////// UIViewController /////////////////
     #import "UIApplication+YJAppInfo.h"
+    #import "UIApplication+YJSuperExt.h"
 
 //////////// UILabel /////////////////
     #import "UILabel+YJSuperExt.h"

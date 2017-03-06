@@ -54,6 +54,7 @@
 		63D38FDC1E6D5BC80067C967 /* UIViewController+YJBackButtonBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D38FDB1E6D5BC80067C967 /* UIViewController+YJBackButtonBlock.m */; };
 		63D38FDF1E6D5F900067C967 /* SubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D38FDE1E6D5F900067C967 /* SubViewController.m */; };
 		63D390111E6D67BC0067C967 /* UINavigationController+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D390101E6D67BC0067C967 /* UINavigationController+YJSuperExt.m */; };
+		63D390141E6D6FE20067C967 /* UIApplication+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D390131E6D6FE20067C967 /* UIApplication+YJSuperExt.m */; };
 		63D8CD081E6AFEB3000706BE /* NSString+YJPinYin.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D8CD071E6AFEB3000706BE /* NSString+YJPinYin.m */; };
 		63F04B311E56E2A5007F0DDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B301E56E2A5007F0DDA /* main.m */; };
 		63F04B341E56E2A5007F0DDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B331E56E2A5007F0DDA /* AppDelegate.m */; };
@@ -161,6 +162,8 @@
 		63D38FDE1E6D5F900067C967 /* SubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubViewController.m; sourceTree = "<group>"; };
 		63D3900F1E6D67BC0067C967 /* UINavigationController+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+YJSuperExt.h"; sourceTree = "<group>"; };
 		63D390101E6D67BC0067C967 /* UINavigationController+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+YJSuperExt.m"; sourceTree = "<group>"; };
+		63D390121E6D6FE20067C967 /* UIApplication+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+YJSuperExt.h"; sourceTree = "<group>"; };
+		63D390131E6D6FE20067C967 /* UIApplication+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+YJSuperExt.m"; sourceTree = "<group>"; };
 		63D8CD061E6AFEB3000706BE /* NSString+YJPinYin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YJPinYin.h"; sourceTree = "<group>"; };
 		63D8CD071E6AFEB3000706BE /* NSString+YJPinYin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YJPinYin.m"; sourceTree = "<group>"; };
 		63F04B2C1E56E2A5007F0DDA /* YJCategoriesGather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJCategoriesGather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -414,6 +417,8 @@
 			children = (
 				631D707E1E597D9400F12739 /* UIApplication+YJAppInfo.h */,
 				631D707F1E597D9400F12739 /* UIApplication+YJAppInfo.m */,
+				63D390121E6D6FE20067C967 /* UIApplication+YJSuperExt.h */,
+				63D390131E6D6FE20067C967 /* UIApplication+YJSuperExt.m */,
 			);
 			path = UIApplication;
 			sourceTree = "<group>";
@@ -632,6 +637,7 @@
 				6375A6F31E6BC17100F19DC6 /* NSString+YJMIME.m in Sources */,
 				6314C3F01E589AF000A40B52 /* NSString+YJSuperExt.m in Sources */,
 				631D70801E597D9400F12739 /* UIApplication+YJAppInfo.m in Sources */,
+				63D390141E6D6FE20067C967 /* UIApplication+YJSuperExt.m in Sources */,
 				6314C3CA1E5894B000A40B52 /* UIView+YJFrame.m in Sources */,
 				631D707C1E59788800F12739 /* NSDictionary+YJMerge.m in Sources */,
 				631D70841E597F0200F12739 /* UITableView+YJSuperExt.m in Sources */,

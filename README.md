@@ -84,6 +84,7 @@ YJCategories 是Objective-C超级分类集合
     
     * UIApplication
         1.  YJAppInfo
+        2.  YJSuperExt
 
     * UIViewController
         1.  YJSuperExt

@@ -25,14 +25,12 @@
 
 - (void)setUpMainView{
     
-    NSLog(@"-->%d", [self jk_isVisible]);
 }
 
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    NSLog(@"1111-->%d", [self jk_isVisible]);
     
 }
 
