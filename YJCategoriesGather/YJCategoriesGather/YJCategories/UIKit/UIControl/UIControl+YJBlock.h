@@ -10,4 +10,7 @@
 
 @interface UIControl (YJBlock)
 
+/** 点下Block */
+- (void)yj_addTouchDownBlock:(void (^)(__kindof UIControl *sender))block;
+
 @end

@@ -25,9 +25,24 @@
 
 - (void)setUpMainView{
     
-    UITextField *textF = [[UITextField alloc] initWithFrame:CGRectMake(40, 160, 100, 44)];
+    UITextField *textF = [[UITextField alloc] initWithFrame:CGRectMake(40, 120, 100, 44)];
     textF.backgroundColor = [UIColor redColor];
     [self.view addSubview:textF];
+    
+    
+    UIButton *btnInit = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnInit.frame = CGRectMake(100, 200, 120, 40);
+    btnInit.backgroundColor = [UIColor orangeColor];
+    [btnInit setTitle:@"" forState:UIControlStateNormal];
+    [btnInit setTitle:@"" forState:UIControlStateHighlighted];
+    [btnInit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnInit setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [self.view addSubview:btnInit];
+    
+    [btnInit yj_addTouchDownBlock:^(__kindof UIControl *sender) {
+        NSLog(@"-->%@", sender);
+    }];
+
     
 }
 
@@ -40,11 +55,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    NSLog(@"-->%@", NSStringFromCGRect([[UIApplication sharedApplication] yj_keyboardFrame]));
 
-    
-//    SubViewController *subVc = [[SubViewController alloc] init];
-//    [self.navigationController pushViewController:subVc animated:YES];
 }
 
 #pragma mark - Lazy
