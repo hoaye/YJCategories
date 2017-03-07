@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+/** 匹配字符串的相似度 */
+typedef NS_OPTIONS(NSUInteger, YJNSStringScoreOption) {
+    YJNSStringScoreOptionNone                     = 1 << 0,
+    YJNSStringScoreOptionFavorSmallerWords        = 1 << 1,
+    YJNSStringScoreOptionReducedLongStringPenalty = 1 << 2
+};
+
 @interface NSString (YJSuperExt)
 
 /** 安全取出非nilString, 避免显示(null) */
@@ -42,6 +49,9 @@
 - (NSArray *)yj_getPagesOfString:(NSString *)string
                             font:(UIFont*)font
                           inRect:(CGRect)rect;
+
+/** 字符串的匹配相似度 */
+- (CGFloat)yj_scoreAgainst:(NSString *)anotherString fuzziness:(NSNumber *)fuzziness options:(YJNSStringScoreOption)options;
 
 
 

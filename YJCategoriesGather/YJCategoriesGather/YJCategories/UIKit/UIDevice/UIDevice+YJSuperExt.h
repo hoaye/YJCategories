@@ -19,4 +19,7 @@
 /** 文件大小的计算转换为KB/MB/GB */
 + (NSString *)fileSizeWithOrginalSize:(CGFloat)orginalSize;
 
+/** 获取设备UUID */
++ (NSString *)yj_UUID;
+
 @end
