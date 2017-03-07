@@ -83,6 +83,12 @@ Pod::Spec.new do |s|
             sss.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UINavigationController/*.{h,m}'
             sss.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UINavigationController/*.{h}'
         end
+
+        # 11. UIControl 配置模块
+        ss.subspec 'UIControl' do |sss|
+            sss.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIControl/*.{h,m}'
+            sss.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIControl/*.{h}'
+        end
     end
 
     # Foundation 配置模块
