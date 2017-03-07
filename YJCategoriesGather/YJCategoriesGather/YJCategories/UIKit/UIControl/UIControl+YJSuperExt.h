@@ -1,5 +1,5 @@
 //
-//  UIWindow+YJHierarchy.h
+//  UIControl+YJSuperExt.h
 //  YJCategoriesGather
 //
 //  Created by YJHou on 2015/3/17.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIWindow (YJHierarchy)
+@interface UIControl (YJSuperExt)
+
+
 
 @end

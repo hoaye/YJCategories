@@ -24,7 +24,7 @@
 
 
 //////////// UIWindow /////////////////
-    #import "UIWindow+YJHierarchy.h"
+    #import "UIWindow+YJSuperExt.h"
 
 //////////// UIViewController /////////////////
     #import "UIApplication+YJAppInfo.h"
@@ -51,6 +51,7 @@
 
 
 ////////// UIControl //////////
+    #import "UIControl+YJSuperExt.h"
     #import "UIControl+YJBlock.h"
 
 
