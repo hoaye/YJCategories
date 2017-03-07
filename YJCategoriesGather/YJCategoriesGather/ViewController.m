@@ -37,11 +37,15 @@
     [btnInit setTitle:@"" forState:UIControlStateHighlighted];
     [btnInit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btnInit setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    btnInit.tag = 112;
     [self.view addSubview:btnInit];
     
-    [btnInit yj_addTouchDownBlock:^(__kindof UIControl *sender) {
-        NSLog(@"-->%@", sender);
-    }];
+    [btnInit yj_addControlBlock:^(__kindof UIControl *sender) {
+        NSLog(@"-->%@---%ld", sender, sender.tag);
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"messagemessage" delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"other", nil];
+        [alert show];
+    } events:UIControlEventTouchDown];
 
     
 }
@@ -55,6 +59,9 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
+    
+    SubViewController *sub = [[SubViewController alloc] init];
+    [self.navigationController pushViewController:sub animated:YES];
 
 }
 

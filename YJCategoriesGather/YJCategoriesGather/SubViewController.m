@@ -10,6 +10,8 @@
 
 @interface SubViewController () <UIAlertViewDelegate>
 
+@property (nonatomic, strong) UIView *showView;
+
 @end
 
 @implementation SubViewController
@@ -18,14 +20,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
     
-    [self yj_backButtonClickBlock:^(__kindof UIViewController *vc) {
-        NSLog(@"-->%@", vc);
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"55555" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-        [alert show];
-    }];
-    
-
+    [self.view addSubview:self.showView];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -52,7 +47,20 @@
 }
 
 
-
+#pragma mark - Lazy
+- (UIView *)showView{
+    if (!_showView) {
+        _showView = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 10, 10)];
+        _showView.backgroundColor = [UIColor redColor];
+        //        [_showView yj_cornerRadius:50 color:[UIColor greenColor] borderWidth:1];
+        
+        //        UIView *nodeView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 10, 10)];
+        //        nodeView.backgroundColor = [UIColor blackColor];
+        //        [nodeView yj_cornerRadius:5 color:nil borderWidth:0];
+        //        [_showView addSubview:nodeView];
+    }
+    return _showView;
+}
 
 
 - (void)didReceiveMemoryWarning {
