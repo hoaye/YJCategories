@@ -80,7 +80,7 @@ YJCategories 是Objective-C超级分类集合
 
 ### UIKit
     * UIWindow
-        1.  YJHierarchy
+        1.  YJSuperExt
     
     * UIApplication
         1.  YJAppInfo

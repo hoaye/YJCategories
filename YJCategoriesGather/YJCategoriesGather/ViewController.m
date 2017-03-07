@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SubViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 
@@ -46,8 +47,12 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"messagemessage" delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"other", nil];
         [alert show];
     } events:UIControlEventTouchDown];
-
     
+    UIViewController *topMost = [[AppDelegate sharedInstanceDelegate].window yj_topMostController];
+    NSLog(@"111-->%@", topMost);
+    
+    UIViewController *topMost2 = [[AppDelegate sharedInstanceDelegate].window yj_currentViewController];
+    NSLog(@"222-->%@", topMost2);
 }
 
 

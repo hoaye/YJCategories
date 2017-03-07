@@ -7,6 +7,7 @@
 //
 
 #import "SubViewController.h"
+#import "AppDelegate.h"
 
 @interface SubViewController () <UIAlertViewDelegate>
 
@@ -25,6 +26,12 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
+    UIViewController *topMost = [[AppDelegate sharedInstanceDelegate].window yj_topMostController];
+    NSLog(@"111-->%@", topMost);
+    
+    UIViewController *topMost2 = [[AppDelegate sharedInstanceDelegate].window yj_currentViewController];
+    NSLog(@"222-->%@", topMost2);
     
 
 }

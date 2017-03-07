@@ -10,4 +10,10 @@
 
 @interface UIWindow (YJSuperExt)
 
+/** 最底层的控制器 */
+- (UIViewController *)yj_topMostController;
+
+/** 当前显示的控制器 */
+- (UIViewController *)yj_currentViewController;
+
 @end
