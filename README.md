@@ -137,6 +137,10 @@ YJCategories 是Objective-C超级分类集合
     * UIResponder
         1.  YJSuperExt
 
+    * UIBezierPath
+        1.  YJSuperExt
+
+
 
 ### QuartzCore
     * CALayer

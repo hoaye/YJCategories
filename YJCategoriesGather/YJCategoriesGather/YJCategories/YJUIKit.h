@@ -59,6 +59,7 @@
 
     #import "UINavigationBar+YJSuperExt.h"
     #import "UIResponder+YJSuperExt.h"
+    #import "UIBezierPath+YJSuperExt.h"
 
 
 
