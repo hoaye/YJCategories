@@ -113,6 +113,12 @@ Pod::Spec.new do |s|
             sss.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIBezierPath/*.{h,m}'
             sss.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIBezierPath/*.{h}'
         end
+
+        # 16. UIScrollView 配置模块
+        ss.subspec 'UIScrollView' do |sss|
+            sss.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIScrollView/*.{h,m}'
+            sss.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIScrollView/*.{h}'
+        end
     end
 
     # Foundation 配置模块

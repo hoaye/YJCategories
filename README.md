@@ -140,6 +140,10 @@ YJCategories 是Objective-C超级分类集合
     * UIBezierPath
         1.  YJSuperExt
 
+    * UIScrollView
+        1.  YJSuperExt
+        2.  YJPosition
+
 
 
 ### QuartzCore

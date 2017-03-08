@@ -39,6 +39,8 @@
 		6348FBEE1E6FE0EB007C1D96 /* UINavigationBar+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FBED1E6FE0EB007C1D96 /* UINavigationBar+YJSuperExt.m */; };
 		6348FBF21E6FE8B8007C1D96 /* UIResponder+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FBF11E6FE8B8007C1D96 /* UIResponder+YJSuperExt.m */; };
 		6348FBF61E6FEBB8007C1D96 /* UIBezierPath+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FBF51E6FEBB8007C1D96 /* UIBezierPath+YJSuperExt.m */; };
+		6348FBFA1E6FED07007C1D96 /* UIScrollView+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FBF91E6FED07007C1D96 /* UIScrollView+YJSuperExt.m */; };
+		6348FBFD1E6FEDCC007C1D96 /* UIScrollView+YJPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FBFC1E6FEDCC007C1D96 /* UIScrollView+YJPosition.m */; };
 		636C21B21E67C3470051289F /* NSString+YJContains.m in Sources */ = {isa = PBXBuildFile; fileRef = 636C21B11E67C3470051289F /* NSString+YJContains.m */; };
 		636CF4EE1E655CF500926D3E /* NSDateFormatter+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF4ED1E655CF500926D3E /* NSDateFormatter+YJSuperExt.m */; };
 		636CF4F11E657DCE00926D3E /* NSDate+YJStartEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 636CF4F01E657DCE00926D3E /* NSDate+YJStartEnd.m */; };
@@ -138,6 +140,10 @@
 		6348FBF11E6FE8B8007C1D96 /* UIResponder+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+YJSuperExt.m"; sourceTree = "<group>"; };
 		6348FBF41E6FEBB8007C1D96 /* UIBezierPath+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+YJSuperExt.h"; sourceTree = "<group>"; };
 		6348FBF51E6FEBB8007C1D96 /* UIBezierPath+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+YJSuperExt.m"; sourceTree = "<group>"; };
+		6348FBF81E6FED07007C1D96 /* UIScrollView+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YJSuperExt.h"; sourceTree = "<group>"; };
+		6348FBF91E6FED07007C1D96 /* UIScrollView+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YJSuperExt.m"; sourceTree = "<group>"; };
+		6348FBFB1E6FEDCC007C1D96 /* UIScrollView+YJPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YJPosition.h"; sourceTree = "<group>"; };
+		6348FBFC1E6FEDCC007C1D96 /* UIScrollView+YJPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YJPosition.m"; sourceTree = "<group>"; };
 		636C21B01E67C3460051289F /* NSString+YJContains.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YJContains.h"; sourceTree = "<group>"; };
 		636C21B11E67C3470051289F /* NSString+YJContains.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YJContains.m"; sourceTree = "<group>"; };
 		636CF4EC1E655CF500926D3E /* NSDateFormatter+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+YJSuperExt.h"; sourceTree = "<group>"; };
@@ -216,6 +222,7 @@
 		6314C3A11E58483900A40B52 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				6348FBF71E6FECF7007C1D96 /* UIScrollView */,
 				6348FBF31E6FEBAA007C1D96 /* UIBezierPath */,
 				6348FBEF1E6FE89F007C1D96 /* UIResponder */,
 				6348FBEB1E6FE0AC007C1D96 /* UINavigationBar */,
@@ -508,6 +515,17 @@
 			path = UIBezierPath;
 			sourceTree = "<group>";
 		};
+		6348FBF71E6FECF7007C1D96 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				6348FBF81E6FED07007C1D96 /* UIScrollView+YJSuperExt.h */,
+				6348FBF91E6FED07007C1D96 /* UIScrollView+YJSuperExt.m */,
+				6348FBFB1E6FEDCC007C1D96 /* UIScrollView+YJPosition.h */,
+				6348FBFC1E6FEDCC007C1D96 /* UIScrollView+YJPosition.m */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
 		636CF4EB1E655CD600926D3E /* NSDateFormatter */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +755,7 @@
 				631D706E1E59729100F12739 /* NSURL+YJParameters.m in Sources */,
 				6348FBF21E6FE8B8007C1D96 /* UIResponder+YJSuperExt.m in Sources */,
 				6314C3F31E589B7200A40B52 /* NSArray+YJSuperExt.m in Sources */,
+				6348FBFA1E6FED07007C1D96 /* UIScrollView+YJSuperExt.m in Sources */,
 				632BB2131E68177B00D5345F /* NSFileManager+YJSuperExt.m in Sources */,
 				6314C3C81E5894B000A40B52 /* UIView+YJConstraints.m in Sources */,
 				63B5E4E11E69645F005A2408 /* UIView+YJDraggable.m in Sources */,
@@ -748,6 +767,7 @@
 				63F04B311E56E2A5007F0DDA /* main.m in Sources */,
 				6375A6F01E6BAEAA00F19DC6 /* NSString+YJSpecialCharacter.m in Sources */,
 				6314C3DC1E58980D00A40B52 /* UILabel+YJSuperExt.m in Sources */,
+				6348FBFD1E6FEDCC007C1D96 /* UIScrollView+YJPosition.m in Sources */,
 				6314C3E01E58988F00A40B52 /* UIButton+YJSuperExt.m in Sources */,
 				638B703E1E6E91D4001B8FE7 /* UIControl+YJBlock.m in Sources */,
 				63B5E4E41E696EA4005A2408 /* UIView+YJAnimation.m in Sources */,
