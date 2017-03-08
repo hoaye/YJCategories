@@ -54,6 +54,9 @@
     #import "UIControl+YJSuperExt.h"
     #import "UIControl+YJBlock.h"
 
+//////////// UIFont ////////
+    #import "UIFont+YJSuperExt.h"
+
 
 
 #endif /* YJUIKit_h */

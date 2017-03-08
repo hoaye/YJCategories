@@ -128,6 +128,9 @@ YJCategories 是Objective-C超级分类集合
         1.  YJSuperExt
         2.  YJBlock
 
+    * UIFont
+        1.  YJSuperExt
+
 
 ### QuartzCore
     * CALayer
