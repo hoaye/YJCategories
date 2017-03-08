@@ -1,3 +1,0 @@
-Name:houmanager
-Email:houmanager@hotmail.com
-Address:https://github.com/YJManager/YJCategories.git
