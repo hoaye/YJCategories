@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
     s.library       = 'resolv.9'
     #s.libraries    = "libresolv.9.tbd"
     s.source       = { :git => "https://github.com/YJManager/YJCategories.git", :tag => "#{version}", :submodules => true }
-    s.public_header_files = 'YJCategoriesGather/YJCategories/*.{h,m}'
+    s.public_header_files = 'YJCategories/*.{h,m}'
     s.source_files        = 'YJCategoriesGather/YJCategories/*.{h,m}'
 
     # UIKit 配置模块
