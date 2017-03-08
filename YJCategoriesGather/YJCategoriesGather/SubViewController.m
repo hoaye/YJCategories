@@ -22,6 +22,20 @@
     self.view.backgroundColor = [UIColor redColor];
     
     [self.view addSubview:self.showView];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar yj_setBackgroundColor:[UIColor clearColor]];
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        weakSelf.navigationController.navigationBar.yj_overlayView.backgroundColor = [UIColor blueColor];
+    });
+//    [self.navigationController.navigationBar yj_setTranslationY:20];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{

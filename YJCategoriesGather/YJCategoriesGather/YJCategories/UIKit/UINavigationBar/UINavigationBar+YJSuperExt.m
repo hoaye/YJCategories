@@ -9,40 +9,37 @@
 #import "UINavigationBar+YJSuperExt.h"
 #import <objc/message.h>
 
+static char const * const YJ_OVERLAY_Key = "YJOVERLAYKey";
+
 @implementation UINavigationBar (YJSuperExt)
 
-
-static char jk_overlayKey;
-
-- (UIView *)jk_overlay
-{
-    return objc_getAssociatedObject(self, &jk_overlayKey);
+- (UIView *)yj_overlayView{
+    return objc_getAssociatedObject(self, YJ_OVERLAY_Key);
 }
 
-- (void)setJk_overlay:(UIView *)overlay
-{
-    objc_setAssociatedObject(self, &jk_overlayKey, overlay, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setYj_overlayView:(UIView *)yj_overlayView{
+    objc_setAssociatedObject(self, YJ_OVERLAY_Key, yj_overlayView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)jk_setBackgroundColor:(UIColor *)backgroundColor
-{
-    if (!self.jk_overlay) {
+/** 导航栏设置背景颜色 */
+- (void)yj_setBackgroundColor:(UIColor *)backgroundColor{
+    if (!self.yj_overlayView) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        self.jk_overlay = [[UIView alloc] initWithFrame:CGRectMake(0, -20, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) + 20)];
-        self.jk_overlay.userInteractionEnabled = NO;
-        self.jk_overlay.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        [self insertSubview:self.jk_overlay atIndex:0];
+        self.yj_overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) + 20)];
+        self.yj_overlayView.userInteractionEnabled = NO;
+        self.yj_overlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        [self insertSubview:self.yj_overlayView atIndex:0];
     }
-    self.jk_overlay.backgroundColor = backgroundColor;
+    self.yj_overlayView.backgroundColor = backgroundColor;
 }
 
-- (void)jk_setTranslationY:(CGFloat)translationY
-{
+/** 修改导航栏的位置 */
+- (void)yj_setTranslationY:(CGFloat)translationY{
     self.transform = CGAffineTransformMakeTranslation(0, translationY);
 }
 
-- (void)jk_setElementsAlpha:(CGFloat)alpha
-{
+/** 设置添加视图的透明度 */
+- (void)yj_setElementsAlpha:(CGFloat)alpha{
     [[self valueForKey:@"_leftViews"] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger i, BOOL *stop) {
         view.alpha = alpha;
     }];
@@ -62,11 +59,12 @@ static char jk_overlayKey;
     }];
 }
 
-- (void)jk_reset
-{
+/** 重新设置初始化 */
+- (void)yj_reset{
+    self.transform = CGAffineTransformMakeTranslation(0, 0);
     [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    [self.jk_overlay removeFromSuperview];
-    self.jk_overlay = nil;
+    [self.yj_overlayView removeFromSuperview];
+    self.yj_overlayView = nil;
 }
 
 

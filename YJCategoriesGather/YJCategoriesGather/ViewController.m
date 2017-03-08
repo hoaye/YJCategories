@@ -53,6 +53,9 @@
     
     UIViewController *topMost2 = [[AppDelegate sharedInstanceDelegate].window yj_currentViewController];
     NSLog(@"222-->%@", topMost2);
+    
+    
+
 }
 
 
@@ -60,6 +63,13 @@
     [super viewDidAppear:animated];
     
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar yj_reset];
+    [self.navigationController.navigationBar yj_setBackgroundColor:[UIColor redColor]];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
