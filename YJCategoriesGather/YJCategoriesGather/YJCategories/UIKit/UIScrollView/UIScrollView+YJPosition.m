@@ -57,4 +57,69 @@
     return CGPointMake(self.contentSize.width + self.contentInset.right - self.bounds.size.width, 0.0f);
 }
 
+
+- (YJScrollDirection)yj_ScrollDirection{
+    
+    YJScrollDirection direction;
+    
+    if ([self.panGestureRecognizer translationInView:self.superview].y > 0.0f){
+        direction = YJScrollDirectionUp;
+    }else if ([self.panGestureRecognizer translationInView:self.superview].y < 0.0f){
+        direction = YJScrollDirectionDown;
+    }else if ([self.panGestureRecognizer translationInView:self].x < 0.0f){
+        direction = YJScrollDirectionLeft;
+    }else if ([self.panGestureRecognizer translationInView:self].x > 0.0f){
+        direction = YJScrollDirectionRight;
+    }else{
+        direction = YJScrollDirectionWTF;
+    }
+    return direction;
+}
+
+- (BOOL)yj_isScrolledToTop{
+    return self.contentOffset.y <= [self yj_topContentOffset].y;
+}
+- (BOOL)yj_isScrolledToBottom{
+    return self.contentOffset.y >= [self yj_bottomContentOffset].y;
+}
+
+- (BOOL)yj_isScrolledToLeft{
+    return self.contentOffset.x <= [self yj_leftContentOffset].x;
+}
+- (BOOL)yj_isScrolledToRight{
+    return self.contentOffset.x >= [self yj_rightContentOffset].x;
+}
+
+- (void)yj_scrollToTopAnimated:(BOOL)animated{
+    [self setContentOffset:[self yj_topContentOffset] animated:animated];
+}
+
+- (void)yj_scrollToBottomAnimated:(BOOL)animated{
+    [self setContentOffset:[self yj_bottomContentOffset] animated:animated];
+}
+
+- (void)yj_scrollToLeftAnimated:(BOOL)animated{
+    [self setContentOffset:[self yj_leftContentOffset] animated:animated];
+}
+
+- (void)yj_scrollToRightAnimated:(BOOL)animated{
+    [self setContentOffset:[self yj_rightContentOffset] animated:animated];
+}
+
+- (NSUInteger)yj_verticalPageIndex{
+    return (self.contentOffset.y + (self.frame.size.height * 0.5f)) / self.frame.size.height;
+}
+
+- (NSUInteger)yj_horizontalPageIndex{
+    return (self.contentOffset.x + (self.frame.size.width * 0.5f)) / self.frame.size.width;
+}
+
+- (void)yj_scrollToVerticalPageIndex:(NSUInteger)pageIndex animated:(BOOL)animated{
+    [self setContentOffset:CGPointMake(0.0f, self.frame.size.height * pageIndex) animated:animated];
+}
+
+- (void)yj_scrollToHorizontalPageIndex:(NSUInteger)pageIndex animated:(BOOL)animated{
+    [self setContentOffset:CGPointMake(self.frame.size.width * pageIndex, 0.0f) animated:animated];
+}
+
 @end
