@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "YJCategories.h"
 
 @interface AppDelegate ()
 
