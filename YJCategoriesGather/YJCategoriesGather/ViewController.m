@@ -50,9 +50,6 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    
-    SubViewController *sub = [[SubViewController alloc] init];
-    [self.navigationController pushViewController:sub animated:YES];
 
 }
 

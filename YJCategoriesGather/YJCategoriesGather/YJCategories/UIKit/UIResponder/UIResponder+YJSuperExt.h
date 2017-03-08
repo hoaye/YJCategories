@@ -10,4 +10,10 @@
 
 @interface UIResponder (YJSuperExt)
 
+/** 当前第一响应者 */
++ (id)yj_currentFirstResponder;
+
+/** 响应者链 */
+- (NSString *)yj_responderChainDescription;
+
 @end
