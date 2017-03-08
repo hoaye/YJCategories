@@ -31,28 +31,6 @@
     [self.view addSubview:textF];
     
     
-    UIButton *btnInit = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnInit.frame = CGRectMake(100, 200, 120, 40);
-    btnInit.backgroundColor = [UIColor orangeColor];
-    [btnInit setTitle:@"" forState:UIControlStateNormal];
-    [btnInit setTitle:@"" forState:UIControlStateHighlighted];
-    [btnInit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btnInit setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    btnInit.tag = 112;
-    [self.view addSubview:btnInit];
-    
-    [btnInit yj_addControlBlock:^(__kindof UIControl *sender) {
-        NSLog(@"-->%@---%ld", sender, sender.tag);
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"messagemessage" delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"other", nil];
-        [alert show];
-    } events:UIControlEventTouchDown];
-    
-    UIViewController *topMost = [[AppDelegate sharedInstanceDelegate].window yj_topMostController];
-    NSLog(@"111-->%@", topMost);
-    
-    UIViewController *topMost2 = [[AppDelegate sharedInstanceDelegate].window yj_currentViewController];
-    NSLog(@"222-->%@", topMost2);
     
     
 
@@ -68,8 +46,6 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self.navigationController.navigationBar yj_reset];
-    [self.navigationController.navigationBar yj_setBackgroundColor:[UIColor redColor]];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

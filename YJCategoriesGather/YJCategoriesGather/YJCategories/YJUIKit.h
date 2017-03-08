@@ -58,6 +58,7 @@
     #import "UIFont+YJSuperExt.h"
 
     #import "UINavigationBar+YJSuperExt.h"
+    #import "UIResponder+YJSuperExt.h"
 
 
 

@@ -134,6 +134,9 @@ YJCategories 是Objective-C超级分类集合
     * UINavigationBar
         1.  YJSuperExt
 
+    * UIResponder
+        1.  YJSuperExt
+
 
 ### QuartzCore
     * CALayer

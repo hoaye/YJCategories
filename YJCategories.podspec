@@ -101,6 +101,12 @@ Pod::Spec.new do |s|
             sss.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UINavigationBar/*.{h,m}'
             sss.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UINavigationBar/*.{h}'
         end
+
+        # 14. UIResponder 配置模块
+        ss.subspec 'UIResponder' do |sss|
+            sss.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIResponder/*.{h,m}'
+            sss.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIResponder/*.{h}'
+        end
     end
 
     # Foundation 配置模块
