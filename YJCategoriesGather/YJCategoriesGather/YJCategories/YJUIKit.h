@@ -57,6 +57,8 @@
 //////////// UIFont ////////
     #import "UIFont+YJSuperExt.h"
 
+    #import "UINavigationBar+YJSuperExt.h"
+
 
 
 #endif /* YJUIKit_h */

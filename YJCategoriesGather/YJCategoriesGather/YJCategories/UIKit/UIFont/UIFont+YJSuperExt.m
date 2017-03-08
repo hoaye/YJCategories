@@ -9,6 +9,9 @@
 #import "UIFont+YJSuperExt.h"
 #import <CoreText/CoreText.h>
 
+// other
+// https://github.com/daktales/UIFontWDCustomLoader.git
+
 @implementation UIFont (YJSuperExt)
 
 /** 自定义字体的获取 */
@@ -33,5 +36,7 @@
     
     return returnFont;
 }
+
+
 
 @end

@@ -95,6 +95,12 @@ Pod::Spec.new do |s|
             sss.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIFont/*.{h,m}'
             sss.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UIFont/*.{h}'
         end
+
+        # 13. UINavigationBar 配置模块
+        ss.subspec 'UINavigationBar' do |sss|
+            sss.source_files        = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UINavigationBar/*.{h,m}'
+            sss.public_header_files = 'YJCategoriesGather/YJCategoriesGather/YJCategories/UIKit/UINavigationBar/*.{h}'
+        end
     end
 
     # Foundation 配置模块

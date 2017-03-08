@@ -131,6 +131,9 @@ YJCategories 是Objective-C超级分类集合
     * UIFont
         1.  YJSuperExt
 
+    * UINavigationBar
+        1.  YJSuperExt
+
 
 ### QuartzCore
     * CALayer
