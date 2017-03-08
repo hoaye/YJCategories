@@ -1,4 +1,4 @@
-version = "0.0.2.3";
+version = "0.0.2.4";
 
 Pod::Spec.new do |s|
     s.name         = "YJCategories"
@@ -19,57 +19,57 @@ Pod::Spec.new do |s|
     s.library       = 'resolv.9'
     #s.libraries    = "libresolv.9.tbd"
     s.source       = { :git => "https://github.com/YJManager/YJCategories.git", :tag => "#{version}", :submodules => true }
-    s.public_header_files = 'YJCategories/*.{h,m}'
-    s.source_files        = 'YJCategoriesGather/YJCategories/*.{h,m}'
+    s.public_header_files = '*.{h,m}'
+    s.source_files        = '*.{h,m}'
 
     # UIKit 配置模块
     s.subspec 'UIKit' do |ss|
         # 1. UIApplication 配置模块
         ss.subspec 'UIApplication' do |sss|
-            sss.source_files        = 'YJCategoriesGather/YJCategories/UIKit/UIApplication/*.{h,m}'
-            sss.public_header_files = 'YJCategoriesGather/YJCategories/UIKit/UIApplication/*.{h}'
+            sss.source_files        = 'UIKit/UIApplication/*.{h,m}'
+            sss.public_header_files = 'UIKit/UIApplication/*.{h}'
         end
 
         # 2. UIWindow 配置模块
         ss.subspec 'UIWindow' do |sss|
-            sss.source_files        = 'YJCategoriesGather/YJCategories/UIKit/UIWindow/*.{h,m}'
-            sss.public_header_files = 'YJCategoriesGather/YJCategories/UIKit/UIWindow/*.{h}'
+            sss.source_files        = 'UIKit/UIWindow/*.{h,m}'
+            sss.public_header_files = 'UIKit/UIWindow/*.{h}'
         end
 
         # 3. UIViewController 配置模块
         ss.subspec 'UIViewController' do |sss|
-            sss.source_files        = 'YJCategoriesGather/YJCategories/UIKit/UIViewController/*.{h,m}'
-            sss.public_header_files = 'YJCategoriesGather/YJCategories/UIKit/UIViewController/*.{h}'
+            sss.source_files        = 'UIKit/UIViewController/*.{h,m}'
+            sss.public_header_files = 'UIKit/UIViewController/*.{h}'
         end
 
         # 4. UIView 配置模块
         ss.subspec 'UIView' do |sss|
-            sss.source_files        = 'YJCategoriesGather/YJCategories/UIKit/UIView/*.{h,m}'
-            sss.public_header_files = 'YJCategoriesGather/YJCategories/UIKit/UIView/*.{h}'
+            sss.source_files        = 'UIKit/UIView/*.{h,m}'
+            sss.public_header_files = 'UIKit/UIView/*.{h}'
         end
 
         # 5. UITableView 配置模块
         ss.subspec 'UITableView' do |sss|
-            sss.source_files        = 'YJCategoriesGather/YJCategories/UIKit/UITableView/*.{h,m}'
-            sss.public_header_files = 'YJCategoriesGather/YJCategories/UIKit/UITableView/*.{h}'
+            sss.source_files        = 'UIKit/UITableView/*.{h,m}'
+            sss.public_header_files = 'UIKit/UITableView/*.{h}'
         end
 
         # 6. UITableViewCell 配置模块
         ss.subspec 'UITableViewCell' do |sss|
-            sss.source_files        = 'YJCategoriesGather/YJCategories/UIKit/UITableViewCell/*.{h,m}'
-            sss.public_header_files = 'YJCategoriesGather/YJCategories/UIKit/UITableViewCell/*.{h}'
+            sss.source_files        = 'UIKit/UITableViewCell/*.{h,m}'
+            sss.public_header_files = 'UIKit/UITableViewCell/*.{h}'
         end
 
         # 7. UILabel 配置模块
         ss.subspec 'UILabel' do |sss|
-            sss.source_files        = 'YJCategoriesGather/YJCategories/UIKit/UILabel/*.{h,m}'
-            sss.public_header_files = 'YJCategoriesGather/YJCategories/UIKit/UILabel/*.{h}'
+            sss.source_files        = 'UIKit/UILabel/*.{h,m}'
+            sss.public_header_files = 'UIKit/UILabel/*.{h}'
         end
 
         # 8. UIButton 配置模块
         ss.subspec 'UIButton' do |sss|
-            sss.source_files        = 'YJCategoriesGather/YJCategories/UIKit/UIButton/*.{h,m}'
-            sss.public_header_files = 'YJCategoriesGather/YJCategories/UIKit/UIButton/*.{h}'
+            sss.source_files        = 'UIKit/UIButton/*.{h,m}'
+            sss.public_header_files = 'UIKit/UIButton/*.{h}'
         end
 
         # 9. UIDevice 配置模块
