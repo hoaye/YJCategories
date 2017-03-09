@@ -10,4 +10,7 @@
 
 @interface UIButton (YJSuperExt)
 
+/** 倒计时Btn */
+- (void)yj_startCountDownTime:(NSInteger )timeout title:(NSString *)tittle waitTittle:(NSString *)waitTittle;
+
 @end

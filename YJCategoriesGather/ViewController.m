@@ -31,9 +31,23 @@
     [self.view addSubview:textF];
     
     
+    UIButton *btnInit = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnInit.frame = CGRectMake(100, 200, 160, 44);
+    btnInit.backgroundColor = [UIColor orangeColor];
+    [btnInit setTitle:@"" forState:UIControlStateNormal];
+    [btnInit setTitle:@"" forState:UIControlStateHighlighted];
+    [btnInit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnInit setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [btnInit addTarget:self action:@selector(cuntDownAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnInit];
     
-    
+    [btnInit yj_startCountDownTime:60 title:@"获取验证码" waitTittle:@"重新获取"];
 
+    
+}
+
+- (void)cuntDownAction:(UIButton *)btn{
+    NSLog(@"-->%@", btn);
 }
 
 
