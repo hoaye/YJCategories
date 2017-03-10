@@ -9,10 +9,11 @@
 #import "ViewController.h"
 #import "SubViewController.h"
 #import "AppDelegate.h"
+#import "DrawView.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) UIView *showView;
+@property (nonatomic, strong) DrawView *drawView;
 
 @end
 
@@ -26,42 +27,10 @@
 
 - (void)setUpMainView{
     
-    UITextField *textF = [[UITextField alloc] initWithFrame:CGRectMake(40, 120, 100, 44)];
-    textF.backgroundColor = [UIColor redColor];
-    [self.view addSubview:textF];
-    
-    
-    UIButton *btnInit = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnInit.frame = CGRectMake(100, 200, 160, 44);
-    btnInit.backgroundColor = [UIColor orangeColor];
-    [btnInit setTitle:@"" forState:UIControlStateNormal];
-    [btnInit setTitle:@"" forState:UIControlStateHighlighted];
-    [btnInit setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btnInit setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [btnInit addTarget:self action:@selector(cuntDownAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btnInit];
-    
-    [btnInit yj_startCountDownTime:60 title:@"获取验证码" waitTittle:@"重新获取"];
-
+    [self.view addSubview:self.drawView];
     
 }
 
-- (void)cuntDownAction:(UIButton *)btn{
-    NSLog(@"-->%@", btn);
-}
-
-
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    
-    
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-}
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
@@ -69,20 +38,14 @@
 }
 
 #pragma mark - Lazy
-- (UIView *)showView{
-    if (!_showView) {
-        _showView = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 10, 10)];
-        _showView.backgroundColor = [UIColor redColor];
-//        [_showView yj_cornerRadius:50 color:[UIColor greenColor] borderWidth:1];
-        
-//        UIView *nodeView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 10, 10)];
-//        nodeView.backgroundColor = [UIColor blackColor];
-//        [nodeView yj_cornerRadius:5 color:nil borderWidth:0];
-//        [_showView addSubview:nodeView];
+- (DrawView *)drawView{
+    if (!_drawView) {
+        _drawView = [[DrawView alloc] initWithFrame:self.view.frame];
+        _drawView.backgroundColor = [UIColor whiteColor];
     }
-    return _showView;
+    return _drawView;
 }
-
+                 
 
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		631E7E871E727EE3004639B1 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631E7E861E727EE3004639B1 /* DrawView.m */; };
 		632BB20F1E68145E00D5345F /* SampleFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 632BB20E1E68145E00D5345F /* SampleFile.txt */; };
 		6348FCB31E6FFE8D007C1D96 /* NSArray+YJBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FC251E6FFE8D007C1D96 /* NSArray+YJBlock.m */; };
 		6348FCB41E6FFE8D007C1D96 /* NSArray+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FC271E6FFE8D007C1D96 /* NSArray+YJSuperExt.m */; };
@@ -75,6 +76,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		631E7E851E727EE3004639B1 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
+		631E7E861E727EE3004639B1 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
 		632BB20E1E68145E00D5345F /* SampleFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleFile.txt; sourceTree = "<group>"; };
 		6348FC241E6FFE8D007C1D96 /* NSArray+YJBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YJBlock.h"; sourceTree = "<group>"; };
 		6348FC251E6FFE8D007C1D96 /* NSArray+YJBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YJBlock.m"; sourceTree = "<group>"; };
@@ -219,6 +222,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		631E7E841E727EC6004639B1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				631E7E851E727EE3004639B1 /* DrawView.h */,
+				631E7E861E727EE3004639B1 /* DrawView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		632BB20D1E68145E00D5345F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +622,7 @@
 		63F04B2E1E56E2A5007F0DDA /* YJCategoriesGather */ = {
 			isa = PBXGroup;
 			children = (
+				631E7E841E727EC6004639B1 /* Views */,
 				632BB20D1E68145E00D5345F /* Resources */,
 				63F04B321E56E2A5007F0DDA /* AppDelegate.h */,
 				63F04B331E56E2A5007F0DDA /* AppDelegate.m */,
@@ -770,6 +783,7 @@
 				6348FCC91E6FFE8D007C1D96 /* NSTimer+YJBlock.m in Sources */,
 				63F04B311E56E2A5007F0DDA /* main.m in Sources */,
 				6348FCDC1E6FFE8D007C1D96 /* UIView+YJAnimation.m in Sources */,
+				631E7E871E727EE3004639B1 /* DrawView.m in Sources */,
 				6348FCC81E6FFE8D007C1D96 /* NSString+YJXML.m in Sources */,
 				6348FCB41E6FFE8D007C1D96 /* NSArray+YJSuperExt.m in Sources */,
 				6348FCEA1E6FFE8D007C1D96 /* UIWindow+YJSuperExt.m in Sources */,
