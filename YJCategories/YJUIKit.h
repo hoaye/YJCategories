@@ -63,6 +63,7 @@
     #import "UIBezierPath+YJSuperExt.h"
     #import "UIBezierPath+YJBasicShapes.h"
     #import "UIBezierPath+YJSymbol.h"
+    #import "UIBezierPath+YJLength.h"
 
     #import "UIScrollView+YJSuperExt.h"
     #import "UIScrollView+YJPosition.h"

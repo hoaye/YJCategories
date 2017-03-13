@@ -11,6 +11,7 @@
 		632BB20F1E68145E00D5345F /* SampleFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 632BB20E1E68145E00D5345F /* SampleFile.txt */; };
 		632CC7B31E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m in Sources */ = {isa = PBXBuildFile; fileRef = 632CC7B21E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m */; };
 		632CC7B61E7697D800BB69FE /* UIBezierPath+YJSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 632CC7B51E7697D800BB69FE /* UIBezierPath+YJSymbol.m */; };
+		632CC7B91E769D0C00BB69FE /* UIBezierPath+YJLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 632CC7B81E769D0C00BB69FE /* UIBezierPath+YJLength.m */; };
 		6348FCB31E6FFE8D007C1D96 /* NSArray+YJBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FC251E6FFE8D007C1D96 /* NSArray+YJBlock.m */; };
 		6348FCB41E6FFE8D007C1D96 /* NSArray+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FC271E6FFE8D007C1D96 /* NSArray+YJSuperExt.m */; };
 		6348FCB51E6FFE8D007C1D96 /* NSBundle+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FC2A1E6FFE8D007C1D96 /* NSBundle+YJSuperExt.m */; };
@@ -85,6 +86,8 @@
 		632CC7B21E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+YJBasicShapes.m"; sourceTree = "<group>"; };
 		632CC7B41E7697D800BB69FE /* UIBezierPath+YJSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+YJSymbol.h"; sourceTree = "<group>"; };
 		632CC7B51E7697D800BB69FE /* UIBezierPath+YJSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+YJSymbol.m"; sourceTree = "<group>"; };
+		632CC7B71E769D0C00BB69FE /* UIBezierPath+YJLength.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+YJLength.h"; sourceTree = "<group>"; };
+		632CC7B81E769D0C00BB69FE /* UIBezierPath+YJLength.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+YJLength.m"; sourceTree = "<group>"; };
 		6348FC241E6FFE8D007C1D96 /* NSArray+YJBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YJBlock.h"; sourceTree = "<group>"; };
 		6348FC251E6FFE8D007C1D96 /* NSArray+YJBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YJBlock.m"; sourceTree = "<group>"; };
 		6348FC261E6FFE8D007C1D96 /* NSArray+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YJSuperExt.h"; sourceTree = "<group>"; };
@@ -453,6 +456,8 @@
 				632CC7B21E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m */,
 				632CC7B41E7697D800BB69FE /* UIBezierPath+YJSymbol.h */,
 				632CC7B51E7697D800BB69FE /* UIBezierPath+YJSymbol.m */,
+				632CC7B71E769D0C00BB69FE /* UIBezierPath+YJLength.h */,
+				632CC7B81E769D0C00BB69FE /* UIBezierPath+YJLength.m */,
 			);
 			path = UIBezierPath;
 			sourceTree = "<group>";
@@ -785,6 +790,7 @@
 				6348FCDD1E6FFE8D007C1D96 /* UIView+YJConstraints.m in Sources */,
 				6348FCC41E6FFE8D007C1D96 /* NSString+YJSize.m in Sources */,
 				6348FCE41E6FFE8D007C1D96 /* UIView+YJRecursion.m in Sources */,
+				632CC7B91E769D0C00BB69FE /* UIBezierPath+YJLength.m in Sources */,
 				6348FCB61E6FFE8D007C1D96 /* NSData+YJGzip.m in Sources */,
 				6348FCD51E6FFE8D007C1D96 /* UINavigationBar+YJSuperExt.m in Sources */,
 				6348FCE51E6FFE8D007C1D96 /* UIView+YJScreenshot.m in Sources */,
