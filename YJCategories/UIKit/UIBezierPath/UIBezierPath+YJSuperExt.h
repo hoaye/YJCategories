@@ -10,6 +10,9 @@
 
 @interface UIBezierPath (YJSuperExt)
 
+/** UIBezierPath转成SVG */
+- (NSString *)yj_SVGString;
+
 
 
 @end

@@ -19,6 +19,8 @@
     UIBezierPath *drawPath = [UIBezierPath yj_stars:5 shapeInFrame:CGRectMake(100, 100, 100, 50)];
     [drawPath fill];
     
+    NSLog(@"-->%@", [drawPath yj_SVGString]);
+    
 }
 
 @end

@@ -60,6 +60,7 @@
     #import "UINavigationBar+YJSuperExt.h"
     #import "UIResponder+YJSuperExt.h"
     #import "UIBezierPath+YJSuperExt.h"
+    #import "UIBezierPath+YJBasicShapes.h"
     #import "UIScrollView+YJSuperExt.h"
     #import "UIScrollView+YJPosition.h"
 
