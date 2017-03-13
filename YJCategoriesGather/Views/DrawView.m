@@ -13,13 +13,12 @@
 
 - (void)drawRect:(CGRect)rect {
     
-    UIColor *color = [UIColor redColor];
+    UIColor *color = [UIColor orangeColor];
     [color set];
     
-    UIBezierPath *drawPath = [UIBezierPath yj_stars:5 shapeInFrame:CGRectMake(100, 100, 100, 50)];
+    UIBezierPath *drawPath = [UIBezierPath yj_customBezierPathOfPencilSymbolWithRect:CGRectMake(50, 100, 100, 100) scale:2 thick:3];
     [drawPath fill];
     
-    NSLog(@"-->%@", [drawPath yj_SVGString]);
     
 }
 
