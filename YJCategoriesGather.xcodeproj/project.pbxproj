@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		631E7E871E727EE3004639B1 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631E7E861E727EE3004639B1 /* DrawView.m */; };
 		632BB20F1E68145E00D5345F /* SampleFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 632BB20E1E68145E00D5345F /* SampleFile.txt */; };
+		632CC7B31E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m in Sources */ = {isa = PBXBuildFile; fileRef = 632CC7B21E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m */; };
 		6348FCB31E6FFE8D007C1D96 /* NSArray+YJBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FC251E6FFE8D007C1D96 /* NSArray+YJBlock.m */; };
 		6348FCB41E6FFE8D007C1D96 /* NSArray+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FC271E6FFE8D007C1D96 /* NSArray+YJSuperExt.m */; };
 		6348FCB51E6FFE8D007C1D96 /* NSBundle+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FC2A1E6FFE8D007C1D96 /* NSBundle+YJSuperExt.m */; };
@@ -79,6 +80,8 @@
 		631E7E851E727EE3004639B1 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		631E7E861E727EE3004639B1 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
 		632BB20E1E68145E00D5345F /* SampleFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleFile.txt; sourceTree = "<group>"; };
+		632CC7B11E7695F300BB69FE /* UIBezierPath+YJBasicShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+YJBasicShapes.h"; sourceTree = "<group>"; };
+		632CC7B21E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+YJBasicShapes.m"; sourceTree = "<group>"; };
 		6348FC241E6FFE8D007C1D96 /* NSArray+YJBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YJBlock.h"; sourceTree = "<group>"; };
 		6348FC251E6FFE8D007C1D96 /* NSArray+YJBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YJBlock.m"; sourceTree = "<group>"; };
 		6348FC261E6FFE8D007C1D96 /* NSArray+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YJSuperExt.h"; sourceTree = "<group>"; };
@@ -443,6 +446,8 @@
 			children = (
 				6348FC681E6FFE8D007C1D96 /* UIBezierPath+YJSuperExt.h */,
 				6348FC691E6FFE8D007C1D96 /* UIBezierPath+YJSuperExt.m */,
+				632CC7B11E7695F300BB69FE /* UIBezierPath+YJBasicShapes.h */,
+				632CC7B21E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m */,
 			);
 			path = UIBezierPath;
 			sourceTree = "<group>";
@@ -736,6 +741,7 @@
 				6348FCB91E6FFE8D007C1D96 /* NSDate+YJSuperExt.m in Sources */,
 				6348FCC71E6FFE8D007C1D96 /* NSString+YJVerification.m in Sources */,
 				6348FCE61E6FFE8D007C1D96 /* UIView+YJShake.m in Sources */,
+				632CC7B31E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m in Sources */,
 				6348FCCA1E6FFE8D007C1D96 /* NSTimer+YJSuperExt.m in Sources */,
 				6348FCE81E6FFE8D007C1D96 /* UIViewController+YJBackButtonBlock.m in Sources */,
 				6348FCD41E6FFE8D007C1D96 /* UILabel+YJSuperExt.m in Sources */,

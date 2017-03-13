@@ -9,6 +9,11 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#define kSCREEN_FRAME [UIScreen mainScreen].bounds
+#define kSCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define kSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define kKEY_WINDOW [UIApplication sharedApplication].keyWindow
+
 // 定义是否全局引入开关 0=完全不引入, 1=完全引入
 #define ALL_IMPORT_ENABLE 1
 

@@ -40,7 +40,7 @@
 #pragma mark - Lazy
 - (DrawView *)drawView{
     if (!_drawView) {
-        _drawView = [[DrawView alloc] initWithFrame:self.view.frame];
+        _drawView = [[DrawView alloc] initWithFrame:CGRectMake(0, 64, kSCREEN_WIDTH, kSCREEN_HEIGHT)];
         _drawView.backgroundColor = [UIColor whiteColor];
     }
     return _drawView;
