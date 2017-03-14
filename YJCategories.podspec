@@ -119,6 +119,13 @@ Pod::Spec.new do |s|
             sss.source_files        = 'YJCategories/UIKit/UIScrollView/*.{h,m}'
             sss.public_header_files = 'YJCategories/UIKit/UIScrollView/*.{h}'
         end
+
+        # 17. UIBarButtonItem 配置模块
+        ss.subspec 'UIBarButtonItem' do |sss|
+            sss.source_files        = 'YJCategories/UIKit/UIBarButtonItem/*.{h,m}'
+            sss.public_header_files = 'YJCategories/UIKit/UIBarButtonItem/*.{h}'
+        end
+
     end
 
     # Foundation 配置模块

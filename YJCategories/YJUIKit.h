@@ -68,6 +68,8 @@
     #import "UIScrollView+YJSuperExt.h"
     #import "UIScrollView+YJPosition.h"
 
+    #import "UIBarButtonItem+YJBadge.h"
+
 
 
 #endif /* YJUIKit_h */
