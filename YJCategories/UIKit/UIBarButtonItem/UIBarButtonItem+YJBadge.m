@@ -12,19 +12,20 @@
 static char const *const kUIBarButtonItemBadegeLabelKey = "kUIBarButtonItemBadegeLabelKey";
 static char const *const kUIBarButtonItemBadegeOriginXKey = "kUIBarButtonItemBadegeOriginXKey";
 static char const *const kUIBarButtonItemBadegeOriginYKey = "kUIBarButtonItemBadegeOriginYKey";
+static char const *const kUIBarButtonItemBadegeValueKey = "kUIBarButtonItemBadegeValueKey";
+static char const *const kUIBarButtonItemBadegeBgColorKey = "kUIBarButtonItemBadegeBgColorKey";
 
 
 
 
 
-NSString const *jk_UIBarButtonItem_badgeBGColorKey = @"jk_UIBarButtonItem_badgeBGColorKey";
+
 NSString const *jk_UIBarButtonItem_badgeTextColorKey = @"jk_UIBarButtonItem_badgeTextColorKey";
 NSString const *jk_UIBarButtonItem_badgeFontKey = @"jk_UIBarButtonItem_badgeFontKey";
 NSString const *jk_UIBarButtonItem_badgePaddingKey = @"jk_UIBarButtonItem_badgePaddingKey";
 NSString const *jk_UIBarButtonItem_badgeMinSizeKey = @"jk_UIBarButtonItem_badgeMinSizeKey";
 NSString const *jk_UIBarButtonItem_shouldHideBadgeAtZeroKey = @"jk_UIBarButtonItem_shouldHideBadgeAtZeroKey";
 NSString const *jk_UIBarButtonItem_shouldAnimateBadgeKey = @"jk_UIBarButtonItem_shouldAnimateBadgeKey";
-NSString const *jk_UIBarButtonItem_badgeValueKey = @"jk_UIBarButtonItem_badgeValueKey";
 
 
 @implementation UIBarButtonItem (YJBadge)
@@ -60,91 +61,9 @@ NSString const *jk_UIBarButtonItem_badgeValueKey = @"jk_UIBarButtonItem_badgeVal
 
 #pragma mark - Utility methods
 
-// Handle badge display when its properties have been changed (color, font, ...)
-- (void)jk_refreshBadge
-{
-    // Change new attributes
-    self.jk_badge.textColor        = self.jk_badgeTextColor;
-    self.jk_badge.backgroundColor  = self.jk_badgeBGColor;
-    self.jk_badge.font             = self.jk_badgeFont;
-    
-    if (!self.jk_badgeValue || [self.jk_badgeValue isEqualToString:@""] || ([self.jk_badgeValue isEqualToString:@"0"] && self.jk_shouldHideBadgeAtZero)) {
-        self.jk_badge.hidden = YES;
-    } else {
-        self.jk_badge.hidden = NO;
-        [self jk_updateBadgeValueAnimated:YES];
-    }
-    
-}
-
-
-
-
-
-// Handle the badge changing value
-- (void)jk_updateBadgeValueAnimated:(BOOL)animated
-{
-    // Bounce animation on badge if value changed and if animation authorized
-    if (animated && self.jk_shouldAnimateBadge && ![self.jk_badge.text isEqualToString:self.jk_badgeValue]) {
-        CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-        [animation setFromValue:[NSNumber numberWithFloat:1.5]];
-        [animation setToValue:[NSNumber numberWithFloat:1]];
-        [animation setDuration:0.2];
-        [animation setTimingFunction:[CAMediaTimingFunction functionWithControlPoints:.4f :1.3f :1.f :1.f]];
-        [self.jk_badge.layer addAnimation:animation forKey:@"bounceAnimation"];
-    }
-    
-    // Set the new value
-    self.jk_badge.text = self.jk_badgeValue;
-    
-    // Animate the size modification if needed
-    if (animated && self.jk_shouldAnimateBadge) {
-        [UIView animateWithDuration:0.2 animations:^{
-            [self _yj_updateBadgeFrame];
-        }];
-    } else {
-        [self _yj_updateBadgeFrame];
-    }
-}
-
-
-
-- (void)jk_removeBadge
-{
-    // Animate badge removal
-    [UIView animateWithDuration:0.2 animations:^{
-        self.jk_badge.transform = CGAffineTransformMakeScale(0, 0);
-    } completion:^(BOOL finished) {
-        [self.jk_badge removeFromSuperview];
-        self.jk_badge = nil;
-    }];
-}
-
-
-// Badge value to be display
--(NSString *)jk_badgeValue {
-    return objc_getAssociatedObject(self, &jk_UIBarButtonItem_badgeValueKey);
-}
--(void)setJk_vadgeValue:(NSString *)badgeValue
-{
-    objc_setAssociatedObject(self, &jk_UIBarButtonItem_badgeValueKey, badgeValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
-    // When changing the badge value check if we need to remove the badge
-    [self jk_updateBadgeValueAnimated:YES];
-    [self jk_refreshBadge];
-}
 
 // Badge background color
--(UIColor *)badgeBGColor {
-    return objc_getAssociatedObject(self, &jk_UIBarButtonItem_badgeBGColorKey);
-}
--(void)setBadgeBGColor:(UIColor *)badgeBGColor
-{
-    objc_setAssociatedObject(self, &jk_UIBarButtonItem_badgeBGColorKey, badgeBGColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if (self.jk_badge) {
-        [self jk_refreshBadge];
-    }
-}
+
 
 // Badge text color
 -(UIColor *)badgeTextColor {
@@ -154,7 +73,7 @@ NSString const *jk_UIBarButtonItem_badgeValueKey = @"jk_UIBarButtonItem_badgeVal
 {
     objc_setAssociatedObject(self, &jk_UIBarButtonItem_badgeTextColorKey, badgeTextColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.jk_badge) {
-        [self jk_refreshBadge];
+        [self yj_refreshBadge];
     }
 }
 
@@ -166,7 +85,7 @@ NSString const *jk_UIBarButtonItem_badgeValueKey = @"jk_UIBarButtonItem_badgeVal
 {
     objc_setAssociatedObject(self, &jk_UIBarButtonItem_badgeFontKey, badgeFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.jk_badge) {
-        [self jk_refreshBadge];
+        [self yj_refreshBadge];
     }
 }
 
@@ -210,7 +129,7 @@ NSString const *jk_UIBarButtonItem_badgeValueKey = @"jk_UIBarButtonItem_badgeVal
     NSNumber *number = [NSNumber numberWithBool:shouldHideBadgeAtZero];
     objc_setAssociatedObject(self, &jk_UIBarButtonItem_shouldHideBadgeAtZeroKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if(self.jk_badge) {
-        [self jk_refreshBadge];
+        [self yj_refreshBadge];
     }
 }
 
@@ -224,7 +143,7 @@ NSString const *jk_UIBarButtonItem_badgeValueKey = @"jk_UIBarButtonItem_badgeVal
     NSNumber *number = [NSNumber numberWithBool:shouldAnimateBadge];
     objc_setAssociatedObject(self, &jk_UIBarButtonItem_shouldAnimateBadgeKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if(self.jk_badge) {
-        [self jk_refreshBadge];
+        [self yj_refreshBadge];
     }
 }
 
@@ -276,6 +195,30 @@ NSString const *jk_UIBarButtonItem_badgeValueKey = @"jk_UIBarButtonItem_badgeVal
     return badgeOriginX.floatValue;
 }
 
+// 数值
+- (void)setBadgeValue:(NSString *)badgeValue{
+    objc_setAssociatedObject(self, kUIBarButtonItemBadegeValueKey, badgeValue, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    [self yj_updateBadgeValueAnimated:YES];
+    [self yj_refreshBadge];
+}
+
+- (NSString *)badgeValue{
+    return objc_getAssociatedObject(self, kUIBarButtonItemBadegeValueKey);
+}
+
+// 背景色
+- (void)setYj_badgeBgColor:(UIColor *)yj_badgeBgColor{
+    objc_setAssociatedObject(self, kUIBarButtonItemBadegeBgColorKey, yj_badgeBgColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.yj_badgeLabel) {
+        [self yj_refreshBadge];
+    }
+}
+
+- (UIColor *)yj_badgeBgColor{
+    objc_getAssociatedObject(self, kUIBarButtonItemBadegeBgColorKey);
+}
+
+
 #pragma mark - 更新Frame
 - (void)_yj_updateBadgeFrame{
 
@@ -305,6 +248,54 @@ NSString const *jk_UIBarButtonItem_badgeValueKey = @"jk_UIBarButtonItem_badgeVal
     duplicateLabel.text = labelToCopy.text;
     duplicateLabel.font = labelToCopy.font;
     return duplicateLabel;
+}
+
+/** 刷新数据 */
+- (void)yj_refreshBadge{
+
+    self.yj_badgeLabel.textColor       = self.yj_badgeTextColor;
+    self.yj_badgeLabel.backgroundColor = self.yj_badgeBgColor;
+    self.yj_badgeLabel.font            = self.yj_badgeFont;
+    
+    if (!self.badgeValue || [self.badgeValue isEqualToString:@""] || ([self.badgeValue isEqualToString:@"0"] && self.yj_hideBadgeWhenZero)) {
+        self.yj_badgeLabel.hidden = YES;
+    } else {
+        self.yj_badgeLabel.hidden = NO;
+        [self yj_updateBadgeValueAnimated:YES];
+    }
+}
+
+- (void)yj_updateBadgeValueAnimated:(BOOL)animated{
+
+    if (animated && self.yj_animateBadgeEnable && ![self.yj_badgeLabel.text isEqualToString:self.badgeValue]) {
+        CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        [animation setFromValue:[NSNumber numberWithFloat:1.5]];
+        [animation setToValue:[NSNumber numberWithFloat:1]];
+        [animation setDuration:0.2];
+        [animation setTimingFunction:[CAMediaTimingFunction functionWithControlPoints:.4f :1.3f :1.f :1.f]];
+        [self.yj_badgeLabel.layer addAnimation:animation forKey:@"bounceAnimation"];
+    }
+    
+    self.yj_badgeLabel.text = self.badgeValue;
+    
+    if (animated && self.yj_animateBadgeEnable) {
+        [UIView animateWithDuration:0.2 animations:^{
+            [self _yj_updateBadgeFrame];
+        }];
+    } else {
+        [self _yj_updateBadgeFrame];
+    }
+}
+
+/** 移除 */
+- (void)yj_removeBadge{
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.yj_badgeLabel.transform = CGAffineTransformMakeScale(0, 0);
+    } completion:^(BOOL finished) {
+        [self.yj_badgeLabel removeFromSuperview];
+        self.yj_badgeLabel = nil;
+    }];
 }
 
 
