@@ -3,7 +3,7 @@ version = "0.0.5";
 Pod::Spec.new do |s|
     s.name         = "YJCategories"
     s.version      = version
-    s.summary      = "YJCategories a collection of useful Objective-C Categories extending iOS Frameworks, Author's email:houmanager@Hotmail.com"
+    s.summary      = "YJCategories a collection of useful Objective-C Categories extending iOS Frameworks, Author's email:houmanager@Hotmail.com 工作地点:BeiJing 欢迎骚扰。"
     s.description      = <<-DESC
                         YJCategories a collection of useful Objective-C Categories extending iOS Frameworks such as Foundation, UIKit, CoreData, QuartzCore, CoreLocation, MapKit Etc. Author's email:houmanager@Hotmail.com
                             DESC
