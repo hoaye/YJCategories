@@ -21,6 +21,7 @@
     #import "UIView+YJVisuals.h"         // 显示效果
     #import "UIView+YJDraggable.h"       // 拖动
     #import "UIView+YJAnimation.h"       // 动画
+    #import "UIView+YJBadge.h"           // 角标
 
 
 //////////// UIWindow /////////////////

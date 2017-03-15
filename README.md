@@ -115,7 +115,7 @@ YJCategories 是Objective-C超级分类集合
         10. YJVisuals
         11. YJDraggable
         12. YJAnimation
-        13. 获取 View 右下角 rightBottom
+        13. YJBadge
         14. 获取 View 中心点X centerX
         15. 获取 View 中心点Y centerY
         16. 移动 View 不改变大小 moveOriginToPoint:
@@ -144,9 +144,8 @@ YJCategories 是Objective-C超级分类集合
         1.  YJSuperExt
         2.  YJPosition
 
-    * UIBezierPath
+    * UIBarButtonItem
         1.  YJBadge
-
 
 
 ### QuartzCore

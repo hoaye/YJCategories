@@ -12,6 +12,7 @@
 @interface SubViewController () <UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIView *showView;
+@property (nonatomic, weak) UIButton *btnBadge; /**< 角标按钮 */
 
 @end
 
@@ -19,43 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
-    
-    UIButton *btnInit = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnInit.frame = CGRectMake(20, 100, 60, 30);
-    btnInit.backgroundColor = [UIColor orangeColor];
-    [btnInit setImage:[UIImage imageNamed:@"10"] forState:UIControlStateNormal];
-    [btnInit setImage:[UIImage imageNamed:@"10"] forState:UIControlStateHighlighted];
-    [btnInit addTarget:self action:@selector(clickBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btnInit];
-    item.badgeValue = @"100";
-    item.yj_badgeOriginY = -10;
-    item.yj_animateBadgeEnable = NO;
-    item.yj_badgeOriginX = -30;
-    item.yj_badgeBgColor = [UIColor redColor];
-    item.yj_badgeTextColor = [UIColor whiteColor];
-    item.yj_badgeXPadding = 50;
-//    item.yj_badgeYPadding = 5;
-    item.yj_badgeFont = [UIFont boldSystemFontOfSize:14.0f];
-    self.navigationItem.rightBarButtonItem = item;
-    
-    [NSTimer scheduledTimerWithTimeInterval:1.0
-                                     target:self
-                                   selector:@selector(incrementBadge:)
-                                   userInfo:nil
-                                    repeats:YES];
+    self.view.backgroundColor = [UIColor whiteColor];
     
 }
 
-- (void)clickBtnAction:(UIButton *)btn{
-    NSLog(@"-->%@", @"---");
-}
-
--(void)incrementBadge:(id)sender{
-    NSInteger val = [self.navigationItem.rightBarButtonItem.badgeValue integerValue];
-    val++;
-    self.navigationItem.rightBarButtonItem.badgeValue = [NSString stringWithFormat:@"%ld",val%1000];
-}
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
