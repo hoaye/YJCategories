@@ -14,19 +14,12 @@ static char const *const kUIBarButtonItemBadegeOriginXKey = "kUIBarButtonItemBad
 static char const *const kUIBarButtonItemBadegeOriginYKey = "kUIBarButtonItemBadegeOriginYKey";
 static char const *const kUIBarButtonItemBadegeValueKey = "kUIBarButtonItemBadegeValueKey";
 static char const *const kUIBarButtonItemBadegeBgColorKey = "kUIBarButtonItemBadegeBgColorKey";
-
-
-
-
-
-
-NSString const *jk_UIBarButtonItem_badgeTextColorKey = @"jk_UIBarButtonItem_badgeTextColorKey";
-NSString const *jk_UIBarButtonItem_badgeFontKey = @"jk_UIBarButtonItem_badgeFontKey";
-NSString const *jk_UIBarButtonItem_badgePaddingKey = @"jk_UIBarButtonItem_badgePaddingKey";
-NSString const *jk_UIBarButtonItem_badgeMinSizeKey = @"jk_UIBarButtonItem_badgeMinSizeKey";
-NSString const *jk_UIBarButtonItem_shouldHideBadgeAtZeroKey = @"jk_UIBarButtonItem_shouldHideBadgeAtZeroKey";
-NSString const *jk_UIBarButtonItem_shouldAnimateBadgeKey = @"jk_UIBarButtonItem_shouldAnimateBadgeKey";
-
+static char const *const kUIBarButtonItemBadegeTextColorKey = "kUIBarButtonItemBadegeTextColorKey";
+static char const *const kUIBarButtonItemBadegeTextFontKey = "kUIBarButtonItemBadegeTextFontKey";
+static char const *const kUIBarButtonItemBadegePaddingKey = "kUIBarButtonItemBadegePaddingKey";
+static char const *const kUIBarButtonItemBadegeMinHeightKey = "kUIBarButtonItemBadegeMinHeightKey";
+static char const *const kUIBarButtonItemBadegeHideBadgeWhenZeroKey = "kUIBarButtonItemBadegeHideBadgeWhenZeroKey";
+static char const *const kUIBarButtonItemBadegeAnimateBadgeKey = "kUIBarButtonItemBadegeAnimateBadgeKey";
 
 @implementation UIBarButtonItem (YJBadge)
 
@@ -55,96 +48,6 @@ NSString const *jk_UIBarButtonItem_shouldAnimateBadgeKey = @"jk_UIBarButtonItem_
     self.yj_badgeOriginY = -4.0f;
     self.yj_hideBadgeWhenZero = YES;
     self.yj_animateBadgeEnable = YES;
-    
-    
-}
-
-#pragma mark - Utility methods
-
-
-// Badge background color
-
-
-// Badge text color
--(UIColor *)badgeTextColor {
-    return objc_getAssociatedObject(self, &jk_UIBarButtonItem_badgeTextColorKey);
-}
--(void)setBadgeTextColor:(UIColor *)badgeTextColor
-{
-    objc_setAssociatedObject(self, &jk_UIBarButtonItem_badgeTextColorKey, badgeTextColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if (self.jk_badge) {
-        [self yj_refreshBadge];
-    }
-}
-
-// Badge font
--(UIFont *)badgeFont {
-    return objc_getAssociatedObject(self, &jk_UIBarButtonItem_badgeFontKey);
-}
--(void)setBadgeFont:(UIFont *)badgeFont
-{
-    objc_setAssociatedObject(self, &jk_UIBarButtonItem_badgeFontKey, badgeFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if (self.jk_badge) {
-        [self yj_refreshBadge];
-    }
-}
-
-// Padding value for the badge
--(CGFloat) badgePadding {
-    NSNumber *number = objc_getAssociatedObject(self, &jk_UIBarButtonItem_badgePaddingKey);
-    return number.floatValue;
-}
--(void) setBadgePadding:(CGFloat)badgePadding
-{
-    NSNumber *number = [NSNumber numberWithDouble:badgePadding];
-    objc_setAssociatedObject(self, &jk_UIBarButtonItem_badgePaddingKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if (self.jk_badge) {
-        [self _yj_updateBadgeFrame];
-    }
-}
-
-// Minimum size badge to small
--(CGFloat)jk_badgeMinSize {
-    NSNumber *number = objc_getAssociatedObject(self, &jk_UIBarButtonItem_badgeMinSizeKey);
-    return number.floatValue;
-}
--(void) setJk_badgeMinSize:(CGFloat)badgeMinSize
-{
-    NSNumber *number = [NSNumber numberWithDouble:badgeMinSize];
-    objc_setAssociatedObject(self, &jk_UIBarButtonItem_badgeMinSizeKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if (self.jk_badge) {
-        [self _yj_updateBadgeFrame];
-    }
-}
-
-
-
-// In case of numbers, remove the badge when reaching zero
--(BOOL) shouldHideBadgeAtZero {
-    NSNumber *number = objc_getAssociatedObject(self, &jk_UIBarButtonItem_shouldHideBadgeAtZeroKey);
-    return number.boolValue;
-}
-- (void)setShouldHideBadgeAtZero:(BOOL)shouldHideBadgeAtZero
-{
-    NSNumber *number = [NSNumber numberWithBool:shouldHideBadgeAtZero];
-    objc_setAssociatedObject(self, &jk_UIBarButtonItem_shouldHideBadgeAtZeroKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if(self.jk_badge) {
-        [self yj_refreshBadge];
-    }
-}
-
-// Badge has a bounce animation when value changes
--(BOOL) jk_shouldAnimateBadge {
-    NSNumber *number = objc_getAssociatedObject(self, &jk_UIBarButtonItem_shouldAnimateBadgeKey);
-    return number.boolValue;
-}
-- (void)setJk_shouldAnimateBadge:(BOOL)shouldAnimateBadge
-{
-    NSNumber *number = [NSNumber numberWithBool:shouldAnimateBadge];
-    objc_setAssociatedObject(self, &jk_UIBarButtonItem_shouldAnimateBadgeKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if(self.jk_badge) {
-        [self yj_refreshBadge];
-    }
 }
 
 #pragma mark - Lazy
@@ -215,9 +118,88 @@ NSString const *jk_UIBarButtonItem_shouldAnimateBadgeKey = @"jk_UIBarButtonItem_
 }
 
 - (UIColor *)yj_badgeBgColor{
-    objc_getAssociatedObject(self, kUIBarButtonItemBadegeBgColorKey);
+    return objc_getAssociatedObject(self, kUIBarButtonItemBadegeBgColorKey);
 }
 
+// 字体颜色
+- (void)setYj_badgeTextColor:(UIColor *)yj_badgeTextColor{
+    objc_setAssociatedObject(self, kUIBarButtonItemBadegeTextColorKey, yj_badgeTextColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.yj_badgeLabel) {
+        [self yj_refreshBadge];
+    }
+}
+
+- (UIColor *)yj_badgeTextColor{
+    return objc_getAssociatedObject(self, kUIBarButtonItemBadegeTextColorKey);
+}
+
+// 字体
+- (void)setYj_badgeFont:(UIFont *)yj_badgeFont{
+    objc_setAssociatedObject(self, kUIBarButtonItemBadegeTextFontKey, yj_badgeFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.yj_badgeLabel) {
+        [self yj_refreshBadge];
+    }
+}
+
+- (UIFont *)yj_badgeFont{
+    return objc_getAssociatedObject(self, kUIBarButtonItemBadegeTextFontKey);
+}
+
+// padding
+- (void)setYj_badgePadding:(CGFloat)yj_badgePadding{
+    NSNumber *number = [NSNumber numberWithDouble:yj_badgePadding];
+    objc_setAssociatedObject(self, kUIBarButtonItemBadegePaddingKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.yj_badgeLabel) {
+        [self _yj_updateBadgeFrame];
+    }
+}
+
+- (CGFloat)yj_badgePadding{
+    NSNumber *paddingNumber = objc_getAssociatedObject(self, kUIBarButtonItemBadegePaddingKey);
+    return paddingNumber.floatValue;
+}
+
+// 最小高度
+- (void)setYj_badgeMinHeight:(CGFloat)yj_badgeMinHeight{
+    NSNumber *number = [NSNumber numberWithDouble:yj_badgeMinHeight];
+    objc_setAssociatedObject(self, kUIBarButtonItemBadegeMinHeightKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.yj_badgeLabel) {
+        [self _yj_updateBadgeFrame];
+    }
+}
+
+- (CGFloat)yj_badgeMinHeight{
+    NSNumber *minHeight = objc_getAssociatedObject(self, kUIBarButtonItemBadegeMinHeightKey);
+    return minHeight.floatValue;
+}
+
+// 自动消失
+- (void)setYj_hideBadgeWhenZero:(BOOL)yj_hideBadgeWhenZero{
+    NSNumber *number = [NSNumber numberWithBool:yj_hideBadgeWhenZero];
+    objc_setAssociatedObject(self, kUIBarButtonItemBadegeHideBadgeWhenZeroKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.yj_badgeLabel) {
+        [self yj_refreshBadge];
+    }
+}
+
+- (BOOL)yj_hideBadgeWhenZero{
+    NSNumber *number = objc_getAssociatedObject(self, kUIBarButtonItemBadegeHideBadgeWhenZeroKey);
+    return number.boolValue;
+}
+
+/** 动画 */
+- (void)setYj_animateBadgeEnable:(BOOL)yj_animateBadgeEnable{
+    NSNumber *number = [NSNumber numberWithBool:yj_animateBadgeEnable];
+    objc_setAssociatedObject(self, kUIBarButtonItemBadegeAnimateBadgeKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.yj_badgeLabel) {
+        [self yj_refreshBadge];
+    }
+}
+
+- (BOOL)yj_animateBadgeEnable{
+    NSNumber *number = objc_getAssociatedObject(self, kUIBarButtonItemBadegeAnimateBadgeKey);
+    return number.boolValue;
+}
 
 #pragma mark - 更新Frame
 - (void)_yj_updateBadgeFrame{
@@ -297,12 +279,5 @@ NSString const *jk_UIBarButtonItem_shouldAnimateBadgeKey = @"jk_UIBarButtonItem_
         self.yj_badgeLabel = nil;
     }];
 }
-
-
-
-
-
-
-
 
 @end
