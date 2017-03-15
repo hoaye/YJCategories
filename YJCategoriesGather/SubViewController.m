@@ -31,8 +31,12 @@
     item.badgeValue = @"100";
     item.yj_badgeOriginY = -10;
     item.yj_animateBadgeEnable = NO;
-    item.yj_badgeBgColor = [UIColor cyanColor];
-    item.yj_badgeTextColor = [UIColor redColor];
+    item.yj_badgeOriginX = -30;
+    item.yj_badgeBgColor = [UIColor redColor];
+    item.yj_badgeTextColor = [UIColor whiteColor];
+    item.yj_badgeXPadding = 50;
+//    item.yj_badgeYPadding = 5;
+    item.yj_badgeFont = [UIFont boldSystemFontOfSize:14.0f];
     self.navigationItem.rightBarButtonItem = item;
     
     [NSTimer scheduledTimerWithTimeInterval:1.0

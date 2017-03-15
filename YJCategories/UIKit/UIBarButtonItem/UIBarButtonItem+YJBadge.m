@@ -16,7 +16,8 @@ static char const *const kUIBarButtonItemBadegeValueKey             = "kUIBarBut
 static char const *const kUIBarButtonItemBadegeBgColorKey           = "kUIBarButtonItemBadegeBgColorKey";
 static char const *const kUIBarButtonItemBadegeTextColorKey         = "kUIBarButtonItemBadegeTextColorKey";
 static char const *const kUIBarButtonItemBadegeTextFontKey          = "kUIBarButtonItemBadegeTextFontKey";
-static char const *const kUIBarButtonItemBadegePaddingKey           = "kUIBarButtonItemBadegePaddingKey";
+static char const *const kUIBarButtonItemBadegeXPaddingKey           = "kUIBarButtonItemBadegeXPaddingKey";
+static char const *const kUIBarButtonItemBadegeYPaddingKey           = "kUIBarButtonItemBadegeYPaddingKey";
 static char const *const kUIBarButtonItemBadegeMinHeightKey         = "kUIBarButtonItemBadegeMinHeightKey";
 static char const *const kUIBarButtonItemBadegeHideBadgeWhenZeroKey = "kUIBarButtonItemBadegeHideBadgeWhenZeroKey";
 static char const *const kUIBarButtonItemBadegeAnimateBadgeKey      = "kUIBarButtonItemBadegeAnimateBadgeKey";
@@ -42,7 +43,8 @@ static char const *const kUIBarButtonItemBadegeAnimateBadgeKey      = "kUIBarBut
     self.yj_badgeBgColor = [UIColor redColor];
     self.yj_badgeTextColor = [UIColor whiteColor];
     self.yj_badgeFont = [UIFont systemFontOfSize:12.0f];
-    self.yj_badgePadding = 6.0f;
+    self.yj_badgeXPadding = 6.0f;
+    self.yj_badgeYPadding = 6.0f;
     self.yj_badgeMinHeight = 8.0f;
     self.yj_badgeOriginX = defaultOriginX;
     self.yj_badgeOriginY = -4.0f;
@@ -145,17 +147,31 @@ static char const *const kUIBarButtonItemBadegeAnimateBadgeKey      = "kUIBarBut
     return objc_getAssociatedObject(self, kUIBarButtonItemBadegeTextFontKey);
 }
 
-// padding
-- (void)setYj_badgePadding:(CGFloat)yj_badgePadding{
-    NSNumber *number = [NSNumber numberWithDouble:yj_badgePadding];
-    objc_setAssociatedObject(self, kUIBarButtonItemBadegePaddingKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+// Xpadding
+- (void)setYj_badgeXPadding:(CGFloat)yj_badgeXPadding{
+    NSNumber *number = [NSNumber numberWithDouble:yj_badgeXPadding];
+    objc_setAssociatedObject(self, kUIBarButtonItemBadegeXPaddingKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.yj_badgeLabel) {
         [self _yj_updateBadgeFrame];
     }
 }
 
-- (CGFloat)yj_badgePadding{
-    NSNumber *paddingNumber = objc_getAssociatedObject(self, kUIBarButtonItemBadegePaddingKey);
+- (CGFloat)yj_badgeXPadding{
+    NSNumber *paddingNumber = objc_getAssociatedObject(self, kUIBarButtonItemBadegeXPaddingKey);
+    return paddingNumber.floatValue;
+}
+
+// Ypadding
+- (void)setYj_badgeYPadding:(CGFloat)yj_badgeYPadding{
+    NSNumber *number = [NSNumber numberWithDouble:yj_badgeYPadding];
+    objc_setAssociatedObject(self, kUIBarButtonItemBadegeYPaddingKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.yj_badgeLabel) {
+        [self _yj_updateBadgeFrame];
+    }
+}
+
+- (CGFloat)yj_badgeYPadding{
+    NSNumber *paddingNumber = objc_getAssociatedObject(self, kUIBarButtonItemBadegeYPaddingKey);
     return paddingNumber.floatValue;
 }
 
@@ -205,7 +221,8 @@ static char const *const kUIBarButtonItemBadegeAnimateBadgeKey      = "kUIBarBut
 - (void)_yj_updateBadgeFrame{
 
     CGSize expectedLabelSize = [self yj_badgeExpectedSize];
-    CGFloat padding = self.yj_badgePadding;
+    CGFloat paddingX = self.yj_badgeXPadding;
+    CGFloat paddingY = self.yj_badgeYPadding;
     
     CGFloat minHeight = expectedLabelSize.height;
     minHeight = (minHeight < self.yj_badgeMinHeight)?self.yj_badgeMinHeight:expectedLabelSize.height;
@@ -213,8 +230,8 @@ static char const *const kUIBarButtonItemBadegeAnimateBadgeKey      = "kUIBarBut
     CGFloat minWidth = expectedLabelSize.width;
     minWidth = (minWidth < minHeight)?minHeight:expectedLabelSize.width;
     self.yj_badgeLabel.layer.masksToBounds = YES;
-    self.yj_badgeLabel.frame = CGRectMake(self.yj_badgeOriginX, self.yj_badgeOriginY, minWidth + padding, minHeight + padding);
-    self.yj_badgeLabel.layer.cornerRadius = (minHeight + padding) * 0.5;
+    self.yj_badgeLabel.frame = CGRectMake(self.yj_badgeOriginX, self.yj_badgeOriginY, minWidth + paddingX, minHeight + paddingY);
+    self.yj_badgeLabel.layer.cornerRadius = (minHeight + paddingY) * 0.5;
 }
 
 // 适配字体

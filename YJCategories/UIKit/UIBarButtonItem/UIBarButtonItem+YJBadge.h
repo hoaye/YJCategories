@@ -18,7 +18,10 @@
 @property (nonatomic, strong) UIColor  *yj_badgeBgColor; /**< 背景色 */
 @property (nonatomic, strong) UIColor  *yj_badgeTextColor; /**< 字体色 */
 @property (nonatomic, strong) UIFont   *yj_badgeFont; /**< 字体 */
-@property (nonatomic, assign) CGFloat   yj_badgePadding; /**< Padding */
+
+@property (nonatomic, assign) CGFloat   yj_badgeXPadding; /**< XPadding */
+@property (nonatomic, assign) CGFloat   yj_badgeYPadding; /**< YPadding */
+
 @property (nonatomic, assign) CGFloat   yj_badgeMinHeight; /**< MinHeight */
 
 @property (nonatomic, assign) BOOL      yj_hideBadgeWhenZero; /**< 为0时隐藏 */
