@@ -37,6 +37,7 @@
 
 //////////// UIButton /////////////////
     #import "UIButton+YJSuperExt.h"
+    #import "UIButton+YJImagePosition.h"
 
 //////////// UITableView /////////////////
     #import "UITableView+YJSuperExt.h"
