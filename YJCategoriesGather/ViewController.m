@@ -33,7 +33,9 @@
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
+
+    SubViewController *subVc = [[SubViewController alloc] init];
+    [self.navigationController pushViewController:subVc animated:YES];
 
 }
 

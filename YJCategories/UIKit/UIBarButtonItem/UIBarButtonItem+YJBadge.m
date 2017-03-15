@@ -9,17 +9,17 @@
 #import "UIBarButtonItem+YJBadge.h"
 #import <objc/runtime.h>
 
-static char const *const kUIBarButtonItemBadegeLabelKey = "kUIBarButtonItemBadegeLabelKey";
-static char const *const kUIBarButtonItemBadegeOriginXKey = "kUIBarButtonItemBadegeOriginXKey";
-static char const *const kUIBarButtonItemBadegeOriginYKey = "kUIBarButtonItemBadegeOriginYKey";
-static char const *const kUIBarButtonItemBadegeValueKey = "kUIBarButtonItemBadegeValueKey";
-static char const *const kUIBarButtonItemBadegeBgColorKey = "kUIBarButtonItemBadegeBgColorKey";
-static char const *const kUIBarButtonItemBadegeTextColorKey = "kUIBarButtonItemBadegeTextColorKey";
-static char const *const kUIBarButtonItemBadegeTextFontKey = "kUIBarButtonItemBadegeTextFontKey";
-static char const *const kUIBarButtonItemBadegePaddingKey = "kUIBarButtonItemBadegePaddingKey";
-static char const *const kUIBarButtonItemBadegeMinHeightKey = "kUIBarButtonItemBadegeMinHeightKey";
+static char const *const kUIBarButtonItemBadegeLabelKey             = "kUIBarButtonItemBadegeLabelKey";
+static char const *const kUIBarButtonItemBadegeOriginXKey           = "kUIBarButtonItemBadegeOriginXKey";
+static char const *const kUIBarButtonItemBadegeOriginYKey           = "kUIBarButtonItemBadegeOriginYKey";
+static char const *const kUIBarButtonItemBadegeValueKey             = "kUIBarButtonItemBadegeValueKey";
+static char const *const kUIBarButtonItemBadegeBgColorKey           = "kUIBarButtonItemBadegeBgColorKey";
+static char const *const kUIBarButtonItemBadegeTextColorKey         = "kUIBarButtonItemBadegeTextColorKey";
+static char const *const kUIBarButtonItemBadegeTextFontKey          = "kUIBarButtonItemBadegeTextFontKey";
+static char const *const kUIBarButtonItemBadegePaddingKey           = "kUIBarButtonItemBadegePaddingKey";
+static char const *const kUIBarButtonItemBadegeMinHeightKey         = "kUIBarButtonItemBadegeMinHeightKey";
 static char const *const kUIBarButtonItemBadegeHideBadgeWhenZeroKey = "kUIBarButtonItemBadegeHideBadgeWhenZeroKey";
-static char const *const kUIBarButtonItemBadegeAnimateBadgeKey = "kUIBarButtonItemBadegeAnimateBadgeKey";
+static char const *const kUIBarButtonItemBadegeAnimateBadgeKey      = "kUIBarButtonItemBadegeAnimateBadgeKey";
 
 @implementation UIBarButtonItem (YJBadge)
 
@@ -214,7 +214,7 @@ static char const *const kUIBarButtonItemBadegeAnimateBadgeKey = "kUIBarButtonIt
     minWidth = (minWidth < minHeight)?minHeight:expectedLabelSize.width;
     self.yj_badgeLabel.layer.masksToBounds = YES;
     self.yj_badgeLabel.frame = CGRectMake(self.yj_badgeOriginX, self.yj_badgeOriginY, minWidth + padding, minHeight + padding);
-    self.yj_badgeLabel.layer.cornerRadius = (minHeight * padding) * 0.5;
+    self.yj_badgeLabel.layer.cornerRadius = (minHeight + padding) * 0.5;
 }
 
 // 适配字体

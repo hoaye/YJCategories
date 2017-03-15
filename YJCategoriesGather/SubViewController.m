@@ -21,8 +21,36 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
     
-    [self.view addSubview:self.showView];
+    UIButton *btnInit = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnInit.frame = CGRectMake(20, 100, 60, 30);
+    btnInit.backgroundColor = [UIColor orangeColor];
+    [btnInit setImage:[UIImage imageNamed:@"10"] forState:UIControlStateNormal];
+    [btnInit setImage:[UIImage imageNamed:@"10"] forState:UIControlStateHighlighted];
+    [btnInit addTarget:self action:@selector(clickBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btnInit];
+    item.badgeValue = @"100";
+    item.yj_badgeOriginY = -10;
+    item.yj_animateBadgeEnable = NO;
+    item.yj_badgeBgColor = [UIColor cyanColor];
+    item.yj_badgeTextColor = [UIColor redColor];
+    self.navigationItem.rightBarButtonItem = item;
     
+    [NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(incrementBadge:)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+}
+
+- (void)clickBtnAction:(UIButton *)btn{
+    NSLog(@"-->%@", @"---");
+}
+
+-(void)incrementBadge:(id)sender{
+    NSInteger val = [self.navigationItem.rightBarButtonItem.badgeValue integerValue];
+    val++;
+    self.navigationItem.rightBarButtonItem.badgeValue = [NSString stringWithFormat:@"%ld",val%1000];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
