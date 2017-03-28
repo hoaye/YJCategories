@@ -21,10 +21,8 @@
     if (radius > 0) {
         self.layer.cornerRadius = radius;
     }
-    if (color) {
+    if (color && borderWidth > 0) {
         self.layer.borderColor = color.CGColor;
-    }
-    if (borderWidth > 0) {
         self.layer.borderWidth = borderWidth;
     }
 }
