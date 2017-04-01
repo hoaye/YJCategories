@@ -68,6 +68,8 @@
 		6348FCE81E6FFE8D007C1D96 /* UIViewController+YJBackButtonBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FCAA1E6FFE8D007C1D96 /* UIViewController+YJBackButtonBlock.m */; };
 		6348FCE91E6FFE8D007C1D96 /* UIViewController+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FCAC1E6FFE8D007C1D96 /* UIViewController+YJSuperExt.m */; };
 		6348FCEA1E6FFE8D007C1D96 /* UIWindow+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FCAF1E6FFE8D007C1D96 /* UIWindow+YJSuperExt.m */; };
+		637242621E8F4FDF0014BE40 /* NSObject+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 637242611E8F4FDF0014BE40 /* NSObject+YJSuperExt.m */; };
+		637242661E8F50C10014BE40 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637242651E8F50C10014BE40 /* PersonModel.m */; };
 		63AB04AA1E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB04A91E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m */; };
 		63D38FDF1E6D5F900067C967 /* SubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D38FDE1E6D5F900067C967 /* SubViewController.m */; };
 		63D7C8691E793005005BE05F /* UIView+YJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7C8681E793005005BE05F /* UIView+YJBadge.m */; };
@@ -206,6 +208,10 @@
 		6348FCB01E6FFE8D007C1D96 /* YJCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJCategories.h; sourceTree = "<group>"; };
 		6348FCB11E6FFE8D007C1D96 /* YJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJFoundation.h; sourceTree = "<group>"; };
 		6348FCB21E6FFE8D007C1D96 /* YJUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJUIKit.h; sourceTree = "<group>"; };
+		637242601E8F4FDF0014BE40 /* NSObject+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YJSuperExt.h"; sourceTree = "<group>"; };
+		637242611E8F4FDF0014BE40 /* NSObject+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YJSuperExt.m"; sourceTree = "<group>"; };
+		637242641E8F50C10014BE40 /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
+		637242651E8F50C10014BE40 /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
 		63AB04A81E77ED4D00754C01 /* UIBarButtonItem+YJBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YJBadge.h"; sourceTree = "<group>"; };
 		63AB04A91E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YJBadge.m"; sourceTree = "<group>"; };
 		63D38FDD1E6D5F900067C967 /* SubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubViewController.h; sourceTree = "<group>"; };
@@ -272,6 +278,7 @@
 		6348FC221E6FFE8D007C1D96 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				6372425F1E8F4FBE0014BE40 /* NSObject */,
 				6348FC231E6FFE8D007C1D96 /* NSArray */,
 				6348FC281E6FFE8D007C1D96 /* NSBundle */,
 				6348FC2B1E6FFE8D007C1D96 /* NSData */,
@@ -630,6 +637,24 @@
 			path = UIWindow;
 			sourceTree = "<group>";
 		};
+		6372425F1E8F4FBE0014BE40 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				637242601E8F4FDF0014BE40 /* NSObject+YJSuperExt.h */,
+				637242611E8F4FDF0014BE40 /* NSObject+YJSuperExt.m */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
+		637242631E8F50A30014BE40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				637242641E8F50C10014BE40 /* PersonModel.h */,
+				637242651E8F50C10014BE40 /* PersonModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		63AB04A71E77ED3000754C01 /* UIBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,6 +685,7 @@
 		63F04B2E1E56E2A5007F0DDA /* YJCategoriesGather */ = {
 			isa = PBXGroup;
 			children = (
+				637242631E8F50A30014BE40 /* Models */,
 				631E7E841E727EC6004639B1 /* Views */,
 				632BB20D1E68145E00D5345F /* Resources */,
 				63F04B321E56E2A5007F0DDA /* AppDelegate.h */,
@@ -776,6 +802,7 @@
 				6348FCC71E6FFE8D007C1D96 /* NSString+YJVerification.m in Sources */,
 				6348FCE61E6FFE8D007C1D96 /* UIView+YJShake.m in Sources */,
 				632CC7B31E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m in Sources */,
+				637242661E8F50C10014BE40 /* PersonModel.m in Sources */,
 				6348FCCA1E6FFE8D007C1D96 /* NSTimer+YJSuperExt.m in Sources */,
 				6348FCE81E6FFE8D007C1D96 /* UIViewController+YJBackButtonBlock.m in Sources */,
 				632CC7B61E7697D800BB69FE /* UIBezierPath+YJSymbol.m in Sources */,
@@ -817,6 +844,7 @@
 				6348FCE41E6FFE8D007C1D96 /* UIView+YJRecursion.m in Sources */,
 				632CC7B91E769D0C00BB69FE /* UIBezierPath+YJLength.m in Sources */,
 				6348FCB61E6FFE8D007C1D96 /* NSData+YJGzip.m in Sources */,
+				637242621E8F4FDF0014BE40 /* NSObject+YJSuperExt.m in Sources */,
 				6348FCD51E6FFE8D007C1D96 /* UINavigationBar+YJSuperExt.m in Sources */,
 				6348FCE51E6FFE8D007C1D96 /* UIView+YJScreenshot.m in Sources */,
 				6348FCE71E6FFE8D007C1D96 /* UIView+YJVisuals.m in Sources */,

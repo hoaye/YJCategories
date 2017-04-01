@@ -203,6 +203,12 @@ Pod::Spec.new do |s|
             sss.public_header_files = 'YJCategories/Foundation/NSTimer/*.{h}'
         end
 
+        # 12. NSObject 配置模块
+        ss.subspec 'NSObject' do |sss|
+            sss.source_files        = 'YJCategories/Foundation/NSObject/*.{h,m}'
+            sss.public_header_files = 'YJCategories/Foundation/NSObject/*.{h}'
+        end
+
     end
 
     #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }

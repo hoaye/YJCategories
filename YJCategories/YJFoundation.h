@@ -9,6 +9,8 @@
 #ifndef YJFoundation_h
 #define YJFoundation_h
 
+    #import "NSObject+YJSuperExt.h"
+
 //  NSArray
     #import "NSArray+YJSuperExt.h"
     #import "NSArray+YJBlock.h"

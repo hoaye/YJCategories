@@ -10,6 +10,7 @@
 #import "SubViewController.h"
 #import "AppDelegate.h"
 #import "DrawView.h"
+#import "PersonModel.h"
 
 @interface ViewController ()
 
@@ -26,6 +27,18 @@
 }
 
 - (void)setUpMainView{
+    
+    PersonModel *model = [[PersonModel alloc] init];
+    model.name = @"houmanager";
+    model.height = nil;
+    
+    BOOL isContaint = [model isContainsNilObject];
+    if (isContaint) {
+        NSLog(@"-->%@", @"包含空");
+    }else{
+        NSLog(@"-->%@", @"正常------");
+    }
+    
     
     [self.view addSubview:self.drawView];
     
