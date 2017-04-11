@@ -39,4 +39,14 @@
     return NO;
 }
 
+/** 交换对象方法 */
++ (void)yj_exchangeInstanceMethod1:(SEL)method1 method2:(SEL)method2{
+    method_exchangeImplementations(class_getInstanceMethod(self, method1), class_getInstanceMethod(self, method2));
+}
+
+/** 交换类方法 */
++ (void)yj_exchangeClassMethod1:(SEL)method1 method2:(SEL)method2{
+    method_exchangeImplementations(class_getClassMethod(self, method1), class_getClassMethod(self, method2));
+}
+
 @end
