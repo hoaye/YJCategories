@@ -92,6 +92,7 @@ YJCategories 是Objective-C超级分类集合
     * UIViewController
         1.  YJSuperExt
         2.  YJBackButtonBlock
+        3.  YJFullScreenSupport
 
     * UILabel
         1.  YJSuperExt
