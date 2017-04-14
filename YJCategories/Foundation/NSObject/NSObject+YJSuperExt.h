@@ -10,7 +10,7 @@
 
 @interface NSObject (YJSuperExt)
 
-/** 模型是否包含空值nil */
+/** 模型是否包含空对象值nil */
 - (BOOL)isContainsNilObject;
 
 /** 交换对象方法 */

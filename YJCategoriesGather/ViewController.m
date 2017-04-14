@@ -32,13 +32,6 @@
     model.name = @"houmanager";
     model.height = nil;
     
-    BOOL isContaint = [model isContainsNilObject];
-    if (isContaint) {
-        NSLog(@"-->%@", @"包含空");
-    }else{
-        NSLog(@"-->%@", @"正常------");
-    }
-    
     
     [self.view addSubview:self.drawView];
     

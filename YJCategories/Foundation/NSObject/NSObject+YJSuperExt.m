@@ -11,7 +11,7 @@
 
 @implementation NSObject (YJSuperExt)
 
-/** 模型是否包含空值nil */
+/** 模型是否包含空对象值nil */
 - (BOOL)isContainsNilObject{
     unsigned count = 0;
     objc_property_t *properties = class_copyPropertyList([self class], &count);
