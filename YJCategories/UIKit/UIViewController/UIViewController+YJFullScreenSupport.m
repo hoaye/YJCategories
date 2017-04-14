@@ -37,19 +37,19 @@
     [self yj_setNavigationBarOriginY:nextY animated:animated];
 }
 
-- (void)yj_setNavigationBarOriginY:(CGFloat)y animated:(BOOL)animated{
+- (void)yj_setNavigationBarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration{
     CGSize statuBarFrameSize = [UIApplication sharedApplication].statusBarFrame.size;
     CGFloat statusBarHeight = [self isPortrait] ? statuBarFrameSize.height : statuBarFrameSize.width;
     CGRect frame = self.navigationController.navigationBar.frame;
     CGFloat navigationBarHeight = frame.size.height;
     
-    CGFloat topLimit = YJ_IS_RUNNING_IOS7 ? -navigationBarHeight + statusBarHeight : -navigationBarHeight;
+    CGFloat topLimit = YJ_IS_RUNNING_IOS7 ? -navigationBarHeight - statusBarHeight : -navigationBarHeight;
     CGFloat bottomLimit = statusBarHeight;
     
     frame.origin.y = fmin(fmax(y, topLimit), bottomLimit);
     CGFloat alpha = 1 - (statusBarHeight - frame.origin.y) / statusBarHeight;
     UIColor *titleTextColor = [UIColor colorWithWhite:0.0 alpha:alpha]; // fade title
-    [UIView animateWithDuration:animated ? 0.1 : 0 animations:^{
+    [UIView animateWithDuration:animated ? duration : 0.0f animations:^{
         self.navigationController.navigationBar.frame = frame;
         [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName : titleTextColor }];
         if (YJ_IS_RUNNING_IOS7) {
@@ -84,7 +84,7 @@
     [self yj_setToolbarOriginY:nextY animated:animated];
 }
 
-- (void)yj_setToolbarOriginY:(CGFloat)y animated:(BOOL)animated{
+- (void)yj_setToolbarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration{
     CGRect frame = self.tabBarController.tabBar.frame;
     CGFloat toolBarHeight = frame.size.height;
     CGSize viewSize = self.navigationController.view.frame.size;
@@ -95,7 +95,7 @@
     
     frame.origin.y = fmin(fmax(y, topLimit), bottomLimit); // limit over moving
     
-    [UIView animateWithDuration:animated ? 0.1 : 0 animations:^{
+    [UIView animateWithDuration:animated ? duration : 0.0 animations:^{
         self.tabBarController.tabBar.frame = frame;
     }];
 }
@@ -124,7 +124,7 @@
     [self yj_setToolbarOriginY:nextY animated:animated];
 }
 
-- (void)yj_setTabBarOriginY:(CGFloat)y animated:(BOOL)animated{
+- (void)yj_setTabBarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration{
     CGRect frame = self.tabBarController.tabBar.frame;
     CGFloat toolBarHeight = frame.size.height;
     CGSize viewSize = self.tabBarController.view.frame.size;
@@ -135,7 +135,7 @@
     
     frame.origin.y = fmin(fmax(y, topLimit), bottomLimit); // limit over moving
     
-    [UIView animateWithDuration:animated ? 0.1 : 0 animations:^{
+    [UIView animateWithDuration:animated ? duration : 0.0 animations:^{
         self.tabBarController.tabBar.frame = frame;
     }];
 }

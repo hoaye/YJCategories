@@ -20,7 +20,7 @@
 - (void)yj_moveNavigtionBar:(CGFloat)deltaY animated:(BOOL)animated;
 
 /** 设置导航栏起始位置 */
-- (void)yj_setNavigationBarOriginY:(CGFloat)y animated:(BOOL)animated;
+- (void)yj_setNavigationBarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration;
 
 
 /** 显示Toolbar */
@@ -33,7 +33,7 @@
 - (void)yj_moveToolbar:(CGFloat)deltaY animated:(BOOL)animated;
 
 /** 设置ToolBar起始位置 */
-- (void)yj_setToolbarOriginY:(CGFloat)y animated:(BOOL)animated;
+- (void)yj_setToolbarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration;
 
 
 /** 显示TabBar */
@@ -46,6 +46,6 @@
 - (void)yj_moveTabBar:(CGFloat)deltaY animated:(BOOL)animated;
 
 /** 设置TabBar起始位置 */
-- (void)yj_setTabBarOriginY:(CGFloat)y animated:(BOOL)animated;
+- (void)yj_setTabBarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration;
 
 @end
