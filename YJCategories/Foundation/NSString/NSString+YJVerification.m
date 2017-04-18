@@ -64,6 +64,21 @@
     return ret1;
 }
 
+/** 是否只含有中文字符 */
+- (BOOL)yj_validateIsOnlyContainChineseCharacter:(NSString *)mobileNo{
+    
+    NSUInteger length = [mobileNo length];
+    for (int i=0; i<length; ++i){
+        NSRange range = NSMakeRange(i, 1);
+        NSString *subString = [mobileNo substringWithRange:range];
+        const char    *cString = [subString UTF8String];
+        if (strlen(cString) != 3){
+            return  NO;
+        }
+    }
+    return  YES;
+}
+
 /** 手机运营商 */
 - (NSString *)yj_mobileNumberAscription{
     

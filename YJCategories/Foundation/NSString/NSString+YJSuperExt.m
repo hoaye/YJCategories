@@ -367,6 +367,21 @@
     return finalScore;
 }
 
+/** 设置WebView类型的自提样式 colorStr=#ffffff */
+- (NSString *)yj_setWebViewWithString:(NSString *)str font:(float)size color:(NSString *)colorStr{
+    //    NSString *conContent = [NSString stringWithFormat:@"<html> \n"
+    //                            "<head> \n"
+    //                            "<style type=\"text/css\"> \n"
+    //                            "body {font-family: \"%@\"; font-size: %f; color: %@;}\n"
+    //                            "</style> \n"
+    //                            "</head> \n"
+    //                            "<body>%@</body> \n"
+    //                            "</html>", @"宋体", size ,colorStr,str] ;
+    NSString *conContent = [NSString stringWithFormat:@"<div style=\"word-break:break-all; float:left;width:240px; font-size:14px;font-family:helvetica;background-color:transparent; color:%@;\">%@</div>",colorStr,str];
+    //    NSString *conContent1 = [NSString stringWithFormat:@"<div id ='foo' align='left' style='line-height:18px; float:left;width:300px; font-size:28px;font-family:helvetica;background-color:transparent; color:#ff7070;>%@<div>",str] ;
+    return conContent;
+}
+
 
 
 

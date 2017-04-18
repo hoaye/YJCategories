@@ -53,6 +53,9 @@ typedef NS_OPTIONS(NSUInteger, YJNSStringScoreOption) {
 /** 字符串的匹配相似度 */
 - (CGFloat)yj_scoreAgainst:(NSString *)anotherString fuzziness:(NSNumber *)fuzziness options:(YJNSStringScoreOption)options;
 
+/** 设置WebView类型的自提样式 colorStr=#ffffff */
+- (NSString *)yj_setWebViewWithString:(NSString *)str font:(float)size color:(NSString *)colorStr;
+
 
 
 @end

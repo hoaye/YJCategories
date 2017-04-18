@@ -22,6 +22,9 @@
 /** 手机号有效性 */
 - (BOOL)yj_isMobileNumber;
 
+/** 是否只含有中文字符 */
+- (BOOL)yj_validateIsOnlyContainChineseCharacter:(NSString *)mobileNo;
+
 /** 邮箱有效性 */
 - (BOOL)yj_isEmailAddress;
 
