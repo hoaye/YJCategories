@@ -11,39 +11,39 @@
 @interface UIViewController (YJFullScreenSupport)
 
 /** 显示导航栏 */
-- (void)yj_showNavigationBar:(BOOL)animated;
+- (void)yj_showNavigationBar:(BOOL)animated duration:(NSTimeInterval)duration;
 
 /** 隐藏导航栏 */
-- (void)yj_hideNavigationBar:(BOOL)animated;
+- (void)yj_hideNavigationBar:(BOOL)animated duration:(NSTimeInterval)duration;
 
 /** 移动导航栏 */
-- (void)yj_moveNavigtionBar:(CGFloat)deltaY animated:(BOOL)animated;
+- (void)yj_moveNavigtionBar:(CGFloat)deltaY animated:(BOOL)animated duration:(NSTimeInterval)duration;
 
 /** 设置导航栏起始位置 */
 - (void)yj_setNavigationBarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration;
 
 
 /** 显示Toolbar */
-- (void)yj_showToolbar:(BOOL)animated;
+- (void)yj_showToolbar:(BOOL)animated duration:(NSTimeInterval)duration;
 
 /** 隐藏ToolBar */
-- (void)yj_hideToolbar:(BOOL)animated;
+- (void)yj_hideToolbar:(BOOL)animated duration:(NSTimeInterval)duration;
 
 /** 移动ToolBar */
-- (void)yj_moveToolbar:(CGFloat)deltaY animated:(BOOL)animated;
+- (void)yj_moveToolbar:(CGFloat)deltaY animated:(BOOL)animated duration:(NSTimeInterval)duration;
 
 /** 设置ToolBar起始位置 */
 - (void)yj_setToolbarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration;
 
 
 /** 显示TabBar */
-- (void)yj_showTabBar:(BOOL)animated;
+- (void)yj_showTabBar:(BOOL)animated duration:(NSTimeInterval)duration;
 
 /** 隐藏TabBar */
-- (void)yj_hideTabBar:(BOOL)animated;
+- (void)yj_hideTabBar:(BOOL)animated duration:(NSTimeInterval)duration;
 
 /** 移动TabBar */
-- (void)yj_moveTabBar:(CGFloat)deltaY animated:(BOOL)animated;
+- (void)yj_moveTabBar:(CGFloat)deltaY animated:(BOOL)animated duration:(NSTimeInterval)duration;
 
 /** 设置TabBar起始位置 */
 - (void)yj_setTabBarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration;

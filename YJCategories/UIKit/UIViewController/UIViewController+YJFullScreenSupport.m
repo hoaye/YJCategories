@@ -16,25 +16,25 @@
 
 @implementation UIViewController (YJFullScreenSupport)
 
-- (void)yj_showNavigationBar:(BOOL)animated{
+- (void)yj_showNavigationBar:(BOOL)animated duration:(NSTimeInterval)duration{
     CGSize statuBarFrameSize = [UIApplication sharedApplication].statusBarFrame.size;
     CGFloat statusBarHeight = [self isPortrait] ? statuBarFrameSize.height : statuBarFrameSize.width;
-    [self yj_setNavigationBarOriginY:statusBarHeight animated:animated];
+    [self yj_setNavigationBarOriginY:statusBarHeight animated:animated duration:duration];
     
 }
 
-- (void)yj_hideNavigationBar:(BOOL)animated{
+- (void)yj_hideNavigationBar:(BOOL)animated duration:(NSTimeInterval)duration{
     CGSize statuBarFrameSize = [UIApplication sharedApplication].statusBarFrame.size;
     CGFloat statusBarHeight = [self isPortrait] ? statuBarFrameSize.height : statuBarFrameSize.width;
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
     CGFloat top = YJ_IS_RUNNING_IOS7 ? -navigationBarHeight + statusBarHeight : -navigationBarHeight;
-    [self yj_setNavigationBarOriginY:top animated:animated];
+    [self yj_setNavigationBarOriginY:top animated:animated duration:duration];
 }
 
-- (void)yj_moveNavigtionBar:(CGFloat)deltaY animated:(BOOL)animated{
+- (void)yj_moveNavigtionBar:(CGFloat)deltaY animated:(BOOL)animated duration:(NSTimeInterval)duration{
     CGRect frame = self.navigationController.navigationBar.frame;
     CGFloat nextY = frame.origin.y + deltaY;
-    [self yj_setNavigationBarOriginY:nextY animated:animated];
+    [self yj_setNavigationBarOriginY:nextY animated:animated duration:duration];
 }
 
 - (void)yj_setNavigationBarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration{
@@ -65,23 +65,23 @@
 }
 
 #pragma mark - ToolBar
-- (void)yj_showToolbar:(BOOL)animated{
+- (void)yj_showToolbar:(BOOL)animated duration:(NSTimeInterval)duration{
     CGSize viewSize = self.navigationController.view.frame.size;
     CGFloat viewHeight = [self isPortrait] ? viewSize.height : viewSize.width;
     CGFloat toolbarHeight = self.tabBarController.tabBar.frame.size.height;
-    [self yj_setToolbarOriginY:viewHeight - toolbarHeight animated:animated];
+    [self yj_setToolbarOriginY:viewHeight - toolbarHeight animated:animated duration:duration];
 }
 
-- (void)yj_hideToolbar:(BOOL)animated{
+- (void)yj_hideToolbar:(BOOL)animated duration:(NSTimeInterval)duration{
     CGSize viewSize = self.navigationController.view.frame.size;
     CGFloat viewHeight = [self isPortrait] ? viewSize.height : viewSize.width;
-    [self yj_setToolbarOriginY:viewHeight animated:animated];
+    [self yj_setToolbarOriginY:viewHeight animated:animated duration:duration];
 }
 
-- (void)yj_moveToolbar:(CGFloat)deltaY animated:(BOOL)animated{
+- (void)yj_moveToolbar:(CGFloat)deltaY animated:(BOOL)animated duration:(NSTimeInterval)duration{
     CGRect frame = self.tabBarController.tabBar.frame;
     CGFloat nextY = frame.origin.y + deltaY;
-    [self yj_setToolbarOriginY:nextY animated:animated];
+    [self yj_setToolbarOriginY:nextY animated:animated duration:duration];
 }
 
 - (void)yj_setToolbarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration{
@@ -106,22 +106,22 @@
 
 #pragma mark - TabBar
 
-- (void)yj_showTabBar:(BOOL)animated{
+- (void)yj_showTabBar:(BOOL)animated duration:(NSTimeInterval)duration{
     CGFloat viewHeight = self.tabBarController.view.frame.size.height;
     CGFloat toolbarHeight = self.tabBarController.tabBar.frame.size.height;
-    [self yj_setToolbarOriginY:viewHeight - toolbarHeight animated:animated];
+    [self yj_setToolbarOriginY:viewHeight - toolbarHeight animated:animated duration:duration];
 }
 
-- (void)yj_hideTabBar:(BOOL)animated{
+- (void)yj_hideTabBar:(BOOL)animated duration:(NSTimeInterval)duration{
     CGSize viewSize = self.tabBarController.view.frame.size;
     CGFloat viewHeight = [self isPortrait] ? viewSize.height : viewSize.width;
-    [self yj_setToolbarOriginY:viewHeight animated:animated];
+    [self yj_setToolbarOriginY:viewHeight animated:animated duration:duration];
 }
 
-- (void)yj_moveTabBar:(CGFloat)deltaY animated:(BOOL)animated{
+- (void)yj_moveTabBar:(CGFloat)deltaY animated:(BOOL)animated duration:(NSTimeInterval)duration{
     CGRect frame =  self.tabBarController.tabBar.frame;
     CGFloat nextY = frame.origin.y + deltaY;
-    [self yj_setToolbarOriginY:nextY animated:animated];
+    [self yj_setToolbarOriginY:nextY animated:animated duration:duration];
 }
 
 - (void)yj_setTabBarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration{
