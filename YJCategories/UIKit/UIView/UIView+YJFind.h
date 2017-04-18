@@ -11,18 +11,18 @@
 @interface UIView (YJFind)
 
 /** 找到指定类名的subview子对象 */
-- (id)findSubViewWithSubViewClass:(Class)clazz;
+- (id)yj_findSubViewWithSubViewClass:(Class)clazz;
 
 /** 找到指定类名的SuperView对象 */
-- (id)findSuperViewWithSuperViewClass:(Class)clazz;
+- (id)yj_findSuperViewWithSuperViewClass:(Class)clazz;
 
 /** 找到第一响应者 */
-- (UIView *)findFirstResponder;
+- (UIView *)yj_findFirstResponder;
 
 /** 找到第一响应者并注销 */
-- (BOOL)findFirstResponderAndResign;
+- (BOOL)yj_findFirstResponderAndResign;
 
 /** 找到当前view所在的viewcontroler */
-- (UIViewController *)findSelfInViewController;
+- (UIViewController *)yj_findSelfInViewController;
 
 @end

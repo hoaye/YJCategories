@@ -32,11 +32,11 @@ CGPoint CGRectGetCenter(CGRect rect);
 @property (nonatomic, assign) CGFloat centerY;        /**< 中心点Y */
 
 /** 移动 */
-- (void)moveOriginToPoint:(CGPoint)point;
+- (void)yj_moveOriginToPoint:(CGPoint)point;
 /** 缩放 */
-- (void)scaleWidth:(CGFloat)widthFactor height:(CGFloat)heightFactor;
+- (void)yj_scaleWidth:(CGFloat)widthFactor height:(CGFloat)heightFactor;
 /** 适应缩放 */
-- (void)fitScaleInSize:(CGSize)size;
+- (void)yj_fitScaleInSize:(CGSize)size;
 
 
 @end

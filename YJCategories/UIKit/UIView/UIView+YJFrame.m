@@ -164,7 +164,7 @@ CGPoint CGRectGetCenter(CGRect rect){
     self.center = CGPointMake(self.center.x, centerY);
 }
 
-- (void)moveOriginToPoint:(CGPoint)point{
+- (void)yj_moveOriginToPoint:(CGPoint)point{
     CGRect newframe = self.frame;
     newframe.origin.x = point.x;
     newframe.origin.y = point.y;
@@ -178,14 +178,14 @@ CGPoint CGRectGetCenter(CGRect rect){
     self.center = newcenter;
 }
 
-- (void)scaleWidth:(CGFloat)widthFactor height:(CGFloat)heightFactor{
+- (void)yj_scaleWidth:(CGFloat)widthFactor height:(CGFloat)heightFactor{
     CGRect newframe = self.frame;
     newframe.size.width *= widthFactor;
     newframe.size.height *= heightFactor;
     self.frame = newframe;
 }
 
-- (void)fitScaleInSize:(CGSize)size{
+- (void)yj_fitScaleInSize:(CGSize)size{
     
     CGFloat scale;
     CGRect newframe = self.frame;

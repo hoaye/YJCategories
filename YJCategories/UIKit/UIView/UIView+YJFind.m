@@ -11,7 +11,7 @@
 @implementation UIView (YJFind)
 
 /** 找到指定类名的subview子对象 */
-- (id)findSubViewWithSubViewClass:(Class)clazz{
+- (id)yj_findSubViewWithSubViewClass:(Class)clazz{
     for (id subView in self.subviews) {
         if ([subView isKindOfClass:clazz]) {
             return subView;
@@ -21,7 +21,7 @@
 }
 
 /** 找到指定类名的SuperView对象 */
-- (id)findSuperViewWithSuperViewClass:(Class)clazz{
+- (id)yj_findSuperViewWithSuperViewClass:(Class)clazz{
     if (self == nil) {
         return nil;
     } else if (self.superview == nil) {
@@ -29,19 +29,19 @@
     } else if ([self.superview isKindOfClass:clazz]) {
         return self.superview;
     } else {
-        return [self.superview findSuperViewWithSuperViewClass:clazz];
+        return [self.superview yj_findSuperViewWithSuperViewClass:clazz];
     }
 }
 
 /** 找到第一响应者 */
-- (UIView *)findFirstResponder{
+- (UIView *)yj_findFirstResponder{
     
     if (([self isKindOfClass:[UITextField class]] || [self isKindOfClass:[UITextView class]])
         && (self.isFirstResponder)) {
         return self;
     }
     for (UIView *v in self.subviews) {
-        UIView *fv = [v findFirstResponder];
+        UIView *fv = [v yj_findFirstResponder];
         if (fv) {
             return fv;
         }
@@ -50,14 +50,14 @@
 }
 
 /** 找到第一响应者并注销 */
-- (BOOL)findFirstResponderAndResign{
+- (BOOL)yj_findFirstResponderAndResign{
     if (self.isFirstResponder) {
         [self resignFirstResponder];
         return YES;
     }
     
     for (UIView *v in self.subviews) {
-        if ([v findFirstResponderAndResign]) {
+        if ([v yj_findFirstResponderAndResign]) {
             return YES;
         }
     }
@@ -65,7 +65,7 @@
 }
 
 /** 找到当前view所在的viewcontroler */
-- (UIViewController *)findSelfInViewController{
+- (UIViewController *)yj_findSelfInViewController{
     UIResponder *responder = self.nextResponder;
     do {
         if ([responder isKindOfClass:[UIViewController class]]) {
