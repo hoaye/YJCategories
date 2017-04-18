@@ -25,6 +25,9 @@
 /** 是否只含有中文字符 */
 - (BOOL)yj_validateIsOnlyContainChineseCharacter:(NSString *)mobileNo;
 
+/** 验证是否是min到max位的中文 */
+- (BOOL)validateChineseCharMinLength:(NSUInteger)min maxLength:(NSUInteger)max;
+
 /** 邮箱有效性 */
 - (BOOL)yj_isEmailAddress;
 
@@ -156,5 +159,7 @@
  *  我们对它进行一些分析吧：
  *  首先是一个转义字符\(,它能出现0次或1次(?),然后是一个0，后面跟着2个数字(\d{2})，然后是)或-或空格中的一个，它出现1次或不出现(?)，
  *  最后是8个数字(\d{8})
+ 
+ 非法字符集： @"[·~`!@#$%^&{}\\\\<>\\+\\[\\]　•〔〕『』«»【】〗〖›‹」「﹝﹞]"
 */
 

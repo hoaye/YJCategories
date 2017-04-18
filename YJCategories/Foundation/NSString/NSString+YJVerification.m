@@ -79,6 +79,20 @@
     return  YES;
 }
 
+/** 验证是否是min到max位的中文 */
+- (BOOL)validateChineseCharMinLength:(NSUInteger)min maxLength:(NSUInteger)max{
+    if (!self || [self isEmptyOrWhitespace]){
+        return NO;
+    }
+    NSString *invoiceRegex = [NSString stringWithFormat:@"[\\u4e00-\\u9fa5]{%ld,%ld}", min, max];
+    return [self yj_isValidateByRegex:invoiceRegex];
+}
+
+- (BOOL)isEmptyOrWhitespace {
+    return !self.length ||
+    ![self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length;
+}
+
 /** 手机运营商 */
 - (NSString *)yj_mobileNumberAscription{
     
