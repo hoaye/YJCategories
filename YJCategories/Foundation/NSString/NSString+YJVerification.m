@@ -84,7 +84,7 @@
     if (!self || [self isEmptyOrWhitespace]){
         return NO;
     }
-    NSString *invoiceRegex = [NSString stringWithFormat:@"[\\u4e00-\\u9fa5]{%ld,%ld}", min, max];
+    NSString *invoiceRegex = [NSString stringWithFormat:@"[\\u4e00-\\u9fa5]{%ld,%ld}", (unsigned long)min, (unsigned long)max];
     return [self yj_isValidateByRegex:invoiceRegex];
 }
 
