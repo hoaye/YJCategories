@@ -13,16 +13,16 @@ typedef void(^YJFinishedBlock)(BOOL finished);
 @interface UIViewController (YJFullScreenSupport)
 
 /** 显示导航栏 */
-- (void)yj_showNavigationBar:(BOOL)animated duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion;
+- (void)yj_showNavigationBar:(BOOL)animated toStatusBar:(BOOL)toStatusBar duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion;
 
 /** 隐藏导航栏 */
-- (void)yj_hideNavigationBar:(BOOL)animated duration:(NSTimeInterval)duration toStatusBar:(BOOL)toStatusBar completion:(YJFinishedBlock)completion;
+- (void)yj_hideNavigationBar:(BOOL)animated toStatusBar:(BOOL)toStatusBar duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion;
 
 /** 移动导航栏 */
-- (void)yj_moveNavigtionBar:(CGFloat)deltaY animated:(BOOL)animated duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion;
+- (void)yj_moveNavigtionBar:(CGFloat)deltaY animated:(BOOL)animated toStatusBar:(BOOL)toStatusBar duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion;
 
 /** 设置导航栏起始位置 */
-- (void)yj_setNavigationBarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion;
+- (void)yj_setNavigationBarOriginY:(CGFloat)y animated:(BOOL)animated toStatusBar:(BOOL)toStatusBar duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion;
 
 
 /** 显示Toolbar */

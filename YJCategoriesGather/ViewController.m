@@ -33,16 +33,26 @@
     model.height = nil;
     
     
-    [self.view addSubview:self.drawView];
+    
+//    [self.view addSubview:self.drawView];
     
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    SubViewController *subVc = [[SubViewController alloc] init];
-    [self.navigationController pushViewController:subVc animated:YES];
+    [self yj_hideNavigationBar:YES toStatusBar:NO duration:0.25 completion:^(BOOL finished) {
+        NSLog(@"-->%@", @"over");
+        NSLog(@"-->%@", NSStringFromCGRect(self.view.frame));
+    }];
 
+}
+
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    [self yj_showNavigationBar:YES toStatusBar:YES duration:1 completion:^(BOOL finished) {
+        NSLog(@"-->%@", @"over");
+        NSLog(@"-->%@", NSStringFromCGRect(self.view.frame));
+    }];
 }
 
 #pragma mark - Lazy

@@ -16,43 +16,43 @@
 
 @implementation UIViewController (YJFullScreenSupport)
 
-- (void)yj_showNavigationBar:(BOOL)animated duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion{
+- (void)yj_showNavigationBar:(BOOL)animated toStatusBar:(BOOL)toStatusBar duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion{
     CGSize statuBarFrameSize = [UIApplication sharedApplication].statusBarFrame.size;
     CGFloat statusBarHeight = [self isPortrait] ? statuBarFrameSize.height : statuBarFrameSize.width;
-    [self yj_setNavigationBarOriginY:statusBarHeight animated:animated duration:duration completion:completion];
+    [self yj_setNavigationBarOriginY:statusBarHeight animated:animated toStatusBar:(BOOL)toStatusBar duration:duration completion:completion];
     
 }
 
-- (void)yj_hideNavigationBar:(BOOL)animated duration:(NSTimeInterval)duration toStatusBar:(BOOL)toStatusBar completion:(YJFinishedBlock)completion{
+- (void)yj_hideNavigationBar:(BOOL)animated toStatusBar:(BOOL)toStatusBar duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion{
     CGSize statuBarFrameSize = [UIApplication sharedApplication].statusBarFrame.size;
     CGFloat statusBarHeight = [self isPortrait] ? statuBarFrameSize.height : statuBarFrameSize.width;
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
-    CGFloat top = YJ_IS_RUNNING_IOS7 ? ((toStatusBar)?(-navigationBarHeight + statusBarHeight):(-navigationBarHeight - statusBarHeight)) : -navigationBarHeight;
-    [self yj_setNavigationBarOriginY:top animated:animated duration:duration completion:completion];
+    CGFloat top = (toStatusBar)?(-navigationBarHeight + statusBarHeight):(-navigationBarHeight - statusBarHeight);
+    [self yj_setNavigationBarOriginY:top animated:animated toStatusBar:(BOOL)toStatusBar duration:duration completion:completion];
 }
 
-- (void)yj_moveNavigtionBar:(CGFloat)deltaY animated:(BOOL)animated duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion{
+- (void)yj_moveNavigtionBar:(CGFloat)deltaY animated:(BOOL)animated toStatusBar:(BOOL)toStatusBar duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion{
     CGRect frame = self.navigationController.navigationBar.frame;
     CGFloat nextY = frame.origin.y + deltaY;
-    [self yj_setNavigationBarOriginY:nextY animated:animated duration:duration completion:completion];
+    [self yj_setNavigationBarOriginY:nextY animated:animated toStatusBar:(BOOL)toStatusBar duration:duration completion:completion];
 }
 
-- (void)yj_setNavigationBarOriginY:(CGFloat)y animated:(BOOL)animated duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion{
+- (void)yj_setNavigationBarOriginY:(CGFloat)y animated:(BOOL)animated toStatusBar:(BOOL)toStatusBar duration:(NSTimeInterval)duration completion:(YJFinishedBlock)completion{
     CGSize statuBarFrameSize = [UIApplication sharedApplication].statusBarFrame.size;
     CGFloat statusBarHeight = [self isPortrait] ? statuBarFrameSize.height : statuBarFrameSize.width;
     CGRect frame = self.navigationController.navigationBar.frame;
     CGFloat navigationBarHeight = frame.size.height;
     
-    CGFloat topLimit = YJ_IS_RUNNING_IOS7 ? -navigationBarHeight - statusBarHeight : -navigationBarHeight;
+    CGFloat topLimit = (toStatusBar)?(-navigationBarHeight + statusBarHeight):(-navigationBarHeight - statusBarHeight);
     CGFloat bottomLimit = statusBarHeight;
     
     frame.origin.y = fmin(fmax(y, topLimit), bottomLimit);
     CGFloat alpha = 1 - (statusBarHeight - frame.origin.y) / statusBarHeight;
-    UIColor *titleTextColor = [UIColor colorWithWhite:0.0 alpha:alpha]; // fade title
+//    UIColor *titleTextColor = [UIColor colorWithWhite:0.0 alpha:alpha]; // fade title
     
     [UIView animateWithDuration:animated ? duration : 0.0f animations:^{
         self.navigationController.navigationBar.frame = frame;
-        [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName : titleTextColor }];
+//        [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName : titleTextColor }];
         if (YJ_IS_RUNNING_IOS7) {
             // fade bar buttons
             UIColor *tintColor = self.navigationController.navigationBar.tintColor;
