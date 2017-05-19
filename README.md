@@ -30,6 +30,7 @@ YJCategories 是Objective-C超级分类集合
 
     * NSObject
         1.  YJSuperExt
+        2.  YJKeyValueObserving
 
     * NSArray
         1.  YJSuperExt

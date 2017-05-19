@@ -36,17 +36,16 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    self.isCanMoveTop = !self.isCanMoveTop;
+}
+
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1) {
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-
-}
-
 
 #pragma mark - Lazy
 - (UIView *)showView{
@@ -80,7 +79,9 @@
 */
 
 - (void)dealloc{
-    NSLog(@"-->%@", @"SubViewController dealloc");
+    NSLog(@"-->%@", @"SubViewController----------dealloc");
+    NSLog(@"-->%@", self.keyPathObservers);
+    [self yj_removeSafeAllObservers];
 }
 
 @end

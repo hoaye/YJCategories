@@ -10,6 +10,7 @@
 #define YJFoundation_h
 
     #import "NSObject+YJSuperExt.h"
+    #import "NSObject+YJKeyValueObserving.h"
 
 //  NSArray
     #import "NSArray+YJSuperExt.h"

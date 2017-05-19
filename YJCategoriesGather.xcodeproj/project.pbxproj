@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		631DF0421ECEEDC200499586 /* NSObject+YJKeyValueObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 631DF0411ECEEDC200499586 /* NSObject+YJKeyValueObserving.m */; };
 		631E7E871E727EE3004639B1 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631E7E861E727EE3004639B1 /* DrawView.m */; };
 		632BB20F1E68145E00D5345F /* SampleFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 632BB20E1E68145E00D5345F /* SampleFile.txt */; };
 		632CC7B31E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m in Sources */ = {isa = PBXBuildFile; fileRef = 632CC7B21E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m */; };
@@ -85,6 +86,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		631DF0401ECEEDC200499586 /* NSObject+YJKeyValueObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YJKeyValueObserving.h"; sourceTree = "<group>"; };
+		631DF0411ECEEDC200499586 /* NSObject+YJKeyValueObserving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YJKeyValueObserving.m"; sourceTree = "<group>"; };
 		631E7E851E727EE3004639B1 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		631E7E861E727EE3004639B1 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
 		632BB20E1E68145E00D5345F /* SampleFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SampleFile.txt; sourceTree = "<group>"; };
@@ -647,6 +650,8 @@
 			children = (
 				637242601E8F4FDF0014BE40 /* NSObject+YJSuperExt.h */,
 				637242611E8F4FDF0014BE40 /* NSObject+YJSuperExt.m */,
+				631DF0401ECEEDC200499586 /* NSObject+YJKeyValueObserving.h */,
+				631DF0411ECEEDC200499586 /* NSObject+YJKeyValueObserving.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -812,6 +817,7 @@
 				6348FCE81E6FFE8D007C1D96 /* UIViewController+YJBackButtonBlock.m in Sources */,
 				632CC7B61E7697D800BB69FE /* UIBezierPath+YJSymbol.m in Sources */,
 				6348FCD41E6FFE8D007C1D96 /* UILabel+YJSuperExt.m in Sources */,
+				631DF0421ECEEDC200499586 /* NSObject+YJKeyValueObserving.m in Sources */,
 				63F04B371E56E2A5007F0DDA /* ViewController.m in Sources */,
 				6348FCDB1E6FFE8D007C1D96 /* UITableViewCell+YJNib.m in Sources */,
 				6348FCC11E6FFE8D007C1D96 /* NSString+YJContains.m in Sources */,

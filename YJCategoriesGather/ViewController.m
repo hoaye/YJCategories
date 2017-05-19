@@ -41,11 +41,20 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    [self yj_hideNavigationBar:YES toStatusBar:NO duration:0.25 completion:^(BOOL finished) {
-        NSLog(@"-->%@", @"over");
-        NSLog(@"-->%@", NSStringFromCGRect(self.view.frame));
-    }];
+    NSLog(@"-->%@", self);
+    SubViewController *subViewC = [[SubViewController alloc] init];
+    [subViewC yj_addSafeObserver:self forKeyPath:@"isCanMoveTop"];
 
+    [self.navigationController pushViewController:subViewC animated:YES];
+   
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+
+    if ([keyPath isEqualToString:@"isCanMoveTop"]) {
+        BOOL isCanMoveTop = [[change objectForKey:NSKeyValueChangeNewKey] integerValue];
+        NSLog(@"-->%d", isCanMoveTop);
+    }
 }
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{

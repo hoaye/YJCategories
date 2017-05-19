@@ -10,4 +10,6 @@
 
 @interface SubViewController : UIViewController
 
+@property (nonatomic, assign) BOOL isCanMoveTop; /**< 可以滑动到顶部 */
+
 @end
