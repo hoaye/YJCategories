@@ -61,6 +61,8 @@ static char const *const kSafeObserversKey = "kSafeObserversKey";
         id observer = [keyObserver.allValues firstObject];
         [self yj_removeSafeObserver:observer forKeyPath:keyPath];
     }
+    
+    [self.keyPathObservers removeAllObjects];
 }
 
 @end
