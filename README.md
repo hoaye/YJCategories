@@ -36,6 +36,9 @@ YJCategories 是Objective-C超级分类集合
         1.  YJSuperExt
         2.  YJBlock
 
+    * NSMutableArray
+        1.  YJSuperExt
+
     * NSDictionary
         1.  YJSuperExt
         2.  YJMerge

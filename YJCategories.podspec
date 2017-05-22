@@ -142,72 +142,79 @@ Pod::Spec.new do |s|
             sss.public_header_files = 'YJCategories/Foundation/NSArray/*.{h}'
         end
 
-        # 3. NSDictionary 配置模块
+        # 3. NSMutableArray 配置模块
+        ss.subspec 'NSArray' do |sss|
+            sss.source_files        = 'YJCategories/Foundation/NSMutableArray/*.{h,m}'
+            sss.public_header_files = 'YJCategories/Foundation/NSMutableArray/*.{h}'
+        end
+
+        # 4. NSDictionary 配置模块
         ss.subspec 'NSDictionary' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSDictionary/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSDictionary/*.{h}'
         end
 
-        # 4. NSBundle 配置模块
+        # 5. NSBundle 配置模块
         ss.subspec 'NSBundle' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSBundle/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSBundle/*.{h}'
         end
 
-        # 5. NSData 配置模块
+        # 6. NSData 配置模块
         ss.subspec 'NSData' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSData/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSData/*.{h}'
         end
 
-        # 6. NSIndexPath 配置模块
+        # 7. NSIndexPath 配置模块
         ss.subspec 'NSIndexPath' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSIndexPath/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSIndexPath/*.{h}'
         end
 
-        # 7. NSNotificationCenter 配置模块
+        # 8. NSNotificationCenter 配置模块
         ss.subspec 'NSNotificationCenter' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSNotificationCenter/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSNotificationCenter/*.{h}'
         end
 
-        # 8. NSURL 配置模块
+        # 9. NSURL 配置模块
         ss.subspec 'NSURL' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSURL/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSURL/*.{h}'
         end
 
-        # 8. NSDate 配置模块
+        # 10. NSDate 配置模块
         ss.subspec 'NSDate' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSDate/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSDate/*.{h}'
         end
 
-        # 9. NSDateFormatter 配置模块
+        # 11. NSDateFormatter 配置模块
         ss.subspec 'NSDateFormatter' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSDateFormatter/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSDateFormatter/*.{h}'
         end
 
 
-        # 10. NSFileManager 配置模块
+        # 12. NSFileManager 配置模块
         ss.subspec 'NSFileManager' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSFileManager/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSFileManager/*.{h}'
         end
 
-        # 11. NSTimer 配置模块
+        # 13. NSTimer 配置模块
         ss.subspec 'NSTimer' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSTimer/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSTimer/*.{h}'
         end
 
-        # 12. NSObject 配置模块
+        # 14. NSObject 配置模块
         ss.subspec 'NSObject' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSObject/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSObject/*.{h}'
         end
+
 
     end
 

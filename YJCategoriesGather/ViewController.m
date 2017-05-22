@@ -40,6 +40,14 @@
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    
+    NSArray *names = @[@"1",@"2", @"3"];
+    NSMutableArray *mutableNames = [NSMutableArray arrayWithArray:names];
+    names = [names yj_removeLastObject];
+    
+    NSLog(@"-->%@", names);
+    
 
     NSLog(@"-->%@", self);
     SubViewController *subViewC = [[SubViewController alloc] init];

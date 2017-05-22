@@ -72,6 +72,7 @@
 		637242621E8F4FDF0014BE40 /* NSObject+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 637242611E8F4FDF0014BE40 /* NSObject+YJSuperExt.m */; };
 		637242661E8F50C10014BE40 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637242651E8F50C10014BE40 /* PersonModel.m */; };
 		63AB04AA1E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB04A91E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m */; };
+		63BB19AD1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BB19AC1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m */; };
 		63D38FDF1E6D5F900067C967 /* SubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D38FDE1E6D5F900067C967 /* SubViewController.m */; };
 		63D7C8691E793005005BE05F /* UIView+YJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7C8681E793005005BE05F /* UIView+YJBadge.m */; };
 		63D7C86C1E7939F3005BE05F /* UIButton+YJImagePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7C86B1E7939F3005BE05F /* UIButton+YJImagePosition.m */; };
@@ -218,6 +219,8 @@
 		637242651E8F50C10014BE40 /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
 		63AB04A81E77ED4D00754C01 /* UIBarButtonItem+YJBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YJBadge.h"; sourceTree = "<group>"; };
 		63AB04A91E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YJBadge.m"; sourceTree = "<group>"; };
+		63BB19AB1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+YJSuperExt.h"; sourceTree = "<group>"; };
+		63BB19AC1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+YJSuperExt.m"; sourceTree = "<group>"; };
 		63D38FDD1E6D5F900067C967 /* SubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubViewController.h; sourceTree = "<group>"; };
 		63D38FDE1E6D5F900067C967 /* SubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubViewController.m; sourceTree = "<group>"; };
 		63D7C8671E793005005BE05F /* UIView+YJBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YJBadge.h"; sourceTree = "<group>"; };
@@ -284,6 +287,7 @@
 		6348FC221E6FFE8D007C1D96 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				63BB19AA1ED2F4D400A7165B /* NSMutableArray */,
 				6372425F1E8F4FBE0014BE40 /* NSObject */,
 				6348FC231E6FFE8D007C1D96 /* NSArray */,
 				6348FC281E6FFE8D007C1D96 /* NSBundle */,
@@ -674,6 +678,15 @@
 			path = UIBarButtonItem;
 			sourceTree = "<group>";
 		};
+		63BB19AA1ED2F4D400A7165B /* NSMutableArray */ = {
+			isa = PBXGroup;
+			children = (
+				63BB19AB1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.h */,
+				63BB19AC1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m */,
+			);
+			path = NSMutableArray;
+			sourceTree = "<group>";
+		};
 		63F04B231E56E2A5007F0DDA = {
 			isa = PBXGroup;
 			children = (
@@ -865,6 +878,7 @@
 				6348FCB71E6FFE8D007C1D96 /* NSData+YJSuperExt.m in Sources */,
 				6348FCC91E6FFE8D007C1D96 /* NSTimer+YJBlock.m in Sources */,
 				63F04B311E56E2A5007F0DDA /* main.m in Sources */,
+				63BB19AD1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m in Sources */,
 				63D7C8691E793005005BE05F /* UIView+YJBadge.m in Sources */,
 				6348FCDC1E6FFE8D007C1D96 /* UIView+YJAnimation.m in Sources */,
 				631E7E871E727EE3004639B1 /* DrawView.m in Sources */,
