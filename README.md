@@ -1,5 +1,9 @@
-YJCategories 是Objective-C超级分类集合
-================
+# YJCategories 是Objective-C超级分类集合
+
+[![CocoaPods](https://img.shields.io/cocoapods/p/YJCategories.svg)](https://github.com/YJManager/YJCategories.git)
+[![CocoaPods](https://img.shields.io/cocoapods/v/YJCategories.svg)](https://github.com/YJManager/YJCategories.git)
+[![GitHub tag](https://img.shields.io/github/tag/YJManager/YJCategories.svg)](https://github.com/YJManager/YJCategories.git)
+[![license](https://img.shields.io/github/license/YJManager/YJCategories.svg)](https://github.com/YJManager/YJCategories.git)
 
 收集常用、实用的Objective-C Categories扩展, 其中包括 Foundation, UIKit, CoreData, QuartzCore, CoreLocation, MapKit 等.
 
