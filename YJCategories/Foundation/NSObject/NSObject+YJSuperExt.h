@@ -18,4 +18,7 @@
 /** 交换类方法 */
 + (void)yj_exchangeClassMethod1:(SEL)method1 method2:(SEL)method2;
 
+/** 执行 > 2 参数的方法签名 */
+-(id)performSelector:(SEL)aSelector withObjectsYJ_Ext:(NSArray *)objects;
+
 @end
