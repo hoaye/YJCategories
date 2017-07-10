@@ -49,35 +49,29 @@
     method_exchangeImplementations(class_getClassMethod(self, method1), class_getClassMethod(self, method2));
 }
 
--(id)performSelector:(SEL)aSelector withObjectsYJ_Ext:(NSArray *)objects{
+- (id)performSelector:(SEL)aSelector withObjectsYJ_Ext:(NSArray *)objects{
     
     NSMethodSignature * signature = [[self class] instanceMethodSignatureForSelector:aSelector];
-    if (signature == nil) {
-        return nil;
-    }
+    
+    if (!signature) {return nil;}
+    
     NSInvocation * invocation = [NSInvocation invocationWithMethodSignature:signature];
     invocation.target = self;
     invocation.selector = aSelector;
     
-    // 设置参数
-    NSInteger paramsCount = signature.numberOfArguments - 2; // 减去 self 和 _cmd
+    NSInteger paramsCount = signature.numberOfArguments - 2;
     paramsCount = MIN(paramsCount, objects.count);
+    
     for (NSInteger i = 0; i < paramsCount; i++) {
         id object = objects[i];
-        if ([object isKindOfClass:[NSNull class]]) {
-            continue;
-        }
+        if ([object isKindOfClass:[NSNull class]]) { continue; }
         [invocation setArgument:&object atIndex:i + 2];
     }
     
-    // 调用方法
     [invocation invoke];
     
-    // 返回值
     id returnValue = nil;
-    if (signature.methodReturnLength) {
-        [invocation getReturnValue:&returnValue];
-    }
+    if (signature.methodReturnLength) { [invocation getReturnValue:&returnValue]; }
     return returnValue;
 }
 
