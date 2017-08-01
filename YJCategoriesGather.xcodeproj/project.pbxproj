@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6318F38D1F301482003E10F9 /* UIImageView+YJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318F38C1F301482003E10F9 /* UIImageView+YJCornerRadius.m */; };
 		631DF0421ECEEDC200499586 /* NSObject+YJKeyValueObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 631DF0411ECEEDC200499586 /* NSObject+YJKeyValueObserving.m */; };
 		631E7E871E727EE3004639B1 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631E7E861E727EE3004639B1 /* DrawView.m */; };
 		632B9E501F134ABE003FE595 /* UIImage+YJReSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 632B9E4F1F134ABE003FE595 /* UIImage+YJReSize.m */; };
@@ -88,9 +89,12 @@
 		63F04B3C1E56E2A5007F0DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63F04B3B1E56E2A5007F0DDA /* Assets.xcassets */; };
 		63F04B3F1E56E2A5007F0DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F04B3D1E56E2A5007F0DDA /* LaunchScreen.storyboard */; };
 		63F04B7D1E57037D007F0DDA /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F04B7C1E57037D007F0DDA /* libresolv.9.tbd */; };
+		63FB4EF11F2F3B870071ED8F /* UIView+YJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FB4EF01F2F3B870071ED8F /* UIView+YJCornerRadius.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6318F38B1F301482003E10F9 /* UIImageView+YJCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YJCornerRadius.h"; sourceTree = "<group>"; };
+		6318F38C1F301482003E10F9 /* UIImageView+YJCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+YJCornerRadius.m"; sourceTree = "<group>"; };
 		631DF0401ECEEDC200499586 /* NSObject+YJKeyValueObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YJKeyValueObserving.h"; sourceTree = "<group>"; };
 		631DF0411ECEEDC200499586 /* NSObject+YJKeyValueObserving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YJKeyValueObserving.m"; sourceTree = "<group>"; };
 		631E7E851E727EE3004639B1 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 		63F04B401E56E2A5007F0DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63F04B7A1E56FCDF007F0DDA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		63F04B7C1E57037D007F0DDA /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		63FB4EEF1F2F3B870071ED8F /* UIView+YJCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YJCornerRadius.h"; sourceTree = "<group>"; };
+		63FB4EF01F2F3B870071ED8F /* UIView+YJCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YJCornerRadius.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +273,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6318F38A1F301469003E10F9 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				6318F38B1F301482003E10F9 /* UIImageView+YJCornerRadius.h */,
+				6318F38C1F301482003E10F9 /* UIImageView+YJCornerRadius.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
 		631E7E841E727EC6004639B1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +491,7 @@
 		6348FC611E6FFE8D007C1D96 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				6318F38A1F301469003E10F9 /* UIImageView */,
 				632D991B1F1DDCA80002302D /* UITextField */,
 				632B9E4D1F134A94003FE595 /* UIImage */,
 				63AB04A71E77ED3000754C01 /* UIBarButtonItem */,
@@ -659,6 +675,8 @@
 				6348FCA71E6FFE8D007C1D96 /* UIView+YJVisuals.m */,
 				63D7C8671E793005005BE05F /* UIView+YJBadge.h */,
 				63D7C8681E793005005BE05F /* UIView+YJBadge.m */,
+				63FB4EEF1F2F3B870071ED8F /* UIView+YJCornerRadius.h */,
+				63FB4EF01F2F3B870071ED8F /* UIView+YJCornerRadius.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -858,6 +876,7 @@
 				6348FCDF1E6FFE8D007C1D96 /* UIView+YJDraggable.m in Sources */,
 				632D991E1F1DDCBD0002302D /* UITextField+YJSuperExt.m in Sources */,
 				63D7C86C1E7939F3005BE05F /* UIButton+YJImagePosition.m in Sources */,
+				6318F38D1F301482003E10F9 /* UIImageView+YJCornerRadius.m in Sources */,
 				6348FCB91E6FFE8D007C1D96 /* NSDate+YJSuperExt.m in Sources */,
 				6348FCC71E6FFE8D007C1D96 /* NSString+YJVerification.m in Sources */,
 				6348FCE61E6FFE8D007C1D96 /* UIView+YJShake.m in Sources */,
@@ -881,6 +900,7 @@
 				6348FCE91E6FFE8D007C1D96 /* UIViewController+YJSuperExt.m in Sources */,
 				6348FCD21E6FFE8D007C1D96 /* UIDevice+YJSuperExt.m in Sources */,
 				6348FCD61E6FFE8D007C1D96 /* UINavigationController+YJSuperExt.m in Sources */,
+				63FB4EF11F2F3B870071ED8F /* UIView+YJCornerRadius.m in Sources */,
 				6348FCE01E6FFE8D007C1D96 /* UIView+YJFind.m in Sources */,
 				6348FCD81E6FFE8D007C1D96 /* UIScrollView+YJPosition.m in Sources */,
 				6348FCBB1E6FFE8D007C1D96 /* NSDictionary+YJMerge.m in Sources */,
