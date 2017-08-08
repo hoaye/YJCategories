@@ -76,12 +76,15 @@
 		6348FCEA1E6FFE8D007C1D96 /* UIWindow+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6348FCAF1E6FFE8D007C1D96 /* UIWindow+YJSuperExt.m */; };
 		637242621E8F4FDF0014BE40 /* NSObject+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 637242611E8F4FDF0014BE40 /* NSObject+YJSuperExt.m */; };
 		637242661E8F50C10014BE40 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637242651E8F50C10014BE40 /* PersonModel.m */; };
+		638299691F383FCB00E6A199 /* UIImageView+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 638299681F383FCB00E6A199 /* UIImageView+YJSuperExt.m */; };
+		6382996B1F3842BF00E6A199 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6382996A1F3842BF00E6A199 /* 01.png */; };
 		63AB04AA1E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB04A91E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m */; };
 		63BB19AD1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BB19AC1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m */; };
 		63D38FDF1E6D5F900067C967 /* SubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D38FDE1E6D5F900067C967 /* SubViewController.m */; };
 		63D7C8691E793005005BE05F /* UIView+YJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7C8681E793005005BE05F /* UIView+YJBadge.m */; };
 		63D7C86C1E7939F3005BE05F /* UIButton+YJImagePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D7C86B1E7939F3005BE05F /* UIButton+YJImagePosition.m */; };
 		63E07D8D1EA0CFF400EB8F3F /* UIViewController+YJFullScreenSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E07D8C1EA0CFF400EB8F3F /* UIViewController+YJFullScreenSupport.m */; };
+		63E8EA581F347B000039F261 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E8EA571F347B000039F261 /* NSString+Hashing.m */; };
 		63F04B311E56E2A5007F0DDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B301E56E2A5007F0DDA /* main.m */; };
 		63F04B341E56E2A5007F0DDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B331E56E2A5007F0DDA /* AppDelegate.m */; };
 		63F04B371E56E2A5007F0DDA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F04B361E56E2A5007F0DDA /* ViewController.m */; };
@@ -233,6 +236,9 @@
 		637242611E8F4FDF0014BE40 /* NSObject+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YJSuperExt.m"; sourceTree = "<group>"; };
 		637242641E8F50C10014BE40 /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
 		637242651E8F50C10014BE40 /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
+		638299671F383FCB00E6A199 /* UIImageView+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YJSuperExt.h"; sourceTree = "<group>"; };
+		638299681F383FCB00E6A199 /* UIImageView+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+YJSuperExt.m"; sourceTree = "<group>"; };
+		6382996A1F3842BF00E6A199 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
 		63AB04A81E77ED4D00754C01 /* UIBarButtonItem+YJBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YJBadge.h"; sourceTree = "<group>"; };
 		63AB04A91E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YJBadge.m"; sourceTree = "<group>"; };
 		63BB19AB1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+YJSuperExt.h"; sourceTree = "<group>"; };
@@ -245,6 +251,8 @@
 		63D7C86B1E7939F3005BE05F /* UIButton+YJImagePosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+YJImagePosition.m"; sourceTree = "<group>"; };
 		63E07D8B1EA0CFF400EB8F3F /* UIViewController+YJFullScreenSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YJFullScreenSupport.h"; sourceTree = "<group>"; };
 		63E07D8C1EA0CFF400EB8F3F /* UIViewController+YJFullScreenSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YJFullScreenSupport.m"; sourceTree = "<group>"; };
+		63E8EA561F347B000039F261 /* NSString+Hashing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hashing.h"; sourceTree = "<group>"; };
+		63E8EA571F347B000039F261 /* NSString+Hashing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hashing.m"; sourceTree = "<group>"; };
 		63F04B2C1E56E2A5007F0DDA /* YJCategoriesGather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJCategoriesGather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F04B301E56E2A5007F0DDA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63F04B321E56E2A5007F0DDA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -278,6 +286,8 @@
 			children = (
 				6318F38B1F301482003E10F9 /* UIImageView+YJCornerRadius.h */,
 				6318F38C1F301482003E10F9 /* UIImageView+YJCornerRadius.m */,
+				638299671F383FCB00E6A199 /* UIImageView+YJSuperExt.h */,
+				638299681F383FCB00E6A199 /* UIImageView+YJSuperExt.m */,
 			);
 			path = UIImageView;
 			sourceTree = "<group>";
@@ -307,6 +317,7 @@
 		632BB20D1E68145E00D5345F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6382996A1F3842BF00E6A199 /* 01.png */,
 				632BB20E1E68145E00D5345F /* SampleFile.txt */,
 			);
 			path = Resources;
@@ -448,6 +459,8 @@
 		6348FC481E6FFE8D007C1D96 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
+				63E8EA561F347B000039F261 /* NSString+Hashing.h */,
+				63E8EA571F347B000039F261 /* NSString+Hashing.m */,
 				6348FC491E6FFE8D007C1D96 /* NSString+YJContains.h */,
 				6348FC4A1E6FFE8D007C1D96 /* NSString+YJContains.m */,
 				6348FC4B1E6FFE8D007C1D96 /* NSString+YJMIME.h */,
@@ -856,6 +869,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6382996B1F3842BF00E6A199 /* 01.png in Resources */,
 				63F04B3F1E56E2A5007F0DDA /* LaunchScreen.storyboard in Resources */,
 				63F04B3C1E56E2A5007F0DDA /* Assets.xcassets in Resources */,
 				632BB20F1E68145E00D5345F /* SampleFile.txt in Resources */,
@@ -888,6 +902,7 @@
 				6348FCD41E6FFE8D007C1D96 /* UILabel+YJSuperExt.m in Sources */,
 				631DF0421ECEEDC200499586 /* NSObject+YJKeyValueObserving.m in Sources */,
 				63F04B371E56E2A5007F0DDA /* ViewController.m in Sources */,
+				63E8EA581F347B000039F261 /* NSString+Hashing.m in Sources */,
 				6348FCDB1E6FFE8D007C1D96 /* UITableViewCell+YJNib.m in Sources */,
 				6348FCC11E6FFE8D007C1D96 /* NSString+YJContains.m in Sources */,
 				6348FCB31E6FFE8D007C1D96 /* NSArray+YJBlock.m in Sources */,
@@ -946,6 +961,7 @@
 				6348FCEA1E6FFE8D007C1D96 /* UIWindow+YJSuperExt.m in Sources */,
 				6348FCCD1E6FFE8D007C1D96 /* UIApplication+YJSuperExt.m in Sources */,
 				6348FCBE1E6FFE8D007C1D96 /* NSFileManager+YJSuperExt.m in Sources */,
+				638299691F383FCB00E6A199 /* UIImageView+YJSuperExt.m in Sources */,
 				632B9E501F134ABE003FE595 /* UIImage+YJReSize.m in Sources */,
 				6348FCBF1E6FFE8D007C1D96 /* NSIndexPath+YJOffset.m in Sources */,
 			);

@@ -126,6 +126,12 @@ Pod::Spec.new do |s|
             sss.public_header_files = 'YJCategories/UIKit/UIBarButtonItem/*.{h}'
         end
 
+        # 18. UIImageView 配置模块
+        ss.subspec 'UIImageView' do |sss|
+            sss.source_files        = 'YJCategories/UIKit/UIImageView/*.{h,m}'
+            sss.public_header_files = 'YJCategories/UIKit/UIImageView/*.{h}'
+        end
+
     end
 
     # Foundation 配置模块

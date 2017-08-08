@@ -73,6 +73,10 @@
 
     #import "UIBarButtonItem+YJBadge.h"
 
+#import "UIImageView+YJSuperExt.h"
+#import "UIImageView+YJCornerRadius.h"
+
+
 
 
 #endif /* YJUIKit_h */

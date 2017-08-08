@@ -22,6 +22,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 100, 200, 200)];
+    imageView.image = [UIImage imageNamed:@"01"];
+    [self.view addSubview:imageView];
+    [imageView yj_reflect];
+
+    
 }
 
 
