@@ -2,8 +2,8 @@
 //  NSObject+YJKeyValueObserving.h
 //  YJCategoriesGather
 //
-//  Created by YJHou on 2014/5/19.
-//  Copyright © 2014年 侯跃军 houmanager@Hotmail.com. All rights reserved.
+//  Created by YJHou on 2015/5/19.
+//  Copyright © 2015年 侯跃军 houmanager@Hotmail.com. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
