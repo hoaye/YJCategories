@@ -1,4 +1,4 @@
-version = "0.0.8";
+version = "0.0.9";
 
 Pod::Spec.new do |s|
     s.name         = "YJCategories"
@@ -222,6 +222,15 @@ Pod::Spec.new do |s|
         end
 
 
+    end
+
+    # QuartzCore 配置模块
+    s.subspec 'QuartzCore' do |ss|
+        # 1. CATransaction 配置模块
+        ss.subspec 'CATransaction' do |sss|
+            sss.source_files        = 'YJCategories/QuartzCore/CATransaction/*.{h,m}'
+            sss.public_header_files = 'YJCategories/QuartzCore/CATransaction/*.{h}'
+        end
     end
 
     #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }

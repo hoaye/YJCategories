@@ -78,6 +78,7 @@
 		637242661E8F50C10014BE40 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637242651E8F50C10014BE40 /* PersonModel.m */; };
 		638299691F383FCB00E6A199 /* UIImageView+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 638299681F383FCB00E6A199 /* UIImageView+YJSuperExt.m */; };
 		6382996B1F3842BF00E6A199 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6382996A1F3842BF00E6A199 /* 01.png */; };
+		63A95BF21F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A95BF11F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m */; };
 		63AB04AA1E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB04A91E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m */; };
 		63BB19AD1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BB19AC1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m */; };
 		63D38FDF1E6D5F900067C967 /* SubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D38FDE1E6D5F900067C967 /* SubViewController.m */; };
@@ -239,6 +240,9 @@
 		638299671F383FCB00E6A199 /* UIImageView+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YJSuperExt.h"; sourceTree = "<group>"; };
 		638299681F383FCB00E6A199 /* UIImageView+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+YJSuperExt.m"; sourceTree = "<group>"; };
 		6382996A1F3842BF00E6A199 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
+		63A95BF01F457D5000CE58F3 /* CATransaction+YJAnimationDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransaction+YJAnimationDuration.h"; sourceTree = "<group>"; };
+		63A95BF11F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATransaction+YJAnimationDuration.m"; sourceTree = "<group>"; };
+		63A95BF31F457D8000CE58F3 /* YJQuartzCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJQuartzCore.h; sourceTree = "<group>"; };
 		63AB04A81E77ED4D00754C01 /* UIBarButtonItem+YJBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YJBadge.h"; sourceTree = "<group>"; };
 		63AB04A91E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YJBadge.m"; sourceTree = "<group>"; };
 		63BB19AB1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+YJSuperExt.h"; sourceTree = "<group>"; };
@@ -335,11 +339,13 @@
 		6348FC211E6FFE8D007C1D96 /* YJCategories */ = {
 			isa = PBXGroup;
 			children = (
+				63A95BEB1F457CEB00CE58F3 /* QuartzCore */,
 				6348FC221E6FFE8D007C1D96 /* Foundation */,
 				6348FC611E6FFE8D007C1D96 /* UIKit */,
 				6348FCB01E6FFE8D007C1D96 /* YJCategories.h */,
 				6348FCB11E6FFE8D007C1D96 /* YJFoundation.h */,
 				6348FCB21E6FFE8D007C1D96 /* YJUIKit.h */,
+				63A95BF31F457D8000CE58F3 /* YJQuartzCore.h */,
 			);
 			path = YJCategories;
 			sourceTree = "<group>";
@@ -736,6 +742,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		63A95BEB1F457CEB00CE58F3 /* QuartzCore */ = {
+			isa = PBXGroup;
+			children = (
+				63A95BEC1F457CEB00CE58F3 /* CATransaction */,
+			);
+			path = QuartzCore;
+			sourceTree = "<group>";
+		};
+		63A95BEC1F457CEB00CE58F3 /* CATransaction */ = {
+			isa = PBXGroup;
+			children = (
+				63A95BF01F457D5000CE58F3 /* CATransaction+YJAnimationDuration.h */,
+				63A95BF11F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m */,
+			);
+			path = CATransaction;
+			sourceTree = "<group>";
+		};
 		63AB04A71E77ED3000754C01 /* UIBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -931,6 +954,7 @@
 				6348FCD01E6FFE8D007C1D96 /* UIControl+YJBlock.m in Sources */,
 				6348FCCF1E6FFE8D007C1D96 /* UIButton+YJSuperExt.m in Sources */,
 				6348FCCC1E6FFE8D007C1D96 /* UIApplication+YJAppInfo.m in Sources */,
+				63A95BF21F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m in Sources */,
 				6348FCC01E6FFE8D007C1D96 /* NSNotificationCenter+YJMainThread.m in Sources */,
 				6348FCDA1E6FFE8D007C1D96 /* UITableView+YJSuperExt.m in Sources */,
 				6348FCD71E6FFE8D007C1D96 /* UIResponder+YJSuperExt.m in Sources */,

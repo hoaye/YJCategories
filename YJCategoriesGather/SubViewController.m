@@ -25,7 +25,7 @@
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 100, 200, 200)];
     imageView.image = [UIImage imageNamed:@"01"];
     [self.view addSubview:imageView];
-    [imageView yj_reflect];
+//    [imageView yj_reflect];
 
     
 }
@@ -86,8 +86,7 @@
 
 - (void)dealloc{
     NSLog(@"-->%@", @"SubViewController----------dealloc");
-    NSLog(@"-->%@", self.keyPathObservers);
-    [self yj_removeSafeAllObservers];
+
 }
 
 @end

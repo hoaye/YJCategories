@@ -38,20 +38,22 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear-->%@", NSStringFromCGRect(self.view.frame));
+}
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
+//    [self yj_hideNavigationBar:YES toStatusBar:YES duration:1 completion:^(BOOL finished) {
+//        NSLog(@"-->%@", @"over");
+//        NSLog(@"-->%@", NSStringFromCGRect(self.view.frame));
+//    }];
+//    return;
     
-    NSArray *names = @[@"1",@"2", @"3"];
-    NSMutableArray *mutableNames = [NSMutableArray arrayWithArray:names];
-    names = [names yj_removeLastObject];
     
-    NSLog(@"-->%@", names);
-    
-
-    NSLog(@"-->%@", self);
     SubViewController *subViewC = [[SubViewController alloc] init];
-    [subViewC yj_addSafeObserver:self forKeyPath:@"isCanMoveTop"];
 
     [self.navigationController pushViewController:subViewC animated:YES];
    
@@ -66,10 +68,7 @@
 }
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
-    [self yj_showNavigationBar:YES toStatusBar:YES duration:1 completion:^(BOOL finished) {
-        NSLog(@"-->%@", @"over");
-        NSLog(@"-->%@", NSStringFromCGRect(self.view.frame));
-    }];
+
 }
 
 #pragma mark - Lazy
