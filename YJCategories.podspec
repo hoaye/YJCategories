@@ -149,7 +149,7 @@ Pod::Spec.new do |s|
         end
 
         # 3. NSMutableArray 配置模块
-        ss.subspec 'NSArray' do |sss|
+        ss.subspec 'NSMutableArray' do |sss|
             sss.source_files        = 'YJCategories/Foundation/NSMutableArray/*.{h,m}'
             sss.public_header_files = 'YJCategories/Foundation/NSMutableArray/*.{h}'
         end
