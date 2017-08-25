@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630941121F4FD1FA00E871F2 /* UIScreen+YJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 630941111F4FD1FA00E871F2 /* UIScreen+YJFrame.m */; };
 		6318F38D1F301482003E10F9 /* UIImageView+YJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318F38C1F301482003E10F9 /* UIImageView+YJCornerRadius.m */; };
 		631DF0421ECEEDC200499586 /* NSObject+YJKeyValueObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 631DF0411ECEEDC200499586 /* NSObject+YJKeyValueObserving.m */; };
 		631E7E871E727EE3004639B1 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631E7E861E727EE3004639B1 /* DrawView.m */; };
@@ -97,6 +98,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630941101F4FD1FA00E871F2 /* UIScreen+YJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+YJFrame.h"; sourceTree = "<group>"; };
+		630941111F4FD1FA00E871F2 /* UIScreen+YJFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+YJFrame.m"; sourceTree = "<group>"; };
 		6318F38B1F301482003E10F9 /* UIImageView+YJCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YJCornerRadius.h"; sourceTree = "<group>"; };
 		6318F38C1F301482003E10F9 /* UIImageView+YJCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+YJCornerRadius.m"; sourceTree = "<group>"; };
 		631DF0401ECEEDC200499586 /* NSObject+YJKeyValueObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YJKeyValueObserving.h"; sourceTree = "<group>"; };
@@ -285,6 +288,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6309410F1F4FD1E000E871F2 /* UIScreen */ = {
+			isa = PBXGroup;
+			children = (
+				630941101F4FD1FA00E871F2 /* UIScreen+YJFrame.h */,
+				630941111F4FD1FA00E871F2 /* UIScreen+YJFrame.m */,
+			);
+			path = UIScreen;
+			sourceTree = "<group>";
+		};
 		6318F38A1F301469003E10F9 /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +522,7 @@
 		6348FC611E6FFE8D007C1D96 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				6309410F1F4FD1E000E871F2 /* UIScreen */,
 				6318F38A1F301469003E10F9 /* UIImageView */,
 				632D991B1F1DDCA80002302D /* UITextField */,
 				632B9E4D1F134A94003FE595 /* UIImage */,
@@ -925,6 +938,7 @@
 				6348FCD41E6FFE8D007C1D96 /* UILabel+YJSuperExt.m in Sources */,
 				631DF0421ECEEDC200499586 /* NSObject+YJKeyValueObserving.m in Sources */,
 				63F04B371E56E2A5007F0DDA /* ViewController.m in Sources */,
+				630941121F4FD1FA00E871F2 /* UIScreen+YJFrame.m in Sources */,
 				63E8EA581F347B000039F261 /* NSString+Hashing.m in Sources */,
 				6348FCDB1E6FFE8D007C1D96 /* UITableViewCell+YJNib.m in Sources */,
 				6348FCC11E6FFE8D007C1D96 /* NSString+YJContains.m in Sources */,

@@ -76,6 +76,8 @@
 #import "UIImageView+YJSuperExt.h"
 #import "UIImageView+YJCornerRadius.h"
 
+#import "UIScreen+YJFrame.h"
+
 
 
 
