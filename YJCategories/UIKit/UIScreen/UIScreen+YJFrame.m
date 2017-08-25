@@ -50,5 +50,4 @@ static inline CGSize yj_SizeSWAP(CGSize size) {
     return CGSizeMake(size.height, size.width);
 }
 
-
 @end
