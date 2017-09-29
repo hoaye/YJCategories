@@ -160,6 +160,9 @@
     * UIBarButtonItem
         1.  YJBadge
 
+    * UIImge
+        1.  YJSuperExt
+
 
 ### QuartzCore
     * CALayer

@@ -79,6 +79,7 @@
 		637242661E8F50C10014BE40 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 637242651E8F50C10014BE40 /* PersonModel.m */; };
 		638299691F383FCB00E6A199 /* UIImageView+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 638299681F383FCB00E6A199 /* UIImageView+YJSuperExt.m */; };
 		6382996B1F3842BF00E6A199 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6382996A1F3842BF00E6A199 /* 01.png */; };
+		6396AF961F7DDBE500901A46 /* UIImage+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6396AF951F7DDBE500901A46 /* UIImage+YJSuperExt.m */; };
 		63A95BF21F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A95BF11F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m */; };
 		63AB04AA1E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB04A91E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m */; };
 		63BB19AD1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BB19AC1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m */; };
@@ -243,6 +244,8 @@
 		638299671F383FCB00E6A199 /* UIImageView+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YJSuperExt.h"; sourceTree = "<group>"; };
 		638299681F383FCB00E6A199 /* UIImageView+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+YJSuperExt.m"; sourceTree = "<group>"; };
 		6382996A1F3842BF00E6A199 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
+		6396AF941F7DDBE500901A46 /* UIImage+YJSuperExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+YJSuperExt.h"; sourceTree = "<group>"; };
+		6396AF951F7DDBE500901A46 /* UIImage+YJSuperExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YJSuperExt.m"; sourceTree = "<group>"; };
 		63A95BF01F457D5000CE58F3 /* CATransaction+YJAnimationDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransaction+YJAnimationDuration.h"; sourceTree = "<group>"; };
 		63A95BF11F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATransaction+YJAnimationDuration.m"; sourceTree = "<group>"; };
 		63A95BF31F457D8000CE58F3 /* YJQuartzCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJQuartzCore.h; sourceTree = "<group>"; };
@@ -326,6 +329,8 @@
 				632B9E521F134BAB003FE595 /* UIImage+YJAlpha.m */,
 				632B9E541F134C47003FE595 /* UIImage+YJRoundedCorner.h */,
 				632B9E551F134C47003FE595 /* UIImage+YJRoundedCorner.m */,
+				6396AF941F7DDBE500901A46 /* UIImage+YJSuperExt.h */,
+				6396AF951F7DDBE500901A46 /* UIImage+YJSuperExt.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -873,7 +878,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = "侯跃军 houmanager@Hotmail.com";
+				ORGANIZATIONNAME = "stackhou houmanager@Hotmail.com";
 				TargetAttributes = {
 					63F04B2B1E56E2A5007F0DDA = {
 						CreatedOnToolsVersion = 8.0;
@@ -958,6 +963,7 @@
 				6348FCBB1E6FFE8D007C1D96 /* NSDictionary+YJMerge.m in Sources */,
 				6348FCE11E6FFE8D007C1D96 /* UIView+YJFrame.m in Sources */,
 				63E07D8D1EA0CFF400EB8F3F /* UIViewController+YJFullScreenSupport.m in Sources */,
+				6396AF961F7DDBE500901A46 /* UIImage+YJSuperExt.m in Sources */,
 				63D38FDF1E6D5F900067C967 /* SubViewController.m in Sources */,
 				6348FCE31E6FFE8D007C1D96 /* UIView+YJLoadNib.m in Sources */,
 				6348FCD91E6FFE8D007C1D96 /* UIScrollView+YJSuperExt.m in Sources */,
