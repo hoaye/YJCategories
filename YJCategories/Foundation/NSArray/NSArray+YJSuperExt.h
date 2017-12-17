@@ -22,5 +22,12 @@
 /** 移除最后一个对象 */
 - (NSArray *)yj_removeLastObject;
 
+/**
+ 逆序数组元素
+
+ @return 已经逆序的数组
+ */
+- (NSArray *)yj_reverseObject;
+
 @end
 
