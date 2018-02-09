@@ -34,5 +34,17 @@
     return [self subarrayWithRange:NSMakeRange(0, self.count - 1)];
 }
 
+- (NSArray *)yj_reverseObject{
+//    return [[self reverseObjectEnumerator] allObjects];
+    
+    NSMutableArray *resultArray = [NSMutableArray arrayWithArray:self];
+    for (NSInteger min = 0, max = resultArray.count - 1; min < max; min++, max--) {
+        id tmp = resultArray[min];
+        resultArray[min] = resultArray[max];
+        resultArray[max] = tmp;
+    }
+    return resultArray;
+}
+
 @end
 
