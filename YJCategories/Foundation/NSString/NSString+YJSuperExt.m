@@ -7,6 +7,8 @@
 //
 
 #import "NSString+YJSuperExt.h"
+#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonCryptor.h>
 
 @implementation NSString (YJSuperExt)
 
@@ -383,7 +385,121 @@
 }
 
 
+- (NSString *)yj_getterToSetter{
+    NSRange firstChar, rest;
+    firstChar.location  = 0;
+    firstChar.length    = 1;
+    rest.location       = 1;
+    rest.length         = self.length - 1;
+    
+    return [NSString stringWithFormat:@"set%@%@:",
+            [[self substringWithRange:firstChar] uppercaseString],
+            [self substringWithRange:rest]];
+}
 
 
+- (NSString *)yj_setterToGetter{
+    NSRange firstChar, rest;
+    firstChar.location  = 3;
+    firstChar.length    = 1;
+    rest.location       = 4;
+    rest.length         = self.length - 5;
+    
+    return [NSString stringWithFormat:@"%@%@",
+            [[self substringWithRange:firstChar] lowercaseString],
+            [self substringWithRange:rest]];
+}
+
+- (NSString *)yj_removeHtmlTags{
+    NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:@"<[^>]+>" options:0 error:NULL];
+    return [regex stringByReplacingMatchesInString:self options:NSMatchingReportProgress range:NSMakeRange(0, self.length) withTemplate:@""];
+}
+
+- (BOOL)yj_has4ByteChar{
+    __block BOOL has4Byte = NO;
+    [self enumerateSubstringsInRange:NSMakeRange(0, [self length])
+                             options:NSStringEnumerationByComposedCharacterSequences
+                          usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+                              
+                              if ([substring lengthOfBytesUsingEncoding:NSUTF8StringEncoding] >= 4)
+                              {
+                                  has4Byte = YES;
+                                  *stop = YES;
+                              }
+                          }];
+    return has4Byte;
+}
+
+- (BOOL)yj_isAsciiString{
+    return [self lengthOfBytesUsingEncoding:NSUTF8StringEncoding] == [self length];
+}
+
+
+- (NSString *)yj_MD5Hex{
+    const char *str = [self UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(str, (CC_LONG)strlen(str), result);
+    
+    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH*2];
+    for(int i = 0; i<CC_MD5_DIGEST_LENGTH; i++) {
+        [ret appendFormat:@"%02x",result[i]];
+    }
+    return ret;
+}
+
+- (NSData *)yj_hexStringToData{
+    if (!self.length) {
+        return nil;
+    }
+    
+    const char *ch = [[self lowercaseString] cStringUsingEncoding:NSUTF8StringEncoding];
+    NSMutableData* data = [[NSMutableData alloc] initWithCapacity:strlen(ch)/2];
+    while (*ch)
+    {
+        char byte = 0;
+        if ('0' <= *ch && *ch <= '9')
+        {
+            byte = *ch - '0';
+        }
+        else if ('a' <= *ch && *ch <= 'f')
+        {
+            byte = *ch - 'a' + 10;
+        }
+        ch++;
+        byte = byte << 4;
+        if (*ch)
+        {
+            if ('0' <= *ch && *ch <= '9')
+            {
+                byte += *ch - '0';
+            } else if ('a' <= *ch && *ch <= 'f')
+            {
+                byte += *ch - 'a' + 10;
+            }
+            ch++;
+        }
+        
+        [data appendBytes:&byte length:1];
+    }
+    
+    return data;
+}
+
+- (NSString *)yj_stringWithFormat:(NSString *)format, ...{
+    if (format){
+        va_list args;
+        va_start(args, format);
+        NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
+        va_end(args);
+        
+        return message;
+//        setenv("yj", "YES", 1);
+//        char *envChar = getenv("yj");
+//        if (envChar) {
+//            NSLog(@"-->%d", strcmp(envChar, "YES") == 0);
+//        }
+    }
+    return nil;
+}
 
 @end

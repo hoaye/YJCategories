@@ -32,7 +32,13 @@
     model.name = @"houmanager";
     model.height = nil;
     
+    NSString *html = @"<html><head><title>我是Title</title></head><body>我是body<div>&nbsp; &nbsp; &nbsp; &nbsp;我是DIV</div></body></html>";
     
+    NSString *oneStepString = [html yj_stringByConvertingHTMLToPlainText];
+    NSString *twoStepString = [oneStepString yj_removeBlank];
+    NSLog(@"第1步处理结果-->%@", oneStepString);
+    NSLog(@"第2步处理结果-->%@", twoStepString);
+
     
 //    [self.view addSubview:self.drawView];
     
@@ -40,7 +46,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSLog(@"viewDidAppear-->%@", NSStringFromCGRect(self.view.frame));
+//    NSLog(@"viewDidAppear-->%@", NSStringFromCGRect(self.view.frame));
 }
 
 

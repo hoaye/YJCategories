@@ -32,6 +32,7 @@
     #import "NSString+YJMIME.h"
     #import "NSString+YJVerification.h"
     #import "NSString+YJXML.h"
+    #import "NSString+YJHTML.h"
 
     #import "NSNotificationCenter+YJMainThread.h"
     #import "NSIndexPath+YJOffset.h"

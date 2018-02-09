@@ -80,6 +80,7 @@
 		638299691F383FCB00E6A199 /* UIImageView+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 638299681F383FCB00E6A199 /* UIImageView+YJSuperExt.m */; };
 		6382996B1F3842BF00E6A199 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6382996A1F3842BF00E6A199 /* 01.png */; };
 		6396AF961F7DDBE500901A46 /* UIImage+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6396AF951F7DDBE500901A46 /* UIImage+YJSuperExt.m */; };
+		639BF489202D69D900F2FFEF /* NSString+YJHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 639BF488202D69D900F2FFEF /* NSString+YJHTML.m */; };
 		63A95BF21F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A95BF11F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m */; };
 		63AB04AA1E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AB04A91E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m */; };
 		63BB19AD1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BB19AC1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m */; };
@@ -246,6 +247,8 @@
 		6382996A1F3842BF00E6A199 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
 		6396AF941F7DDBE500901A46 /* UIImage+YJSuperExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+YJSuperExt.h"; sourceTree = "<group>"; };
 		6396AF951F7DDBE500901A46 /* UIImage+YJSuperExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YJSuperExt.m"; sourceTree = "<group>"; };
+		639BF487202D69D900F2FFEF /* NSString+YJHTML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YJHTML.h"; sourceTree = "<group>"; };
+		639BF488202D69D900F2FFEF /* NSString+YJHTML.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YJHTML.m"; sourceTree = "<group>"; };
 		63A95BF01F457D5000CE58F3 /* CATransaction+YJAnimationDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransaction+YJAnimationDuration.h"; sourceTree = "<group>"; };
 		63A95BF11F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATransaction+YJAnimationDuration.m"; sourceTree = "<group>"; };
 		63A95BF31F457D8000CE58F3 /* YJQuartzCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJQuartzCore.h; sourceTree = "<group>"; };
@@ -500,6 +503,8 @@
 				6348FC561E6FFE8D007C1D96 /* NSString+YJVerification.m */,
 				6348FC571E6FFE8D007C1D96 /* NSString+YJXML.h */,
 				6348FC581E6FFE8D007C1D96 /* NSString+YJXML.m */,
+				639BF487202D69D900F2FFEF /* NSString+YJHTML.h */,
+				639BF488202D69D900F2FFEF /* NSString+YJHTML.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -988,6 +993,7 @@
 				6348FCB61E6FFE8D007C1D96 /* NSData+YJGzip.m in Sources */,
 				637242621E8F4FDF0014BE40 /* NSObject+YJSuperExt.m in Sources */,
 				6348FCD51E6FFE8D007C1D96 /* UINavigationBar+YJSuperExt.m in Sources */,
+				639BF489202D69D900F2FFEF /* NSString+YJHTML.m in Sources */,
 				6348FCE51E6FFE8D007C1D96 /* UIView+YJScreenshot.m in Sources */,
 				6348FCE71E6FFE8D007C1D96 /* UIView+YJVisuals.m in Sources */,
 				6348FCBA1E6FFE8D007C1D96 /* NSDateFormatter+YJSuperExt.m in Sources */,
