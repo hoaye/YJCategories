@@ -32,7 +32,7 @@
     model.name = @"houmanager";
     model.height = nil;
     
-    NSString *html = @"<html><head><title>我是Title</title></head><body>我是body<div>&nbsp; &nbsp; &nbsp; &nbsp;我是DIV</div></body></html>";
+    NSString *html = @"<html><head><title>我是Title</title></head><body>我是body&nbsp; &nbsp; &nbsp; 飒飒|<div>||&nbsp; &nbsp; &nbsp; &nbsp;我是DIV</div></body></html>";
     
     NSString *oneStepString = [html yj_stringByConvertingHTMLToPlainText];
     NSString *twoStepString = [oneStepString yj_removeBlank];
@@ -85,7 +85,20 @@
     }
     return _drawView;
 }
-                 
+
+//-(void) scrollToSectionHeader:(int)section {
+//    NSIndexPath *indexPath = [NSIndexPath
+//                              indexPathForRow:0 inSection:section];
+//    UICollectionViewLayoutAttributes *attribs =
+//    [self.collectionView layoutAttributesForSupplementaryElementOfKind:UICollectionElementKindSectionHeader
+//     atIndexPath:indexPath];
+//    CGPoint topOfHeader = CGPointMake(0,
+//                                      attribs.frame.origin.y -
+//                                      self.collectionView.contentInset.top);
+//    [self.collectionView
+//     setContentOffset:topOfHeader animated:YES];
+//}
+
 
 
 
