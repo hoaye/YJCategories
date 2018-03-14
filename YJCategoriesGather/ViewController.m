@@ -38,8 +38,15 @@
     NSString *twoStepString = [oneStepString yj_removeBlank];
     NSLog(@"第1步处理结果-->%@", oneStepString);
     NSLog(@"第2步处理结果-->%@", twoStepString);
-
     
+    NSArray *sources = @[@"你", @"我", @"他"];
+    NSLog(@"-->%@", sources);
+    NSLog(@"-->%@", [sources descriptionWithLocale:nil]);
+    
+    NSDictionary *dict = @{@"第1个":@"我是谁", @"第2个":@"你是谁"};
+    NSLog(@"-->%@", dict);
+    NSLog(@"-->%@", [dict descriptionWithLocale:nil]);
+
 //    [self.view addSubview:self.drawView];
     
 }

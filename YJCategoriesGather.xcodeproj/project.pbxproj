@@ -11,6 +11,8 @@
 		6318F38D1F301482003E10F9 /* UIImageView+YJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318F38C1F301482003E10F9 /* UIImageView+YJCornerRadius.m */; };
 		631DF0421ECEEDC200499586 /* NSObject+YJKeyValueObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 631DF0411ECEEDC200499586 /* NSObject+YJKeyValueObserving.m */; };
 		631E7E871E727EE3004639B1 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 631E7E861E727EE3004639B1 /* DrawView.m */; };
+		6321A98620590F9C00073181 /* NSArray+YJLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6321A98520590F9C00073181 /* NSArray+YJLog.m */; };
+		6321A9892059109700073181 /* NSDictionary+YJLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6321A9882059109700073181 /* NSDictionary+YJLog.m */; };
 		632B9E501F134ABE003FE595 /* UIImage+YJReSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 632B9E4F1F134ABE003FE595 /* UIImage+YJReSize.m */; };
 		632B9E531F134BAB003FE595 /* UIImage+YJAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 632B9E521F134BAB003FE595 /* UIImage+YJAlpha.m */; };
 		632B9E561F134C47003FE595 /* UIImage+YJRoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 632B9E551F134C47003FE595 /* UIImage+YJRoundedCorner.m */; };
@@ -108,6 +110,10 @@
 		631DF0411ECEEDC200499586 /* NSObject+YJKeyValueObserving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YJKeyValueObserving.m"; sourceTree = "<group>"; };
 		631E7E851E727EE3004639B1 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		631E7E861E727EE3004639B1 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		6321A98420590F9C00073181 /* NSArray+YJLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+YJLog.h"; sourceTree = "<group>"; };
+		6321A98520590F9C00073181 /* NSArray+YJLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YJLog.m"; sourceTree = "<group>"; };
+		6321A9872059109700073181 /* NSDictionary+YJLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YJLog.h"; sourceTree = "<group>"; };
+		6321A9882059109700073181 /* NSDictionary+YJLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YJLog.m"; sourceTree = "<group>"; };
 		632B9E4E1F134ABE003FE595 /* UIImage+YJReSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YJReSize.h"; sourceTree = "<group>"; };
 		632B9E4F1F134ABE003FE595 /* UIImage+YJReSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YJReSize.m"; sourceTree = "<group>"; };
 		632B9E511F134BAA003FE595 /* UIImage+YJAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YJAlpha.h"; sourceTree = "<group>"; };
@@ -398,6 +404,8 @@
 				6348FC251E6FFE8D007C1D96 /* NSArray+YJBlock.m */,
 				6348FC261E6FFE8D007C1D96 /* NSArray+YJSuperExt.h */,
 				6348FC271E6FFE8D007C1D96 /* NSArray+YJSuperExt.m */,
+				6321A98420590F9C00073181 /* NSArray+YJLog.h */,
+				6321A98520590F9C00073181 /* NSArray+YJLog.m */,
 			);
 			path = NSArray;
 			sourceTree = "<group>";
@@ -451,6 +459,8 @@
 				6348FC3C1E6FFE8D007C1D96 /* NSDictionary+YJSuperExt.m */,
 				6348FC3D1E6FFE8D007C1D96 /* NSDictionary+YJXML.h */,
 				6348FC3E1E6FFE8D007C1D96 /* NSDictionary+YJXML.m */,
+				6321A9872059109700073181 /* NSDictionary+YJLog.h */,
+				6321A9882059109700073181 /* NSDictionary+YJLog.m */,
 			);
 			path = NSDictionary;
 			sourceTree = "<group>";
@@ -942,6 +952,7 @@
 				6348FCE61E6FFE8D007C1D96 /* UIView+YJShake.m in Sources */,
 				632CC7B31E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m in Sources */,
 				637242661E8F50C10014BE40 /* PersonModel.m in Sources */,
+				6321A9892059109700073181 /* NSDictionary+YJLog.m in Sources */,
 				6348FCCA1E6FFE8D007C1D96 /* NSTimer+YJSuperExt.m in Sources */,
 				6348FCE81E6FFE8D007C1D96 /* UIViewController+YJBackButtonBlock.m in Sources */,
 				632CC7B61E7697D800BB69FE /* UIBezierPath+YJSymbol.m in Sources */,
@@ -997,6 +1008,7 @@
 				6348FCE51E6FFE8D007C1D96 /* UIView+YJScreenshot.m in Sources */,
 				6348FCE71E6FFE8D007C1D96 /* UIView+YJVisuals.m in Sources */,
 				6348FCBA1E6FFE8D007C1D96 /* NSDateFormatter+YJSuperExt.m in Sources */,
+				6321A98620590F9C00073181 /* NSArray+YJLog.m in Sources */,
 				6348FCBD1E6FFE8D007C1D96 /* NSDictionary+YJXML.m in Sources */,
 				6348FCB71E6FFE8D007C1D96 /* NSData+YJSuperExt.m in Sources */,
 				6348FCC91E6FFE8D007C1D96 /* NSTimer+YJBlock.m in Sources */,
