@@ -29,5 +29,14 @@
  */
 - (NSArray *)yj_reverseObject;
 
+
+/**
+ 二分查找法
+
+ @param obj 要查找的元素
+ @return 查找元素的索引，没找到为-1
+ */
+- (NSInteger)binarySearchObjectIndex:(NSNumber *)obj;
+
 @end
 

@@ -46,5 +46,21 @@
     return resultArray;
 }
 
+- (NSInteger)binarySearchObjectIndex:(NSNumber *)obj{
+    
+    NSInteger min = 0, max = self.count - 1, mid = 0;
+    while (min <= max) {
+        mid = (min + max) / 2;
+        if (obj.integerValue > ((NSNumber *)self[mid]).integerValue) {
+            min = mid + 1;
+        }else if (obj.integerValue < ((NSNumber *)self[mid]).integerValue){
+            max = mid - 1;
+        }else{
+            return mid;
+        }
+    }
+    return -1;
+}
+
 @end
 
