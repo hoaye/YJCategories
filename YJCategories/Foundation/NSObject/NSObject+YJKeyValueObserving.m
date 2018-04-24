@@ -55,8 +55,9 @@ static char const *const kSafeObserversKey = "kSafeObserversKey";
 
 - (void)yj_removeSafeAllObservers{
     
-    for (NSInteger i = 0; i < self.keyPathObservers.count; i++) {
-        NSDictionary *keyObserver = [self.keyPathObservers objectAtIndex:i];
+    NSMutableArray *keyPathObserversTemp = self.keyPathObservers.mutableCopy;
+    for (NSInteger i = 0; i < keyPathObserversTemp.count; i++) {
+        NSDictionary *keyObserver = [keyPathObserversTemp objectAtIndex:i];
         NSString *keyPath = [keyObserver.allKeys firstObject];
         id observer = [keyObserver.allValues firstObject];
         [self yj_removeSafeObserver:observer forKeyPath:keyPath];

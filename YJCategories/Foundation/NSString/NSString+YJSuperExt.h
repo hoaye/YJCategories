@@ -56,6 +56,24 @@ typedef NS_OPTIONS(NSUInteger, YJNSStringScoreOption) {
 /** 设置WebView类型的自提样式 colorStr=#ffffff */
 - (NSString *)yj_setWebViewWithString:(NSString *)str font:(float)size color:(NSString *)colorStr;
 
+- (NSString *)yj_getterToSetter;
+
+- (NSString *)yj_setterToGetter;
+
+- (NSString *)yj_removeHtmlTags;
+- (BOOL)yj_has4ByteChar;
+- (BOOL)yj_isAsciiString;
+- (NSString *)yj_MD5Hex;
+- (NSData *)yj_hexStringToData;
+
+
+/**
+ 格式化字符串内部实现
+
+ @param format 格式
+ @return 格式化后的字符串
+ */
+- (NSString *)yj_stringWithFormat:(NSString *)format, ...;
 
 
 @end

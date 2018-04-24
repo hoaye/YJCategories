@@ -78,6 +78,11 @@
 
 #import "UIScreen+YJFrame.h"
 
+#import "UIImage+YJReSize.h"
+#import "UIImage+YJAlpha.h"
+#import "UIImage+YJRoundedCorner.h"
+#import "UIImage+YJSuperExt.h"
+
 
 
 

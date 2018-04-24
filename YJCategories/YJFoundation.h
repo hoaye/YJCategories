@@ -15,6 +15,7 @@
 //  NSArray
     #import "NSArray+YJSuperExt.h"
     #import "NSArray+YJBlock.h"
+    #import "NSArray+YJLog.h"
 
     #import "NSMutableArray+YJSuperExt.h"
 
@@ -22,6 +23,7 @@
     #import "NSDictionary+YJSuperExt.h"
     #import "NSDictionary+YJMerge.h"
     #import "NSDictionary+YJXML.h"
+    #import "NSDictionary+YJLog.h"
 
 //  NSString
     #import "NSString+YJSuperExt.h"
@@ -32,6 +34,7 @@
     #import "NSString+YJMIME.h"
     #import "NSString+YJVerification.h"
     #import "NSString+YJXML.h"
+    #import "NSString+YJHTML.h"
 
     #import "NSNotificationCenter+YJMainThread.h"
     #import "NSIndexPath+YJOffset.h"
