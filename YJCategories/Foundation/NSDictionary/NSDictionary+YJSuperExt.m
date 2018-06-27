@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+YJSuperExt.h"
+#import <objc/runtime.h>
 
 @implementation NSDictionary (YJSuperExt)
 
@@ -67,6 +68,26 @@
         CFRelease(escaped);
     }
     return string;
+}
+
++(void)load{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        Method originMethod = class_getInstanceMethod(NSClassFromString(@"__NSDictionaryM"), @selector(setObject:forKey:));
+        Method overrideMethod = class_getInstanceMethod(NSClassFromString(@"__NSDictionaryM"), @selector(_setObject:forKey:));
+        method_exchangeImplementations(originMethod, overrideMethod);
+        
+    });
+}
+
+-(void)_setObject:(id)anObject forKey:(id<NSCopying>)aKey{
+    if(anObject){
+        [self _setObject:anObject forKey:aKey];
+        
+    }else{
+        NSLog(@"%@----setObjct--To---key--%@ is nil",self,aKey);
+    }
 }
 
 @end

@@ -98,6 +98,8 @@
 		63F04B3C1E56E2A5007F0DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63F04B3B1E56E2A5007F0DDA /* Assets.xcassets */; };
 		63F04B3F1E56E2A5007F0DDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63F04B3D1E56E2A5007F0DDA /* LaunchScreen.storyboard */; };
 		63F04B7D1E57037D007F0DDA /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F04B7C1E57037D007F0DDA /* libresolv.9.tbd */; };
+		63F2495920AACBC400103B02 /* NSArray+YJSafeExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F2495820AACBC400103B02 /* NSArray+YJSafeExt.m */; };
+		63F2495C20AACC2300103B02 /* NSMutableArray+YJSafeExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F2495B20AACC2300103B02 /* NSMutableArray+YJSafeExt.m */; };
 		63FB4EF11F2F3B870071ED8F /* UIView+YJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FB4EF01F2F3B870071ED8F /* UIView+YJCornerRadius.m */; };
 /* End PBXBuildFile section */
 
@@ -284,6 +286,10 @@
 		63F04B401E56E2A5007F0DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63F04B7A1E56FCDF007F0DDA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		63F04B7C1E57037D007F0DDA /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		63F2495720AACBC400103B02 /* NSArray+YJSafeExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+YJSafeExt.h"; sourceTree = "<group>"; };
+		63F2495820AACBC400103B02 /* NSArray+YJSafeExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YJSafeExt.m"; sourceTree = "<group>"; };
+		63F2495A20AACC2300103B02 /* NSMutableArray+YJSafeExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+YJSafeExt.h"; sourceTree = "<group>"; };
+		63F2495B20AACC2300103B02 /* NSMutableArray+YJSafeExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+YJSafeExt.m"; sourceTree = "<group>"; };
 		63FB4EEF1F2F3B870071ED8F /* UIView+YJCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YJCornerRadius.h"; sourceTree = "<group>"; };
 		63FB4EF01F2F3B870071ED8F /* UIView+YJCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YJCornerRadius.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -406,6 +412,8 @@
 				6348FC271E6FFE8D007C1D96 /* NSArray+YJSuperExt.m */,
 				6321A98420590F9C00073181 /* NSArray+YJLog.h */,
 				6321A98520590F9C00073181 /* NSArray+YJLog.m */,
+				63F2495720AACBC400103B02 /* NSArray+YJSafeExt.h */,
+				63F2495820AACBC400103B02 /* NSArray+YJSafeExt.m */,
 			);
 			path = NSArray;
 			sourceTree = "<group>";
@@ -806,6 +814,8 @@
 			children = (
 				63BB19AB1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.h */,
 				63BB19AC1ED2F4E600A7165B /* NSMutableArray+YJSuperExt.m */,
+				63F2495A20AACC2300103B02 /* NSMutableArray+YJSafeExt.h */,
+				63F2495B20AACC2300103B02 /* NSMutableArray+YJSafeExt.m */,
 			);
 			path = NSMutableArray;
 			sourceTree = "<group>";
@@ -952,6 +962,7 @@
 				6348FCE61E6FFE8D007C1D96 /* UIView+YJShake.m in Sources */,
 				632CC7B31E7695F300BB69FE /* UIBezierPath+YJBasicShapes.m in Sources */,
 				637242661E8F50C10014BE40 /* PersonModel.m in Sources */,
+				63F2495C20AACC2300103B02 /* NSMutableArray+YJSafeExt.m in Sources */,
 				6321A9892059109700073181 /* NSDictionary+YJLog.m in Sources */,
 				6348FCCA1E6FFE8D007C1D96 /* NSTimer+YJSuperExt.m in Sources */,
 				6348FCE81E6FFE8D007C1D96 /* UIViewController+YJBackButtonBlock.m in Sources */,
@@ -991,6 +1002,7 @@
 				6348FCCF1E6FFE8D007C1D96 /* UIButton+YJSuperExt.m in Sources */,
 				6348FCCC1E6FFE8D007C1D96 /* UIApplication+YJAppInfo.m in Sources */,
 				63A95BF21F457D5000CE58F3 /* CATransaction+YJAnimationDuration.m in Sources */,
+				63F2495920AACBC400103B02 /* NSArray+YJSafeExt.m in Sources */,
 				6348FCC01E6FFE8D007C1D96 /* NSNotificationCenter+YJMainThread.m in Sources */,
 				6348FCDA1E6FFE8D007C1D96 /* UITableView+YJSuperExt.m in Sources */,
 				6348FCD71E6FFE8D007C1D96 /* UIResponder+YJSuperExt.m in Sources */,
