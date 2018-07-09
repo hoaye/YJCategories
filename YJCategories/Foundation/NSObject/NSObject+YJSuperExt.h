@@ -21,4 +21,11 @@
 /** 执行 > 2 参数的方法签名 */
 -(id)performSelector:(SEL)aSelector withObjectsYJ_Ext:(NSArray *)objects;
 
+/**
+ po 打印模型
+
+ @return 模型String
+ */
+- (NSString *)debugDescription;
+
 @end
