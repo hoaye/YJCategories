@@ -8,6 +8,22 @@
 
 #import "NSObject+YJSuperExt.h"
 #import <objc/runtime.h>
+#import <mach/mach_time.h>  // for mach_absolute_time() and friends
+
+// 程序执行时间，将执行部分放入block
+CGFloat RunTimeBlock (void (^block)(void)) {
+    mach_timebase_info_data_t info;
+    if (mach_timebase_info(&info) != KERN_SUCCESS) return -1.0;
+    
+    uint64_t start = mach_absolute_time ();
+    block ();
+    uint64_t end = mach_absolute_time ();
+    uint64_t elapsed = end - start;
+    
+    uint64_t nanos = elapsed * info.numer / info.denom;
+    return (CGFloat)nanos / NSEC_PER_SEC;
+    
+} // RunTimeBlock
 
 @implementation NSObject (YJSuperExt)
 
