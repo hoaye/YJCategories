@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001A445A2122DB8500222BD2 /* NSAttributedString+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 001A44592122DB8500222BD2 /* NSAttributedString+YJSuperExt.m */; };
+		001A445D2122DFB400222BD2 /* UIView+YJViewSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 001A445C2122DFB400222BD2 /* UIView+YJViewSize.m */; };
+		003AC1B82122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 003AC1B72122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.m */; };
+		00C76E262121560900BE60DB /* UIView+YJGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C76E252121560900BE60DB /* UIView+YJGradient.m */; };
+		00C76E2B21215E6B00BE60DB /* NSDate+YJInternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C76E2A21215E6B00BE60DB /* NSDate+YJInternetDateTime.m */; };
+		00C76E2E2121627200BE60DB /* UIViewController+YJCyclePushLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C76E2D2121627200BE60DB /* UIViewController+YJCyclePushLimit.m */; };
 		630941121F4FD1FA00E871F2 /* UIScreen+YJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 630941111F4FD1FA00E871F2 /* UIScreen+YJFrame.m */; };
 		6318F38D1F301482003E10F9 /* UIImageView+YJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 6318F38C1F301482003E10F9 /* UIImageView+YJCornerRadius.m */; };
 		631DF0421ECEEDC200499586 /* NSObject+YJKeyValueObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 631DF0411ECEEDC200499586 /* NSObject+YJKeyValueObserving.m */; };
@@ -103,7 +109,37 @@
 		63FB4EF11F2F3B870071ED8F /* UIView+YJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FB4EF01F2F3B870071ED8F /* UIView+YJCornerRadius.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0057933E20FF230C00B94FBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0057933920FF230C00B94FBE /* YJBannerViewDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 631C281A1ED55D3B00F31057;
+			remoteInfo = YJBannerViewDemo;
+		};
+		0057934020FF230C00B94FBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0057933920FF230C00B94FBE /* YJBannerViewDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6307D7381F0A389000CF1EAD;
+			remoteInfo = YJBannerViewFramework;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		001A44582122DB8500222BD2 /* NSAttributedString+YJSuperExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+YJSuperExt.h"; sourceTree = "<group>"; };
+		001A44592122DB8500222BD2 /* NSAttributedString+YJSuperExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+YJSuperExt.m"; sourceTree = "<group>"; };
+		001A445B2122DFB400222BD2 /* UIView+YJViewSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YJViewSize.h"; sourceTree = "<group>"; };
+		001A445C2122DFB400222BD2 /* UIView+YJViewSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+YJViewSize.m"; sourceTree = "<group>"; };
+		003AC1B62122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YJSuperExt.h"; sourceTree = "<group>"; };
+		003AC1B72122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YJSuperExt.m"; sourceTree = "<group>"; };
+		0057933920FF230C00B94FBE /* YJBannerViewDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YJBannerViewDemo.xcodeproj; path = YJBannerView/YJBannerViewDemo.xcodeproj; sourceTree = "<group>"; };
+		00C76E242121560900BE60DB /* UIView+YJGradient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YJGradient.h"; sourceTree = "<group>"; };
+		00C76E252121560900BE60DB /* UIView+YJGradient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+YJGradient.m"; sourceTree = "<group>"; };
+		00C76E2921215E6B00BE60DB /* NSDate+YJInternetDateTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+YJInternetDateTime.h"; sourceTree = "<group>"; };
+		00C76E2A21215E6B00BE60DB /* NSDate+YJInternetDateTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YJInternetDateTime.m"; sourceTree = "<group>"; };
+		00C76E2C2121627200BE60DB /* UIViewController+YJCyclePushLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YJCyclePushLimit.h"; sourceTree = "<group>"; };
+		00C76E2D2121627200BE60DB /* UIViewController+YJCyclePushLimit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YJCyclePushLimit.m"; sourceTree = "<group>"; };
 		630941101F4FD1FA00E871F2 /* UIScreen+YJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+YJFrame.h"; sourceTree = "<group>"; };
 		630941111F4FD1FA00E871F2 /* UIScreen+YJFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+YJFrame.m"; sourceTree = "<group>"; };
 		6318F38B1F301482003E10F9 /* UIImageView+YJCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YJCornerRadius.h"; sourceTree = "<group>"; };
@@ -306,6 +342,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001A44552122DB6C00222BD2 /* NSAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				001A44582122DB8500222BD2 /* NSAttributedString+YJSuperExt.h */,
+				001A44592122DB8500222BD2 /* NSAttributedString+YJSuperExt.m */,
+			);
+			path = NSAttributedString;
+			sourceTree = "<group>";
+		};
+		0057933A20FF230C00B94FBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0057933F20FF230C00B94FBE /* YJBannerViewDemo.app */,
+				0057934120FF230C00B94FBE /* YJBannerView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6309410F1F4FD1E000E871F2 /* UIScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +439,7 @@
 		6348FC221E6FFE8D007C1D96 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				001A44552122DB6C00222BD2 /* NSAttributedString */,
 				63BB19AA1ED2F4D400A7165B /* NSMutableArray */,
 				6372425F1E8F4FBE0014BE40 /* NSObject */,
 				6348FC231E6FFE8D007C1D96 /* NSArray */,
@@ -445,6 +500,8 @@
 				6348FC321E6FFE8D007C1D96 /* NSDate+YJStartEnd.m */,
 				6348FC331E6FFE8D007C1D96 /* NSDate+YJSuperExt.h */,
 				6348FC341E6FFE8D007C1D96 /* NSDate+YJSuperExt.m */,
+				00C76E2921215E6B00BE60DB /* NSDate+YJInternetDateTime.h */,
+				00C76E2A21215E6B00BE60DB /* NSDate+YJInternetDateTime.m */,
 			);
 			path = NSDate;
 			sourceTree = "<group>";
@@ -737,6 +794,10 @@
 				63D7C8681E793005005BE05F /* UIView+YJBadge.m */,
 				63FB4EEF1F2F3B870071ED8F /* UIView+YJCornerRadius.h */,
 				63FB4EF01F2F3B870071ED8F /* UIView+YJCornerRadius.m */,
+				00C76E242121560900BE60DB /* UIView+YJGradient.h */,
+				00C76E252121560900BE60DB /* UIView+YJGradient.m */,
+				001A445B2122DFB400222BD2 /* UIView+YJViewSize.h */,
+				001A445C2122DFB400222BD2 /* UIView+YJViewSize.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -750,6 +811,8 @@
 				6348FCAC1E6FFE8D007C1D96 /* UIViewController+YJSuperExt.m */,
 				63E07D8B1EA0CFF400EB8F3F /* UIViewController+YJFullScreenSupport.h */,
 				63E07D8C1EA0CFF400EB8F3F /* UIViewController+YJFullScreenSupport.m */,
+				00C76E2C2121627200BE60DB /* UIViewController+YJCyclePushLimit.h */,
+				00C76E2D2121627200BE60DB /* UIViewController+YJCyclePushLimit.m */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -805,6 +868,8 @@
 			children = (
 				63AB04A81E77ED4D00754C01 /* UIBarButtonItem+YJBadge.h */,
 				63AB04A91E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m */,
+				003AC1B62122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.h */,
+				003AC1B72122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.m */,
 			);
 			path = UIBarButtonItem;
 			sourceTree = "<group>";
@@ -823,6 +888,7 @@
 		63F04B231E56E2A5007F0DDA = {
 			isa = PBXGroup;
 			children = (
+				0057933920FF230C00B94FBE /* YJBannerViewDemo.xcodeproj */,
 				6348FC211E6FFE8D007C1D96 /* YJCategories */,
 				63F04B2E1E56E2A5007F0DDA /* YJCategoriesGather */,
 				63F04B2D1E56E2A5007F0DDA /* Products */,
@@ -923,12 +989,35 @@
 			mainGroup = 63F04B231E56E2A5007F0DDA;
 			productRefGroup = 63F04B2D1E56E2A5007F0DDA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0057933A20FF230C00B94FBE /* Products */;
+					ProjectRef = 0057933920FF230C00B94FBE /* YJBannerViewDemo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				63F04B2B1E56E2A5007F0DDA /* YJCategoriesGather */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0057933F20FF230C00B94FBE /* YJBannerViewDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = YJBannerViewDemo.app;
+			remoteRef = 0057933E20FF230C00B94FBE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0057934120FF230C00B94FBE /* YJBannerView.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YJBannerView.framework;
+			remoteRef = 0057934020FF230C00B94FBE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		63F04B2A1E56E2A5007F0DDA /* Resources */ = {
@@ -971,7 +1060,9 @@
 				631DF0421ECEEDC200499586 /* NSObject+YJKeyValueObserving.m in Sources */,
 				63F04B371E56E2A5007F0DDA /* ViewController.m in Sources */,
 				630941121F4FD1FA00E871F2 /* UIScreen+YJFrame.m in Sources */,
+				00C76E2E2121627200BE60DB /* UIViewController+YJCyclePushLimit.m in Sources */,
 				63E8EA581F347B000039F261 /* NSString+Hashing.m in Sources */,
+				001A445D2122DFB400222BD2 /* UIView+YJViewSize.m in Sources */,
 				6348FCDB1E6FFE8D007C1D96 /* UITableViewCell+YJNib.m in Sources */,
 				6348FCC11E6FFE8D007C1D96 /* NSString+YJContains.m in Sources */,
 				6348FCB31E6FFE8D007C1D96 /* NSArray+YJBlock.m in Sources */,
@@ -993,10 +1084,12 @@
 				6396AF961F7DDBE500901A46 /* UIImage+YJSuperExt.m in Sources */,
 				63D38FDF1E6D5F900067C967 /* SubViewController.m in Sources */,
 				6348FCE31E6FFE8D007C1D96 /* UIView+YJLoadNib.m in Sources */,
+				003AC1B82122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.m in Sources */,
 				6348FCD91E6FFE8D007C1D96 /* UIScrollView+YJSuperExt.m in Sources */,
 				6348FCCE1E6FFE8D007C1D96 /* UIBezierPath+YJSuperExt.m in Sources */,
 				6348FCD31E6FFE8D007C1D96 /* UIFont+YJSuperExt.m in Sources */,
 				63AB04AA1E77ED4D00754C01 /* UIBarButtonItem+YJBadge.m in Sources */,
+				001A445A2122DB8500222BD2 /* NSAttributedString+YJSuperExt.m in Sources */,
 				6348FCB81E6FFE8D007C1D96 /* NSDate+YJStartEnd.m in Sources */,
 				6348FCD01E6FFE8D007C1D96 /* UIControl+YJBlock.m in Sources */,
 				6348FCCF1E6FFE8D007C1D96 /* UIButton+YJSuperExt.m in Sources */,
@@ -1009,10 +1102,12 @@
 				6348FCC21E6FFE8D007C1D96 /* NSString+YJMIME.m in Sources */,
 				6348FCD11E6FFE8D007C1D96 /* UIControl+YJSuperExt.m in Sources */,
 				6348FCB51E6FFE8D007C1D96 /* NSBundle+YJSuperExt.m in Sources */,
+				00C76E2B21215E6B00BE60DB /* NSDate+YJInternetDateTime.m in Sources */,
 				6348FCDD1E6FFE8D007C1D96 /* UIView+YJConstraints.m in Sources */,
 				6348FCC41E6FFE8D007C1D96 /* NSString+YJSize.m in Sources */,
 				6348FCE41E6FFE8D007C1D96 /* UIView+YJRecursion.m in Sources */,
 				632CC7B91E769D0C00BB69FE /* UIBezierPath+YJLength.m in Sources */,
+				00C76E262121560900BE60DB /* UIView+YJGradient.m in Sources */,
 				6348FCB61E6FFE8D007C1D96 /* NSData+YJGzip.m in Sources */,
 				637242621E8F4FDF0014BE40 /* NSObject+YJSuperExt.m in Sources */,
 				6348FCD51E6FFE8D007C1D96 /* UINavigationBar+YJSuperExt.m in Sources */,

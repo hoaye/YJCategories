@@ -73,6 +73,22 @@
     }
 }
 
+- (void)yj_moveObjectAtIndex:(NSUInteger)index
+                     toIndex:(NSUInteger)toIndex{
+    
+    if (self.count > index && self.count > toIndex) {
+        id object = [self objectAtIndex:index];
+        if (index > toIndex) {
+            [self removeObjectAtIndex:index];
+            [self insertObject:object atIndex:toIndex];
+        } else if (index < toIndex) {
+            [self removeObjectAtIndex:index];
+            [self insertObject:object atIndex:toIndex - 1];
+        }
+    }
+}
+
+
 
 
 @end

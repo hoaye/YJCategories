@@ -188,6 +188,9 @@
 /** 返回时间信息 */
 + (NSString *)yj_timeInfoWithDateString:(NSString *)dateString;
 
+// 秒数时间转换 刚刚 一分钟前 某年某月某日
++ (NSString *)yj_distanceTimeWithBeforeTime:(double)time;
+
 
 
 

@@ -27,4 +27,32 @@
     return newImage;
 }
 
++ (UIImage *)yj_ellipseImage:(UIImage *)image
+                       inset:(CGFloat)inset
+                 borderWidth:(CGFloat)width
+                 borderColor:(UIColor*)color {
+    
+    UIGraphicsBeginImageContext(image.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGRect rect = CGRectMake(inset, inset, image.size.width - inset * 2.f , image.size.height - inset * 2.f);
+    
+    CGContextAddEllipseInRect(context, rect);
+    CGContextClip(context);
+    [image drawInRect:rect];
+    
+    if (width > 0) {
+        CGContextSetStrokeColorWithColor(context, color.CGColor);
+        CGContextSetLineCap(context,kCGLineCapButt);
+        CGContextSetLineWidth(context, width);
+        CGRect rect2 = CGRectMake(inset + width/2, inset +  width/2, image.size.width - width- inset * 2.0f, image.size.height - width- inset * 2.0f);
+        CGContextAddEllipseInRect(context, rect2);
+        
+        CGContextStrokePath(context);
+    }
+    
+    UIImage *newimg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newimg;
+}
+
 @end

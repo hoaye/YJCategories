@@ -13,4 +13,7 @@
 /** 将APNS NSData类型token 格式化成字符串 */
 - (NSString *)APNSTokenString;
 
+// 创建密匙
+- (NSData *)yj_ctreatAKeyData;
+
 @end

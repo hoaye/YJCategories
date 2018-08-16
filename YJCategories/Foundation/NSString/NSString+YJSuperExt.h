@@ -75,5 +75,14 @@ typedef NS_OPTIONS(NSUInteger, YJNSStringScoreOption) {
  */
 - (NSString *)yj_stringWithFormat:(NSString *)format, ...;
 
+/**
+ 将浮点数转换成字符串
+ 实现：有小数点就显示，最多2位
+
+ @param floatValue 浮点值
+ @return 格式化好的String
+ */
++ (NSString *)yj_floatToString:(CGFloat)floatValue;
+
 
 @end

@@ -25,4 +25,27 @@
 /** 可用磁盘空间 */
 + (double)yj_availableDiskSpace;
 
+/** 获取应用沙盒根路径 */
++ (NSString *)yj_homePath;
+
+/** 获取Tmp目录路径 */
++ (NSString *)yj_tmpPath;
+
+/**
+ file is Exists
+
+ @param filePath filePath
+ @return file exists or not
+ */
+- (BOOL)yj_isFileExists:(NSString *)filePath;
+
+/**
+ 判断文件是否超时
+
+ @param filePath filePath
+ @param timeout timeout
+ @return timeout or not
+ */
+- (BOOL)yj_isFile:(NSString *)filePath timeout:(NSTimeInterval)timeout;
+
 @end

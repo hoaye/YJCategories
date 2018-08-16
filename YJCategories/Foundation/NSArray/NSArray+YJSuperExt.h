@@ -29,5 +29,29 @@
  */
 - (NSArray *)yj_reverseObject;
 
+/**
+ 数组洗牌
+
+ @return 打乱的数组
+ */
+- (NSArray *)yj_shuffledArray;
+
+/**
+ 数组去重
+
+ @return unique Array
+ */
+- (NSArray *)yj_uniqueArray;
+
+/**
+ 根据关键词 对array的内容进行排序，并返回排序后的array
+
+ @param parameters key
+ @param ascending ascending
+ @return result
+ */
+- (NSArray *)yj_arraySorting:(NSString *)parameters
+                   ascending:(BOOL)ascending;
+
 @end
 
