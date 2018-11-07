@@ -9,6 +9,17 @@
 #import "NSAttributedString+YJSuperExt.h"
 #import <CoreText/CoreText.h>
 
+NSMutableAttributedString *GetAttributedText(NSString *value) {//这里调整富文本的段落格式
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:value];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:5.0];
+    //    [paragraphStyle setParagraphSpacing:11];  //调整段间距
+    //    [paragraphStyle setHeadIndent:75.0];//段落整体缩进
+    //    [paragraphStyle setFirstLineHeadIndent:.0];//首行缩进
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [value length])];
+    return attributedString;
+}
+
 @implementation NSAttributedString (YJSuperExt)
 
 - (CGFloat)yj_attributedStringHeightWithContainWidth:(CGFloat)width {
@@ -37,5 +48,7 @@
     CFRelease(textFrame);
     return total_height;
 }
+
+
 
 @end

@@ -84,5 +84,19 @@ typedef NS_OPTIONS(NSUInteger, YJNSStringScoreOption) {
  */
 + (NSString *)yj_floatToString:(CGFloat)floatValue;
 
+/**
+ 分割字符串
+
+ @param string original
+ @param interval 每隔几个字符分割
+ @param separateString 用来分割的字符串
+ @param separateCount 分割字符每次添加几次
+ @return result
+ */
+- (NSString *)yj_formatString:(NSString *)string
+                     interval:(NSInteger)interval
+               separateString:(NSString *)separateString
+                separateCount:(NSInteger)separateCount;
+
 
 @end

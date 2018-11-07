@@ -1163,5 +1163,35 @@
                               context:nil].size;
 }
 
+- (NSString *)yj_formatString:(NSString *)string
+                     interval:(NSInteger)interval
+               separateString:(NSString *)separateString
+                separateCount:(NSInteger)separateCount {
+    
+    NSMutableArray *chars = [[NSMutableArray alloc] init];
+    
+    for (int i = 0, j = 0 ; i < [string length]; i++, j++) {
+        
+        [chars addObject:[NSString stringWithFormat:@"%c", [string characterAtIndex:i]]];
+        if (j == interval) {
+            j = -1;
+            for (NSInteger k = 0; k < separateCount; k++) {
+                [chars addObject:[NSString stringWithFormat:@"%@", separateString]];
+            }
+        }
+    }
+    
+    int length = (int)[chars count];
+    char str[length];
+    for (int i = 0; i < length; i++) {
+        str[i] = [chars[i] characterAtIndex:0];
+//        str[i] = [chars[i] charValue];
+    }
+    
+    NSString *temp = [NSString stringWithUTF8String:str];
+    return temp;
+}
+
+
 
 @end

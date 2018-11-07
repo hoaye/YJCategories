@@ -49,6 +49,10 @@
 
 //    [self.view addSubview:self.drawView];
     
+    NSString *seprateString = @"338383774949494948473";
+    
+    NSLog(@"-->%@", [seprateString yj_formatString:seprateString interval:2 separateString:@"|" separateCount:1]);
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -64,6 +68,11 @@
 //        NSLog(@"-->%@", NSStringFromCGRect(self.view.frame));
 //    }];
 //    return;
+    
+    NSDictionary *dict = @{@"name":@"ABC", @"age":@13};
+    
+    NSString *json = [dict yj_convertToJSONString];
+    NSLog(@"-->%@", json);
     
     
     SubViewController *subViewC = [[SubViewController alloc] init];
