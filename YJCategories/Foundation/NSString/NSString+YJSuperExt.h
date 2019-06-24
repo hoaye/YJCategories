@@ -98,5 +98,13 @@ typedef NS_OPTIONS(NSUInteger, YJNSStringScoreOption) {
                separateString:(NSString *)separateString
                 separateCount:(NSInteger)separateCount;
 
+/**
+ 获取随机 length 的字符串
+
+ @param length 长度
+ @return result
+ */
++ (instancetype)yj_randomStringWithoutDigitalWithLength:(int)length;
+
 
 @end

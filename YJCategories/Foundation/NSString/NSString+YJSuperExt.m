@@ -1193,5 +1193,19 @@
 }
 
 
++ (instancetype)yj_randomStringWithoutDigitalWithLength:(int)length {
+    
+    if (length <= 0) return nil;
+    
+    NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
+    NSMutableString *string = [NSMutableString stringWithCapacity:length];
+    for (int i = 0; i < length; i++) {
+        uint32_t index = arc4random_uniform((uint32_t)letters.length);
+        unichar c = [letters characterAtIndex:index];
+        [string appendFormat:@"%C", c];
+    }
+    return string;
+}
+
 
 @end
