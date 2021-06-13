@@ -14,6 +14,7 @@
 		002B49D322681912007668E2 /* NSSet+YJUnicodeConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 002B49CE22681912007668E2 /* NSSet+YJUnicodeConvert.m */; };
 		002B49D422681912007668E2 /* NSObject+YJUnicodeConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 002B49D022681912007668E2 /* NSObject+YJUnicodeConvert.m */; };
 		003AC1B82122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 003AC1B72122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.m */; };
+		00BB1DC524EA1CC300368BBD /* NSThread+YJSuperExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BB1DC424EA1CC300368BBD /* NSThread+YJSuperExt.m */; };
 		00C76E262121560900BE60DB /* UIView+YJGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C76E252121560900BE60DB /* UIView+YJGradient.m */; };
 		00C76E2B21215E6B00BE60DB /* NSDate+YJInternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C76E2A21215E6B00BE60DB /* NSDate+YJInternetDateTime.m */; };
 		00C76E2E2121627200BE60DB /* UIViewController+YJCyclePushLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C76E2D2121627200BE60DB /* UIViewController+YJCyclePushLimit.m */; };
@@ -146,6 +147,8 @@
 		003AC1B62122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YJSuperExt.h"; sourceTree = "<group>"; };
 		003AC1B72122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YJSuperExt.m"; sourceTree = "<group>"; };
 		0057933920FF230C00B94FBE /* YJBannerViewDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YJBannerViewDemo.xcodeproj; path = YJBannerView/YJBannerViewDemo.xcodeproj; sourceTree = "<group>"; };
+		00BB1DC324EA1CC300368BBD /* NSThread+YJSuperExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSThread+YJSuperExt.h"; sourceTree = "<group>"; };
+		00BB1DC424EA1CC300368BBD /* NSThread+YJSuperExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSThread+YJSuperExt.m"; sourceTree = "<group>"; };
 		00C76E242121560900BE60DB /* UIView+YJGradient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YJGradient.h"; sourceTree = "<group>"; };
 		00C76E252121560900BE60DB /* UIView+YJGradient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+YJGradient.m"; sourceTree = "<group>"; };
 		00C76E2921215E6B00BE60DB /* NSDate+YJInternetDateTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+YJInternetDateTime.h"; sourceTree = "<group>"; };
@@ -387,6 +390,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		00BB1DC224EA1C8C00368BBD /* NSThread */ = {
+			isa = PBXGroup;
+			children = (
+				00BB1DC324EA1CC300368BBD /* NSThread+YJSuperExt.h */,
+				00BB1DC424EA1CC300368BBD /* NSThread+YJSuperExt.m */,
+			);
+			path = NSThread;
+			sourceTree = "<group>";
+		};
 		6309410F1F4FD1E000E871F2 /* UIScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +479,7 @@
 		6348FC221E6FFE8D007C1D96 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				00BB1DC224EA1C8C00368BBD /* NSThread */,
 				001A44552122DB6C00222BD2 /* NSAttributedString */,
 				63BB19AA1ED2F4D400A7165B /* NSMutableArray */,
 				6372425F1E8F4FBE0014BE40 /* NSObject */,
@@ -1011,6 +1024,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1161,6 +1175,7 @@
 				6348FCB41E6FFE8D007C1D96 /* NSArray+YJSuperExt.m in Sources */,
 				6348FCEA1E6FFE8D007C1D96 /* UIWindow+YJSuperExt.m in Sources */,
 				6348FCCD1E6FFE8D007C1D96 /* UIApplication+YJSuperExt.m in Sources */,
+				00BB1DC524EA1CC300368BBD /* NSThread+YJSuperExt.m in Sources */,
 				6348FCBE1E6FFE8D007C1D96 /* NSFileManager+YJSuperExt.m in Sources */,
 				638299691F383FCB00E6A199 /* UIImageView+YJSuperExt.m in Sources */,
 				632B9E501F134ABE003FE595 /* UIImage+YJReSize.m in Sources */,
