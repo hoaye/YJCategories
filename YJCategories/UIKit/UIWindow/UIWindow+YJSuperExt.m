@@ -28,4 +28,22 @@
     return currentViewController;
 }
 
+- (UIWindow *)bk_mainWindow {
+        
+    UIWindow *mainView = nil;
+    if ([[UIApplication sharedApplication].delegate respondsToSelector:@selector(window)]) {
+        mainView = [UIApplication sharedApplication].delegate.window;
+    }
+    
+    if (![mainView isKindOfClass:[UIView class]]) {
+        mainView = [UIApplication sharedApplication].keyWindow;
+    }
+    
+    if (mainView == nil) {
+        mainView = [[UIApplication sharedApplication].windows objectAtIndex:0];
+    }
+    
+    return mainView;
+}
+
 @end

@@ -1014,7 +1014,7 @@
 				TargetAttributes = {
 					63F04B2B1E56E2A5007F0DDA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 33K3DU6932;
+						DevelopmentTeam = NP728WNA6C;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1300,13 +1300,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 33K3DU6932;
+				DEVELOPMENT_TEAM = NP728WNA6C;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YJCategoriesGather/PrefixHeader.pch;
 				INFOPLIST_FILE = YJCategoriesGather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hm.de;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mk.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1317,13 +1317,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 33K3DU6932;
+				DEVELOPMENT_TEAM = NP728WNA6C;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YJCategoriesGather/PrefixHeader.pch;
 				INFOPLIST_FILE = YJCategoriesGather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hm.de;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mk.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};

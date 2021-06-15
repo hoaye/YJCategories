@@ -69,5 +69,32 @@
     }
 }
 
++ (UIViewController *)bk_recursiveFindCurrentShowViewControllerFromViewController:(UIViewController *)fromVC {
+    
+    UIViewController *result = nil;
+    if ([fromVC isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *nav = (UINavigationController *)fromVC;
+        result = [self bk_recursiveFindCurrentShowViewControllerFromViewController:[nav topViewController]];
+    } else {
+        
+        if ([fromVC isKindOfClass:[UITabBarController class]]) {
+            UITabBarController *tab = (UITabBarController *)fromVC;
+            result = [self bk_recursiveFindCurrentShowViewControllerFromViewController:[tab selectedViewController]];
+        } else {
+            if (![fromVC isKindOfClass:[UIViewController class]]) {
+                result = nil;
+                return result;
+            }
+            
+            UIViewController *presented = fromVC.presentedViewController;
+            if (presented && ![presented isKindOfClass:[UIAlertController class]]) {
+                result = [self bk_recursiveFindCurrentShowViewControllerFromViewController:presented];
+
+            }
+        }
+    }
+    return result;
+}
+
 
 @end
