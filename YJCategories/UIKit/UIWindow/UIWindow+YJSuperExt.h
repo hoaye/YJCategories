@@ -16,4 +16,7 @@
 /** 当前显示的控制器 */
 - (UIViewController *)yj_currentViewController;
 
++ (UIWindow *)bk_mainWindow;
++ (CGSize)bk_windowSize;
+
 @end

@@ -22,6 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
+    NSLog(@"-->%@", NSStringFromCGSize([UIWindow bk_windowSize]));
 
     
     return YES;

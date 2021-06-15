@@ -114,23 +114,6 @@
 		63FB4EF11F2F3B870071ED8F /* UIView+YJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FB4EF01F2F3B870071ED8F /* UIView+YJCornerRadius.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0057933E20FF230C00B94FBE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0057933920FF230C00B94FBE /* YJBannerViewDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 631C281A1ED55D3B00F31057;
-			remoteInfo = YJBannerViewDemo;
-		};
-		0057934020FF230C00B94FBE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0057933920FF230C00B94FBE /* YJBannerViewDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6307D7381F0A389000CF1EAD;
-			remoteInfo = YJBannerViewFramework;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		001A44582122DB8500222BD2 /* NSAttributedString+YJSuperExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+YJSuperExt.h"; sourceTree = "<group>"; };
 		001A44592122DB8500222BD2 /* NSAttributedString+YJSuperExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+YJSuperExt.m"; sourceTree = "<group>"; };
@@ -146,7 +129,6 @@
 		002B49D022681912007668E2 /* NSObject+YJUnicodeConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YJUnicodeConvert.m"; sourceTree = "<group>"; };
 		003AC1B62122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YJSuperExt.h"; sourceTree = "<group>"; };
 		003AC1B72122EB1C00B33868 /* UIBarButtonItem+YJSuperExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YJSuperExt.m"; sourceTree = "<group>"; };
-		0057933920FF230C00B94FBE /* YJBannerViewDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YJBannerViewDemo.xcodeproj; path = YJBannerView/YJBannerViewDemo.xcodeproj; sourceTree = "<group>"; };
 		00BB1DC324EA1CC300368BBD /* NSThread+YJSuperExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSThread+YJSuperExt.h"; sourceTree = "<group>"; };
 		00BB1DC424EA1CC300368BBD /* NSThread+YJSuperExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSThread+YJSuperExt.m"; sourceTree = "<group>"; };
 		00C76E242121560900BE60DB /* UIView+YJGradient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YJGradient.h"; sourceTree = "<group>"; };
@@ -379,15 +361,6 @@
 				002B49D022681912007668E2 /* NSObject+YJUnicodeConvert.m */,
 			);
 			path = YJUnicodeConvert;
-			sourceTree = "<group>";
-		};
-		0057933A20FF230C00B94FBE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0057933F20FF230C00B94FBE /* YJBannerViewDemo.app */,
-				0057934120FF230C00B94FBE /* YJBannerView.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		00BB1DC224EA1C8C00368BBD /* NSThread */ = {
@@ -929,7 +902,6 @@
 		63F04B231E56E2A5007F0DDA = {
 			isa = PBXGroup;
 			children = (
-				0057933920FF230C00B94FBE /* YJBannerViewDemo.xcodeproj */,
 				6348FC211E6FFE8D007C1D96 /* YJCategories */,
 				63F04B2E1E56E2A5007F0DDA /* YJCategoriesGather */,
 				63F04B2D1E56E2A5007F0DDA /* Products */,
@@ -1031,35 +1003,12 @@
 			mainGroup = 63F04B231E56E2A5007F0DDA;
 			productRefGroup = 63F04B2D1E56E2A5007F0DDA /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 0057933A20FF230C00B94FBE /* Products */;
-					ProjectRef = 0057933920FF230C00B94FBE /* YJBannerViewDemo.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				63F04B2B1E56E2A5007F0DDA /* YJCategoriesGather */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0057933F20FF230C00B94FBE /* YJBannerViewDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = YJBannerViewDemo.app;
-			remoteRef = 0057933E20FF230C00B94FBE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0057934120FF230C00B94FBE /* YJBannerView.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = YJBannerView.framework;
-			remoteRef = 0057934020FF230C00B94FBE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		63F04B2A1E56E2A5007F0DDA /* Resources */ = {
@@ -1306,7 +1255,7 @@
 				INFOPLIST_FILE = YJCategoriesGather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mk.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bk.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1323,7 +1272,7 @@
 				INFOPLIST_FILE = YJCategoriesGather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mk.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bk.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};

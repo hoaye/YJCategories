@@ -96,5 +96,33 @@
     return result;
 }
 
+// 安全的presentViewController, 多次Present同一个会崩溃
+- (void)bk_safelyPresentViewController:(UIViewController *)viewController
+                              animated: (BOOL)animated
+                            completion:(void (^)(void))completion {
+    
+    if (self.presentedViewController) {
+        
+    } else {
+        if (self != viewController) {
+            [self presentViewController:viewController animated:animated completion:completion];
+        }
+    }
+}
+
+// 获取当前最后一个被present出的VC，如果没有返回self
+- (UIViewController *)bk_presentingViewController {
+    
+    UIViewController *result = self;
+    if (self.presentedViewController) {
+        UIViewController *vc = nil;
+        do {
+            vc = self.presentedViewController.presentedViewController;
+        } while (vc);
+    }
+    
+    return result;
+}
+
 
 @end

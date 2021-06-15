@@ -12,7 +12,9 @@
 
 @implementation NSObject (YJUnicodeConvert)
 
-- (NSString *)description {
+// description 会报错，待查
+- (NSString *)description1 {
+    
   NSMutableDictionary *debugInfos = [NSMutableDictionary dictionary];
   
   unsigned int count = 0;
@@ -64,7 +66,7 @@
   return debugInfos.description;
 }
 
-- (NSString *)debugDescription {
+- (NSString *)debugDescription1 {
   NSMutableDictionary *debugInfos = [NSMutableDictionary dictionary];
   
   unsigned int count = 0;
