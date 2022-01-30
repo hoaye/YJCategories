@@ -16,8 +16,5 @@
 /** 数组过滤器 */
 - (NSArray *)yj_filterBlock:(BOOL (^)(id object))block;
 
-/** 数组剔除器 */
-- (NSArray *)yj_reversePickWithArray:(NSArray *)array;
-
 
 @end

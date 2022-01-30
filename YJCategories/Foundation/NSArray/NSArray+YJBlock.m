@@ -30,19 +30,5 @@
     }]];
 }
 
-/** 数组剔除器 */
-- (NSArray *)yj_reversePickWithArray:(NSArray *)array{
-    
-    NSMutableArray *results = [NSMutableArray arrayWithArray:self];
- 
-    for (id obj in array) {
-        if ([self containsObject:obj]) { // 包含就剔除
-            [results removeObject:obj];
-        }
-    }
-    return results;
-}
-
-
 
 @end

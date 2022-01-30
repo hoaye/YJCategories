@@ -62,5 +62,46 @@
     return -1;
 }
 
+/**
+ 去除数组中重复的数据
+ */
+- (NSArray *)yj_removeRepeatObject{
+    
+    // 方法一
+//    for(NSString *str in dataArray){
+//        [dic setValue:str forKey:str];
+//    }
+//    NSLog(@"%@",[dic allKeys]);
+    
+    // 方法二
+//    NSSet *set = [NSSet setWithArray:dataArray];
+//    NSLog(@"%@",[set allObjects]);
+    
+    // 方法三
+//    for (NSString *str in dataArray) {
+//        if (![listAry containsObject:str]) {
+//            [listAry addObject:str];
+//        }
+//    }
+//    NSLog(@"%@",listAry);
+    
+    // 方法四
+    return [self valueForKeyPath:@"@distinctUnionOfObjects.self"];
+}
+
+/** 数组剔除器 */
+- (NSArray *)yj_reversePickWithArray:(NSArray *)array{
+    
+    NSMutableArray *results = [NSMutableArray arrayWithArray:self];
+    
+    for (id obj in array) {
+        if ([self containsObject:obj]) { // 包含就剔除
+            [results removeObject:obj];
+        }
+    }
+    return results;
+}
+
+
 @end
 

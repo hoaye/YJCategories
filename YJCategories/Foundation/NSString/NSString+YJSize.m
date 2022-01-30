@@ -46,4 +46,22 @@
     return CGSizeMake(ceil(textSize.width), ceil(textSize.height));
 }
 
+- (CGSize)yj_sizeWithFont:(UIFont *)font constrained2Side:(CGFloat)side isWidth:(BOOL)isWidth{
+    UIFont *textFont = font?font:[UIFont systemFontOfSize:[UIFont systemFontSize]];
+    CGSize textSize;
+    
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+    NSDictionary *attributes = @{NSFontAttributeName: textFont,
+                                 NSParagraphStyleAttributeName: paragraph};
+    textSize = [self boundingRectWithSize:CGSizeMake(isWidth?side:CGFLOAT_MAX, isWidth?CGFLOAT_MAX:side)
+                                  options:(NSStringDrawingUsesLineFragmentOrigin |
+                                           NSStringDrawingTruncatesLastVisibleLine)
+                               attributes:attributes
+                                  context:nil].size;
+    
+    return CGSizeMake(ceil(textSize.width), ceil(textSize.height));
+}
+
+
 @end

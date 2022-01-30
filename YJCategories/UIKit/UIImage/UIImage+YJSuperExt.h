@@ -18,4 +18,10 @@
  */
 - (UIImage *)yj_convertCreateImageWithUIView:(UIView *)view;
 
+//纠正图片方向
+- (UIImage *)yj_imageFixOrientation:(UIImage *)srcImg;
+
+//正中裁剪
+- (UIImage *)yj_clipImageCenterWithImage:(UIImage *)sourceImage andOrigalRect:(CGRect)bound;
+
 @end

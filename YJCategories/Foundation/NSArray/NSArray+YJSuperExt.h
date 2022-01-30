@@ -38,5 +38,13 @@
  */
 - (NSInteger)binarySearchObjectIndex:(NSNumber *)obj;
 
+/**
+ 去除数组中重复的数据
+ */
+- (NSArray *)yj_removeRepeatObject;
+
+/** 数组剔除器 */
+- (NSArray *)yj_reversePickWithArray:(NSArray *)array;
+
 @end
 
