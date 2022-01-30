@@ -46,4 +46,13 @@
 /** 移除第一个对象 */
 - (void)yj_removeFirstObject ;
 
+/**
+ move item
+
+ @param index form
+ @param toIndex to
+ */
+- (void)yj_moveObjectAtIndex:(NSUInteger)index
+                     toIndex:(NSUInteger)toIndex;
+
 @end

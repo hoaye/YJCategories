@@ -8,6 +8,36 @@
 
 #import "NSObject+YJSuperExt.h"
 #import <objc/runtime.h>
+#import <mach/mach_time.h>  // for mach_absolute_time() and friends
+
+// 程序执行时间，将执行部分放入block
+CGFloat RunTimeBlock (void (^block)(void)) {
+    mach_timebase_info_data_t info;
+    if (mach_timebase_info(&info) != KERN_SUCCESS) return -1.0;
+    
+    uint64_t start = mach_absolute_time ();
+    block ();
+    uint64_t end = mach_absolute_time ();
+    uint64_t elapsed = end - start;
+    
+    uint64_t nanos = elapsed * info.numer / info.denom;
+    return (CGFloat)nanos / NSEC_PER_SEC;
+    
+} // RunTimeBlock
+
+// swizzleMethod
+static void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector){
+    Method originalMethod = class_getInstanceMethod(class, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+    
+    BOOL didAddMethod = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+    
+    if (didAddMethod) {
+        class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+    } else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+}
 
 @implementation NSObject (YJSuperExt)
 
@@ -73,6 +103,25 @@
     id returnValue = nil;
     if (signature.methodReturnLength) { [invocation getReturnValue:&returnValue]; }
     return returnValue;
+}
+
+- (NSString *)debugDescription{
+    if ([self isKindOfClass:[NSArray class]] || [self isKindOfClass:[NSDictionary class]] || [self isKindOfClass:[NSNumber class]] || [self isKindOfClass:[NSString class]])
+    {
+        return self.debugDescription;
+    }
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+    uint count;
+    objc_property_t *properties = class_copyPropertyList([self class], &count);
+    for (int i = 0; i < count; i++)
+    {
+        objc_property_t property = properties[i];
+        NSString *name = @(property_getName(property));
+        id value = [self valueForKey:name]?:@"nil"; // 默认值为nil字符串
+        [dictionary setObject:value forKey:name];
+    }
+    free(properties);
+    return [NSString stringWithFormat:@"<%@: %p> -- %@", [self class], self, dictionary];
 }
 
 @end

@@ -75,5 +75,36 @@ typedef NS_OPTIONS(NSUInteger, YJNSStringScoreOption) {
  */
 - (NSString *)yj_stringWithFormat:(NSString *)format, ...;
 
+/**
+ 将浮点数转换成字符串
+ 实现：有小数点就显示，最多2位
+
+ @param floatValue 浮点值
+ @return 格式化好的String
+ */
++ (NSString *)yj_floatToString:(CGFloat)floatValue;
+
+/**
+ 分割字符串
+
+ @param string original
+ @param interval 每隔几个字符分割
+ @param separateString 用来分割的字符串
+ @param separateCount 分割字符每次添加几次
+ @return result
+ */
+- (NSString *)yj_formatString:(NSString *)string
+                     interval:(NSInteger)interval
+               separateString:(NSString *)separateString
+                separateCount:(NSInteger)separateCount;
+
+/**
+ 获取随机 length 的字符串
+
+ @param length 长度
+ @return result
+ */
++ (instancetype)yj_randomStringWithoutDigitalWithLength:(int)length;
+
 
 @end

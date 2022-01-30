@@ -177,6 +177,38 @@ float yj_radiansForDegrees(int degrees) {
                      }];        
 }
 
+// 转子动画
+- (void)createCircle:(float)startAngle andEndAngle:(float)endAngle {
+    
+    CGFloat origin_x = self.frame.size.width * 0.5;
+    CGFloat origin_y = self.frame.size.height * 0.5;
+    
+    for (NSInteger i = 0; i < 5; i++) {
+        CALayer *layer = [CALayer layer];
+        layer.backgroundColor = [UIColor redColor].CGColor;
+        layer.frame = CGRectMake(-500, -500, 6 - i, 6 - i);
+        layer.cornerRadius = (6 - i) * 0.5;
+        //创建运动的轨迹动画
+        CAKeyframeAnimation *pathAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+        pathAnimation.calculationMode = kCAAnimationPaced;
+        pathAnimation.fillMode = kCAFillModeForwards;
+        pathAnimation.removedOnCompletion = NO;
+        pathAnimation.duration = 1.5;
+        pathAnimation.beginTime = i * 0.1;
+        pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        UIBezierPath *arc = [UIBezierPath bezierPathWithArcCenter:CGPointMake(origin_x, origin_y) radius:20 startAngle:startAngle endAngle:endAngle  clockwise:YES];
+        pathAnimation.path = arc.CGPath;
+        
+        CAAnimationGroup *group = [CAAnimationGroup animation];
+        group.animations = @[pathAnimation];
+        group.duration = 2;
+        group.repeatCount = INTMAX_MAX;
+        //设置运转的动画
+        [layer addAnimation:group forKey:@"moveTheCircleOne"];
+        [self.layer addSublayer:layer];
+    }
+}
+
 
 
 

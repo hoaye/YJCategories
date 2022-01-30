@@ -102,6 +102,34 @@
     return results;
 }
 
+- (NSArray *)yj_shuffledArray {
+    
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
+    NSMutableArray *copy = [self mutableCopy];
+    while ([copy count] > 0)
+    {
+        int index = arc4random() % [copy count];
+        id objectToMove = [copy objectAtIndex:index];
+        [array addObject:objectToMove];
+        [copy removeObjectAtIndex:index];
+    }
+    return array;
+}
+
+- (NSArray *)yj_uniqueArray {
+    
+    NSSet *set = [NSSet setWithArray:self];
+    NSArray *array = [[NSArray alloc] initWithArray:[set allObjects]];
+    return array;
+}
+
+- (NSArray *)yj_arraySorting:(NSString *)parameters  ascending:(BOOL)ascending{
+    
+    NSSortDescriptor*sorter=[[NSSortDescriptor alloc]initWithKey:parameters ascending:ascending];
+    NSMutableArray *sortDescriptors=[[NSMutableArray alloc]initWithObjects:&sorter count:1];
+    NSArray *sortArray=[self sortedArrayUsingDescriptors:sortDescriptors];
+    return sortArray;
+}
 
 @end
 

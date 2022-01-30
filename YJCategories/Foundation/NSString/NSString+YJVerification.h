@@ -86,6 +86,11 @@
          containOtherCharacter:(NSString *)containOtherCharacter
            firstCannotBeDigtal:(BOOL)firstCannotBeDigtal;
 
+// 判断用户输入是否含有emoji
++ (BOOL)yj_stringContainsEmoji:(NSString *)string;
+
+// 过滤emoji
++ (NSString *)yj_removeStringIntheEmoji:(NSString *)string;
 
 @end
 

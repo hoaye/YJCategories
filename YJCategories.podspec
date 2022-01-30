@@ -234,4 +234,6 @@ Pod::Spec.new do |s|
     end
 
     #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+    # pod 'lib', :subspecs => ['lib1', 'lib2']
+
 end
